@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2007-11-26T11:32:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>gamefont.spritefont</Source>
+      <Name>gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Time>2007-11-26T11:32:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2007-11-26T11:32:06-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\WarningLogo.png</Source>
+      <Name>Intro\WarningLogo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb</Output>
+      <Time>2008-10-25T12:05:08-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\BoxOfElephants.png</Source>
+      <Name>Intro\BoxOfElephants</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb</Output>
+      <Time>2008-10-21T18:03:40-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\controls.jpg</Source>
+      <Name>Main Menu\controls</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb</Output>
+      <Time>2008-10-26T18:21:02-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\GDD2007_Transparent.png</Source>
+      <Name>Intro\GDD2007_Transparent</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb</Output>
+      <Time>2008-10-28T00:38:54-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\Intro Explosion no black.png</Source>
+      <Name>Intro\Intro Explosion no black</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb</Output>
+      <Time>2008-10-27T03:37:36-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\Driving Tank Animation.PNG</Source>
+      <Name>Intro\Driving Tank Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb</Output>
+      <Time>2008-10-28T00:23:12-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\turning tank animation.PNG</Source>
+      <Name>Intro\turning tank animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb</Output>
+      <Time>2008-10-28T00:30:54-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\Zooming tank Animation.PNG</Source>
+      <Name>Intro\Zooming tank Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb</Output>
+      <Time>2008-10-28T00:23:40-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\background.png</Source>
+      <Name>Main Menu\background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb</Output>
+      <Time>2008-10-27T16:14:42-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\new copy.png</Source>
+      <Name>Main Menu\new copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb</Output>
+      <Time>2008-10-28T00:19:36-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\controls copy.png</Source>
+      <Name>Main Menu\controls copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb</Output>
+      <Time>2008-10-28T22:57:12-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\single copy.png</Source>
+      <Name>Main Menu\single copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb</Output>
+      <Time>2008-10-29T01:20:56-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\local copy.png</Source>
+      <Name>Main Menu\local copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb</Output>
+      <Time>2008-10-29T01:39:28-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\individual copy.png</Source>
+      <Name>Main Menu\individual copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb</Output>
+      <Time>2008-10-29T01:55:02-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\opposite copy.png</Source>
+      <Name>Main Menu\opposite copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb</Output>
+      <Time>2008-10-29T01:56:46-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Infintry.PNG</Source>
+      <Name>Infintry</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry.xnb</Output>
+      <Time>2008-10-29T02:13:26-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Infintry2.PNG</Source>
+      <Name>Infintry2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry2.xnb</Output>
+      <Time>2008-10-29T02:13:30-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Infintry3.PNG</Source>
+      <Name>Infintry3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry3.xnb</Output>
+      <Time>2008-10-29T02:13:32-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Infintry4.PNG</Source>
+      <Name>Infintry4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry4.xnb</Output>
+      <Time>2008-10-29T02:13:34-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\Brightness copy.png</Source>
+      <Name>Main Menu\Brightness copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb</Output>
+      <Time>2008-10-29T02:47:12-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\master copy.png</Source>
+      <Name>Main Menu\master copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb</Output>
+      <Time>2008-10-29T03:23:22-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\how copy.png</Source>
+      <Name>Main Menu\how copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb</Output>
+      <Time>2008-10-29T03:27:24-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\view copy.png</Source>
+      <Name>Main Menu\view copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb</Output>
+      <Time>2008-10-29T03:33:48-04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <RootDirectory>C:\Users\Robby\Documents\Tanktics\Tanktics\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Robby\Documents\Tanktics\Tanktics\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Robby\Documents\Tanktics\Tanktics\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>c:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2007-11-28T12:08:00-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>c:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2007-11-28T12:08:42-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>c:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2007-11-28T12:08:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>c:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2007-11-28T12:07:44-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\2.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2008-09-03T21:26:54.7035301-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

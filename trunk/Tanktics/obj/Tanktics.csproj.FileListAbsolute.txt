@@ -1,0 +1,182 @@
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\bin\x86\Debug\Tanktics.pdb
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\bin\x86\Debug\Content\warningLogo.xnb
+G:\ITCS 5230\Tanktics\Tanktics\Tanktics\bin\x86\Debug\Content\BoxOfElephants.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\WarningLogo.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\BoxOfElephants.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Tanktics.pdb
+G:\ITCS 5230\Tanktics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\ITCS 5230\Tanktics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\ITCS 5230\Tanktics\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\ITCS 5230\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
+G:\ITCS 5230\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\infantry.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\controls.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\GDD2007_White.xnb
+G:\ITCS 5230\Tanktics\Tanktics\bin\x86\Debug\Content\GDD2007_Transparent.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\WarningLogo.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\BoxOfElephants.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\infantry.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\controls.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\GDD2007_Transparent.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\audio\theme music.xgs
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Wave Bank.xwb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Sound Bank.xsb
+C:\Documents and Settings\me\Desktop\Tanktics102608b\Tanktics\Tanktics\bin\x86\Debug\Content\Intro Explosion no black.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Wave Bank.xwb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Sound Bank.xsb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb
+C:\Users\Robby\Documents\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
+C:\Users\Robby\Documents\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb
+C:\Users\Robby\Documents\Tanktics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Robby\Documents\Tanktics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Robby\Documents\Tanktics\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Tanktics.pdb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\infantry.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\credits copy.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\exit copy.xnb
+C:\Documents and Settings\me\Desktop\all code\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\options copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\audio\GameSounds.xgs
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Wave Bank.xwb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Sound Bank.xsb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry2.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry3.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry4.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\brightness copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics102708\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry2.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry3.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry4.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb
+C:\Documents and Settings\me\Desktop\Tanktics\Tanktics\bin\x86\Debug\Content\audio\GameSounds.xgs
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry2.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry3.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry4.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\audio\GameSounds.xgs
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Wave Bank.xwb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Sound Bank.xsb
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe.manifest
+C:\Users\Robby\Documents\Tanktics\Tanktics\bin\x86\Debug\Tanktics.application
+C:\Users\Robby\Documents\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe.manifest
+C:\Users\Robby\Documents\Tanktics\Tanktics\obj\x86\Debug\Tanktics.application
