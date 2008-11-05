@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asmv1:assemblyIdentity name="Tanktics.exe" version="1.0.0.2" publicKeyToken="6281949cc128b5ae" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="Game.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Tanktics" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="Tanktics.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="4" minorVersion="10" buildNumber="0" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Xna.Framework" version="2.0.0.0" publicKeyToken="6D5C3888EF60E27D" language="neutral" processorArchitecture="x86" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Xna.Framework.Game" version="2.0.0.0" publicKeyToken="6D5C3888EF60E27D" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tanktics.exe" size="65536">
+      <assemblyIdentity name="Tanktics" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Td47Z9wTG/zaDyIhTpvhGUUe3x0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Game.ico" size="4286">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>/y21PfwGnUAkwpPwwaFuIIyWENo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="GameThumbnail.png" size="5734">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>diNvdcDpDtGEMuMQIHpkKK3qVHc=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=MyPC\Robby" issuerKeyHash="ff58d95e4eeabf08a7c0dd33ddad4d6499e5d26e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>aKqwCM7a3TWthtgGCN3B/4gfOkE=</DigestValue></Reference></SignedInfo><SignatureValue>T7fc6fn90iiuaWRr0Lw3+c/C+l47x73NjjCW1/D68CGhM8CPmJLaobpZBigW3ODtraVj75KiqcEs+D48zbV8YljRpgeT/BTqa/gA4rBw/HiuWeNSZNQgeiVa1pY/yepll1nZPVpL1mpQJiSlnFT1NuuqAtlCYFVUfbUXoqlYySw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>uxzXy6sTltwJahl6gFLCe7ixPCzfwRWwpVrwOESWatX7kTggdFy+BPmfkLCDZreljZyBP2YWZAzw2zJrpHuOkPXB6ltKfc3/M+nZlMYR9SIwuQtNTQK/ZBNzoavBdFnZCsu9K2o+hoP0wcVLfVBt9jdliHxIGJTHUe3i7sNpots=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="413a1f88ffc1dd0806d886ad35dddace08b0aa68" Description="" Url=""><as:assemblyIdentity name="Tanktics.exe" version="1.0.0.2" publicKeyToken="6281949cc128b5ae" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MyPC\Robby</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>qfLTuXvqjt/UHgE//BmUiQ30MLA=</DigestValue></Reference></SignedInfo><SignatureValue>tuoiEZyUr0QHC5Iq/PQ6cBEkElUpMcvQENXpHNZHlPWHUVTVinGQPHb1P2i/kEo34D0j/StUG4EtuaGRRbUCdSe5uW+5LkWfYXDFLb1OIVR3VhHN2fuK/QhLBVllWKj7NDFYE4JB/LO9bE3xIWZB+fnulpxdLopXj7IBeHyQfbc=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>uxzXy6sTltwJahl6gFLCe7ixPCzfwRWwpVrwOESWatX7kTggdFy+BPmfkLCDZreljZyBP2YWZAzw2zJrpHuOkPXB6ltKfc3/M+nZlMYR9SIwuQtNTQK/ZBNzoavBdFnZCsu9K2o+hoP0wcVLfVBt9jdliHxIGJTHUe3i7sNpots=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBwTCCASqgAwIBAgIQhAqcoyMbyI1L1yzp+7Ef+DANBgkqhkiG9w0BAQUFADAfMR0wGwYDVQQDHhQATQB5AFAAQwBcAFIAbwBiAGIAeTAeFw0wODEwMjkyMTA3NTNaFw0wOTEwMzAwMzA3NTNaMB8xHTAbBgNVBAMeFABNAHkAUABDAFwAUgBvAGIAYgB5MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7HNfLqxOW3AlqGXqAUsJ7uLE8LN/BFbClWvA4RJZq1fuROCB0XL4E+Z+QsINmt6WNnIE/ZhZkDPDbMmuke46Q9cHqW0p9zf8z6dmUxhH1IjC5C01NAr9kE3Ohq8F0WdkKy70raj6Gg/TBxUt9UG32N2WIfEgYlMdR7eLuw2mi2wIDAQABMA0GCSqGSIb3DQEBBQUAA4GBADeQzUGpS30agW6MNVPqwxZTLH/UONGfd7nvWlcJVoAOcOy8g/10oCU/fdmmwivd4StmKPcezMcGZrOI+VqM9S5jtDRyvS4XbIweZ1Eh+AmZyFKK6tXatsuxoateuyXbCmwjix3AzkXglawINWW2qRIQt6jwtViUwiaAvWivYk7b</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
