@@ -38,14 +38,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tanktics.exe" size="65536">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Tanktics.exe" size="69632">
       <assemblyIdentity name="Tanktics" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>X/cM0XrYCiVDYFbL7PbvF49PgzQ=</dsig:DigestValue>
+        <dsig:DigestValue>InhbM05GPj2a70oVsNFozoIanGw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -65,6 +65,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>diNvdcDpDtGEMuMQIHpkKK3qVHc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Maps\map0.txt" size="7034">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Kt9HB//kawGqfqf6Pn4GRgoRHuc=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

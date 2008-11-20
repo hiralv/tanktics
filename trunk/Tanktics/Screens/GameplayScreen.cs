@@ -28,15 +28,13 @@ namespace Tanktics
         #region Fields
 
         ContentManager content;
-        SpriteFont gameFont;
+        //amount of time (in seconds) between Update calls
+        float elapsed;
 
-        string player = "Gameplay goes here!";
-        Vector2 playerPosition = new Vector2(100, 100);
-        Vector2 playerSize;
-        Vector2 playerMovement = new Vector2(3, 4);
-
-        Viewport viewport;
-        bool noViewport = true;
+        //tile engine and cameras
+        TileEngine tileEngine;
+        Camera2D camera;
+        Camera2D miniMap;
 
         #endregion
 
@@ -48,7 +46,26 @@ namespace Tanktics
         public GameplayScreen()
         {
             TransitionOnTime = TimeSpan.FromSeconds(1.0);
-            TransitionOffTime = TimeSpan.FromSeconds(0.0);
+            TransitionOffTime = TimeSpan.FromSeconds(1.0);
+
+            tileEngine = new TileEngine("Maps/map0.txt", 48, 48, 10, 12);
+
+            //create main camera
+            camera = new Camera2D(
+                tileEngine.TileWidth, tileEngine.TileHeight,
+                tileEngine.MapWidth, tileEngine.MapHeight);
+            camera.Viewport = new Rectangle(0, 0, 800, 440);
+            camera.Speed = 240;
+            //only allow zooming out to total width of board
+            camera.MinScale = (float)camera.Viewport.Width / tileEngine.WidthInPixels;
+
+            //create minimap window
+            miniMap = new Camera2D(
+                tileEngine.TileWidth, tileEngine.TileHeight,
+                tileEngine.MapWidth, tileEngine.MapHeight);
+            miniMap.Viewport = new Rectangle(650, 450, 150, 150);
+            //scale to show entire map in camera
+            miniMap.Scale = (float)miniMap.Viewport.Width / tileEngine.WidthInPixels;
         }
 
 
@@ -60,10 +77,7 @@ namespace Tanktics
             if (content == null)
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
-            gameFont = ScreenManager.Font;// content.Load<SpriteFont>("gamefont");
-
-            //calculate the size of the player string
-            playerSize = gameFont.MeasureString(player);
+            tileEngine.Texture = content.Load<Texture2D>("fulltileset_alpha");
 
             // A real game would probably have more content than this sample, so
             // it would take longer to load. We simulate that by delaying for a
@@ -97,30 +111,8 @@ namespace Tanktics
                                                        bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
-
-            //bounce the player string around the screen
             
-            //viewport has been found in Draw
-            if (!noViewport)
-            {
-                //bounce off left border
-                if (playerPosition.X < 0f)
-                    playerMovement.X = -playerMovement.X;
-                //bounce off right border
-                else if ((playerPosition.X + playerSize.X) > viewport.Width)
-                    playerMovement.X = -playerMovement.X;
-
-                //bounce off top border
-                if (playerPosition.Y < 0f)
-                    playerMovement.Y = -playerMovement.Y;
-                //bounce off bottom border
-                else if ((playerPosition.Y + playerSize.Y) > viewport.Height)
-                    playerMovement.Y = -playerMovement.Y;
-
-                //move player
-                playerPosition += playerMovement;
-            }
-
+            elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
 
 
@@ -138,6 +130,31 @@ namespace Tanktics
                 LoadingScreen.Load(ScreenManager, false, new MenuBackgroundScreen(),
                     new MainMenuScreen());
             }
+
+            Vector2 cameraMotion = Vector2.Zero;
+
+            //move camera
+            if (input.IsKeyDownUp())
+                cameraMotion.Y--;
+            if (input.IsKeyDownDown())
+                cameraMotion.Y++;
+            if (input.IsKeyDownLeft())
+                cameraMotion.X--;
+            if (input.IsKeyDownRight())
+                cameraMotion.X++;
+
+            if (cameraMotion != Vector2.Zero)
+            {
+                //normalize so camera moves at same speed diagonally as horizontal/vertical
+                cameraMotion.Normalize();
+                camera.Move(cameraMotion, elapsed);
+            }
+
+            //zoom in/out with pageup/pagedown keys
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageUp))
+                camera.ZoomIn(elapsed);
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageDown))
+                camera.ZoomOut(elapsed);
         }
 
 
@@ -147,16 +164,13 @@ namespace Tanktics
         public override void Draw(GameTime gameTime)
         {
             ScreenManager.GraphicsDevice.Clear(ClearOptions.Target, Color.Black, 0, 0);
-
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
-
-            //get the viewport (used by Update)
-            viewport = ScreenManager.GraphicsDevice.Viewport;
-            noViewport = false;
 
             spriteBatch.Begin();
 
-            spriteBatch.DrawString(gameFont, player, playerPosition, Color.White);
+            //draw main camera and minimap
+            tileEngine.Draw(spriteBatch, camera);
+            tileEngine.Draw(spriteBatch, miniMap);
 
             spriteBatch.End();
 
