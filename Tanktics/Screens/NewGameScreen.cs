@@ -116,6 +116,8 @@ namespace Tanktics
                 //select single player
                 if (input.MenuSelect)
                 {
+                    gameAudio.PlaySound("Menu Sound");
+                    LoadingScreen.Load(ScreenManager, true, new GameplayScreen());
                 }
 
                 //rotate menu

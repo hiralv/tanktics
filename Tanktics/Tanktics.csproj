@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera2D.cs" />
     <Compile Include="GameAudio.cs" />
     <Compile Include="Screens\AudioScreen.cs" />
     <Compile Include="Screens\Control.cs" />
@@ -100,10 +101,14 @@
     <Compile Include="Screens\TeamGameScreen.cs" />
     <Compile Include="Screens\VideoScreen.cs" />
     <Compile Include="Screens\WarningScreen.cs" />
+    <Compile Include="TileEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="Maps\map0.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
