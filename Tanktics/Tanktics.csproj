@@ -79,6 +79,7 @@
     <Compile Include="Screens\Control.cs" />
     <Compile Include="Screens\GameplayScreen.cs" />
     <Compile Include="Screens\HelpScreen.cs" />
+    <Compile Include="Screens\Hud.cs" />
     <Compile Include="Screens\LocalScreen.cs" />
     <Compile Include="Screens\MultiPlayerScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

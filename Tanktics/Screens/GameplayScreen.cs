@@ -35,6 +35,7 @@ namespace Tanktics
         TileEngine tileEngine;
         Camera2D camera;
         Camera2D miniMap;
+        Hud hud;
 
         #endregion
 
@@ -66,6 +67,7 @@ namespace Tanktics
             miniMap.Viewport = new Rectangle(650, 450, 150, 150);
             //scale to show entire map in camera
             miniMap.Scale = (float)miniMap.Viewport.Width / tileEngine.WidthInPixels;
+            //hud = new Hud(0,450,160,160,"HUD/hud2 copy");
         }
 
 
@@ -88,6 +90,7 @@ namespace Tanktics
             // timing mechanism that we have just finished a very long frame, and that
             // it should not try to catch up.
             ScreenManager.Game.ResetElapsedTime();
+            //ScreenManager.AddScreen(hud);
         }
 
         /// <summary>
