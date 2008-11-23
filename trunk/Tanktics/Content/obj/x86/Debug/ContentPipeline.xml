@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb</Output>
-      <Time>2008-11-04T23:27:47.8728589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2007-11-26T11:32:06-05:00</Time>
     </Item>
     <Item>
       <Source>gamefont.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb</Output>
-      <Time>2008-11-04T23:27:47.9148589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Time>2007-11-26T11:32:06-05:00</Time>
     </Item>
     <Item>
       <Source>blank.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb</Output>
-      <Time>2008-11-04T23:27:47.9068589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2007-11-26T11:32:06-05:00</Time>
     </Item>
     <Item>
       <Source>Intro\WarningLogo.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb</Output>
-      <Time>2008-11-04T23:26:28.6708589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb</Output>
+      <Time>2008-10-25T12:05:08-04:00</Time>
     </Item>
     <Item>
       <Source>Intro\BoxOfElephants.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb</Output>
-      <Time>2008-11-04T23:26:28.5928589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb</Output>
+      <Time>2008-10-21T18:03:40-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\controls.jpg</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb</Output>
-      <Time>2008-11-04T23:25:45.0938589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb</Output>
+      <Time>2008-10-26T18:21:02-04:00</Time>
     </Item>
     <Item>
       <Source>Intro\GDD2007_Transparent.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb</Output>
-      <Time>2008-11-04T23:26:28.6818589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb</Output>
+      <Time>2008-10-28T00:38:54-04:00</Time>
     </Item>
     <Item>
       <Source>Intro\Intro Explosion no black.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb</Output>
-      <Time>2008-11-04T23:26:28.6578589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb</Output>
+      <Time>2008-10-27T03:37:36-04:00</Time>
     </Item>
     <Item>
       <Source>Intro\Driving Tank Animation.PNG</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb</Output>
-      <Time>2008-11-04T23:26:28.5788589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb</Output>
+      <Time>2008-10-28T00:23:12-04:00</Time>
     </Item>
     <Item>
       <Source>Intro\turning tank animation.PNG</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb</Output>
-      <Time>2008-11-04T23:26:28.6208589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb</Output>
+      <Time>2008-10-28T00:30:54-04:00</Time>
     </Item>
     <Item>
       <Source>Intro\Zooming tank Animation.PNG</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb</Output>
-      <Time>2008-11-04T23:26:28.5658589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb</Output>
+      <Time>2008-10-28T00:23:40-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\background.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb</Output>
-      <Time>2008-11-04T23:25:45.1788589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb</Output>
+      <Time>2008-10-27T16:14:42-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\new copy.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.2078589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb</Output>
+      <Time>2008-10-28T00:19:36-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\controls copy.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.0808589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb</Output>
+      <Time>2008-10-28T22:57:12-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\single copy.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.1638589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb</Output>
+      <Time>2008-10-29T01:20:56-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\local copy.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.2228589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb</Output>
+      <Time>2008-10-29T01:39:28-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\individual copy.png</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.1928589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb</Output>
+      <Time>2008-10-29T01:55:02-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\opposite copy.png</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.0688589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb</Output>
+      <Time>2008-10-29T01:56:46-04:00</Time>
     </Item>
     <Item>
       <Source>Infintry.PNG</Source>
@@ -169,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry.xnb</Output>
-      <Time>2008-11-04T23:27:47.7078589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Infintry.xnb</Output>
+      <Time>2008-10-29T02:13:26-04:00</Time>
     </Item>
     <Item>
       <Source>Infintry2.PNG</Source>
@@ -178,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry2.xnb</Output>
-      <Time>2008-11-04T23:27:47.7978589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Infintry2.xnb</Output>
+      <Time>2008-10-29T02:13:30-04:00</Time>
     </Item>
     <Item>
       <Source>Infintry3.PNG</Source>
@@ -187,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry3.xnb</Output>
-      <Time>2008-11-04T23:27:47.8838589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Infintry3.xnb</Output>
+      <Time>2008-10-29T02:13:32-04:00</Time>
     </Item>
     <Item>
       <Source>Infintry4.PNG</Source>
@@ -196,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry4.xnb</Output>
-      <Time>2008-11-04T23:27:47.8948589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Infintry4.xnb</Output>
+      <Time>2008-10-29T02:13:34-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\Brightness copy.png</Source>
@@ -205,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.1078589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb</Output>
+      <Time>2008-10-29T02:47:12-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\master copy.png</Source>
@@ -214,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.2378589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb</Output>
+      <Time>2008-10-29T03:23:22-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\how copy.png</Source>
@@ -223,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.3038589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb</Output>
+      <Time>2008-10-29T03:27:24-04:00</Time>
     </Item>
     <Item>
       <Source>Main Menu\view copy.png</Source>
@@ -232,8 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb</Output>
-      <Time>2008-11-04T23:25:45.1498589-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb</Output>
+      <Time>2008-10-29T03:33:48-04:00</Time>
     </Item>
     <Item>
       <Source>fulltileset_alpha.png</Source>
@@ -241,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\fulltileset_alpha.xnb</Output>
-      <Time>2008-11-20T16:14:37.2296434-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\fulltileset_alpha.xnb</Output>
+      <Time>2008-11-14T13:53:18.0305118-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\hud2 copy.png</Source>
@@ -250,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\hud2 copy.xnb</Output>
-      <Time>2008-11-22T10:23:23.528-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud2 copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2338-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\hud3 copy.png</Source>
@@ -259,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\hud3 copy.xnb</Output>
-      <Time>2008-11-22T10:23:23.52-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud3 copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2418-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\done copy.png</Source>
@@ -268,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\done copy.xnb</Output>
-      <Time>2008-11-22T11:13:55.135-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\done copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2568-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\finalize copy.png</Source>
@@ -277,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\finalize copy.xnb</Output>
-      <Time>2008-11-22T11:13:55.14-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\finalize copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2278-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\next copy.png</Source>
@@ -286,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\next copy.xnb</Output>
-      <Time>2008-11-22T11:13:55.145-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\next copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2788-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\previous copy.png</Source>
@@ -295,8 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\previous copy.xnb</Output>
-      <Time>2008-11-22T11:13:55.129-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\previous copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2718-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\artillary symbol copy.png</Source>
@@ -304,8 +304,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\artillary symbol copy.xnb</Output>
-      <Time>2008-11-22T12:50:52.061-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\artillary symbol copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2648-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\humvee symbol copy.png</Source>
@@ -313,8 +313,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\humvee symbol copy.xnb</Output>
-      <Time>2008-11-22T12:50:52.066-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\humvee symbol copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2858-05:00</Time>
     </Item>
     <Item>
       <Source>HUD\tanksymbol copy.png</Source>
@@ -322,38 +322,38 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\tanksymbol copy.xnb</Output>
-      <Time>2008-11-22T12:50:52.048-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\tanksymbol copy.xnb</Output>
+      <Time>2008-11-23T13:44:06.2518-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
-      <RootDirectory>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Key>c:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2007-11-28T12:08:00-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Key>c:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
         <Value>2007-11-28T12:08:42-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Key>c:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
         <Value>2007-11-28T12:08:30-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>c:\Program Files\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Key>c:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v2.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
         <Value>2007-11-28T12:07:44-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\2.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2008-09-05T18:56:57.7906934-04:00</Value>
+        <Value>2008-09-03T21:26:54.7035301-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

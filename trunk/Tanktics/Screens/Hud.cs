@@ -7,55 +7,51 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Tanktics
 {
-    class Hud : GameScreen
+    class Hud
     {
         Texture2D hudTexture;
-        ContentManager content;
         Rectangle position;
 
         public Hud(int x, int y, int width, int height)
         {
             position = new Rectangle(x, y, width, height);
-            IsPopup = true;
         }
 
-        public override void LoadContent()
+        public void LoadContent(ContentManager content)
         {
             if (content == null)
-                content = new ContentManager(ScreenManager.Game.Services, "Content");
+                return;
 
             //load stuff
             hudTexture = content.Load<Texture2D>("HUD/hud2 copy");
-            
+
         }
 
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
-        {
-            base.Update(gameTime, otherScreenHasFocus, true);
-        }
+        //public void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
+        //{
+        //    base.Update(gameTime, otherScreenHasFocus, true);
+        //}
 
-        public override void Draw(GameTime gameTime)
+        public void Draw(SpriteBatch batch)
         {
-            ScreenManager.SpriteBatch.Begin();
-            ScreenManager.SpriteBatch.Draw(hudTexture, position, Color.White);
-            ScreenManager.SpriteBatch.End();
+            batch.Draw(hudTexture, position, Color.White);
         }
     }
 
-    class ButtonHud : Hud
-    {
-        public ButtonHud(int x, int y, int width, int height) : base(x,y,width,height)
-        {
-        }
+    //class ButtonHud : Hud
+    //{
+    //    public ButtonHud(int x, int y, int width, int height) : base(x,y,width,height)
+    //    {
+    //    }
 
-        public override void LoadContent()
-        {
-            base.LoadContent();
-        }
+    //    public override void LoadContent()
+    //    {
+    //        base.LoadContent();
+    //    }
 
-        public override void Draw(GameTime gameTime)
-        {
-            base.Draw(gameTime);
-        }
-    }
+    //    public override void Draw(GameTime gameTime)
+    //    {
+    //        base.Draw(gameTime);
+    //    }
+    //}
 }
