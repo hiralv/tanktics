@@ -4,14 +4,14 @@
   <description asmv2:publisher="Microsoft" asmv2:product="Tanktics" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Tanktics.exe.manifest" size="3935">
+    <dependentAssembly dependencyType="install" codebase="Tanktics.exe.manifest" size="3936">
       <assemblyIdentity name="Tanktics.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vf4u8Uhop54HJXqI/0jRiIUf/xg=</dsig:DigestValue>
+        <dsig:DigestValue>Fet66eUbOWwCMQqSrRu3wiFX08w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

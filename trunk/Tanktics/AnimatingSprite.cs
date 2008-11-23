@@ -91,28 +91,29 @@ using Microsoft.Xna.Framework.Graphics;
         /// Creates a new Animation with sprites in multiple rows
         /// </summary>
         /// <param name="width">The total width of the animation</param>
-        /// <param name="frameHeight">The height of each frame</param>
+        /// <param name="height">The total height of the animation</param>
         /// <param name="numFrames">The total number of frames in the animation</param>
-        /// <param name="numRows">The number of rows in the animation</param>
-        /// <param name="numFramesPerRow">The number of frames in each row</param>
+        /// <param name="rows">The number of rows in the animation</param>
+        /// <param name="cols">The number of columns in the animation</param>
         /// <param name="xOffset">The offset along the X axis</param>
         /// <param name="yOffset">The offset along the Y axis</param>
-        public Animation(int width, int frameHeight, int numFrames, int numRows, int numFramesPerRow, int xOffset, int yOffset)
+        public Animation(int width, int height, int numFrames, int rows, int cols, int xOffset, int yOffset)
         {
             int count = 0;
 
             //create our frames array
             frames = new Rectangle[numFrames];
 
-            //determine the width of a single frame
-            int frameWidth = width / numFramesPerRow;
+            //determine the width and height of a single frame
+            int frameWidth = width / cols;
+            int frameHeight = height / rows;
 
             //create the frame Rectangles
             //loop through rows
-            for (int i = 0; i < numRows; i++)
+            for (int i = 0; i < rows; i++)
             {
                 //loop through columns
-                for (int j = 0; j < numFramesPerRow && count < numFrames; j++)
+                for (int j = 0; j < cols && count < numFrames; j++)
                 {
                     frames[count] = new Rectangle(xOffset + (frameWidth * j), yOffset + (frameHeight * i), frameWidth, frameHeight);
                     count++;

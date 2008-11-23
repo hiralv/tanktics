@@ -55,9 +55,9 @@ namespace Tanktics
             zoomSprite = new AnimatingSprite();
 
             //create animations
-            Animation drive = new Animation(1600, 240, 21, 5, 5, 0, 0);
-            Animation turn = new Animation(1600, 240, 21, 5, 5, 0, 0);
-            Animation zoom = new Animation(1600, 240, 21, 5, 5, 0, 0);
+            Animation drive = new Animation(1600, 1200, 21, 5, 5, 0, 0);
+            Animation turn = new Animation(1600, 1200, 21, 5, 5, 0, 0);
+            Animation zoom = new Animation(1600, 1200, 21, 5, 5, 0, 0);
 
             //add animations to corresponding sprites
             driveSprite.Animations.Add("drive", drive);
