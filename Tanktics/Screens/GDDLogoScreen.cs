@@ -51,7 +51,7 @@ namespace Tanktics
             
             explosion = new AnimatingSprite();
 
-            Animation explo = new Animation(3990, 399, 37, 4, 10, 0, 0);
+            Animation explo = new Animation(3990, 1596, 37, 4, 10, 0, 0);
             explo.FramesPerSecond = 15;
 
             explosion.Animations.Add("explo", explo);
