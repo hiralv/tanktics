@@ -101,31 +101,5 @@ C:\Users\Robby\Documents\Tanktics SVN\Tanktics\obj\x86\Debug\Tanktics.obj.x86.De
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\obj\x86\Debug\Tanktics.exe.manifest
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\obj\x86\Debug\Tanktics.application
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\selected border.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Down Animation Brown.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Down Animation Green.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Down Animation Grey.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Down Animation.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Left Animation Brown.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Left Animation Green.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Left Animation Grey.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Left Animation.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Right Animation Brown.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Right Animation Green.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Right Animation Grey.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Right Animation.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Up Animation Grey.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Up Animation.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation Brown.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation Green.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation Grey.xnb
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation Brown.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation Green.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation Grey.xnb
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Revolving Animation Brown.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Revolving Animation Green.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Revolving Animation Grey.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Revolving Animation.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Up Animation Brown.xnb
-C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Up Animation Green.xnb
