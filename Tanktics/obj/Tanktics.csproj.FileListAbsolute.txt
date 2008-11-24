@@ -103,3 +103,59 @@ C:\Users\Robby\Documents\Tanktics SVN\Tanktics\obj\x86\Debug\Tanktics.applicatio
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\selected border.xnb
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation.xnb
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Maps\map0.txt
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\menufont.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\blank.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Infintry.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Infintry2.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Infintry3.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Infintry4.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\fulltileset_alpha.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\hud2 copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\hud3 copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\done copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\finalize copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\next copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\previous copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\artillary symbol copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\humvee symbol copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\tanksymbol copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\selected border.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\audio\GameSounds.xgs
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\audio\Wave Bank.xwb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\audio\Sound Bank.xsb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Tanktics.exe.manifest
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Tanktics.application
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Tanktics.exe
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Tanktics.pdb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\obj\x86\Debug\Tanktics.exe.manifest
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\obj\x86\Debug\Tanktics.application
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\obj\x86\Debug\Tanktics.exe
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\obj\x86\Debug\Tanktics.pdb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\mud texture copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\hud5 copy.xnb

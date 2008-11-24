@@ -36,7 +36,12 @@ namespace Tanktics
         Camera2D camera;
         Camera2D miniMap;
 
+        //Hud elements
         Hud hud;
+        DataHud dataHud;
+        ButtonHud buttonHud;
+        ModelHud modelHud;
+        GraphHud graphHud;
 
         //unit controler and selected square
         UnitController unitControl;
@@ -80,6 +85,10 @@ namespace Tanktics
             miniMap.Scale = (float)miniMap.Viewport.Width / tileEngine.WidthInPixels;
 
             hud = new Hud(640,440,160,160);
+            graphHud = new GraphHud(480, 480, 160, 160);
+            buttonHud = new ButtonHud(320, 480, 160, 160);
+            dataHud = new DataHud(160, 480, 160, 160);
+            modelHud = new ModelHud(0, 440, 160, 160);
 
             unitControl = new UnitController(tileEngine.MapWidth, tileEngine.MapHeight, 4);
         }
@@ -96,6 +105,10 @@ namespace Tanktics
             tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
 
             hud.LoadContent(content);
+            buttonHud.LoadContent(content);
+            graphHud.LoadContent(content);
+            dataHud.LoadContent(content);
+            modelHud.LoadContent(content);
 
             Texture2D infantry1 = content.Load<Texture2D>("Infintry");
             Texture2D infantry2 = content.Load<Texture2D>("Infintry2");
@@ -276,6 +289,10 @@ namespace Tanktics
             tileEngine.Draw(spriteBatch, miniMap);
 
             hud.Draw(spriteBatch);
+            buttonHud.Draw(spriteBatch);
+            graphHud.Draw(spriteBatch);
+            dataHud.Draw(spriteBatch);
+            modelHud.Draw(spriteBatch);
 
             spriteBatch.End();
 
