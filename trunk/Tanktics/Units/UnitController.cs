@@ -277,20 +277,20 @@ namespace Tanktics
         }
 
         //Adds a Unit to the Board
-        public Boolean addUnit(String setType, int setTeam, int startingX, int startingY, Texture2D SpriteSheet)
+        public Boolean addUnit(String setType, int setTeam, int startingX, int startingY, Texture2D[] textures)
         {
             Unit newUnit;
             if (setType.Equals("artillery"))
             {
-                newUnit = new Artillery(setTeam, startingX, startingY, SpriteSheet, totalUnitsMade);
+                newUnit = new Artillery(setTeam, startingX, startingY, textures, totalUnitsMade);
             }
             else if (setType.Equals("humvee"))
             {
-                newUnit = new HumVee(setTeam, startingX, startingY, SpriteSheet, totalUnitsMade);
+                newUnit = new HumVee(setTeam, startingX, startingY, textures, totalUnitsMade);
             }
             else
             {
-                newUnit = new Tank(setTeam, startingX, startingY, SpriteSheet, totalUnitsMade);
+                newUnit = new Tank(setTeam, startingX, startingY, textures, totalUnitsMade);
             }
             totalUnitsMade++;
 
@@ -2524,7 +2524,7 @@ namespace Tanktics
                 {
                     if (currentBoard[y, x].team != 0)
                     {
-                        currentBoard[y, x].sprite.Update(gametime);
+                        currentBoard[y, x].Update(gametime);
                     }
                     x++;
                 }
@@ -2532,42 +2532,42 @@ namespace Tanktics
             }
         }
 
-        public void draw(SpriteBatch batch)
-        {
-            int x = 0;
-            int y = 0;
-            while (y < ySize)
-            {
-                x = 0;
-                while (x < xSize)
-                {
-                    if (currentBoard[y, x].team != 0)
-                    {
-                        currentBoard[y, x].sprite.Position.X = currentBoard[y, x].currentX * spriteAdjusterX;
-                        currentBoard[y, x].sprite.Position.Y = currentBoard[y, x].currentY * spriteAdjusterY;
-                        if (currentBoard[y, x].currentX <= xSize / 2)
-                            currentBoard[y, x].sprite.CurrentAnimation = "Right";
-                        else
-                            currentBoard[y, x].sprite.CurrentAnimation = "Left";
-                        currentBoard[y, x].sprite.Draw(batch);
-                    }
-                    x++;
-                }
-                y++;
-            }
-        }
+        //public void draw(SpriteBatch batch)
+        //{
+        //    int x = 0;
+        //    int y = 0;
+        //    while (y < ySize)
+        //    {
+        //        x = 0;
+        //        while (x < xSize)
+        //        {
+        //            if (currentBoard[y, x].team != 0)
+        //            {
+        //                currentBoard[y, x].sprite.Position.X = currentBoard[y, x].currentX * spriteAdjusterX;
+        //                currentBoard[y, x].sprite.Position.Y = currentBoard[y, x].currentY * spriteAdjusterY;
+        //                if (currentBoard[y, x].currentX <= xSize / 2)
+        //                    currentBoard[y, x].sprite.CurrentAnimation = "Right";
+        //                else
+        //                    currentBoard[y, x].sprite.CurrentAnimation = "Left";
+        //                currentBoard[y, x].sprite.Draw(batch);
+        //            }
+        //            x++;
+        //        }
+        //        y++;
+        //    }
+        //}
 
         //draw the unit at (x, y) in the destination rectangle
         public void draw(SpriteBatch batch, int x, int y, Rectangle destination)
         {
             if (currentBoard[y, x].team != 0)
             {
-                if (currentBoard[y, x].currentX <= xSize / 2)
-                    currentBoard[y, x].sprite.CurrentAnimation = "Right";
+                if (currentBoard[y, x].currentY > ySize / 2)
+                    currentBoard[y, x].currentSprite = (int)Unit.Anim.IdleDown;
                 else
-                    currentBoard[y, x].sprite.CurrentAnimation = "Left";
+                    currentBoard[y, x].currentSprite = (int)Unit.Anim.IdleUp;
 
-                currentBoard[y, x].sprite.Draw(batch, destination);
+                currentBoard[y, x].Draw(batch, destination);
             }
         }
 
@@ -2581,8 +2581,8 @@ namespace Tanktics
                 {
                     if (team1[i].unitNumber == unitNum)
                     {
-                        team1[i] = team1[team1Length];
-                        team1[team1Length] = new NullUnit();
+                        team1[i] = team1[team1Length-1];
+                        team1[team1Length-1] = new NullUnit();
                         team1Length--;
                     }
                     i++;
@@ -2592,8 +2592,8 @@ namespace Tanktics
                 while (i < team2Length){    
                     if (team2[i].unitNumber == unitNum)
                     {
-                        team2[i] = team2[team2Length];
-                        team2[team1Length] = new NullUnit();
+                        team2[i] = team2[team2Length-1];
+                        team2[team1Length-1] = new NullUnit();
                         team2Length--;
                     }
                     i++;
@@ -2604,8 +2604,8 @@ namespace Tanktics
                 {
                     if (team3[i].unitNumber == unitNum)
                     {
-                        team3[i] = team3[team3Length];
-                        team3[team3Length] = new NullUnit();
+                        team3[i] = team3[team3Length-1];
+                        team3[team3Length-1] = new NullUnit();
                         team3Length--;
                     }
                     i++;
@@ -2614,8 +2614,8 @@ namespace Tanktics
             else{        
                 if (team4[i].unitNumber == unitNum)
                     {
-                        team4[i] = team4[team4Length];
-                        team4[team4Length] = new NullUnit();
+                        team4[i] = team4[team4Length-1];
+                        team4[team4Length-1] = new NullUnit();
                         team4Length--;
                     }
                     i++;

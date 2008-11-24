@@ -334,6 +334,258 @@
       <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\selected border.xnb</Output>
       <Time>2008-11-23T21:02:39.8714-05:00</Time>
     </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Down Animation Brown.png</Source>
+      <Name>Tank Animations\Tank Driving Down Animation Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Down Animation Brown.xnb</Output>
+      <Time>2008-11-23T18:29:12.8388-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Down Animation Green.png</Source>
+      <Name>Tank Animations\Tank Driving Down Animation Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Down Animation Green.xnb</Output>
+      <Time>2008-11-23T18:29:13.0768-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Down Animation Grey.png</Source>
+      <Name>Tank Animations\Tank Driving Down Animation Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Down Animation Grey.xnb</Output>
+      <Time>2008-11-23T18:29:12.4388-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Down Animation.png</Source>
+      <Name>Tank Animations\Tank Driving Down Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Down Animation.xnb</Output>
+      <Time>2008-11-23T18:29:12.6218-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Left Animation Brown.png</Source>
+      <Name>Tank Animations\Tank Driving Left Animation Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Left Animation Brown.xnb</Output>
+      <Time>2008-11-24T00:52:52.5196-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Left Animation Green.png</Source>
+      <Name>Tank Animations\Tank Driving Left Animation Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Left Animation Green.xnb</Output>
+      <Time>2008-11-24T00:53:55.6976-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Left Animation Grey.png</Source>
+      <Name>Tank Animations\Tank Driving Left Animation Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Left Animation Grey.xnb</Output>
+      <Time>2008-11-24T00:55:11.5406-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Left Animation.png</Source>
+      <Name>Tank Animations\Tank Driving Left Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Left Animation.xnb</Output>
+      <Time>2008-11-24T00:51:06.4786-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Right Animation Brown.png</Source>
+      <Name>Tank Animations\Tank Driving Right Animation Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Right Animation Brown.xnb</Output>
+      <Time>2008-11-24T00:58:15.0366-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Right Animation Green.png</Source>
+      <Name>Tank Animations\Tank Driving Right Animation Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Right Animation Green.xnb</Output>
+      <Time>2008-11-24T00:59:04.4446-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Right Animation Grey.png</Source>
+      <Name>Tank Animations\Tank Driving Right Animation Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Right Animation Grey.xnb</Output>
+      <Time>2008-11-24T00:59:53.8526-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Right Animation.png</Source>
+      <Name>Tank Animations\Tank Driving Right Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Right Animation.xnb</Output>
+      <Time>2008-11-24T00:56:56.9546-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Up Animation Brown.png</Source>
+      <Name>Tank Animations\Tank Driving Up Animation Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Up Animation Brown.xnb</Output>
+      <Time>2008-11-23T18:29:12.9138-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Up Animation Green.png</Source>
+      <Name>Tank Animations\Tank Driving Up Animation Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Up Animation Green.xnb</Output>
+      <Time>2008-11-23T18:29:12.3548-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Up Animation Grey.png</Source>
+      <Name>Tank Animations\Tank Driving Up Animation Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Up Animation Grey.xnb</Output>
+      <Time>2008-11-23T18:29:12.7038-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Driving Up Animation.png</Source>
+      <Name>Tank Animations\Tank Driving Up Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Driving Up Animation.xnb</Output>
+      <Time>2008-11-23T18:29:12.9938-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Idleing Down Animation Brown.png</Source>
+      <Name>Tank Animations\Tank Idleing Down Animation Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation Brown.xnb</Output>
+      <Time>2008-11-23T18:29:13.0988-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Idleing Down Animation Green.png</Source>
+      <Name>Tank Animations\Tank Idleing Down Animation Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation Green.xnb</Output>
+      <Time>2008-11-23T18:29:12.5108-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Idleing Down Animation Grey.png</Source>
+      <Name>Tank Animations\Tank Idleing Down Animation Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation Grey.xnb</Output>
+      <Time>2008-11-23T18:29:12.6408-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Idleing Down Animation.png</Source>
+      <Name>Tank Animations\Tank Idleing Down Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation.xnb</Output>
+      <Time>2008-11-23T18:29:12.8678-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Idleing Up Animation Brown.png</Source>
+      <Name>Tank Animations\Tank Idleing Up Animation Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation Brown.xnb</Output>
+      <Time>2008-11-23T18:29:12.5998-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Idleing Up Animation Green.png</Source>
+      <Name>Tank Animations\Tank Idleing Up Animation Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation Green.xnb</Output>
+      <Time>2008-11-23T18:29:12.7838-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Idleing Up Animation Grey.png</Source>
+      <Name>Tank Animations\Tank Idleing Up Animation Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation Grey.xnb</Output>
+      <Time>2008-11-23T18:29:12.9368-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Idleing Up Animation.png</Source>
+      <Name>Tank Animations\Tank Idleing Up Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation.xnb</Output>
+      <Time>2008-11-24T02:30:27.5166-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Revolving Animation Brown.png</Source>
+      <Name>Tank Animations\Tank Revolving Animation Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Revolving Animation Brown.xnb</Output>
+      <Time>2008-11-23T18:29:12.4778-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Revolving Animation Green.png</Source>
+      <Name>Tank Animations\Tank Revolving Animation Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Revolving Animation Green.xnb</Output>
+      <Time>2008-11-23T18:29:12.6818-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Revolving Animation Grey.png</Source>
+      <Name>Tank Animations\Tank Revolving Animation Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Revolving Animation Grey.xnb</Output>
+      <Time>2008-11-23T18:29:12.8188-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Tank Animations\Tank Revolving Animation.png</Source>
+      <Name>Tank Animations\Tank Revolving Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Revolving Animation.xnb</Output>
+      <Time>2008-11-23T18:29:13.1388-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
