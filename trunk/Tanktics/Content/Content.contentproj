@@ -270,18 +270,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tank Animations\Tank Idleing Down Animation.png">
-      <Name>Tank Idleing Down Animation</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Tank Animations\Tank Idleing Up Animation.png">
-      <Name>Tank Idleing Up Animation</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="HUD\mud texture copy.png">
       <Name>mud texture copy</Name>
       <Importer>TextureImporter</Importer>
@@ -305,6 +293,468 @@
   <ItemGroup>
     <Compile Include="HUD\graph.png">
       <Name>graph</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\APC\APC Driving Down\APC Driving Down Brown.png">
+      <Name>APC Driving Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Down\APC Driving Down Green.png">
+      <Name>APC Driving Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Down\APC Driving Down Grey.png">
+      <Name>APC Driving Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Down\APC Driving Down White.png">
+      <Name>APC Driving Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\APC\APC Driving Left\APC Driving Left Brown.png">
+      <Name>APC Driving Left Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Left\APC Driving Left Green.png">
+      <Name>APC Driving Left Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Left\APC Driving Left Grey.png">
+      <Name>APC Driving Left Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Left\APC Driving Left White.png">
+      <Name>APC Driving Left White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\APC\APC Driving Right\APC Driving Right Brown.png">
+      <Name>APC Driving Right Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Right\APC Driving Right Green.png">
+      <Name>APC Driving Right Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Right\APC Driving Right Grey.png">
+      <Name>APC Driving Right Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Right\APC Driving Right White.png">
+      <Name>APC Driving Right White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\APC\APC Driving Up\APC Driving Up Brown.png">
+      <Name>APC Driving Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Up\APC Driving Up Green.png">
+      <Name>APC Driving Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Up\APC Driving Up Grey.png">
+      <Name>APC Driving Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Driving Up\APC Driving Up White.png">
+      <Name>APC Driving Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\APC\APC Idling Down\APC Idling Down Brown.png">
+      <Name>APC Idling Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Idling Down\APC Idling Down Green.png">
+      <Name>APC Idling Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Idling Down\APC Idling Down Grey.png">
+      <Name>APC Idling Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Idling Down\APC Idling Down White.png">
+      <Name>APC Idling Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\APC\APC Idling Up\APC Idling Up Brown.png">
+      <Name>APC Idling Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Idling Up\APC Idling Up Green.png">
+      <Name>APC Idling Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Idling Up\APC Idling Up Grey.png">
+      <Name>APC Idling Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Idling Up\APC Idling Up White.png">
+      <Name>APC Idling Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\APC\APC Rotating\APC Rotating Brown.png">
+      <Name>APC Rotating Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Rotating\APC Rotating Green.png">
+      <Name>APC Rotating Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Rotating\APC Rotating Grey.png">
+      <Name>APC Rotating Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\APC\APC Rotating\APC Rotating White.png">
+      <Name>APC Rotating White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown.png">
+      <Name>Artillery Driving Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.png">
+      <Name>Artillery Driving Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.png">
+      <Name>Artillery Driving Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White.png">
+      <Name>Artillery Driving Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown.png">
+      <Name>Artillery Driving Left Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.png">
+      <Name>Artillery Driving Left Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.png">
+      <Name>Artillery Driving Left Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.png">
+      <Name>Artillery Driving Left White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown.png">
+      <Name>Artillery Driving Right Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.png">
+      <Name>Artillery Driving Right Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.png">
+      <Name>Artillery Driving Right Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White.png">
+      <Name>Artillery Driving Right White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown.png">
+      <Name>Artillery Driving Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.png">
+      <Name>Artillery Driving Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.png">
+      <Name>Artillery Driving Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.png">
+      <Name>Artillery Driving Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown.png">
+      <Name>Artillery Idling Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.png">
+      <Name>Artillery Idling Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.png">
+      <Name>Artillery Idling Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White.png">
+      <Name>Artillery Idling Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown.png">
+      <Name>Artillery Idling Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.png">
+      <Name>Artillery Idling Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.png">
+      <Name>Artillery Idling Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.png">
+      <Name>Artillery Idling Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown.png">
+      <Name>Artillery Rotating Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.png">
+      <Name>Artillery Rotating Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.png">
+      <Name>Artillery Rotating Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White.png">
+      <Name>Artillery Rotating White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown.png">
+      <Name>Tank Driving Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.png">
+      <Name>Tank Driving Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.png">
+      <Name>Tank Driving Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Down\Tank Driving Down White.png">
+      <Name>Tank Driving Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown.png">
+      <Name>Tank Driving Left Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.png">
+      <Name>Tank Driving Left Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.png">
+      <Name>Tank Driving Left Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Left\Tank Driving Left White.png">
+      <Name>Tank Driving Left White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown.png">
+      <Name>Tank Driving Right Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.png">
+      <Name>Tank Driving Right Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.png">
+      <Name>Tank Driving Right Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Right\Tank Driving Right White.png">
+      <Name>Tank Driving Right White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown.png">
+      <Name>Tank Driving Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.png">
+      <Name>Tank Driving Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.png">
+      <Name>Tank Driving Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Driving Up\Tank Driving Up White.png">
+      <Name>Tank Driving Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown.png">
+      <Name>Tank Idling Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.png">
+      <Name>Tank Idling Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.png">
+      <Name>Tank Idling Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Idling Down\Tank Idling Down White.png">
+      <Name>Tank Idling Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown.png">
+      <Name>Tank Idling Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.png">
+      <Name>Tank Idling Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.png">
+      <Name>Tank Idling Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Idling Up\Tank Idling Up White.png">
+      <Name>Tank Idling Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Unit Animations\Tank\Tank Rotating\Tank Rotating Brown.png">
+      <Name>Tank Rotating Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Rotating\Tank Rotating Green.png">
+      <Name>Tank Rotating Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.png">
+      <Name>Tank Rotating Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Unit Animations\Tank\Tank Rotating\Tank Rotating White.png">
+      <Name>Tank Rotating White</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -22,7 +22,7 @@ namespace Tanktics
         
         //Simple Boolean 2D array
         //0 No Water
-        //1 Water HumVee onry!
+        //1 Water APC onry!
         Boolean[,] Water;
 
         Unit[] team1 = new Unit[MAXIMUMUNITS];
@@ -284,9 +284,9 @@ namespace Tanktics
             {
                 newUnit = new Artillery(setTeam, startingX, startingY, textures, totalUnitsMade);
             }
-            else if (setType.Equals("humvee"))
+            else if (setType.Equals("apc"))
             {
-                newUnit = new HumVee(setTeam, startingX, startingY, textures, totalUnitsMade);
+                newUnit = new APC(setTeam, startingX, startingY, textures, totalUnitsMade);
             }
             else
             {
@@ -301,6 +301,10 @@ namespace Tanktics
                     currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
                     team1[team1Length] = newUnit;
                     team1Length++;
+
+                    if (currentUnit == null)
+                        currentUnit = newUnit;
+
                     return true;
                 }
             }
@@ -311,6 +315,10 @@ namespace Tanktics
                     currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
                     team2[team2Length] = newUnit;
                     team2Length++;
+
+                    if (currentUnit == null)
+                        currentUnit = newUnit;
+
                     return true;
                 }
             }
@@ -321,6 +329,10 @@ namespace Tanktics
                     currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
                     team3[team3Length] = newUnit;
                     team3Length++;
+
+                    if (currentUnit == null)
+                        currentUnit = newUnit;
+
                     return true;
                 }
             }
@@ -331,6 +343,10 @@ namespace Tanktics
                     currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
                     team4[team4Length] = newUnit;
                     team4Length++;
+
+                    if (currentUnit == null)
+                        currentUnit = newUnit;
+
                     return true;
                 }
             }
@@ -448,7 +464,7 @@ namespace Tanktics
         }
 
 
-        //Movement specifics for HumVees
+        //Movement specifics for APCs
         //ASUMPTION: the game will never feed it a position off the board
         //           for example it will never make a call goal(-1, 4)
         //Returns:  0 if Trying to move greater than maximum movement range of unit
@@ -456,7 +472,7 @@ namespace Tanktics
         //          2 if Unit has already made a move this turn;
         //          3 if Other Unit(s) is blocking all paths to the space
         //          9 End of move method reached. Unknown Error.
-        public int moveHumVee(int goalX, int goalY)
+        public int moveAPC(int goalX, int goalY)
         {
             //Check if unit has already moved this turn
             if (currentUnit.hasMoved)
@@ -2485,8 +2501,8 @@ namespace Tanktics
             if (currentUnit.type.Equals("tank")){
                 results = moveTank(goalX, goalY);
             }
-            else if (currentUnit.type.Equals("humvee")){
-                results = moveHumVee(goalX, goalY);
+            else if (currentUnit.type.Equals("apc")){
+                results = moveAPC(goalX, goalY);
             }
             else{
                 results = moveArtillery(goalX, goalY);
@@ -2561,11 +2577,7 @@ namespace Tanktics
         public void draw(SpriteBatch batch, int x, int y, Rectangle destination)
         {
             if (currentBoard[y, x].team != 0)
-            {
-                currentBoard[y, x].currentSprite = (int)Unit.Anim.IdleDown;
-
                 currentBoard[y, x].Draw(batch, destination);
-            }
         }
 
         //Removes the given unit from the players unit list

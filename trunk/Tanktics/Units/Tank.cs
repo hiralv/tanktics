@@ -28,7 +28,7 @@ namespace Tanktics
             canWater = false;
 
             //Movement range of unit
-            movement = 2;
+            movement = 3;
 
             //Cost in points of unit
             cost = 2;
@@ -47,22 +47,22 @@ namespace Tanktics
             //add up animation
             sprites[(int)Anim.Up] = new AnimatingSprite();
             sprites[(int)Anim.Up].Texture = textures[(int)Anim.Up];
-            sprites[(int)Anim.Up].Animations.Add("up", new Animation(1910, 1995, 50, 5, 10, 0, 0));
+            sprites[(int)Anim.Up].Animations.Add("up", new Animation(510, 555, 50, 5, 10, 0, 0));
             sprites[(int)Anim.Up].CurrentAnimation = "up";
             //add down animation
             sprites[(int)Anim.Down] = new AnimatingSprite();
             sprites[(int)Anim.Down].Texture = textures[(int)Anim.Down];
-            sprites[(int)Anim.Down].Animations.Add("down", new Animation(1890, 2625, 50, 5, 10, 0, 0));
+            sprites[(int)Anim.Down].Animations.Add("down", new Animation(510, 550, 50, 5, 10, 0, 0));
             sprites[(int)Anim.Down].CurrentAnimation = "down";
             //add left animation
             sprites[(int)Anim.Left] = new AnimatingSprite();
             sprites[(int)Anim.Left].Texture = textures[(int)Anim.Left];
-            sprites[(int)Anim.Left].Animations.Add("left", new Animation(2714, 800, 50, 5, 10, 0, 0));
+            sprites[(int)Anim.Left].Animations.Add("left", new Animation(1340, 305, 50, 5, 10, 0, 0));
             sprites[(int)Anim.Left].CurrentAnimation = "left";
             //add right animation
             sprites[(int)Anim.Right] = new AnimatingSprite();
             sprites[(int)Anim.Right].Texture = textures[(int)Anim.Right];
-            sprites[(int)Anim.Right].Animations.Add("right", new Animation(2306, 800, 50, 5, 10, 0, 0));
+            sprites[(int)Anim.Right].Animations.Add("right", new Animation(1360, 315, 50, 5, 10, 0, 0));
             sprites[(int)Anim.Right].CurrentAnimation = "right";
             //add idle up animation
             sprites[(int)Anim.IdleUp] = new AnimatingSprite();
@@ -75,7 +75,7 @@ namespace Tanktics
             sprites[(int)Anim.IdleDown].Animations.Add("idle down", new Animation(530, 535, 50, 5, 10, 0, 0));
             sprites[(int)Anim.IdleDown].CurrentAnimation = "idle down";
 
-            currentSprite = (int)Anim.Up;
+            currentSprite = (int)Anim.IdleDown;
         }
 
     }

@@ -119,9 +119,29 @@ namespace Tanktics
 
     class ModelHud : Hud
     {
+        AnimatingSprite currentUnit;
+        Rectangle spriteDest;
+
         public ModelHud(int x, int y, int width, int height)
             : base(x, y, width, height)
         {
+            currentUnit = new AnimatingSprite();
+            currentUnit.Animations.Add("rotate", new Animation(2000, 260, 50, 5, 10, 0, 0));
+            currentUnit.CurrentAnimation = "rotate";
+
+            Rectangle spriteRect = currentUnit.Animations["rotate"].CurrentFrame;
+            //find the scale needed to make frame fit in hud rectangle
+            float scale = Math.Min(
+                0.8f * (position.Width - 20) / spriteRect.Width,
+                0.8f * (position.Height - 20) / spriteRect.Height);
+
+            spriteDest = new Rectangle(
+                0, 0,
+                (int)(scale * spriteRect.Width),
+                (int)(scale * spriteRect.Height));
+            //center sprite in hud rectangle
+            spriteDest.X = position.X + (position.Width - 20) / 2 - spriteDest.Width / 2;
+            spriteDest.Y = position.Y + 20 + (position.Height - 20) / 2 - spriteDest.Height / 2;
         }
 
         public void LoadContent(ContentManager content)
@@ -132,12 +152,20 @@ namespace Tanktics
             //load stuff
             hudTexture = content.Load<Texture2D>("HUD/hud5 copy");
             blank = content.Load<Texture2D>("HUD/mud texture copy");
+
+            currentUnit.Texture = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating White");
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            currentUnit.Update(gameTime);
         }
 
         public void Draw(SpriteBatch batch)
         {
             batch.Draw(blank, position, Color.White);
             batch.Draw(hudTexture, position, Color.White);
+            currentUnit.Draw(batch, spriteDest);
         }
     }
 
