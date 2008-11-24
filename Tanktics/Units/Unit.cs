@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace Tanktics
 {
     public class Unit
     {
+        public enum Anim { Up, Down, Left, Right, IdleUp, IdleDown };
+
         public Boolean hasMoved;
         public int vision;
         public Boolean canWater;
@@ -16,7 +20,8 @@ namespace Tanktics
         public int currentY;
         public int previousX;
         public int previousY;
-        public AnimatingSprite sprite;
+        public AnimatingSprite[] sprites;
+        public int currentSprite;
         public String type;
         public int unitNumber;
 
@@ -35,5 +40,14 @@ namespace Tanktics
             hasMoved = false;
         }
 
+        public void Update(GameTime gameTime)
+        {
+            sprites[currentSprite].Update(gameTime);
+        }
+
+        public void Draw(SpriteBatch batch, Rectangle destination)
+        {
+            sprites[currentSprite].Draw(batch, destination);
+        }
     }
 }

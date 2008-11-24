@@ -73,11 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Artillery.cs" />
-    <Compile Include="Camera2D.cs" />
+    <Compile Include="Units\Artillery.cs" />
+    <Compile Include="Tile Engine\Camera2D.cs" />
     <Compile Include="GameAudio.cs" />
-    <Compile Include="HumVee.cs" />
-    <Compile Include="NullUnit.cs" />
+    <Compile Include="Units\HumVee.cs" />
+    <Compile Include="Units\NullUnit.cs" />
     <Compile Include="Screens\AudioScreen.cs" />
     <Compile Include="Screens\Control.cs" />
     <Compile Include="Screens\GameplayScreen.cs" />
@@ -105,10 +105,10 @@
     <Compile Include="Screens\TeamGameScreen.cs" />
     <Compile Include="Screens\VideoScreen.cs" />
     <Compile Include="Screens\WarningScreen.cs" />
-    <Compile Include="Tank.cs" />
-    <Compile Include="TileEngine.cs" />
-    <Compile Include="Unit.cs" />
-    <Compile Include="UnitController.cs" />
+    <Compile Include="Units\Tank.cs" />
+    <Compile Include="Tile Engine\TileEngine.cs" />
+    <Compile Include="Units\Unit.cs" />
+    <Compile Include="Units\UnitController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -221,7 +221,7 @@ namespace Tanktics
                     SelectedTexture,
                     new Rectangle(
                         (selected.X - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
-                        (selected.X - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
+                        (selected.Y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
                         scaledTileWidth,
                         scaledTileHeight),
                     Color.White);

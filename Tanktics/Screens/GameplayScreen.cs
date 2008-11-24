@@ -38,8 +38,15 @@ namespace Tanktics
 
         Hud hud;
 
+        //unit controler and selected square
         UnitController unitControl;
         Point selected = Point.Zero;
+
+        //textures for unit animations (up, down, left, right, idle up, idle down)
+        Texture2D[] tank1 = new Texture2D[6];
+        Texture2D[] tank2 = new Texture2D[6];
+        Texture2D[] tank3 = new Texture2D[6];
+        Texture2D[] tank4 = new Texture2D[6];
 
         #endregion
 
@@ -86,6 +93,7 @@ namespace Tanktics
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
             tileEngine.Texture = content.Load<Texture2D>("fulltileset_alpha");
+            tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
 
             hud.LoadContent(content);
 
@@ -94,17 +102,42 @@ namespace Tanktics
             Texture2D infantry3 = content.Load<Texture2D>("Infintry3");
             Texture2D infantry4 = content.Load<Texture2D>("Infintry4");
 
-            addUnits(1, 0, 0, infantry1);
-            addUnits(2, 0, tileEngine.MapWidth - 4, infantry2);
-            addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, infantry3);
-            addUnits(4, tileEngine.MapHeight - 4, 0, infantry4);
+            //load player 1 (white) tank animations
+            tank1[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation");
+            tank1[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation");
+            tank1[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation");
+            tank1[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation");
+            tank1[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
+            tank1[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
 
-            tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
+            //load player 2 (grey) tank animations
+            tank2[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Grey");
+            tank2[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Grey");
+            tank2[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Grey");
+            tank2[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Grey");
+            tank2[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation Grey");
+            tank2[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation Grey");
 
-            // A real game would probably have more content than this sample, so
-            // it would take longer to load. We simulate that by delaying for a
-            // while, giving you a chance to admire the beautiful loading screen.
-            Thread.Sleep(1000);
+            //load player 3 (green) tank animations
+            tank3[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Green");
+            tank3[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Green");
+            tank3[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Green");
+            tank3[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Green");
+            tank3[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation Green");
+            tank3[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation Green");
+
+            //load player 4 (brown) tank animations
+            tank4[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Brown");
+            tank4[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Brown");
+            tank4[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Brown");
+            tank4[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Brown");
+            tank4[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation Brown");
+            tank4[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation Brown");
+
+            addUnits(1, 0, 0, tank1);
+            addUnits(2, 0, tileEngine.MapWidth - 4, tank2);
+            addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, tank3);
+            addUnits(4, tileEngine.MapHeight - 4, 0, tank4);
 
             // once the load has finished, we use ResetElapsedTime to tell the game's
             // timing mechanism that we have just finished a very long frame, and that
@@ -120,13 +153,13 @@ namespace Tanktics
             content.Unload();
         }
 
-        private void addUnits(int team, int top, int left, Texture2D texture)
+        private void addUnits(int team, int top, int left, Texture2D[] textures)
         {
             for (int y = top; y < top + 4; y++)
             {
                 for (int x = left; x < left + 4; x++)
                 {
-                    unitControl.addUnit("humvee", team, x, y, texture);
+                    unitControl.addUnit("tank", team, x, y, textures);
                 }
             }
         }
@@ -198,6 +231,33 @@ namespace Tanktics
                 selected.X = unitControl.currentUnit.currentX;
                 selected.Y = unitControl.currentUnit.currentY;
             }
+
+            //move selected square
+            if (input.IsNewKeyPress(Keys.W) && selected.Y > 0)
+                selected.Y--;
+            if (input.IsNewKeyPress(Keys.S) && selected.Y < tileEngine.MapHeight - 1)
+                selected.Y++;
+            if (input.IsNewKeyPress(Keys.A) && selected.X > 0)
+                selected.X--;
+            if (input.IsNewKeyPress(Keys.D) && selected.X < tileEngine.MapWidth - 1)
+                selected.X++;
+
+            //move current unit to selected square
+            if (input.IsNewKeyPress(Keys.Space))
+            {
+                unitControl.moveUnit(selected.X, selected.Y);
+                selected.X = unitControl.currentUnit.currentX;
+                selected.Y = unitControl.currentUnit.currentY;
+            }
+
+            //finalize turn
+            if (input.IsNewKeyPress(Keys.Enter))
+            {
+                unitControl.finalize();
+                selected.X = unitControl.currentUnit.currentX;
+                selected.Y = unitControl.currentUnit.currentY;
+            }
+
         }
 
 
