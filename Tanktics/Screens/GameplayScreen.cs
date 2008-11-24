@@ -290,10 +290,10 @@ namespace Tanktics
 
             hud.Draw(spriteBatch);
             buttonHud.Draw(spriteBatch);
-            graphHud.Draw(spriteBatch);
+            graphHud.Draw(spriteBatch,ScreenManager);
             dataHud.Draw(spriteBatch);
             modelHud.Draw(spriteBatch);
-
+            
             spriteBatch.End();
 
             // If the game is transitioning on or off, fade it out to black.
