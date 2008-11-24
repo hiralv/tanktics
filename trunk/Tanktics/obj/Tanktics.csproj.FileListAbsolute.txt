@@ -100,3 +100,4 @@ C:\Users\Robby\Documents\Tanktics SVN\Tanktics\obj\x86\Debug\Microsoft.Xna.Frame
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\obj\x86\Debug\Tanktics.exe.manifest
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\obj\x86\Debug\Tanktics.application
+C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\selected border.xnb

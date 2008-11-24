@@ -23,6 +23,8 @@ namespace Tanktics
         public readonly int MapHeight;
         int numLayers;
 
+        public Texture2D SelectedTexture;
+
         #endregion
 
         #region Properties
@@ -152,6 +154,77 @@ namespace Tanktics
                         }
                     }
                 }
+            }
+        }
+
+        public void Draw(SpriteBatch batch, Camera2D camera, UnitController units, Point selected)
+        {
+            int scaledTileWidth = (int)(camera.Scale * TileWidth + 0.5f);
+            int scaledTileHeight = (int)(camera.Scale * TileHeight + 0.5f);
+
+            Point minVisible = new Point(
+                (int)(camera.Position.X / scaledTileWidth),
+                (int)(camera.Position.Y / scaledTileHeight));
+            Point maxVisible = new Point(
+                ((int)(camera.Position.X + camera.Viewport.Width) / scaledTileWidth) + 1,
+                ((int)(camera.Position.Y + camera.Viewport.Height) / scaledTileHeight) + 1);
+
+            minVisible.X = Math.Max(minVisible.X, 0);
+            minVisible.Y = Math.Max(minVisible.Y, 0);
+            maxVisible.X = Math.Min(maxVisible.X, MapWidth);
+            maxVisible.Y = Math.Min(maxVisible.Y, MapHeight);
+
+            for (int i = 0; i < numLayers - 1; i++)
+            {
+                for (int y = minVisible.Y; y < maxVisible.Y; y++)
+                {
+                    for (int x = minVisible.X; x < maxVisible.X; x++)
+                    {
+                        if (map[i, y, x] >= 0)
+                        {
+                            batch.Draw(
+                                texture,
+                                new Rectangle(
+                                    (x - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
+                                    (y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
+                                    scaledTileWidth,
+                                    scaledTileHeight),
+                                tiles[map[i, y, x]],
+                                Color.White);
+                        }
+                    }
+                }
+            }
+
+            //draw units
+            if (units != null)
+            {
+                for (int y = minVisible.Y; y < maxVisible.Y; y++)
+                {
+                    for (int x = minVisible.X; x < maxVisible.X; x++)
+                    {
+                        units.draw(batch, x, y, new Rectangle(
+                            (x - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
+                            (y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
+                            scaledTileWidth,
+                            scaledTileHeight));
+                    }
+                }
+            }
+
+            //draw selected border
+            if (SelectedTexture != null &&
+                minVisible.X <= selected.X && selected.X < maxVisible.X &&
+                minVisible.Y <= selected.Y && selected.Y < maxVisible.Y)
+            {
+                batch.Draw(
+                    SelectedTexture,
+                    new Rectangle(
+                        (selected.X - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
+                        (selected.X - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
+                        scaledTileWidth,
+                        scaledTileHeight),
+                    Color.White);
             }
         }
 

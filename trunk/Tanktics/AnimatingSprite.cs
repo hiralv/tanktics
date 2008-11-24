@@ -307,4 +307,19 @@ using Microsoft.Xna.Framework.Graphics;
                 SpriteEffects.None,
                 0.0f);
         }
+
+        /// <summary>
+        /// Draws the sprite with the given SpriteBatch and destination Rectangle
+        /// </summary>
+        /// <param name="batch">The SpriteBatch with which to draw the sprite</param>
+        public void Draw(SpriteBatch batch, Rectangle destination)
+        {
+            //simple draw call. we use our Animations[currentAnimation].CurrentFrame to
+            //get the source rectangle to use for picking our sprite.
+            batch.Draw(
+                texture,
+                destination,
+                Animations[currentAnimation].CurrentFrame,
+                Color.White);
+        }
     }

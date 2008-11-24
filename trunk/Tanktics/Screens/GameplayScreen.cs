@@ -38,6 +38,9 @@ namespace Tanktics
 
         Hud hud;
 
+        UnitController unitControl;
+        Point selected = Point.Zero;
+
         #endregion
 
         #region Initialization
@@ -70,8 +73,9 @@ namespace Tanktics
             miniMap.Scale = (float)miniMap.Viewport.Width / tileEngine.WidthInPixels;
 
             hud = new Hud(640,440,160,160);
-        }
 
+            unitControl = new UnitController(tileEngine.MapWidth, tileEngine.MapHeight, 4);
+        }
 
         /// <summary>
         /// Load graphics content for the game.
@@ -84,6 +88,18 @@ namespace Tanktics
             tileEngine.Texture = content.Load<Texture2D>("fulltileset_alpha");
 
             hud.LoadContent(content);
+
+            Texture2D infantry1 = content.Load<Texture2D>("Infintry");
+            Texture2D infantry2 = content.Load<Texture2D>("Infintry2");
+            Texture2D infantry3 = content.Load<Texture2D>("Infintry3");
+            Texture2D infantry4 = content.Load<Texture2D>("Infintry4");
+
+            addUnits(1, 0, 0, infantry1);
+            addUnits(2, 0, tileEngine.MapWidth - 4, infantry2);
+            addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, infantry3);
+            addUnits(4, tileEngine.MapHeight - 4, 0, infantry4);
+
+            tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
 
             // A real game would probably have more content than this sample, so
             // it would take longer to load. We simulate that by delaying for a
@@ -104,6 +120,17 @@ namespace Tanktics
             content.Unload();
         }
 
+        private void addUnits(int team, int top, int left, Texture2D texture)
+        {
+            for (int y = top; y < top + 4; y++)
+            {
+                for (int x = left; x < left + 4; x++)
+                {
+                    unitControl.addUnit("humvee", team, x, y, texture);
+                }
+            }
+        }
+
         #endregion
 
         #region Update and Draw
@@ -119,6 +146,8 @@ namespace Tanktics
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
             
             elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            unitControl.update(gameTime);
         }
 
 
@@ -161,6 +190,14 @@ namespace Tanktics
                 camera.ZoomIn(elapsed);
             if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageDown))
                 camera.ZoomOut(elapsed);
+
+            //select next unit
+            if (input.IsNewKeyPress(Keys.Tab))
+            {
+                unitControl.nextUnit();
+                selected.X = unitControl.currentUnit.currentX;
+                selected.Y = unitControl.currentUnit.currentY;
+            }
         }
 
 
@@ -175,7 +212,7 @@ namespace Tanktics
             spriteBatch.Begin();
 
             //draw main camera and minimap
-            tileEngine.Draw(spriteBatch, camera);
+            tileEngine.Draw(spriteBatch, camera, unitControl, selected);
             tileEngine.Draw(spriteBatch, miniMap);
 
             hud.Draw(spriteBatch);
