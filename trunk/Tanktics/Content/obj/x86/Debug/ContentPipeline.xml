@@ -370,6 +370,15 @@
       <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\hud5 copy.xnb</Output>
       <Time>2008-11-24T06:11:47.235162-05:00</Time>
     </Item>
+    <Item>
+      <Source>HUD\graph.png</Source>
+      <Name>HUD\graph</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\bin\x86\Debug\Content\HUD\graph.xnb</Output>
+      <Time>2008-11-24T10:47:35.545-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
