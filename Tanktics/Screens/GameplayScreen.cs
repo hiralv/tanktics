@@ -103,36 +103,36 @@ namespace Tanktics
             Texture2D infantry4 = content.Load<Texture2D>("Infintry4");
 
             //load player 1 (white) tank animations
-            tank1[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation");
-            tank1[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation");
-            tank1[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation");
-            tank1[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation");
+            //tank1[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation");
+            //tank1[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation");
+            //tank1[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation");
+            //tank1[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation");
             tank1[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
             tank1[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
 
             //load player 2 (grey) tank animations
-            tank2[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Grey");
-            tank2[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Grey");
-            tank2[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Grey");
-            tank2[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Grey");
-            tank2[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation Grey");
-            tank2[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation Grey");
+            //tank2[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Grey");
+            //tank2[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Grey");
+            //tank2[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Grey");
+            //tank2[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Grey");
+            tank2[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
+            tank2[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
 
             //load player 3 (green) tank animations
-            tank3[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Green");
-            tank3[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Green");
-            tank3[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Green");
-            tank3[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Green");
-            tank3[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation Green");
-            tank3[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation Green");
+            //tank3[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Green");
+            //tank3[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Green");
+            //tank3[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Green");
+            //tank3[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Green");
+            tank3[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
+            tank3[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
 
             //load player 4 (brown) tank animations
-            tank4[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Brown");
-            tank4[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Brown");
-            tank4[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Brown");
-            tank4[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Brown");
-            tank4[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation Brown");
-            tank4[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation Brown");
+            //tank4[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Brown");
+            //tank4[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Brown");
+            //tank4[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Brown");
+            //tank4[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Brown");
+            tank4[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
+            tank4[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
 
             addUnits(1, 0, 0, tank1);
             addUnits(2, 0, tileEngine.MapWidth - 4, tank2);
