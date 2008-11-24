@@ -13,3 +13,5 @@ C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\Content\o
 C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\Content\obj\x86\Debug\audio\GameSounds.xml
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\Content\obj\x86\Debug\audio\GameSounds.xml
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\Content\obj\x86\Debug\audio\GameSounds.xml
