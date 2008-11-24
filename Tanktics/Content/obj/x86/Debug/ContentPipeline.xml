@@ -512,7 +512,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Down Animation.xnb</Output>
-      <Time>2008-11-24T02:48:33.3116-05:00</Time>
+      <Time>2008-11-24T03:05:28.4066-05:00</Time>
     </Item>
     <Item>
       <Source>Tank Animations\Tank Idleing Up Animation Brown.png</Source>
@@ -548,7 +548,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Tank Animations\Tank Idleing Up Animation.xnb</Output>
-      <Time>2008-11-24T02:48:43.0906-05:00</Time>
+      <Time>2008-11-24T03:05:37.9476-05:00</Time>
     </Item>
     <Item>
       <Source>Tank Animations\Tank Revolving Animation Brown.png</Source>

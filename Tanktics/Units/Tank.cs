@@ -72,7 +72,7 @@ namespace Tanktics
             //add idle down animation
             sprites[(int)Anim.IdleDown] = new AnimatingSprite();
             sprites[(int)Anim.IdleDown].Texture = textures[(int)Anim.IdleDown];
-            sprites[(int)Anim.IdleDown].Animations.Add("idle down", new Animation(460, 445, 50, 5, 10, 0, 0));
+            sprites[(int)Anim.IdleDown].Animations.Add("idle down", new Animation(530, 535, 50, 5, 10, 0, 0));
             sprites[(int)Anim.IdleDown].CurrentAnimation = "idle down";
 
             currentSprite = (int)Anim.Up;
