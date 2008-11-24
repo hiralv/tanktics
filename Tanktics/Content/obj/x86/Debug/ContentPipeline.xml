@@ -325,6 +325,15 @@
       <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\tanksymbol copy.xnb</Output>
       <Time>2008-11-23T13:44:06.2518-05:00</Time>
     </Item>
+    <Item>
+      <Source>selected border.png</Source>
+      <Name>selected border</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\selected border.xnb</Output>
+      <Time>2008-11-23T21:02:39.8714-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

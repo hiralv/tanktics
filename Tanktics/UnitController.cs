@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace Tanktics
 {
-    class UnitController
+    public class UnitController
     {
         //Maximum allowed units per team
         static int MAXIMUMUNITS = 20;
@@ -2554,6 +2554,20 @@ namespace Tanktics
                     x++;
                 }
                 y++;
+            }
+        }
+
+        //draw the unit at (x, y) in the destination rectangle
+        public void draw(SpriteBatch batch, int x, int y, Rectangle destination)
+        {
+            if (currentBoard[y, x].team != 0)
+            {
+                if (currentBoard[y, x].currentX <= xSize / 2)
+                    currentBoard[y, x].sprite.CurrentAnimation = "Right";
+                else
+                    currentBoard[y, x].sprite.CurrentAnimation = "Left";
+
+                currentBoard[y, x].sprite.Draw(batch, destination);
             }
         }
 

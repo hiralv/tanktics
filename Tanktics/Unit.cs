@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Tanktics
 {
-    class Unit
+    public class Unit
     {
         public Boolean hasMoved;
         public int vision;
