@@ -2562,7 +2562,7 @@ namespace Tanktics
         {
             if (currentBoard[y, x].team != 0)
             {
-                if (currentBoard[y, x].currentY > ySize / 2)
+                if (currentBoard[y, x].currentY < ySize / 2)
                     currentBoard[y, x].currentSprite = (int)Unit.Anim.IdleDown;
                 else
                     currentBoard[y, x].currentSprite = (int)Unit.Anim.IdleUp;
