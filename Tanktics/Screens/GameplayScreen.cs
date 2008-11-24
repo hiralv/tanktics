@@ -47,12 +47,6 @@ namespace Tanktics
         UnitController unitControl;
         Point selected = Point.Zero;
 
-        //textures for unit animations (up, down, left, right, idle up, idle down)
-        Texture2D[] tank1 = new Texture2D[6];
-        Texture2D[] tank2 = new Texture2D[6];
-        Texture2D[] tank3 = new Texture2D[6];
-        Texture2D[] tank4 = new Texture2D[6];
-
         #endregion
 
         #region Initialization
@@ -71,7 +65,7 @@ namespace Tanktics
             camera = new Camera2D(
                 tileEngine.TileWidth, tileEngine.TileHeight,
                 tileEngine.MapWidth, tileEngine.MapHeight);
-            camera.Viewport = new Rectangle(0, 0, 800, 440);
+            camera.Viewport = new Rectangle(0, 0, 800, 480);
             camera.Speed = 240;
             //only allow zooming out to total width of board
             camera.MinScale = (float)camera.Viewport.Width / tileEngine.WidthInPixels;
@@ -110,47 +104,147 @@ namespace Tanktics
             dataHud.LoadContent(content);
             modelHud.LoadContent(content);
 
-            Texture2D infantry1 = content.Load<Texture2D>("Infintry");
-            Texture2D infantry2 = content.Load<Texture2D>("Infintry2");
-            Texture2D infantry3 = content.Load<Texture2D>("Infintry3");
-            Texture2D infantry4 = content.Load<Texture2D>("Infintry4");
+            //textures for apc animations for 4 players
+            //(up, down, left, right, idle up, idle down)
+            Texture2D[] apc1 = new Texture2D[6];
+            Texture2D[] apc2 = new Texture2D[6];
+            Texture2D[] apc3 = new Texture2D[6];
+            Texture2D[] apc4 = new Texture2D[6];
+
+            //textures for artillery animations for 4 players
+            //(up, down, left, right, idle up, idle down)
+            Texture2D[] artillery1 = new Texture2D[6];
+            Texture2D[] artillery2 = new Texture2D[6];
+            Texture2D[] artillery3 = new Texture2D[6];
+            Texture2D[] artillery4 = new Texture2D[6];
+
+            //textures for tank animations for 4 players
+            //(up, down, left, right, idle up, idle down)
+            Texture2D[] tank1 = new Texture2D[6];
+            Texture2D[] tank2 = new Texture2D[6];
+            Texture2D[] tank3 = new Texture2D[6];
+            Texture2D[] tank4 = new Texture2D[6];
+
+
+
+            //load player 1 (white) apc animations
+            apc1[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up White");
+            apc1[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Down/APC Driving Down White");
+            apc1[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Left/APC Driving Left White");
+            apc1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right White");
+            apc1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up White");
+            apc1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down White");
+
+            //load player 2 (green) apc animations
+            apc2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Green");
+            apc2[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Down/APC Driving Down Green");
+            apc2[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Left/APC Driving Left Green");
+            apc2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Green");
+            apc2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Green");
+            apc2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Green");
+
+            //load player 3 (grey) apc animations
+            apc3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Grey");
+            apc3[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Down/APC Driving Down Grey");
+            apc3[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Left/APC Driving Left Grey");
+            apc3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Grey");
+            apc3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Grey");
+            apc3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Grey");
+
+            //load player 4 (brown) apc animations
+            apc4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Brown");
+            apc4[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Down/APC Driving Down Brown");
+            apc4[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Left/APC Driving Left Brown");
+            apc4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Brown");
+            apc4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Brown");
+            apc4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Brown");
+
+
+
+            //load player 1 (white) artillery animations
+            artillery1[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up White");
+            artillery1[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Down/Artillery Driving Down White");
+            artillery1[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Left/Artillery Driving Left White");
+            artillery1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right White");
+            artillery1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up White");
+            artillery1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down White");
+
+            //load player 2 (green) artillery animations
+            artillery2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Green");
+            artillery2[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Down/Artillery Driving Down Green");
+            artillery2[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Left/Artillery Driving Left Green");
+            artillery2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Green");
+            artillery2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Green");
+            artillery2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Green");
+
+            //load player 3 (grey) artillery animations
+            artillery3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Grey");
+            artillery3[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Down/Artillery Driving Down Grey");
+            artillery3[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Left/Artillery Driving Left Grey");
+            artillery3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Grey");
+            artillery3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Grey");
+            artillery3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Grey");
+
+            //load player 4 (brown) artillery animations
+            artillery4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Brown");
+            artillery4[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Down/Artillery Driving Down Brown");
+            artillery4[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Left/Artillery Driving Left Brown");
+            artillery4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Brown");
+            artillery4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Brown");
+            artillery4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Brown");
+
+
 
             //load player 1 (white) tank animations
-            //tank1[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation");
-            //tank1[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation");
-            //tank1[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation");
-            //tank1[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation");
-            tank1[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
-            tank1[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
+            tank1[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up White");
+            tank1[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Down/Tank Driving Down White");
+            tank1[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Left/Tank Driving Left White");
+            tank1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right White");
+            tank1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up White");
+            tank1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down White");
 
-            //load player 2 (grey) tank animations
-            //tank2[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Grey");
-            //tank2[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Grey");
-            //tank2[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Grey");
-            //tank2[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Grey");
-            tank2[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
-            tank2[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
+            //load player 2 (green) tank animations
+            tank2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Green");
+            tank2[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Down/Tank Driving Down Green");
+            tank2[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Left/Tank Driving Left Green");
+            tank2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Green");
+            tank2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Green");
+            tank2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Green");
 
-            //load player 3 (green) tank animations
-            //tank3[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Green");
-            //tank3[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Green");
-            //tank3[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Green");
-            //tank3[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Green");
-            tank3[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
-            tank3[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
+            //load player 3 (grey) tank animations
+            tank3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Grey");
+            tank3[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Down/Tank Driving Down Grey");
+            tank3[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Left/Tank Driving Left Grey");
+            tank3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Grey");
+            tank3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Grey");
+            tank3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Grey");
 
             //load player 4 (brown) tank animations
-            //tank4[0] = content.Load<Texture2D>("Tank Animations/Tank Driving Up Animation Brown");
-            //tank4[1] = content.Load<Texture2D>("Tank Animations/Tank Driving Down Animation Brown");
-            //tank4[2] = content.Load<Texture2D>("Tank Animations/Tank Driving Left Animation Brown");
-            //tank4[3] = content.Load<Texture2D>("Tank Animations/Tank Driving Right Animation Brown");
-            tank4[4] = content.Load<Texture2D>("Tank Animations/Tank Idleing Up Animation");
-            tank4[5] = content.Load<Texture2D>("Tank Animations/Tank Idleing Down Animation");
+            tank4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Brown");
+            tank4[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Down/Tank Driving Down Brown");
+            tank4[(int)Unit.Anim.Left] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Left/Tank Driving Left Brown");
+            tank4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Brown");
+            tank4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Brown");
+            tank4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Brown");
 
-            addUnits(1, 0, 0, tank1);
-            addUnits(2, 0, tileEngine.MapWidth - 4, tank2);
-            addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, tank3);
-            addUnits(4, tileEngine.MapHeight - 4, 0, tank4);
+            //addUnits(1, 0, 0, artillery1);
+            addUnits(2, 0, tileEngine.MapWidth - 4, artillery2);
+            addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, artillery3);
+            addUnits(4, tileEngine.MapHeight - 4, 0, artillery4);
+
+            unitControl.addUnit("artillery", 1, 2, 0, artillery1);
+            unitControl.addUnit("artillery", 1, 3, 0, artillery1);
+            unitControl.addUnit("tank", 1, 1, 1, tank1);
+            unitControl.addUnit("tank", 1, 2, 1, tank1);
+            unitControl.addUnit("tank", 1, 3, 1, tank1);
+            unitControl.addUnit("tank", 1, 1, 2, tank1);
+            unitControl.addUnit("apc", 1, 2, 2, apc1);
+            unitControl.addUnit("apc", 1, 3, 2, apc1);
+            unitControl.addUnit("apc", 1, 0, 3, apc1);
+            unitControl.addUnit("apc", 1, 1, 3, apc1);
+            unitControl.addUnit("apc", 1, 2, 3, apc1);
+            unitControl.addUnit("apc", 1, 3, 3, apc1);
+
 
             // once the load has finished, we use ResetElapsedTime to tell the game's
             // timing mechanism that we have just finished a very long frame, and that
@@ -172,7 +266,7 @@ namespace Tanktics
             {
                 for (int x = left; x < left + 4; x++)
                 {
-                    unitControl.addUnit("tank", team, x, y, textures);
+                    unitControl.addUnit("artillery", team, x, y, textures);
                 }
             }
         }
@@ -194,6 +288,7 @@ namespace Tanktics
             elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             unitControl.update(gameTime);
+            modelHud.Update(gameTime);
         }
 
 

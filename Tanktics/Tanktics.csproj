@@ -76,7 +76,7 @@
     <Compile Include="Units\Artillery.cs" />
     <Compile Include="Tile Engine\Camera2D.cs" />
     <Compile Include="GameAudio.cs" />
-    <Compile Include="Units\HumVee.cs" />
+    <Compile Include="Units\APC.cs" />
     <Compile Include="Units\NullUnit.cs" />
     <Compile Include="Screens\AudioScreen.cs" />
     <Compile Include="Screens\Control.cs" />
