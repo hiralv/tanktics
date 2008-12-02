@@ -18,7 +18,7 @@ namespace Tanktics
             position = new Rectangle(x, y, width, height);
         }
 
-        public void LoadContent(ContentManager content)
+        public virtual void LoadContent(ContentManager content)
         {
             if (content == null)
                 return;
@@ -29,7 +29,7 @@ namespace Tanktics
 
         }
 
-        public void Draw(SpriteBatch batch)
+        public virtual void Draw(SpriteBatch batch)
         {
 
             //Viewport port = ScreenManager.GraphicsDevice.Viewport;
@@ -61,7 +61,7 @@ namespace Tanktics
 
         }
 
-        public void LoadContent(ContentManager content)
+        public override void LoadContent(ContentManager content)
         {
             if (content == null)
                 return;
@@ -77,7 +77,7 @@ namespace Tanktics
             done = content.Load<Texture2D>("HUD/done copy");
         }
 
-        public void Draw(SpriteBatch batch)
+        public override void Draw(SpriteBatch batch)
         {
             batch.Draw(blank, position, Color.White);
             batch.Draw(hudTexture, position, Color.White);
@@ -98,7 +98,7 @@ namespace Tanktics
         {
         }
 
-        public void LoadContent(ContentManager content)
+        public override void LoadContent(ContentManager content)
         {
             if (content == null)
                 return;
@@ -110,7 +110,7 @@ namespace Tanktics
 
         }
 
-        public void Draw(SpriteBatch batch)
+        public override void Draw(SpriteBatch batch)
         {
             batch.Draw(blank, position, Color.White);
             batch.Draw(hudTexture, position, Color.White);
@@ -144,7 +144,7 @@ namespace Tanktics
             spriteDest.Y = position.Y + 20 + (position.Height - 20) / 2 - spriteDest.Height / 2;
         }
 
-        public void LoadContent(ContentManager content)
+        public override void LoadContent(ContentManager content)
         {
             if (content == null)
                 return;
@@ -161,7 +161,7 @@ namespace Tanktics
             currentUnit.Update(gameTime);
         }
 
-        public void Draw(SpriteBatch batch)
+        public override void Draw(SpriteBatch batch)
         {
             batch.Draw(blank, position, Color.White);
             batch.Draw(hudTexture, position, Color.White);
@@ -179,7 +179,7 @@ namespace Tanktics
         {
         }
 
-        public void LoadContent(ContentManager content)
+        public override void LoadContent(ContentManager content)
         {
             if (content == null)
                 return;
