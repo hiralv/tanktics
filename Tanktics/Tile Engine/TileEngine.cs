@@ -109,12 +109,16 @@ namespace Tanktics
 
         #region Public Methods
 
-        public bool IsWalkable(int x, int y)
+        public bool IsWalkable(String type, int x, int y)
         {
             if (x < 0 || x >= MapWidth || y < 0 || y >= MapHeight)
                 return false;
 
-            return map[numLayers - 1, y, x] == 0;
+            //apcs can travel through water (1) but not factories (2)
+            if (type.Equals("apc"))
+                return map[numLayers - 1, y, x] < 2;
+            else
+                return map[numLayers - 1, y, x] == 0;
         }
 
         public void Draw(SpriteBatch batch, Camera2D camera)
@@ -159,6 +163,8 @@ namespace Tanktics
 
         public void Draw(SpriteBatch batch, Camera2D camera, UnitController units, Point selected)
         {
+            Color fade = Color.White;
+            
             int scaledTileWidth = (int)(camera.Scale * TileWidth + 0.5f);
             int scaledTileHeight = (int)(camera.Scale * TileHeight + 0.5f);
 
@@ -176,6 +182,9 @@ namespace Tanktics
 
             for (int i = 0; i < numLayers - 1; i++)
             {
+                if (i == numLayers - 2)
+                    fade = new Color(255, 255, 255, 40);
+
                 for (int y = minVisible.Y; y < maxVisible.Y; y++)
                 {
                     for (int x = minVisible.X; x < maxVisible.X; x++)
@@ -190,7 +199,7 @@ namespace Tanktics
                                     scaledTileWidth,
                                     scaledTileHeight),
                                 tiles[map[i, y, x]],
-                                Color.White);
+                                fade);
                         }
                     }
                 }

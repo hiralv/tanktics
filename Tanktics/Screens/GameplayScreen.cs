@@ -59,7 +59,8 @@ namespace Tanktics
             TransitionOnTime = TimeSpan.FromSeconds(1.0);
             TransitionOffTime = TimeSpan.FromSeconds(1.0);
 
-            tileEngine = new TileEngine("Maps/map0.txt", 48, 48, 10, 12);
+            //tileEngine = new TileEngine("Maps/map0.txt", 48, 48, 10, 12);
+            tileEngine = new TileEngine("Maps/map1.txt", 64, 64, 5, 12);
 
             //create main camera
             camera = new Camera2D(
@@ -95,7 +96,8 @@ namespace Tanktics
             if (content == null)
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
-            tileEngine.Texture = content.Load<Texture2D>("fulltileset_alpha");
+            //tileEngine.Texture = content.Load<Texture2D>("fulltileset_alpha");
+            tileEngine.Texture = content.Load<Texture2D>("fullTileSet");
             tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
 
             hud.LoadContent(content);

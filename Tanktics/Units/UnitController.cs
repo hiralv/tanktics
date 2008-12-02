@@ -46,10 +46,6 @@ namespace Tanktics
         Unit[] unitsKilledThisTurn = new Unit[MAXIMUMUNITS];
         int numUnitsKilled = 0;
 
-        //Value to multiply the array index by to get the screen position of sprites
-        int spriteAdjusterX;
-        int spriteAdjusterY;
-
 
         //Creates a new Unit Controller and sets the number of players
         //DOES NOT:
@@ -64,9 +60,6 @@ namespace Tanktics
 
             ySize = height;
             xSize = width;
-
-            spriteAdjusterX = 25;
-            spriteAdjusterY = 25;
                                     
             int i = 0;
             int j = 0;
