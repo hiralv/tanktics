@@ -90,6 +90,13 @@ namespace Tanktics
             }
         }
 
+        //set the unit at a position on the current board
+        //used by Unit to animate moves
+        public void setCurrentBoard(Unit unit, int x, int y)
+        {
+            currentBoard[y, x] = unit;
+        }
+
         //Removes the player from the player rotation and removes their pieces from currentBoard
         // Note: You just lost the game
         public void loseTheGame(int Loser)
@@ -522,9 +529,9 @@ namespace Tanktics
                 //if there is no unit to the left  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -532,9 +539,9 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -550,9 +557,9 @@ namespace Tanktics
                 //if there is no unit to the right  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -560,9 +567,9 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -578,9 +585,9 @@ namespace Tanktics
                 //if there is no unit above
                 else if (currentBoard[currentUnit.currentY-1, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY -1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -588,9 +595,9 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY-1, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY -1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -606,9 +613,9 @@ namespace Tanktics
                 //if there is no unit below
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -616,9 +623,9 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -641,9 +648,10 @@ namespace Tanktics
                 //if there is no unit 2 to the left  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -651,9 +659,10 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -675,9 +684,10 @@ namespace Tanktics
                 //if there is no unit 2 to the right 
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -685,9 +695,10 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -709,9 +720,10 @@ namespace Tanktics
                 //if there is no unit 2 above  
                 else if (currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -719,9 +731,10 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 2, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -743,9 +756,10 @@ namespace Tanktics
                 //if there is no unit 2 below  
                 else if (currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -753,9 +767,10 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 2, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -780,10 +795,20 @@ namespace Tanktics
                 //if there is no unit above and left
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("apc", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -791,10 +816,20 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("apc", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -818,10 +853,20 @@ namespace Tanktics
                 //if there is no unit above and right
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("apc", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -829,10 +874,20 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("apc", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -856,10 +911,20 @@ namespace Tanktics
                 //if there is no unit below and left
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("apc", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -867,10 +932,20 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("apc", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -894,10 +969,20 @@ namespace Tanktics
                 //if there is no unit below and right
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("apc", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -905,10 +990,20 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("apc", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1007,9 +1102,9 @@ namespace Tanktics
                 //else there is no water, no friendly, and no enemy so move 
                 else
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1037,9 +1132,9 @@ namespace Tanktics
                 //else there is no water, no friendly, and no enemy so move 
                 else
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1067,9 +1162,9 @@ namespace Tanktics
                 //else there is no water, no friendly, and no enemy so move 
                 else
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1097,9 +1192,9 @@ namespace Tanktics
                 //else there is no water, no friendly, and no enemy so move 
                 else
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1130,9 +1225,10 @@ namespace Tanktics
                 //if there is no unit 2 to the left  
                 else
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1162,9 +1258,10 @@ namespace Tanktics
                 //if there is no unit 2 to the right  
                 else
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1194,9 +1291,10 @@ namespace Tanktics
                 //if there is no unit 2 above 
                 else
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1226,9 +1324,10 @@ namespace Tanktics
                 //if there is no unit 2 below
                 else
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1253,10 +1352,20 @@ namespace Tanktics
                 //if there is no unit above and left
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("artillery", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //if there is a unit (not urs)
@@ -1282,13 +1391,23 @@ namespace Tanktics
                 {
                     return 3;
                 }
-                //if there is no unit above and left
+                //if there is no unit above and right
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("artillery", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //if there is a unit (not urs)
@@ -1317,10 +1436,20 @@ namespace Tanktics
                 //if there is no unit below and left
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("artillery", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //if there is a unit (not urs)
@@ -1349,10 +1478,20 @@ namespace Tanktics
                 //if there is no unit below and right
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("artillery", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //if there is a unit (not urs)
@@ -1443,9 +1582,9 @@ namespace Tanktics
                 //if there is no unit to the left  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1453,9 +1592,9 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1471,9 +1610,9 @@ namespace Tanktics
                 //if there is no unit to the right  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1481,9 +1620,9 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1499,9 +1638,9 @@ namespace Tanktics
                 //if there is no unit above
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1509,9 +1648,9 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1527,9 +1666,9 @@ namespace Tanktics
                 //if there is no unit below
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1537,9 +1676,9 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 1;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1562,9 +1701,10 @@ namespace Tanktics
                 //if there is no unit 2 to the left  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1572,9 +1712,10 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1596,9 +1737,10 @@ namespace Tanktics
                 //if there is no unit 2 to the right 
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1606,9 +1748,10 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1630,9 +1773,10 @@ namespace Tanktics
                 //if there is no unit 2 above  
                 else if (currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1640,9 +1784,10 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 2, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1664,9 +1809,10 @@ namespace Tanktics
                 //if there is no unit 2 below  
                 else if (currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1674,9 +1820,10 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 2, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1701,9 +1848,11 @@ namespace Tanktics
                 //if there is no unit 3 to the left  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 3].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 3;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1711,9 +1860,11 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 3];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX - 3;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Left;
+                    currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1737,9 +1888,11 @@ namespace Tanktics
                 //if there is no unit 3 to the right  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX  + 3].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 3;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1747,9 +1900,11 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 3];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentX = currentUnit.currentX + 3;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Right;
+                    currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1773,9 +1928,11 @@ namespace Tanktics
                 //if there is no unit 3 above  
                 else if (currentBoard[currentUnit.currentY - 3, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 3;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1783,9 +1940,11 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 3, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 3;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Up;
+                    currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1809,9 +1968,11 @@ namespace Tanktics
                 //if there is no unit 3 below  
                 else if (currentBoard[currentUnit.currentY + 3, currentUnit.currentX].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 3;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1819,9 +1980,11 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 3, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 3;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    currentUnit.moves[0] = (int)Unit.Anim.Down;
+                    currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1846,10 +2009,20 @@ namespace Tanktics
                 //if there is no unit above and left
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1857,10 +2030,20 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1884,10 +2067,20 @@ namespace Tanktics
                 //if there is no unit above and right
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1895,10 +2088,20 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1922,10 +2125,20 @@ namespace Tanktics
                 //if there is no unit below and left
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1933,10 +2146,20 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if left path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -1960,10 +2183,20 @@ namespace Tanktics
                 //if there is no unit below and right
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -1971,10 +2204,20 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if right path is blocked
+                    if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 2;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2011,10 +2254,30 @@ namespace Tanktics
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY - 2, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if up/left path is blocked
+                    if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    //if up path is blocked
+                    else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -2022,10 +2285,30 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 2, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if up/left path is blocked
+                    if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    //if up path is blocked
+                    else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2057,10 +2340,30 @@ namespace Tanktics
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY - 2, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if up/right path is blocked
+                    if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    //if up path is blocked
+                    else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -2068,10 +2371,30 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 2, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 2;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if up/right path is blocked
+                    if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    //if up path is blocked
+                    else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2103,10 +2426,30 @@ namespace Tanktics
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY + 2, currentUnit.currentX - 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if down/left path is blocked
+                    if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    //if down path is blocked
+                    else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -2114,10 +2457,30 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 2, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentUnit.currentX = currentUnit.currentX - 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if down/left path is blocked
+                    if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    //if down path is blocked
+                    else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2149,10 +2512,30 @@ namespace Tanktics
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY + 2, currentUnit.currentX + 1].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if down/right path is blocked
+                    if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    //if down path is blocked
+                    else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -2160,10 +2543,30 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 2, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 2;
-                    currentUnit.currentX = currentUnit.currentX + 1;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if down/right path is blocked
+                    if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    //if down path is blocked
+                    else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2196,10 +2599,30 @@ namespace Tanktics
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 2].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if up/left path is blocked
+                    if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    //if left path is blocked
+                    else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -2207,10 +2630,30 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if up/left path is blocked
+                    if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    //if left path is blocked
+                    else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2242,10 +2685,30 @@ namespace Tanktics
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 2].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if up/right path is blocked
+                    if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    //if right path is blocked
+                    else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -2253,10 +2716,30 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY - 1;
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if up/right path is blocked
+                    if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY - 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Up;
+                    }
+                    //if right path is blocked
+                    else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Up;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Up;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2288,10 +2771,30 @@ namespace Tanktics
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 2].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if down/left path is blocked
+                    if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    //if left path is blocked
+                    else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -2299,10 +2802,30 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX - 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if down/left path is blocked
+                    if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    //if left path is blocked
+                    else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX - 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Left;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Left;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Left;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2335,10 +2858,30 @@ namespace Tanktics
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 2].team == 0)
                 {
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if down/right path is blocked
+                    if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    //if right path is blocked
+                    else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
                 //else there is a unit and it is an enemy
@@ -2346,10 +2889,30 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
-                    currentUnit.currentX = currentUnit.currentX + 2;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
+                    //if down/right path is blocked
+                    if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY + 1))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Down;
+                    }
+                    //if right path is blocked
+                    else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Down;
+                        currentUnit.moves[1] = (int)Unit.Anim.Right;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    else
+                    {
+                        currentUnit.moves[0] = (int)Unit.Anim.Right;
+                        currentUnit.moves[1] = (int)Unit.Anim.Down;
+                        currentUnit.moves[2] = (int)Unit.Anim.Right;
+                    }
+                    currentUnit.numMoves = 3;
+                    currentUnit.isMoving = true;
                     return 1;
                 }
             }
@@ -2419,7 +2982,7 @@ namespace Tanktics
                 {
                     if (currentBoard[y, x].team != 0)
                     {
-                        currentBoard[y, x].Update(gametime);
+                        currentBoard[y, x].Update(gametime, this);
                     }
                     x++;
                 }

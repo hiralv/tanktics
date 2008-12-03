@@ -26,6 +26,7 @@ namespace Tanktics
 
             //Movement range of unit
             movement = 2;
+            moves = new int[movement];
 
             //Cost in points of unit
             cost = 1;
