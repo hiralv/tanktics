@@ -85,7 +85,7 @@ namespace Tanktics
             dataHud = new DataHud(160, 480, 160, 160);
             modelHud = new ModelHud(0, 440, 160, 160);
 
-            unitControl = new UnitController(tileEngine.MapWidth, tileEngine.MapHeight, 4);
+            unitControl = new UnitController(tileEngine, 4);
         }
 
         /// <summary>

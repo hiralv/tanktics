@@ -19,7 +19,8 @@ namespace Tanktics
         Unit[,] originalBoard;
         int xSize;
         int ySize;
-        
+
+        TileEngine map;
         //Simple Boolean 2D array
         //0 No Water
         //1 Water APC onry!
@@ -52,14 +53,15 @@ namespace Tanktics
         //Add or create any units
         //Set the values of the Water Array
         //ATM these must be done with seperate calls
-        public UnitController(int width, int height, int numOfPlayers)
+        public UnitController(TileEngine tileEngine, int numOfPlayers)
         {
-            currentBoard = new Unit[height,width];
-            originalBoard = new Unit[height, width];
-            Water = new Boolean[height, width];
+            map = tileEngine;
+            xSize = tileEngine.MapWidth;
+            ySize = tileEngine.MapHeight;
 
-            ySize = height;
-            xSize = width;
+            currentBoard = new Unit[ySize,xSize];
+            originalBoard = new Unit[ySize, xSize];
+            Water = new Boolean[ySize, xSize];
                                     
             int i = 0;
             int j = 0;
@@ -463,7 +465,7 @@ namespace Tanktics
         //Returns:  0 if Trying to move greater than maximum movement range of unit
         //          1 if legal move
         //          2 if Unit has already made a move this turn;
-        //          3 if Other Unit(s) is blocking all paths to the space
+        //          3 if Other Unit(s) or factory is blocking all paths to the space
         //          9 End of move method reached. Unknown Error.
         public int moveAPC(int goalX, int goalY)
         {
@@ -525,7 +527,8 @@ namespace Tanktics
             if (left && !above && !below && (absoluteDistance == 1))
             {
                 //if the unit to the left is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX-1, currentUnit.currentY))
                 {
                     return 3;
                 }
@@ -552,7 +555,8 @@ namespace Tanktics
             if (right && !above && !below && (absoluteDistance == 1))
             {
                 //if the unit to the right is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX+1, currentUnit.currentY))
                 {
                     return 3;
                 }
@@ -579,7 +583,8 @@ namespace Tanktics
             if (above && !right && !left && (absoluteDistance == 1))
             {
                 //if the unit above is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY-1, currentUnit.currentX].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY-1))
                 {
                     return 3;
                 }
@@ -606,7 +611,8 @@ namespace Tanktics
             if (below && !right && !left && (absoluteDistance == 1))
             {
                 //if the unit below is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY+1))
                 {
                     return 3;
                 }
@@ -634,12 +640,14 @@ namespace Tanktics
             if (left && !above && !below && (absoluteDistance == 2))
             {
                 //if there is any unit 1 space left you can not go
-                if (currentBoard[currentUnit.currentY, currentUnit.currentX-1].team!=0)
+                if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX-1, currentUnit.currentY))
                 {
                     return 3;
                 }
                 //if the unit 2 to the left is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX-2, currentUnit.currentY))
                 {
                     return 3;
                 }
@@ -666,12 +674,14 @@ namespace Tanktics
             if (right && !above && !below && (absoluteDistance == 2))
             {
                 //if there is any unit 1 space right you can not go
-                if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0)
+                if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX+1, currentUnit.currentY))
                 {
                     return 3;
                 }
                 //if the unit 2 to the right is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX+2, currentUnit.currentY))
                 {
                     return 3;
                 }
@@ -698,12 +708,14 @@ namespace Tanktics
             if (above && !right && !left && (absoluteDistance == 2))
             {
                 //if there is any unit 1 space above you can not go
-                if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
+                if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY-1))
                 {
                     return 3;
                 }
                 //if the unit 2 above is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY-2))
                 {
                     return 3;
                 }
@@ -730,12 +742,14 @@ namespace Tanktics
             if (below && !right && !left && (absoluteDistance == 2))
             {
                 //if there is any unit 1 space below you can not go
-                if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
+                if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY+1))
                 {
                     return 3;
                 }
                 //if the unit 2 below is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY+2))
                 {
                     return 3;
                 }
@@ -763,13 +777,16 @@ namespace Tanktics
             if (above && left)
             {
                 //if the unit above and left is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX-1, currentUnit.currentY-1))
                 {
                     return 3;
                 }
                 //if there is any unit directy above AND left then the unit can not go
-                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
+                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY-1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX-1, currentUnit.currentY)))
                 {
                     return 3;
                 }
@@ -798,13 +815,16 @@ namespace Tanktics
             if (above && right)
             {
                 //if the unit above and right is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX+1, currentUnit.currentY-1))
                 {
                     return 3;
                 }
                 //if there is any unit directy above AND right then the unit can not go
-                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
+                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY-1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX+1, currentUnit.currentY)))
                 {
                     return 3;
                 }
@@ -833,13 +853,16 @@ namespace Tanktics
             if (below && left)
             {
                 //if the unit below and left is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX-1, currentUnit.currentY+1))
                 {
                     return 3;
                 }
                 //if there is any unit directy below AND left then the unit can not go
-                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
+                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX-1, currentUnit.currentY)))
                 {
                     return 3;
                 }
@@ -868,13 +891,16 @@ namespace Tanktics
             if (below && right)
             {
                 //if the unit below and right is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("apc", currentUnit.currentX+1, currentUnit.currentY+1))
                 {
                     return 3;
                 }
                 //if there is any unit directy below AND right then the unit can not go
-                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
+                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("apc", currentUnit.currentX+1, currentUnit.currentY)))
                 {
                     return 3;
                 }
@@ -979,20 +1005,20 @@ namespace Tanktics
                     return 3;
                 }
                 //if there is a unit (but not your unit)
-                if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0)
+                else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0)
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 1];
                     numUnitsKilled++;
                     currentBoard[currentUnit.currentY, currentUnit.currentX - 1] = new NullUnit();
                     return 1;
                 }
-                //if there is water to the left
-                else if (Water[currentUnit.currentY, currentUnit.currentX - 1])
+                //if there is water
+                else if (!map.IsWalkable("artillery", currentUnit.currentX - 1, currentUnit.currentY))
                 {
-                    return 4;
+                    return 3;
                 }
                 //else there is no water, no friendly, and no enemy so move 
-                else 
+                else
                 {
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentX = currentUnit.currentX - 1;
@@ -1009,17 +1035,17 @@ namespace Tanktics
                     return 3;
                 }
                 //if there is a unit (but not your unit)
-                if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0)
+                else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0)
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 1];
                     numUnitsKilled++;
                     currentBoard[currentUnit.currentY, currentUnit.currentX + 1] = new NullUnit();
                     return 1;
                 }
-                //if there is water to the right
-                else if (Water[currentUnit.currentY, currentUnit.currentX + 1])
+                //if there is water
+                else if (!map.IsWalkable("artillery", currentUnit.currentX + 1, currentUnit.currentY))
                 {
-                    return 4;
+                    return 3;
                 }
                 //else there is no water, no friendly, and no enemy so move 
                 else
@@ -1039,17 +1065,17 @@ namespace Tanktics
                     return 3;
                 }
                 //if there is a unit (but not your unit)
-                if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
+                else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX];
                     numUnitsKilled++;
                     currentBoard[currentUnit.currentY - 1, currentUnit.currentX] = new NullUnit();
                     return 1;
                 }
-                //if there is water above
-                else if (Water[currentUnit.currentY - 1, currentUnit.currentX])
+                //if there is water
+                else if (!map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY-1))
                 {
-                    return 4;
+                    return 3;
                 }
                 //else there is no water, no friendly, and no enemy so move 
                 else
@@ -1069,17 +1095,17 @@ namespace Tanktics
                     return 3;
                 }
                 //if there is a unit (but not your unit)
-                if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
+                else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX];
                     numUnitsKilled++;
                     currentBoard[currentUnit.currentY + 1, currentUnit.currentX] = new NullUnit();
                     return 1;
                 }
-                //if there is water below
-                else if (Water[currentUnit.currentY + 1, currentUnit.currentX])
+                //if there is water
+                else if (!map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY+1))
                 {
-                    return 4;
+                    return 3;
                 }
                 //else there is no water, no friendly, and no enemy so move 
                 else
@@ -1107,14 +1133,16 @@ namespace Tanktics
                     currentBoard[currentUnit.currentY, currentUnit.currentX - 2] = new NullUnit();
                     return 1;
                 }
-                //if there is no unit 2 to the left  
-                else 
+                //if there is a unit 1 to the left or water 1, 2 to the left
+                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("artillery", currentUnit.currentX - 1, currentUnit.currentY) ||
+                    !map.IsWalkable("artillery", currentUnit.currentX - 2, currentUnit.currentY))
                 {
-                    if (Water[currentUnit.currentY, currentUnit.currentX - 1]
-                        || Water[currentUnit.currentY, currentUnit.currentX - 2]) 
-                    {
-                        return 4;
-                    }
+                    return 3;
+                }
+                //if there is no unit 2 to the left  
+                else
+                {
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentX = currentUnit.currentX - 2;
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
@@ -1137,14 +1165,16 @@ namespace Tanktics
                     currentBoard[currentUnit.currentY, currentUnit.currentX + 2] = new NullUnit();
                     return 1;
                 }
+                //if there is a unit 1 to the right or water 1, 2 to the right
+                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("artillery", currentUnit.currentX + 1, currentUnit.currentY) ||
+                    !map.IsWalkable("artillery", currentUnit.currentX + 2, currentUnit.currentY))
+                {
+                    return 3;
+                }
                 //if there is no unit 2 to the right  
                 else
                 {
-                    if (Water[currentUnit.currentY, currentUnit.currentX + 1]
-                        || Water[currentUnit.currentY, currentUnit.currentX + 2])
-                    {
-                        return 4;
-                    }
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentX = currentUnit.currentX + 2;
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
@@ -1167,14 +1197,16 @@ namespace Tanktics
                     currentBoard[currentUnit.currentY - 2, currentUnit.currentX] = new NullUnit();
                     return 1;
                 }
+                //if there is a unit 1 above or water 1, 2 above
+                else if (currentUnit.team == currentBoard[currentUnit.currentY-1, currentUnit.currentX].team ||
+                   !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY-1) ||
+                   !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY-2))
+                {
+                    return 3;
+                }
                 //if there is no unit 2 above 
                 else
                 {
-                    if (Water[currentUnit.currentY - 1, currentUnit.currentX]
-                        || Water[currentUnit.currentY - 2, currentUnit.currentX])
-                    {
-                        return 4;
-                    }
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentY = currentUnit.currentY - 2;
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
@@ -1197,14 +1229,16 @@ namespace Tanktics
                     currentBoard[currentUnit.currentY + 2, currentUnit.currentX] = new NullUnit();
                     return 1;
                 }
+                //if there is a unit 1 below or water 1, 2 below
+                else if (currentUnit.team == currentBoard[currentUnit.currentY+1, currentUnit.currentX].team ||
+                   !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY+1) ||
+                   !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY+2))
+                {
+                    return 3;
+                }
                 //if there is no unit 2 below
                 else
                 {
-                    if (Water[currentUnit.currentY + 1, currentUnit.currentX]
-                        || Water[currentUnit.currentY + 2, currentUnit.currentX])
-                    {
-                        return 4;
-                    }
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentY = currentUnit.currentY + 2;
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
@@ -1216,30 +1250,22 @@ namespace Tanktics
             if (above && left)
             {
                 //if the unit above and left is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("artillery", currentUnit.currentX-1, currentUnit.currentY-1))
                 {
                     return 3;
                 }
-                //if there is any unit directy above AND left then the unit can not go
-                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
+                //if there is any unit/water directy above AND left then the unit can not go
+                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("artillery", currentUnit.currentY - 1, currentUnit.currentX))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("artillery", currentUnit.currentY, currentUnit.currentX - 1)))
                 {
                     return 3;
-                }
-                //if there is water directly above AND left then the unit can not go
-                else if ((Water[currentUnit.currentY - 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX - 1]))
-                {
-                    return 4;
                 }
                 //if there is no unit above and left
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team == 0)
                 {
-                    if (Water[currentUnit.currentY - 1, currentUnit.currentX - 1])
-                    {
-                        return 4;
-                    }
-                    //if no water
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentY = currentUnit.currentY - 1;
                     currentUnit.currentX = currentUnit.currentX - 1;
@@ -1256,30 +1282,22 @@ namespace Tanktics
             if (above && right)
             {
                 //if the unit above and right is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("artillery", currentUnit.currentX + 1, currentUnit.currentY - 1))
                 {
                     return 3;
                 }
-                //if there is any unit directy above AND right then the unit can not go
-                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
+                //if there is any unit/water directy above AND right then the unit can not go
+                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY-1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("artillery", currentUnit.currentX+1, currentUnit.currentY)))
                 {
                     return 3;
-                }
-                //if there is water directly above AND right then the unit can not go
-                else if ((Water[currentUnit.currentY - 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX + 1]))
-                {
-                    return 4;
                 }
                 //if there is no unit above and left
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team == 0)
                 {
-                    if (Water[currentUnit.currentY - 1, currentUnit.currentX + 1])
-                    {
-                        return 4;
-                    }
-                    //if no water
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentY = currentUnit.currentY - 1;
                     currentUnit.currentX = currentUnit.currentX + 1;
@@ -1296,30 +1314,22 @@ namespace Tanktics
             if (below && left)
             {
                 //if the unit below and left is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("artillery", currentUnit.currentX-1, currentUnit.currentY+1))
                 {
                     return 3;
                 }
-                //if there is any unit directy below AND left then the unit can not go
-                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
+                //if there is any unit/water directy below AND left then the unit can not go
+                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("artillery", currentUnit.currentX+1, currentUnit.currentY)))
                 {
                     return 3;
-                }
-                //if there is water directly below AND left then the unit can not go
-                else if ((Water[currentUnit.currentY + 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX - 1]))
-                {
-                    return 4;
                 }
                 //if there is no unit below and left
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team == 0)
                 {
-                    if (Water[currentUnit.currentY + 1, currentUnit.currentX - 1])
-                    {
-                        return 4;
-                    }
-                    //if no water
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentY = currentUnit.currentY + 1;
                     currentUnit.currentX = currentUnit.currentX - 1;
@@ -1336,30 +1346,22 @@ namespace Tanktics
             if (below && right)
             {
                 //if the unit below and right is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("artillery", currentUnit.currentX+1, currentUnit.currentY+1))
                 {
                     return 3;
                 }
-                //if there is any unit directy below AND right then the unit can not go
-                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
+                //if there is any unit/water directy below AND right then the unit can not go
+                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("artillery", currentUnit.currentX+1, currentUnit.currentY)))
                 {
                     return 3;
-                }
-                //if there is water directly below AND right then the unit can not go
-                else if ((Water[currentUnit.currentY + 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX + 1]))
-                {
-                    return 4;
                 }
                 //if there is no unit below and right
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team == 0)
                 {
-                    if (Water[currentUnit.currentY + 1, currentUnit.currentX + 1])
-                    {
-                        return 4;
-                    }
-                    //if no water
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
                     currentUnit.currentY = currentUnit.currentY + 1;
                     currentUnit.currentX = currentUnit.currentX + 1;
@@ -1383,7 +1385,6 @@ namespace Tanktics
         //          1 if legal move
         //          2 if Unit has already made a move this turn;
         //          3 if Other Unit(s) is blocking all paths to the space
-        //          4 if trying to enter or pass through water
         //          9 End of move method reached. Unknown Error.
         public int moveTank(int goalX, int goalY)
         {
@@ -1394,7 +1395,7 @@ namespace Tanktics
             //Check if within absolute value range
             int dX = Math.Abs(goalX - currentUnit.currentX);
             int dY = Math.Abs(goalY - currentUnit.currentY);
-            int absoluteDistance = dX +dY;
+            int absoluteDistance = dX + dY;
             if (absoluteDistance > currentUnit.movement)
             {
                 return 0;
@@ -1447,14 +1448,10 @@ namespace Tanktics
             if (left && !above && !below && (absoluteDistance == 1))
             {
                 //if the unit to the left is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY))
                 {
                     return 3;
-                }
-                //if there is water to left
-                else if (Water[currentUnit.currentY, currentUnit.currentX - 1])
-                {
-                    return 4;
                 }
                 //if there is no unit to the left  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team == 0)
@@ -1479,14 +1476,10 @@ namespace Tanktics
             if (right && !above && !below && (absoluteDistance == 1))
             {
                 //if the unit to the right is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY))
                 {
                     return 3;
-                }
-                //if there is water to right
-                else if (Water[currentUnit.currentY, currentUnit.currentX + 1])
-                {
-                    return 4;
                 }
                 //if there is no unit to the right  
                 else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team == 0)
@@ -1511,14 +1504,10 @@ namespace Tanktics
             if (above && !right && !left && (absoluteDistance == 1))
             {
                 //if the unit above is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
                 {
                     return 3;
-                }
-                //if there is water above
-                else if (Water[currentUnit.currentY - 1, currentUnit.currentX])
-                {
-                    return 4;
                 }
                 //if there is no unit above
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team == 0)
@@ -1543,14 +1532,10 @@ namespace Tanktics
             if (below && !right && !left && (absoluteDistance == 1))
             {
                 //if the unit below is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
                 {
                     return 3;
-                }
-                //if there is water above
-                else if (Water[currentUnit.currentY + 1, currentUnit.currentX])
-                {
-                    return 4;
                 }
                 //if there is no unit below
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team == 0)
@@ -1576,18 +1561,14 @@ namespace Tanktics
             if (left && !above && !below && (absoluteDistance == 2))
             {
                 //if there is any unit 1 space left you can not go
-                if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0)
+                if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY))
                 {
                     return 3;
                 }
-                //if there is water
-                else if ((Water[currentUnit.currentY, currentUnit.currentX - 1])
-                    || (Water[currentUnit.currentY, currentUnit.currentX - 2]))
-                {
-                    return 4;
-                }
                 //if the unit 2 to the left is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX - 2, currentUnit.currentY))
                 {
                     return 3;
                 }
@@ -1614,18 +1595,14 @@ namespace Tanktics
             if (right && !above && !below && (absoluteDistance == 2))
             {
                 //if there is any unit 1 space right you can not go
-                if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0)
+                if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX + 1, currentUnit.currentY))
                 {
                     return 3;
                 }
-                //if there is water
-                else if ((Water[currentUnit.currentY, currentUnit.currentX + 1])
-                    || (Water[currentUnit.currentY, currentUnit.currentX + 2]))
-                {
-                    return 4;
-                }
                 //if the unit 2 to the right is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX + 2, currentUnit.currentY))
                 {
                     return 3;
                 }
@@ -1652,18 +1629,14 @@ namespace Tanktics
             if (above && !right && !left && (absoluteDistance == 2))
             {
                 //if there is any unit 1 space above you can not go
-                if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
+                if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
                 {
                     return 3;
                 }
-                //if there is water
-                else if ((Water[currentUnit.currentY, currentUnit.currentY - 1])
-                    || (Water[currentUnit.currentY, currentUnit.currentY - 2]))
-                {
-                    return 4;
-                }
                 //if the unit 2 above is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-2))
                 {
                     return 3;
                 }
@@ -1690,18 +1663,14 @@ namespace Tanktics
             if (below && !right && !left && (absoluteDistance == 2))
             {
                 //if there is any unit 1 space below you can not go
-                if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
+                if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
                 {
                     return 3;
                 }
-                //if there is water
-                else if ((Water[currentUnit.currentY, currentUnit.currentY + 1])
-                    || (Water[currentUnit.currentY, currentUnit.currentY + 2]))
-                {
-                    return 4;
-                }
                 //if the unit 2 below is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+2))
                 {
                     return 3;
                 }
@@ -1729,20 +1698,16 @@ namespace Tanktics
             if (left && !above && !below && (absoluteDistance == 3))
             {
                 //if there is any unit 1 or 2 space left you can not go
-                if ((currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0)
-                    || (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team != 0))
+                if ((currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY))
+                    || (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX-2, currentUnit.currentY)))
                 {
                     return 3;
                 }
-                //if there is water
-                else if ((Water[currentUnit.currentY, currentUnit.currentX - 1])
-                    || (Water[currentUnit.currentY, currentUnit.currentX - 2])
-                    || (Water[currentUnit.currentY, currentUnit.currentX - 3]))
-                {
-                    return 4;
-                }
                 //if the unit 3 to the left is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 3].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 3].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX-3, currentUnit.currentY))
                 {
                     return 3;
                 }
@@ -1769,20 +1734,16 @@ namespace Tanktics
             if (right && !above && !below && (absoluteDistance == 3))
             {
                 //if there is any unit 1 or 2 space right you can not go
-                if ((currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0)
-                    || (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team != 0))
+                if ((currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY))
+                    || (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+2, currentUnit.currentY)))
                 {
                     return 3;
                 }
-                //if there is water
-                else if ((Water[currentUnit.currentY, currentUnit.currentX + 1])
-                    || (Water[currentUnit.currentY, currentUnit.currentX + 2])
-                    || (Water[currentUnit.currentY, currentUnit.currentX + 3]))
-                {
-                    return 4;
-                }
                 //if the unit 3 to the right is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 3].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 3].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX+3, currentUnit.currentY))
                 {
                     return 3;
                 }
@@ -1809,20 +1770,16 @@ namespace Tanktics
             if (above && !left && !right && (absoluteDistance == 3))
             {
                 //if there is any unit 1 or 2 space above you can not go
-                if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    || (currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team != 0))
+                if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
+                    || (currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-2)))
                 {
                     return 3;
                 }
-                //if there is water
-                if ((Water[currentUnit.currentY - 1, currentUnit.currentX])
-                    || (Water[currentUnit.currentY - 2, currentUnit.currentX])
-                    || (Water[currentUnit.currentY - 3, currentUnit.currentX]))
-                {
-                    return 4;
-                }
                 //if the unit 3 above is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY - 3, currentUnit.currentX].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY - 3, currentUnit.currentX].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-3))
                 {
                     return 3;
                 }
@@ -1846,23 +1803,19 @@ namespace Tanktics
                 }
             }
             //if player is trying to go three spaces below
-            if (above && !left && !right && (absoluteDistance == 3))
+            if (below && !left && !right && (absoluteDistance == 3))
             {
                 //if there is any unit 1 or 2 space below you can not go
-                if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    || (currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team != 0))
+                if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
+                    || (currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+2)))
                 {
                     return 3;
                 }
-                //if there is water
-                if ((Water[currentUnit.currentY + 1, currentUnit.currentX])
-                    || (Water[currentUnit.currentY + 2, currentUnit.currentX])
-                    || (Water[currentUnit.currentY + 3, currentUnit.currentX]))
-                {
-                    return 4;
-                }
                 //if the unit 3 below is on the same team as current unit
-                else if (currentUnit.team == currentBoard[currentUnit.currentY + 3, currentUnit.currentX].team)
+                else if (currentUnit.team == currentBoard[currentUnit.currentY + 3, currentUnit.currentX].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+3))
                 {
                     return 3;
                 }
@@ -1890,22 +1843,18 @@ namespace Tanktics
             if (above && left && (absoluteDistance == 2))
             {
                 //if the unit above and left is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY-1))
                 {
                     return 3;
                 }
                 //if there is any unit directy above AND left then the unit can not go
-                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
+                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY)))
                 {
                     return 3;
-                }
-                //if there is water
-                else if (((Water[currentUnit.currentY - 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX - 1]))
-                    || (Water[currentUnit.currentY - 1, currentUnit.currentX - 1]))
-                {
-                    return 4;
                 }
                 //if there is no unit above and left
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team == 0)
@@ -1932,22 +1881,18 @@ namespace Tanktics
             if (above && right && (absoluteDistance == 2))
             {
                 //if the unit above and right is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY-1))
                 {
                     return 3;
                 }
                 //if there is any unit directy above AND right then the unit can not go
-                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
+                else if ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY)))
                 {
                     return 3;
-                }
-                //if there is water
-                else if (((Water[currentUnit.currentY - 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX + 1]))
-                    || (Water[currentUnit.currentY - 1, currentUnit.currentX + 1]))
-                {
-                    return 4;
                 }
                 //if there is no unit above and right
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team == 0)
@@ -1974,22 +1919,18 @@ namespace Tanktics
             if (below && left && (absoluteDistance == 2))
             {
                 //if the unit below and left is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY+1))
                 {
                     return 3;
                 }
                 //if there is any unit directy below AND left then the unit can not go
-                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
+                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY)))
                 {
                     return 3;
-                }
-                //if there is water
-                else if (((Water[currentUnit.currentY + 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX - 1]))
-                    || (Water[currentUnit.currentY + 1, currentUnit.currentX - 1]))
-                {
-                    return 4;
                 }
                 //if there is no unit below and left
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team == 0)
@@ -2016,22 +1957,18 @@ namespace Tanktics
             if (below && right && (absoluteDistance == 2))
             {
                 //if the unit below and right is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY+1))
                 {
                     return 3;
                 }
                 //if there is any unit directy below AND right then the unit can not go
-                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
+                else if ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY)))
                 {
                     return 3;
-                }
-                //if there is water
-                else if (((Water[currentUnit.currentY + 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX + 1]))
-                    || (Water[currentUnit.currentY + 1, currentUnit.currentX + 1]))
-                {
-                    return 4;
                 }
                 //if there is no unit below and right
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team == 0)
@@ -2060,34 +1997,29 @@ namespace Tanktics
             ////////////////////////////////////////////////////////////////////////////////////
 
             //if above 2 left 1
-            if (above && left && (dY > dX)){
+            if (above && left && (dY > dX))
+            {
                 //if the unit at goal is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 2, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 2, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY-2))
                 {
                     return 3;
                 }
-                //if there is are units blocking all possible paths
-                else if (((currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0))
-                    )
+                //if there are units blocking all possible paths
+                else if (((currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-2))
+                        && (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY-1)))
+                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))))
                 {
                     return 3;
-                }
-                //if there is water blocking the path OR at goal
-                else if ((((Water[currentUnit.currentY - 2, currentUnit.currentX])
-                    && (Water[currentUnit.currentY - 1, currentUnit.currentX - 1]))
-                    || ((Water[currentUnit.currentY - 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX - 1]))
-                    || ((Water[currentUnit.currentY - 1, currentUnit.currentX - 1])
-                    && (Water[currentUnit.currentY - 1, currentUnit.currentX])))
-                    || (Water[currentUnit.currentY -2, currentUnit.currentX - 1])
-                    )
-                {
-                    return 4;
                 }
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY - 2, currentUnit.currentX - 1].team == 0)
@@ -2111,34 +2043,29 @@ namespace Tanktics
                 }
             }
             //if above 2 right 1
-            if (above && right && (dY > dX)){
+            if (above && right && (dY > dX))
+            {
                 //if the unit at goal is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 2, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 2, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY-2))
                 {
                     return 3;
                 }
                  //if there is are units blocking all possible paths
-                else if (((currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0))
-                    )
+                else if (((currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-2))
+                        && (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY-1)))
+                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))))
                 {
                     return 3;
-                }
-                //if there is water blocking the path OR at goal
-                else if ((((Water[currentUnit.currentY - 2, currentUnit.currentX])
-                    && (Water[currentUnit.currentY - 1, currentUnit.currentX - 1]))
-                    || ((Water[currentUnit.currentY - 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX - 1]))
-                    || ((Water[currentUnit.currentY - 1, currentUnit.currentX - 1])
-                    && (Water[currentUnit.currentY - 1, currentUnit.currentX])))
-                    || (Water[currentUnit.currentY -2, currentUnit.currentX + 1])
-                    )
-                {
-                    return 4;
                 }
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY - 2, currentUnit.currentX + 1].team == 0)
@@ -2162,34 +2089,29 @@ namespace Tanktics
                 }
             }
             //if below 2 left 1
-            if (below && left && (dY > dX)){
+            if (below && left && (dY > dX))
+            {
                 //if the unit at goal is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 2, currentUnit.currentX - 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 2, currentUnit.currentX - 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY+2))
                 {
                     return 3;
                 }
                 //if there is are units blocking all possible paths
-                else if (((currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0))
-                    )
+                else if (((currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+2))
+                        && (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY+1)))
+                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY+1))
+                        && (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))))
                 {
                     return 3;
-                }
-                //if there is water blocking the path OR at goal
-                else if ((((Water[currentUnit.currentY + 2, currentUnit.currentX])
-                    && (Water[currentUnit.currentY + 1, currentUnit.currentX - 1]))
-                    || ((Water[currentUnit.currentY + 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX - 1]))
-                    || ((Water[currentUnit.currentY + 1, currentUnit.currentX - 1])
-                    && (Water[currentUnit.currentY + 1, currentUnit.currentX])))
-                    || (Water[currentUnit.currentY + 2, currentUnit.currentX - 1])
-                    )
-                {
-                    return 4;
                 }
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY + 2, currentUnit.currentX - 1].team == 0)
@@ -2213,34 +2135,29 @@ namespace Tanktics
                 }
             }
             //if below 2 right 1
-            if (below && right && (dY > dX)){
+            if (below && right && (dY > dX))
+            {
                 //if the unit at goal is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 2, currentUnit.currentX + 1].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 2, currentUnit.currentX + 1].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY+2))
                 {
                     return 3;
                 }
                  //if there is are units blocking all possible paths
-                else if (((currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0))
-                    )
+                else if (((currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+2))
+                        && (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY+1)))
+                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY+1))
+                        && (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))))
                 {
                     return 3;
-                }
-                //if there is water blocking the path OR at goal
-                else if ((((Water[currentUnit.currentY + 2, currentUnit.currentX])
-                    && (Water[currentUnit.currentY + 1, currentUnit.currentX - 1]))
-                    || ((Water[currentUnit.currentY + 1, currentUnit.currentX])
-                    && (Water[currentUnit.currentY, currentUnit.currentX - 1]))
-                    || ((Water[currentUnit.currentY + 1, currentUnit.currentX - 1])
-                    && (Water[currentUnit.currentY + 1, currentUnit.currentX])))
-                    || (Water[currentUnit.currentY + 2, currentUnit.currentX + 1])
-                    )
-                {
-                    return 4;
                 }
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY + 2, currentUnit.currentX + 1].team == 0)
@@ -2265,34 +2182,29 @@ namespace Tanktics
             }
             //////////////////////////////////////////////
             //if above 1 left 2
-            if (above && left && (dX > dY)){
+            if (above && left && (dX > dY))
+            {
                 //if the unit at goal is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 2].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 2].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX-2, currentUnit.currentY-1))
                 {
                     return 3;
                 }
                 //if there is are units blocking all possible paths
-                else if (((currentBoard[currentUnit.currentY -1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
-                    )
+                else if (((currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-2, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY))))
                 {
                     return 3;
-                }
-                //if there is water blocking the path OR at goal
-                else if ((((currentBoard[currentUnit.currentY -1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0)))
-                    || (Water[currentUnit.currentY - 1, currentUnit.currentX - 2])
-                    )
-                {
-                    return 4;
                 }
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 2].team == 0)
@@ -2316,40 +2228,35 @@ namespace Tanktics
                 }
             }
             //if above 1 right 2
-            if (above && right && (dX > dY)){
+            if (above && right && (dX > dY))
+            {
                 //if the unit at goal is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 2].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 2].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX+2, currentUnit.currentY-1))
                 {
                     return 3;
                 }
                 //if there is are units blocking all possible paths
-                else if (((currentBoard[currentUnit.currentY -1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
-                    )
+                else if (((currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+2, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY-1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY))))
                 {
                     return 3;
-                }
-                //if there is water blocking the path OR at goal
-                else if ((((currentBoard[currentUnit.currentY -1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0)))
-                    || (Water[currentUnit.currentY - 1, currentUnit.currentX + 2])
-                    )
-                {
-                    return 4;
                 }
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 2].team == 0)
                 {
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = new NullUnit();
-                    currentUnit.currentY = currentUnit.currentY + 1;
+                    currentUnit.currentY = currentUnit.currentY - 1;
                     currentUnit.currentX = currentUnit.currentX + 2;
                     currentBoard[currentUnit.currentY, currentUnit.currentX] = currentUnit;
                     return 1;
@@ -2367,34 +2274,29 @@ namespace Tanktics
                 }
             }
             //if below 1 left 2
-            if (below && left && (dX > dY)){
+            if (below && left && (dX > dY))
+            {
                 //if the unit at goal is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 2].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 2].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX-2, currentUnit.currentY+1))
                 {
                     return 3;
                 }
                 //if there is are units blocking all possible paths
-                else if (((currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
-                    )
+                else if (((currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY+1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-2, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY+1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
+                        && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
+                        !map.IsWalkable("tank", currentUnit.currentX-1, currentUnit.currentY))))
                 {
                     return 3;
-                }
-                //if there is water blocking the path OR at goal
-                else if ((((currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0)))
-                    || (Water[currentUnit.currentY + 1, currentUnit.currentX - 2])
-                    )
-                {
-                    return 4;
                 }
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 2].team == 0)
@@ -2418,34 +2320,30 @@ namespace Tanktics
                 }
             }
             //if below 1 right 2
-            if (below && right && (dX > dY)){
+            if (below && right && (dX > dY))
+            {
                 //if the unit at goal is on the same team as current unit
-                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 2].team)
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 2].team ||
+                    !map.IsWalkable("tank", currentUnit.currentX+2, currentUnit.currentY+1))
                 {
                     return 3;
                 }
                 //if there is are units blocking all possible paths
-                else if (((currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
+                else if (((currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+2, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY)))
+                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX, currentUnit.currentY+1))
+                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
+                    !map.IsWalkable("tank", currentUnit.currentX+1, currentUnit.currentY)))
                     )
                 {
                     return 3;
-                }
-                //if there is water blocking the path OR at goal
-                else if ((((currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0))
-                    || ((currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0)
-                    && (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0)))
-                    || (Water[currentUnit.currentY + 1, currentUnit.currentX + 2])
-                    )
-                {
-                    return 4;
                 }
                 //if there is no unit at goal
                 else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 2].team == 0)
@@ -2468,22 +2366,23 @@ namespace Tanktics
                     return 1;
                 }
             }
+
             return 9;
         }
 
-        //Call for all unite Movement
+        //Call for all unit Movement
         //Does alot of upkeep and calls the specific move calls
         //NOTE:      ONLY CALL THIS FOR MOVEMENT
         //Returns:  0 if Trying to move greater than maximum movement range of unit
         //          1 if legal move
         //          2 if Unit has already made a move this turn;
-        //          3 if Other Unit(s) is blocking all paths to the space
-        //          4 if trying to enter or pass through water
+        //          3 if Other Unit(s), water, or factory is blocking all paths to the space
         //          5 if Special Artillary Error
         //               Attempt to shoot or move to enemy diagonally
         //          8 if goalX or goalY was outside array
         //          9 End of move method reached. Unknown Error.
-        public int moveUnit(int goalX, int goalY){
+        public int moveUnit(int goalX, int goalY)
+        {
             int results;
 
             if ((goalX < 0) || (goalY < 0) || (goalX >= xSize) || (goalY >= ySize))

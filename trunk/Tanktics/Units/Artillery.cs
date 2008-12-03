@@ -29,7 +29,7 @@ namespace Tanktics
             canWater = false;
 
             //Movement range of unit
-            movement = 3;
+            movement = 2;
 
             //Cost in points of unit
             cost = 3;
