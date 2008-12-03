@@ -13,7 +13,7 @@ namespace Tanktics
         public APC(int setTeam, int startingX, int startingY, Texture2D[] textures, int uNum)
         {
             unitNumber = uNum;
-            type = "humvee";
+            type = "apc";
 
             //Team number of unit: 1-4
             team = setTeam;
