@@ -24,9 +24,6 @@ namespace Tanktics
             //Vision range of Unit
             vision = 5;
 
-            //If unit can enter water
-            canWater = true;
-
             //Movement range of unit
             movement = 2;
 

@@ -20,11 +20,8 @@ namespace Tanktics
         int xSize;
         int ySize;
 
+        //tile engine is only used for IsWalkable here
         TileEngine map;
-        //Simple Boolean 2D array
-        //0 No Water
-        //1 Water APC onry!
-        Boolean[,] Water;
 
         Unit[] team1 = new Unit[MAXIMUMUNITS];
         int team1Length = 0;
@@ -61,7 +58,6 @@ namespace Tanktics
 
             currentBoard = new Unit[ySize,xSize];
             originalBoard = new Unit[ySize, xSize];
-            Water = new Boolean[ySize, xSize];
                                     
             int i = 0;
             int j = 0;
@@ -74,7 +70,6 @@ namespace Tanktics
                                 
                     currentBoard[i, j] = new NullUnit();
                     originalBoard[i, j] = new NullUnit();
-                    Water[i, j] = false;
                     j++;
                 }
                 i++;
@@ -93,14 +88,6 @@ namespace Tanktics
                 unitsKilledThisTurn[i] = new NullUnit();
                 i++;
             }
-        }
-
-        //Used for making water spaces on the map
-        //Could pass water array into constructor but I do not know how to pass and then manipulate
-        // 2D arrays in XNA.
-        public void setWater(int x, int y)
-        {
-            Water[y, x] = true;
         }
 
         //Removes the player from the player rotation and removes their pieces from currentBoard
