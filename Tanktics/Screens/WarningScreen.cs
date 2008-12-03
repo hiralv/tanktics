@@ -83,6 +83,23 @@ namespace Tanktics
         }
 
         /// <summary>
+        /// Lets the game respond to player input. Unlike the Update method,
+        /// this will only be called when the gameplay screen is active.
+        /// </summary>
+        public override void HandleInput(InputState input)
+        {
+            if (input == null)
+                throw new ArgumentNullException("input");
+
+            //skip intro
+            if (input.PauseGame)
+            {
+                LoadingScreen.Load(ScreenManager, false, new MenuBackgroundScreen(),
+                    new MainMenuScreen());
+            }
+        }
+
+        /// <summary>
         /// Draws the warning screen.
         /// </summary>
         public override void Draw(GameTime gameTime)
