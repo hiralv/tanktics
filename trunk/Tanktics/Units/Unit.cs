@@ -12,7 +12,6 @@ namespace Tanktics
 
         public Boolean hasMoved;
         public int vision;
-        public Boolean canWater;
         public int movement;
         public int team;
         public int cost;
