@@ -15,14 +15,18 @@ namespace Tanktics
         public int movement;
         public int team;
         public int cost;
+        public String type;
+        public int unitNumber;
+        //map position
         public int currentX;
         public int currentY;
         public int previousX;
         public int previousY;
+
+        //animation variables
         public AnimatingSprite[] sprites;
         public int currentSprite;
-        public String type;
-        public int unitNumber;
+        public Rectangle currentSpriteRect;
 
         //variables for animating moves
         public Boolean isMoving = false;
@@ -57,21 +61,25 @@ namespace Tanktics
                 if (moves[currentDirection] == (int)Anim.Up)
                 {
                     currentSprite = (int)Anim.Up;
+                    currentSpriteRect = sprites[currentSprite].Animations["up"].CurrentFrame;
                     offsetY -= 0.01f;
                 }
                 else if (moves[currentDirection] == (int)Anim.Down)
                 {
                     currentSprite = (int)Anim.Down;
+                    currentSpriteRect = sprites[currentSprite].Animations["down"].CurrentFrame;
                     offsetY += 0.01f;
                 }
                 else if (moves[currentDirection] == (int)Anim.Left)
                 {
                     currentSprite = (int)Anim.Left;
+                    currentSpriteRect = sprites[currentSprite].Animations["left"].CurrentFrame;
                     offsetX -= 0.01f;
                 }
                 else if (moves[currentDirection] == (int)Anim.Right)
                 {
                     currentSprite = (int)Anim.Right;
+                    currentSpriteRect = sprites[currentSprite].Animations["right"].CurrentFrame;
                     offsetX += 0.01f;
                 }
 
@@ -113,9 +121,15 @@ namespace Tanktics
                 if (currentDirection >= numMoves)
                 {
                     if (moves[currentDirection - 1] == (int)Anim.Up)
+                    {
                         currentSprite = (int)Anim.IdleUp;
+                        currentSpriteRect = sprites[currentSprite].Animations["idle up"].CurrentFrame;
+                    }
                     else if (moves[currentDirection - 1] == (int)Anim.Down)
+                    {
                         currentSprite = (int)Anim.IdleDown;
+                        currentSpriteRect = sprites[currentSprite].Animations["idle down"].CurrentFrame;
+                    }
 
                     currentDirection = 0;
                     isMoving = false;
@@ -128,9 +142,29 @@ namespace Tanktics
         //Robby Florence
         public void Draw(SpriteBatch batch, Rectangle destination, Color fade)
         {
+            //offset destination while moving
             destination.X += (int)(offsetX * destination.Width);
             destination.Y += (int)(offsetY * destination.Height);
-            sprites[currentSprite].Draw(batch, destination, fade);
+
+            //calculate scale to make the sprite fit in destination
+            float scale = Math.Min(
+                (float)destination.Width / currentSpriteRect.Width,
+                (float)destination.Height / currentSpriteRect.Height);
+
+            //make apcs smaller since they have no gun barrels
+            if (type.Equals("apc"))
+                scale *= 0.75f;
+
+            //use scale to get new destination rectangle
+            //centered in original destination
+            Rectangle spriteDest = new Rectangle(
+                0, 0,
+                (int)(scale * currentSpriteRect.Width),
+                (int)(scale * currentSpriteRect.Height));
+            spriteDest.X = destination.X + destination.Width / 2 - spriteDest.Width / 2;
+            spriteDest.Y = destination.Y + destination.Height / 2 - spriteDest.Height / 2;
+
+            sprites[currentSprite].Draw(batch, spriteDest, fade);
         }
     }
 }
