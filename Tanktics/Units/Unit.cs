@@ -78,33 +78,33 @@ namespace Tanktics
                 if (offsetX >= 1f)
                 {
                     currentDirection++;
-                    control.setCurrentBoard(new NullUnit(), currentX, currentY);
                     currentX++;
-                    control.setCurrentBoard(this, currentX, currentY);
+                    control.setCurrentBoard(new NullUnit(), team, currentX-1, currentY);
+                    control.setCurrentBoard(this, team, currentX, currentY);
                     offsetX = 0f;
                 }
                 else if (offsetX <= -1f)
                 {
                     currentDirection++;
-                    control.setCurrentBoard(new NullUnit(), currentX, currentY);
                     currentX--;
-                    control.setCurrentBoard(this, currentX, currentY);
+                    control.setCurrentBoard(new NullUnit(), team, currentX+1, currentY);
+                    control.setCurrentBoard(this, team, currentX, currentY);
                     offsetX = 0f;
                 }
                 if (offsetY >= 1f)
                 {
                     currentDirection++;
-                    control.setCurrentBoard(new NullUnit(), currentX, currentY);
                     currentY++;
-                    control.setCurrentBoard(this, currentX, currentY);
+                    control.setCurrentBoard(new NullUnit(), team, currentX, currentY-1);
+                    control.setCurrentBoard(this, team, currentX, currentY);
                     offsetY = 0f;
                 }
                 else if (offsetY <= -1f)
                 {
                     currentDirection++;
-                    control.setCurrentBoard(new NullUnit(), currentX, currentY);
                     currentY--;
-                    control.setCurrentBoard(this, currentX, currentY);
+                    control.setCurrentBoard(new NullUnit(), team, currentX, currentY+1);
+                    control.setCurrentBoard(this, team, currentX, currentY);
                     offsetY = 0f;
                 }
 
@@ -124,11 +124,11 @@ namespace Tanktics
             sprites[currentSprite].Update(gameTime);
         }
 
-        public void Draw(SpriteBatch batch, Rectangle destination)
+        public void Draw(SpriteBatch batch, Rectangle destination, Color fade)
         {
             destination.X += (int)(offsetX * destination.Width);
             destination.Y += (int)(offsetY * destination.Height);
-            sprites[currentSprite].Draw(batch, destination);
+            sprites[currentSprite].Draw(batch, destination, fade);
         }
     }
 }

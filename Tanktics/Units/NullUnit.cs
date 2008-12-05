@@ -10,6 +10,10 @@ namespace Tanktics
         {
             type = "null";
             team = 0;
+
+            //used to check tiles surrounding null unit for visibility
+            //must be max of apc, artillery, and tank vision values
+            vision = 5;
         }
     }
 }

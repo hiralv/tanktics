@@ -26,6 +26,8 @@ namespace Tanktics
         public float MinScale = 0.1f;
         public float MaxScale = 2f;
 
+        public int PlayerNum;
+
         #endregion
 
         #region Properties
@@ -44,8 +46,9 @@ namespace Tanktics
 
         #region Initialization
 
-        public Camera2D(int tileW, int tileH, int mapW, int mapH)
+        public Camera2D(int player, int tileW, int tileH, int mapW, int mapH)
         {
+            PlayerNum = player;
             tileWidth = tileW;
             tileHeight = tileH;
             mapWidth = mapW;

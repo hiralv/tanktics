@@ -32,6 +32,12 @@ namespace Tanktics
         Unit[] team4 = new Unit[MAXIMUMUNITS];
         int team4Length = 0;
 
+        //visibility board for each player
+        Boolean[,] team1Visibility;
+        Boolean[,] team2Visibility;
+        Boolean[,] team3Visibility;
+        Boolean[,] team4Visibility;
+
         Boolean[] inGame = new Boolean[4];
 
         Unit[] actionsTakenThisTurn = new Unit[MAXIMUMUNITS];
@@ -48,7 +54,6 @@ namespace Tanktics
         //Creates a new Unit Controller and sets the number of players
         //DOES NOT:
         //Add or create any units
-        //Set the values of the Water Array
         //ATM these must be done with seperate calls
         public UnitController(TileEngine tileEngine, int numOfPlayers)
         {
@@ -58,6 +63,12 @@ namespace Tanktics
 
             currentBoard = new Unit[ySize,xSize];
             originalBoard = new Unit[ySize, xSize];
+
+            team1Visibility = new Boolean[ySize, xSize];
+            team2Visibility = new Boolean[ySize, xSize];
+            team3Visibility = new Boolean[ySize, xSize];
+            team4Visibility = new Boolean[ySize, xSize];
+
                                     
             int i = 0;
             int j = 0;
@@ -92,9 +103,151 @@ namespace Tanktics
 
         //set the unit at a position on the current board
         //used by Unit to animate moves
-        public void setCurrentBoard(Unit unit, int x, int y)
+        //Robby Florence
+        public void setCurrentBoard(Unit unit, int team, int x, int y)
         {
             currentBoard[y, x] = unit;
+
+            //remove visibility for null units
+            if (unit.type.Equals("null"))
+            {
+                //set left side of unit's visibility to true
+                for (int i = 0; i <= unit.vision; i++)
+                {
+                    for (int j = y - i; j <= y + i; j++)
+                    {
+                        testVisibility(team, x - unit.vision + i, j);
+                    }
+                }
+
+                //set right side of unit's visibility to true
+                for (int i = 1; i <= unit.vision; i++)
+                {
+                    for (int j = y - unit.vision + i; j <= y + unit.vision - i; j++)
+                    {
+                        testVisibility(team, x + i, j);
+                    }
+                }
+            }
+            //add visibility for other units
+            else
+            {
+                //set left side of unit's visibility to true
+                for (int i = 0; i <= unit.vision; i++)
+                {
+                    for (int j = y - i; j <= y + i; j++)
+                    {
+                        setVisibility(true, team, x - unit.vision + i, j);
+                    }
+                }
+
+                //set right side of unit's visibility to true
+                for (int i = 1; i <= unit.vision; i++)
+                {
+                    for (int j = y - unit.vision + i; j <= y + unit.vision - i; j++)
+                    {
+                        setVisibility(true, team, x + i, j);
+                    }
+                }
+            }
+        }
+
+        //Robby Florence
+        public void setVisibility(Boolean val, int team, int x, int y)
+        {
+            //check bounds
+            if (x < 0 || x >= xSize || y < 0 || y >= ySize)
+                return;
+
+            if (team == 1)
+                team1Visibility[y, x] = val;
+            else if (team == 2)
+                team2Visibility[y, x] = val;
+            else if (team == 3)
+                team3Visibility[y, x] = val;
+            else if (team == 4)
+                team4Visibility[y, x] = val;
+        }
+
+        //Robby Florence
+        public void testVisibility(int team, int x, int y)
+        {
+            int distance;
+
+            if (team == 1)
+            {
+                for (int i = 0; i < team1Length; i++)
+                {
+                    distance = Math.Abs(team1[i].currentX - x) + Math.Abs(team1[i].currentY - y);
+
+                    //if (x, y) is within the vision distance of any unit, (x, y) is visible
+                    if (distance <= team1[i].vision)
+                    {
+                        setVisibility(true, team, x, y);
+                        return;
+                    }
+                }
+            }
+            else if (team == 2)
+            {
+                for (int i = 0; i < team2Length; i++)
+                {
+                    distance = Math.Abs(team2[i].currentX - x) + Math.Abs(team2[i].currentY - y);
+
+                    //if (x, y) is within the vision distance of any unit, (x, y) is visible
+                    if (distance <= team2[i].vision)
+                    {
+                        setVisibility(true, team, x, y);
+                        return;
+                    }
+                }
+            }
+            else if (team == 3)
+            {
+                for (int i = 0; i < team3Length; i++)
+                {
+                    distance = Math.Abs(team3[i].currentX - x) + Math.Abs(team3[i].currentY - y);
+
+                    //if (x, y) is within the vision distance of any unit, (x, y) is visible
+                    if (distance <= team3[i].vision)
+                    {
+                        setVisibility(true, team, x, y);
+                        return;
+                    }
+                }
+            }
+            else if (team == 4)
+            {
+                for (int i = 0; i < team4Length; i++)
+                {
+                    distance = Math.Abs(team4[i].currentX - x) + Math.Abs(team4[i].currentY - y);
+
+                    //if (x, y) is within the vision distance of any unit, (x, y) is visible
+                    if (distance <= team4[i].vision)
+                    {
+                        setVisibility(true, team, x, y);
+                        return;
+                    }
+                }
+            }
+
+            //no units are within vision distance of (x, y)
+            setVisibility(false, team, x, y);
+        }
+
+        //Robby Florence
+        public Boolean isVisible(int team, int x, int y)
+        {
+            if (team == 1)
+                return team1Visibility[y, x];
+            else if (team == 2)
+                return team2Visibility[y, x];
+            else if (team == 3)
+                return team3Visibility[y, x];
+            else if (team == 4)
+                return team4Visibility[y, x];
+            else
+                return false;
         }
 
         //Removes the player from the player rotation and removes their pieces from currentBoard
@@ -287,7 +440,7 @@ namespace Tanktics
             {
                 if (team1Length < MAXIMUMUNITS)
                 {
-                    currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
+                    setCurrentBoard(newUnit, newUnit.team, newUnit.currentX, newUnit.currentY);
                     team1[team1Length] = newUnit;
                     team1Length++;
 
@@ -301,7 +454,7 @@ namespace Tanktics
             {
                 if (team2Length < MAXIMUMUNITS)
                 {
-                    currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
+                    setCurrentBoard(newUnit, newUnit.team, newUnit.currentX, newUnit.currentY);
                     team2[team2Length] = newUnit;
                     team2Length++;
 
@@ -315,7 +468,7 @@ namespace Tanktics
             {
                 if (team3Length < MAXIMUMUNITS)
                 {
-                    currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
+                    setCurrentBoard(newUnit, newUnit.team, newUnit.currentX, newUnit.currentY);
                     team3[team3Length] = newUnit;
                     team3Length++;
 
@@ -329,7 +482,7 @@ namespace Tanktics
             {
                 if (team4Length < MAXIMUMUNITS)
                 {
-                    currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
+                    setCurrentBoard(newUnit, newUnit.team, newUnit.currentX, newUnit.currentY);
                     team4[team4Length] = newUnit;
                     team4Length++;
 
@@ -341,7 +494,7 @@ namespace Tanktics
             }
             else
             {
-                currentBoard[newUnit.currentY, newUnit.currentX] = newUnit;
+                setCurrentBoard(newUnit, newUnit.team, newUnit.currentX, newUnit.currentY);
                 return true;
             }
             return false;
@@ -450,6 +603,7 @@ namespace Tanktics
                 currentUnit = team3[0];
             else
                 currentUnit = team4[0];
+            currentUnitNum = 0;
         }
 
 
@@ -3016,10 +3170,10 @@ namespace Tanktics
         //}
 
         //draw the unit at (x, y) in the destination rectangle
-        public void draw(SpriteBatch batch, int x, int y, Rectangle destination)
+        public void draw(SpriteBatch batch, int x, int y, Rectangle destination, Color fade)
         {
             if (currentBoard[y, x].team != 0)
-                currentBoard[y, x].Draw(batch, destination);
+                currentBoard[y, x].Draw(batch, destination, fade);
         }
 
         //Removes the given unit from the players unit list

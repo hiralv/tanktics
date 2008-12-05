@@ -64,6 +64,7 @@ namespace Tanktics
 
             //create main camera
             camera = new Camera2D(
+                1,
                 tileEngine.TileWidth, tileEngine.TileHeight,
                 tileEngine.MapWidth, tileEngine.MapHeight);
             camera.Viewport = new Rectangle(0, 0, 800, 480);
@@ -73,6 +74,7 @@ namespace Tanktics
 
             //create minimap window
             miniMap = new Camera2D(
+                0,
                 tileEngine.TileWidth, tileEngine.TileHeight,
                 tileEngine.MapWidth, tileEngine.MapHeight);
             miniMap.Viewport = new Rectangle(650, 450, 150, 150);

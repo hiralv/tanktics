@@ -165,7 +165,7 @@ namespace Tanktics
         {
             batch.Draw(blank, position, Color.White);
             batch.Draw(hudTexture, position, Color.White);
-            currentUnit.Draw(batch, spriteDest);
+            currentUnit.Draw(batch, spriteDest, Color.White);
         }
     }
 
