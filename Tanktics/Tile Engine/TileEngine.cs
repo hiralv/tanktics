@@ -9,20 +9,24 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Tanktics
 {
+    //Robby Florence
     public class TileEngine
     {
         #region Fields
 
+        //tile variables
         Texture2D texture;
         Rectangle[] tiles;
         public readonly int TileWidth;
         public readonly int TileHeight;
 
+        //map variables
         int[,,] map;
         public readonly int MapWidth;
         public readonly int MapHeight;
         int numLayers;
 
+        //texture for selected squares
         public Texture2D SelectedTexture;
 
         #endregion
@@ -51,6 +55,7 @@ namespace Tanktics
 
         public TileEngine(string filename, int tileW, int tileH, int tileRows, int tileCols)
         {
+            //read map file
             try
             {
                 StreamReader sr = File.OpenText(filename);
@@ -58,6 +63,7 @@ namespace Tanktics
                 char[] delims = { ' ', '\t', ',' };
                 string[] values;
 
+                //read first three lines (width, height, numlayers)
                 line = sr.ReadLine() + " " + sr.ReadLine() + " " + sr.ReadLine();
                 values = line.Split(delims, StringSplitOptions.RemoveEmptyEntries);
 
@@ -70,6 +76,7 @@ namespace Tanktics
                 {
                     for (int y = 0; y < MapHeight; y++)
                     {
+                        //skip any blank lines
                         do
                         {
                             line = sr.ReadLine();
@@ -77,6 +84,7 @@ namespace Tanktics
                         }
                         while (values.Length == 0);
 
+                        //read row
                         for (int x = 0; x < MapWidth; x++)
                         {
                             map[i, y, x] = Convert.ToInt32(values[x]);
@@ -88,6 +96,7 @@ namespace Tanktics
             }
             catch (Exception)
             {
+                //create empty map if any exceptions occur
                 MapWidth = MapHeight = numLayers = 0;
                 map = new int[numLayers, MapHeight, MapWidth];
             }
@@ -96,6 +105,7 @@ namespace Tanktics
             TileHeight = tileH;
             tiles = new Rectangle[tileRows * tileCols];
 
+            //create list of tile rectangles
             for (int i = 0, y = 0; y < tileRows; y++)
             {
                 for (int x = 0; x < tileCols; x++, i++)
@@ -121,11 +131,13 @@ namespace Tanktics
                 return map[numLayers - 1, y, x] == 0;
         }
 
+        //draw tiles without units or selected square
         public void Draw(SpriteBatch batch, Camera2D camera)
         {
             int scaledTileWidth = (int)(camera.Scale * TileWidth + 0.5f);
             int scaledTileHeight = (int)(camera.Scale * TileHeight + 0.5f);
 
+            //calculate range of visible tiles
             Point minVisible = new Point(
                 (int)(camera.Position.X / scaledTileWidth),
                 (int)(camera.Position.Y / scaledTileHeight));
@@ -161,6 +173,7 @@ namespace Tanktics
             }
         }
 
+        //draw tiles, units, and selected square
         public void Draw(SpriteBatch batch, Camera2D camera, UnitController units, Point selected)
         {
             Color fade;
@@ -168,6 +181,7 @@ namespace Tanktics
             int scaledTileWidth = (int)(camera.Scale * TileWidth + 0.5f);
             int scaledTileHeight = (int)(camera.Scale * TileHeight + 0.5f);
 
+            //calculate range of visible tiles
             Point minVisible = new Point(
                 (int)(camera.Position.X / scaledTileWidth),
                 (int)(camera.Position.Y / scaledTileHeight));

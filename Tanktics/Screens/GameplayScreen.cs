@@ -18,11 +18,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Tanktics
 {
-    /// <summary>
-    /// This screen implements the actual game logic. It is just a
-    /// placeholder to get the idea across: you'll probably want to
-    /// put some more interesting gameplay in here!
-    /// </summary>
+    //Robby Florence
     class GameplayScreen : GameScreen
     {
         #region Fields
@@ -43,7 +39,7 @@ namespace Tanktics
         ModelHud modelHud;
         GraphHud graphHud;
 
-        //unit controler and selected square
+        //unit controller and selected square
         UnitController unitControl;
         Point selected = Point.Zero;
 
@@ -252,6 +248,8 @@ namespace Tanktics
             selected.X = unitControl.currentUnit.currentX;
             selected.Y = unitControl.currentUnit.currentY;
 
+            selected.X = unitControl.currentUnit.currentX;
+            selected.Y = unitControl.currentUnit.currentY;
 
             // once the load has finished, we use ResetElapsedTime to tell the game's
             // timing mechanism that we have just finished a very long frame, and that
@@ -267,6 +265,7 @@ namespace Tanktics
             content.Unload();
         }
 
+        //delete this when we finish the initialization phase
         private void addUnits(int team, int top, int left, Texture2D[] textures)
         {
             for (int y = top; y < top + 4; y++)
@@ -308,6 +307,7 @@ namespace Tanktics
             if (input == null)
                 throw new ArgumentNullException("input");
 
+            //exit game
             if (input.PauseGame)
             {
                 LoadingScreen.Load(ScreenManager, false, new MenuBackgroundScreen(),
@@ -376,7 +376,6 @@ namespace Tanktics
             }
 
         }
-
 
         /// <summary>
         /// Draws the gameplay screen.

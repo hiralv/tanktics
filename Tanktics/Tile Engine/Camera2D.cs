@@ -8,24 +8,31 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Tanktics
 {
+    //Robby Florence
     public class Camera2D
     {
         #region Fields
 
+        //information about tile engine
         readonly int tileWidth;
         readonly int tileHeight;
         readonly int mapWidth;
         readonly int mapHeight;
 
+        //camera position (relative to tile engine)
         public Vector2 Position = Vector2.Zero;
+        //camera viewport (relative to window)
         public Rectangle Viewport = new Rectangle();
+        //movement speed
         public float Speed = 100f;
 
+        //zooming variables
         float scale = 1f;
         float scaleRate = 0.25f;
         public float MinScale = 0.1f;
         public float MaxScale = 2f;
 
+        //player using this camera (1, 2, 3, or 4)
         public int PlayerNum;
 
         #endregion
@@ -59,6 +66,7 @@ namespace Tanktics
 
         #region Private Methods
 
+        //prevent camera from moving off edge of the tile map
         private void ClampToViewport()
         {
             Vector2 maxPosition = new Vector2(

@@ -48,6 +48,7 @@ namespace Tanktics
             hasMoved = false;
         }
 
+        //Robby Florence
         public void Update(GameTime gameTime, UnitController control)
         {
             if (isMoving)
@@ -124,6 +125,7 @@ namespace Tanktics
             sprites[currentSprite].Update(gameTime);
         }
 
+        //Robby Florence
         public void Draw(SpriteBatch batch, Rectangle destination, Color fade)
         {
             destination.X += (int)(offsetX * destination.Width);
