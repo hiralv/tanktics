@@ -163,7 +163,7 @@ namespace Tanktics
 
         public void Draw(SpriteBatch batch, Camera2D camera, UnitController units, Point selected)
         {
-            Color fade = Color.White;
+            Color fade;
             
             int scaledTileWidth = (int)(camera.Scale * TileWidth + 0.5f);
             int scaledTileHeight = (int)(camera.Scale * TileHeight + 0.5f);
@@ -182,15 +182,26 @@ namespace Tanktics
 
             for (int i = 0; i < numLayers - 1; i++)
             {
-                if (i == numLayers - 2)
-                    fade = new Color(255, 255, 255, 40);
-
                 for (int y = minVisible.Y; y < maxVisible.Y; y++)
                 {
                     for (int x = minVisible.X; x < maxVisible.X; x++)
                     {
-                        if (map[i, y, x] >= 0)
+                        if (map[i, y, x] >= 0 && units.isVisible(camera.PlayerNum, x, y))
                         {
+                            //grid layer
+                            if (i == numLayers - 2)
+                                fade = new Color(255, 255, 255, 40);
+                            //tile is on edge of visibility
+                            else if ((x > 0 && !units.isVisible(camera.PlayerNum, x - 1, y)) ||
+                                (x < MapWidth - 1 && !units.isVisible(camera.PlayerNum, x + 1, y)) ||
+                                (y > 0 && !units.isVisible(camera.PlayerNum, x, y - 1)) ||
+                                (y < MapHeight - 1 && !units.isVisible(camera.PlayerNum, x, y + 1)))
+                            {
+                                fade = Color.LightGray;
+                            }
+                            else
+                                fade = Color.White;
+
                             batch.Draw(
                                 texture,
                                 new Rectangle(
@@ -212,11 +223,26 @@ namespace Tanktics
                 {
                     for (int x = minVisible.X; x < maxVisible.X; x++)
                     {
-                        units.draw(batch, x, y, new Rectangle(
-                            (x - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
-                            (y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
-                            scaledTileWidth,
-                            scaledTileHeight));
+                        if (units.isVisible(camera.PlayerNum, x, y))
+                        {
+                            //tile is on edge of visibility
+                            if ((x > 0 && !units.isVisible(camera.PlayerNum, x - 1, y)) ||
+                                (x < MapWidth - 1 && !units.isVisible(camera.PlayerNum, x + 1, y)) ||
+                                (y > 0 && !units.isVisible(camera.PlayerNum, x, y - 1)) ||
+                                (y < MapHeight - 1 && !units.isVisible(camera.PlayerNum, x, y + 1)))
+                            {
+                                fade = Color.LightGray;
+                            }
+                            else
+                                fade = Color.White;
+
+                            units.draw(batch, x, y, new Rectangle(
+                                (x - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
+                                (y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
+                                scaledTileWidth,
+                                scaledTileHeight),
+                                fade);
+                        }
                     }
                 }
             }
