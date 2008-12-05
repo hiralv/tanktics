@@ -248,6 +248,9 @@ namespace Tanktics
             unitControl.addUnit("apc", 1, 1, 3, apc1);
             unitControl.addUnit("apc", 1, 2, 3, apc1);
             unitControl.addUnit("apc", 1, 3, 3, apc1);
+            unitControl.nextUnit();
+            selected.X = unitControl.currentUnit.currentX;
+            selected.Y = unitControl.currentUnit.currentY;
 
 
             // once the load has finished, we use ResetElapsedTime to tell the game's
@@ -360,12 +363,14 @@ namespace Tanktics
                 unitControl.moveUnit(selected.X, selected.Y);
                 selected.X = unitControl.currentUnit.currentX;
                 selected.Y = unitControl.currentUnit.currentY;
+
             }
 
             //finalize turn
             if (input.IsNewKeyPress(Keys.Enter))
             {
                 unitControl.finalize();
+                unitControl.nextUnit();
                 selected.X = unitControl.currentUnit.currentX;
                 selected.Y = unitControl.currentUnit.currentY;
             }
