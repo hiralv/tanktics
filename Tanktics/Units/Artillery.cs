@@ -75,6 +75,7 @@ namespace Tanktics
             sprites[(int)Anim.IdleDown].CurrentAnimation = "idle down";
 
             currentSprite = (int)Anim.IdleDown;
+            currentSpriteRect = sprites[currentSprite].Animations["idle down"].CurrentFrame;
         }
 
     }
