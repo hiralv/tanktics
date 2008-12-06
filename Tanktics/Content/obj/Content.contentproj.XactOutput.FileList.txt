@@ -1,0 +1,3 @@
+Content\audio\GameSounds.xgs
+Content\audio\Wave Bank.xwb
+Content\audio\Sound Bank.xsb

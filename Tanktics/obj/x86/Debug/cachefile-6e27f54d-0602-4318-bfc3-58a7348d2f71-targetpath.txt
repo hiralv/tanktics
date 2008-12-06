@@ -1,0 +1,128 @@
+Content\menufont.xnb
+Content\gamefont.xnb
+Content\blank.xnb
+Content\Intro\WarningLogo.xnb
+Content\Intro\BoxOfElephants.xnb
+Content\Main Menu\controls.xnb
+Content\Intro\GDD2007_Transparent.xnb
+Content\Intro\Intro Explosion no black.xnb
+Content\Intro\Driving Tank Animation.xnb
+Content\Intro\turning tank animation.xnb
+Content\Intro\Zooming tank Animation.xnb
+Content\Main Menu\background.xnb
+Content\Main Menu\new copy.xnb
+Content\Main Menu\controls copy.xnb
+Content\Main Menu\single copy.xnb
+Content\Main Menu\local copy.xnb
+Content\Main Menu\individual copy.xnb
+Content\Main Menu\opposite copy.xnb
+Content\Infintry.xnb
+Content\Infintry2.xnb
+Content\Infintry3.xnb
+Content\Infintry4.xnb
+Content\Main Menu\Brightness copy.xnb
+Content\Main Menu\master copy.xnb
+Content\Main Menu\how copy.xnb
+Content\Main Menu\view copy.xnb
+Content\fulltileset_alpha.xnb
+Content\HUD\hud2 copy.xnb
+Content\HUD\done copy.xnb
+Content\HUD\finalize copy.xnb
+Content\HUD\next copy.xnb
+Content\HUD\previous copy.xnb
+Content\HUD\artillary symbol copy.xnb
+Content\HUD\humvee symbol copy.xnb
+Content\HUD\tanksymbol copy.xnb
+Content\selected border.xnb
+Content\HUD\mud texture copy.xnb
+Content\HUD\hud5 copy.xnb
+Content\HUD\hud3 copy.xnb
+Content\HUD\graph.xnb
+Content\Unit Animations\APC\APC Driving Down\APC Driving Down Brown.xnb
+Content\Unit Animations\APC\APC Driving Down\APC Driving Down Green.xnb
+Content\Unit Animations\APC\APC Driving Down\APC Driving Down Grey.xnb
+Content\Unit Animations\APC\APC Driving Down\APC Driving Down White.xnb
+Content\Unit Animations\APC\APC Driving Left\APC Driving Left Brown.xnb
+Content\Unit Animations\APC\APC Driving Left\APC Driving Left Green.xnb
+Content\Unit Animations\APC\APC Driving Left\APC Driving Left Grey.xnb
+Content\Unit Animations\APC\APC Driving Left\APC Driving Left White.xnb
+Content\Unit Animations\APC\APC Driving Right\APC Driving Right Brown.xnb
+Content\Unit Animations\APC\APC Driving Right\APC Driving Right Green.xnb
+Content\Unit Animations\APC\APC Driving Right\APC Driving Right Grey.xnb
+Content\Unit Animations\APC\APC Driving Right\APC Driving Right White.xnb
+Content\Unit Animations\APC\APC Driving Up\APC Driving Up Brown.xnb
+Content\Unit Animations\APC\APC Driving Up\APC Driving Up Green.xnb
+Content\Unit Animations\APC\APC Driving Up\APC Driving Up Grey.xnb
+Content\Unit Animations\APC\APC Driving Up\APC Driving Up White.xnb
+Content\Unit Animations\APC\APC Idling Down\APC Idling Down Brown.xnb
+Content\Unit Animations\APC\APC Idling Down\APC Idling Down Green.xnb
+Content\Unit Animations\APC\APC Idling Down\APC Idling Down Grey.xnb
+Content\Unit Animations\APC\APC Idling Down\APC Idling Down White.xnb
+Content\Unit Animations\APC\APC Idling Up\APC Idling Up Brown.xnb
+Content\Unit Animations\APC\APC Idling Up\APC Idling Up Green.xnb
+Content\Unit Animations\APC\APC Idling Up\APC Idling Up Grey.xnb
+Content\Unit Animations\APC\APC Idling Up\APC Idling Up White.xnb
+Content\Unit Animations\APC\APC Rotating\APC Rotating Brown.xnb
+Content\Unit Animations\APC\APC Rotating\APC Rotating Green.xnb
+Content\Unit Animations\APC\APC Rotating\APC Rotating Grey.xnb
+Content\Unit Animations\APC\APC Rotating\APC Rotating White.xnb
+Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown.xnb
+Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.xnb
+Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.xnb
+Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White.xnb
+Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown.xnb
+Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.xnb
+Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.xnb
+Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.xnb
+Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown.xnb
+Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.xnb
+Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.xnb
+Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White.xnb
+Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown.xnb
+Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.xnb
+Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.xnb
+Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.xnb
+Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown.xnb
+Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.xnb
+Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.xnb
+Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White.xnb
+Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown.xnb
+Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.xnb
+Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.xnb
+Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.xnb
+Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown.xnb
+Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.xnb
+Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.xnb
+Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White.xnb
+Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown.xnb
+Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.xnb
+Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.xnb
+Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down White.xnb
+Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown.xnb
+Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.xnb
+Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.xnb
+Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left White.xnb
+Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown.xnb
+Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.xnb
+Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.xnb
+Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right White.xnb
+Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown.xnb
+Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.xnb
+Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.xnb
+Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up White.xnb
+Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown.xnb
+Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.xnb
+Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.xnb
+Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down White.xnb
+Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown.xnb
+Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.xnb
+Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.xnb
+Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up White.xnb
+Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Brown.xnb
+Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Green.xnb
+Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.xnb
+Content\Unit Animations\Tank\Tank Rotating\Tank Rotating White.xnb
+Content\fullTileSet.xnb
+Content\audio\GameSounds.xgs
+Content\audio\Wave Bank.xwb
+Content\audio\Sound Bank.xsb

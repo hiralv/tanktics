@@ -1,0 +1,1162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2008-11-23T17:52:47.59375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>gamefont.spritefont</Source>
+      <Name>gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Time>2008-11-23T17:52:47.59375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2008-11-23T17:52:47.609375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\WarningLogo.png</Source>
+      <Name>Intro\WarningLogo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb</Output>
+      <Time>2008-11-23T17:47:56.6875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\BoxOfElephants.png</Source>
+      <Name>Intro\BoxOfElephants</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb</Output>
+      <Time>2008-11-23T17:47:56.640625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\controls.jpg</Source>
+      <Name>Main Menu\controls</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb</Output>
+      <Time>2008-11-23T17:51:30.734375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\GDD2007_Transparent.png</Source>
+      <Name>Intro\GDD2007_Transparent</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb</Output>
+      <Time>2008-11-23T17:47:56.6875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\Intro Explosion no black.png</Source>
+      <Name>Intro\Intro Explosion no black</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb</Output>
+      <Time>2008-11-23T17:47:56.6875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\Driving Tank Animation.PNG</Source>
+      <Name>Intro\Driving Tank Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb</Output>
+      <Time>2008-11-23T17:47:56.625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\turning tank animation.PNG</Source>
+      <Name>Intro\turning tank animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb</Output>
+      <Time>2008-11-23T17:47:56.640625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro\Zooming tank Animation.PNG</Source>
+      <Name>Intro\Zooming tank Animation</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb</Output>
+      <Time>2008-11-23T17:47:56.625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\background.png</Source>
+      <Name>Main Menu\background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb</Output>
+      <Time>2008-11-23T17:51:30.78125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\new copy.png</Source>
+      <Name>Main Menu\new copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.78125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\controls copy.png</Source>
+      <Name>Main Menu\controls copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.734375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\single copy.png</Source>
+      <Name>Main Menu\single copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.765625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\local copy.png</Source>
+      <Name>Main Menu\local copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.796875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\individual copy.png</Source>
+      <Name>Main Menu\individual copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.78125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\opposite copy.png</Source>
+      <Name>Main Menu\opposite copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.734375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Infintry.PNG</Source>
+      <Name>Infintry</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Infintry.xnb</Output>
+      <Time>2008-11-23T17:52:47.578125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Infintry2.PNG</Source>
+      <Name>Infintry2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Infintry2.xnb</Output>
+      <Time>2008-11-23T17:52:47.59375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Infintry3.PNG</Source>
+      <Name>Infintry3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Infintry3.xnb</Output>
+      <Time>2008-11-23T17:52:47.59375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Infintry4.PNG</Source>
+      <Name>Infintry4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Infintry4.xnb</Output>
+      <Time>2008-11-23T17:52:47.59375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\Brightness copy.png</Source>
+      <Name>Main Menu\Brightness copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.75-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\master copy.png</Source>
+      <Name>Main Menu\master copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.796875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\how copy.png</Source>
+      <Name>Main Menu\how copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.8125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Main Menu\view copy.png</Source>
+      <Name>Main Menu\view copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb</Output>
+      <Time>2008-11-23T17:51:30.765625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>fulltileset_alpha.png</Source>
+      <Name>fulltileset_alpha</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\fulltileset_alpha.xnb</Output>
+      <Time>2008-11-23T17:52:47.578125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\hud2 copy.png</Source>
+      <Name>HUD\hud2 copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud2 copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.921875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\done copy.png</Source>
+      <Name>HUD\done copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\done copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.9375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\finalize copy.png</Source>
+      <Name>HUD\finalize copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\finalize copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.921875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\next copy.png</Source>
+      <Name>HUD\next copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\next copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.9375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\previous copy.png</Source>
+      <Name>HUD\previous copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\previous copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.9375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\artillary symbol copy.png</Source>
+      <Name>HUD\artillary symbol copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\artillary symbol copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.9375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\humvee symbol copy.png</Source>
+      <Name>HUD\humvee symbol copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\humvee symbol copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.953125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\tanksymbol copy.png</Source>
+      <Name>HUD\tanksymbol copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\tanksymbol copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.921875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>selected border.png</Source>
+      <Name>selected border</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\selected border.xnb</Output>
+      <Time>2008-11-24T03:11:43.390625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\mud texture copy.png</Source>
+      <Name>HUD\mud texture copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\mud texture copy.xnb</Output>
+      <Time>2008-11-24T18:54:06.015625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\hud5 copy.png</Source>
+      <Name>HUD\hud5 copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud5 copy.xnb</Output>
+      <Time>2008-11-24T18:54:06.015625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\hud3 copy.png</Source>
+      <Name>HUD\hud3 copy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud3 copy.xnb</Output>
+      <Time>2008-11-23T17:46:08.921875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>HUD\graph.png</Source>
+      <Name>HUD\graph</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\graph.xnb</Output>
+      <Time>2008-11-24T18:54:06.03125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Down\APC Driving Down Brown.png</Source>
+      <Name>Unit Animations\APC\APC Driving Down\APC Driving Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Brown.xnb</Output>
+      <Time>2008-11-24T08:56:42.859375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Down\APC Driving Down Green.png</Source>
+      <Name>Unit Animations\APC\APC Driving Down\APC Driving Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Green.xnb</Output>
+      <Time>2008-11-24T08:55:44.515625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Down\APC Driving Down Grey.png</Source>
+      <Name>Unit Animations\APC\APC Driving Down\APC Driving Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Grey.xnb</Output>
+      <Time>2008-11-24T08:56:14.625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Down\APC Driving Down White.png</Source>
+      <Name>Unit Animations\APC\APC Driving Down\APC Driving Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down White.xnb</Output>
+      <Time>2008-11-24T08:55:20.1875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Left\APC Driving Left Brown.png</Source>
+      <Name>Unit Animations\APC\APC Driving Left\APC Driving Left Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Brown.xnb</Output>
+      <Time>2008-11-24T08:41:42.234375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Left\APC Driving Left Green.png</Source>
+      <Name>Unit Animations\APC\APC Driving Left\APC Driving Left Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Green.xnb</Output>
+      <Time>2008-11-24T08:42:16.34375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Left\APC Driving Left Grey.png</Source>
+      <Name>Unit Animations\APC\APC Driving Left\APC Driving Left Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Grey.xnb</Output>
+      <Time>2008-11-24T08:41:13.78125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Left\APC Driving Left White.png</Source>
+      <Name>Unit Animations\APC\APC Driving Left\APC Driving Left White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left White.xnb</Output>
+      <Time>2008-11-24T08:40:32.6875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Right\APC Driving Right Brown.png</Source>
+      <Name>Unit Animations\APC\APC Driving Right\APC Driving Right Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Brown.xnb</Output>
+      <Time>2008-11-24T08:51:02.15625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Right\APC Driving Right Green.png</Source>
+      <Name>Unit Animations\APC\APC Driving Right\APC Driving Right Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Green.xnb</Output>
+      <Time>2008-11-24T08:49:27.84375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Right\APC Driving Right Grey.png</Source>
+      <Name>Unit Animations\APC\APC Driving Right\APC Driving Right Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Grey.xnb</Output>
+      <Time>2008-11-24T08:50:12.15625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Right\APC Driving Right White.png</Source>
+      <Name>Unit Animations\APC\APC Driving Right\APC Driving Right White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right White.xnb</Output>
+      <Time>2008-11-24T08:48:39.515625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Up\APC Driving Up Brown.png</Source>
+      <Name>Unit Animations\APC\APC Driving Up\APC Driving Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Brown.xnb</Output>
+      <Time>2008-11-24T08:57:54.546875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Up\APC Driving Up Green.png</Source>
+      <Name>Unit Animations\APC\APC Driving Up\APC Driving Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Green.xnb</Output>
+      <Time>2008-11-24T08:58:50.90625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Up\APC Driving Up Grey.png</Source>
+      <Name>Unit Animations\APC\APC Driving Up\APC Driving Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Grey.xnb</Output>
+      <Time>2008-11-24T08:58:21.78125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Driving Up\APC Driving Up White.png</Source>
+      <Name>Unit Animations\APC\APC Driving Up\APC Driving Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up White.xnb</Output>
+      <Time>2008-11-24T08:57:24.28125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Idling Down\APC Idling Down Brown.png</Source>
+      <Name>Unit Animations\APC\APC Idling Down\APC Idling Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Brown.xnb</Output>
+      <Time>2008-11-24T08:56:42.859375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Idling Down\APC Idling Down Green.png</Source>
+      <Name>Unit Animations\APC\APC Idling Down\APC Idling Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Green.xnb</Output>
+      <Time>2008-11-24T08:55:44.515625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Idling Down\APC Idling Down Grey.png</Source>
+      <Name>Unit Animations\APC\APC Idling Down\APC Idling Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Grey.xnb</Output>
+      <Time>2008-11-24T08:56:14.625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Idling Down\APC Idling Down White.png</Source>
+      <Name>Unit Animations\APC\APC Idling Down\APC Idling Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down White.xnb</Output>
+      <Time>2008-11-24T08:55:20.1875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Idling Up\APC Idling Up Brown.png</Source>
+      <Name>Unit Animations\APC\APC Idling Up\APC Idling Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Brown.xnb</Output>
+      <Time>2008-11-24T08:57:54.546875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Idling Up\APC Idling Up Green.png</Source>
+      <Name>Unit Animations\APC\APC Idling Up\APC Idling Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Green.xnb</Output>
+      <Time>2008-11-24T08:58:50.90625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Idling Up\APC Idling Up Grey.png</Source>
+      <Name>Unit Animations\APC\APC Idling Up\APC Idling Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Grey.xnb</Output>
+      <Time>2008-11-24T08:58:21.78125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Idling Up\APC Idling Up White.png</Source>
+      <Name>Unit Animations\APC\APC Idling Up\APC Idling Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up White.xnb</Output>
+      <Time>2008-11-24T08:57:24.28125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Rotating\APC Rotating Brown.png</Source>
+      <Name>Unit Animations\APC\APC Rotating\APC Rotating Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Brown.xnb</Output>
+      <Time>2008-11-24T08:53:00.21875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Rotating\APC Rotating Green.png</Source>
+      <Name>Unit Animations\APC\APC Rotating\APC Rotating Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Green.xnb</Output>
+      <Time>2008-11-24T08:54:33.125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Rotating\APC Rotating Grey.png</Source>
+      <Name>Unit Animations\APC\APC Rotating\APC Rotating Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Grey.xnb</Output>
+      <Time>2008-11-24T08:53:48.359375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\APC\APC Rotating\APC Rotating White.png</Source>
+      <Name>Unit Animations\APC\APC Rotating\APC Rotating White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating White.xnb</Output>
+      <Time>2008-11-24T08:52:21.875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown.xnb</Output>
+      <Time>2008-11-24T07:00:04.328125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.xnb</Output>
+      <Time>2008-11-24T07:00:43.15625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.xnb</Output>
+      <Time>2008-11-24T06:59:28.3125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White.xnb</Output>
+      <Time>2008-11-24T06:58:38.875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown.xnb</Output>
+      <Time>2008-11-24T07:12:30.8125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.xnb</Output>
+      <Time>2008-11-24T07:13:18.265625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.xnb</Output>
+      <Time>2008-11-24T07:11:57.75-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.xnb</Output>
+      <Time>2008-11-24T07:10:58.625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown.xnb</Output>
+      <Time>2008-11-24T07:15:02.8125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.xnb</Output>
+      <Time>2008-11-24T07:14:22.109375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.xnb</Output>
+      <Time>2008-11-24T07:15:35.359375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White.xnb</Output>
+      <Time>2008-11-24T07:13:53.265625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown.xnb</Output>
+      <Time>2008-11-24T07:08:10.140625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.xnb</Output>
+      <Time>2008-11-24T07:06:14.25-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.xnb</Output>
+      <Time>2008-11-24T07:10:10.40625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.xnb</Output>
+      <Time>2008-11-24T07:04:06.953125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown.xnb</Output>
+      <Time>2008-11-24T07:26:26.5625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.xnb</Output>
+      <Time>2008-11-24T07:25:53.75-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.xnb</Output>
+      <Time>2008-11-24T07:26:58.234375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White.xnb</Output>
+      <Time>2008-11-24T07:25:06.796875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown.xnb</Output>
+      <Time>2008-11-24T07:22:35.703125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.xnb</Output>
+      <Time>2008-11-24T07:24:17.921875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.xnb</Output>
+      <Time>2008-11-24T07:21:04.125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.xnb</Output>
+      <Time>2008-11-24T07:18:46.921875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown.xnb</Output>
+      <Time>2008-11-24T07:30:36.40625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.xnb</Output>
+      <Time>2008-11-24T07:31:05.578125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.xnb</Output>
+      <Time>2008-11-24T07:30:04.0625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White.png</Source>
+      <Name>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White.xnb</Output>
+      <Time>2008-11-24T07:29:20.578125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown.xnb</Output>
+      <Time>2008-11-24T04:31:13.421875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.xnb</Output>
+      <Time>2008-11-24T04:30:23.984375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.xnb</Output>
+      <Time>2008-11-24T04:31:56.125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Down\Tank Driving Down White.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Down\Tank Driving Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down White.xnb</Output>
+      <Time>2008-11-24T04:27:30.59375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown.xnb</Output>
+      <Time>2008-11-24T04:34:52.4375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.xnb</Output>
+      <Time>2008-11-24T04:35:36.484375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.xnb</Output>
+      <Time>2008-11-24T04:34:07.265625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Left\Tank Driving Left White.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Left\Tank Driving Left White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left White.xnb</Output>
+      <Time>2008-11-24T04:28:19.765625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown.xnb</Output>
+      <Time>2008-11-24T04:37:08.984375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.xnb</Output>
+      <Time>2008-11-24T04:36:38.515625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.xnb</Output>
+      <Time>2008-11-24T04:37:48.9375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Right\Tank Driving Right White.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Right\Tank Driving Right White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right White.xnb</Output>
+      <Time>2008-11-24T04:26:24.046875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown.xnb</Output>
+      <Time>2008-11-24T04:40:08.53125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.xnb</Output>
+      <Time>2008-11-24T04:40:57.484375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.xnb</Output>
+      <Time>2008-11-24T04:39:28.640625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Driving Up\Tank Driving Up White.png</Source>
+      <Name>Unit Animations\Tank\Tank Driving Up\Tank Driving Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up White.xnb</Output>
+      <Time>2008-11-24T04:27:47.984375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown.png</Source>
+      <Name>Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown.xnb</Output>
+      <Time>2008-11-24T04:48:52.03125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.png</Source>
+      <Name>Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.xnb</Output>
+      <Time>2008-11-24T04:48:15.75-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.png</Source>
+      <Name>Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.xnb</Output>
+      <Time>2008-11-24T04:49:30.125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Idling Down\Tank Idling Down White.png</Source>
+      <Name>Unit Animations\Tank\Tank Idling Down\Tank Idling Down White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down White.xnb</Output>
+      <Time>2008-11-24T03:03:40.03125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown.png</Source>
+      <Name>Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown.xnb</Output>
+      <Time>2008-11-24T04:51:17.25-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.png</Source>
+      <Name>Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.xnb</Output>
+      <Time>2008-11-24T04:51:59.484375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.png</Source>
+      <Name>Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.xnb</Output>
+      <Time>2008-11-24T04:50:39.9375-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Idling Up\Tank Idling Up White.png</Source>
+      <Name>Unit Animations\Tank\Tank Idling Up\Tank Idling Up White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up White.xnb</Output>
+      <Time>2008-11-24T03:03:20.78125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Rotating\Tank Rotating Brown.png</Source>
+      <Name>Unit Animations\Tank\Tank Rotating\Tank Rotating Brown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Brown.xnb</Output>
+      <Time>2008-11-24T04:53:39.6875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Rotating\Tank Rotating Green.png</Source>
+      <Name>Unit Animations\Tank\Tank Rotating\Tank Rotating Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Green.xnb</Output>
+      <Time>2008-11-24T04:53:10.125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.png</Source>
+      <Name>Unit Animations\Tank\Tank Rotating\Tank Rotating Grey</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.xnb</Output>
+      <Time>2008-11-24T04:54:09.96875-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Unit Animations\Tank\Tank Rotating\Tank Rotating White.png</Source>
+      <Name>Unit Animations\Tank\Tank Rotating\Tank Rotating White</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating White.xnb</Output>
+      <Time>2008-11-24T03:16:00.28125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>fullTileSet.png</Source>
+      <Name>fullTileSet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\fullTileSet.xnb</Output>
+      <Time>2008-12-05T19:34:28.3125-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2008-08-25T09:42:42-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2008-08-25T09:43:36-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2008-08-25T09:43:26-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2008-08-25T09:48:44-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2008-10-22T15:18:56.296875-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

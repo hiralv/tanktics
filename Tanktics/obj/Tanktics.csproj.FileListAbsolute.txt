@@ -1,0 +1,141 @@
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Maps\map0.txt
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Maps\map1.txt
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\blank.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Infintry.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Infintry2.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Infintry3.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Infintry4.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\fulltileset_alpha.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud2 copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\done copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\finalize copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\next copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\previous copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\artillary symbol copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\humvee symbol copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\tanksymbol copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\selected border.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\mud texture copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud5 copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud3 copy.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\graph.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating White.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\fullTileSet.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\audio\GameSounds.xgs
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\audio\Wave Bank.xwb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\audio\Sound Bank.xsb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Tanktics.exe.manifest
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Tanktics.application
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\obj\x86\Debug\Tanktics.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\obj\x86\Debug\Tanktics.exe.manifest
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\obj\x86\Debug\Tanktics.application
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\obj\x86\Debug\Tanktics.exe
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\obj\x86\Debug\Tanktics.pdb
