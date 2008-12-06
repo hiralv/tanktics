@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Tanktics">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\me\Desktop\TankTics\Tanktics.sln">
+</Property><Property Name="Date" Value="Friday, December 05, 2008">
+</Property><Property Name="Time" Value="21:59 PM">
+</Property></Properties><Event ErrorLevel="0" Project="Tanktics" Source="Tanktics\Tanktics.csproj" Description="Upgraded XNA Game Studio nested content projects.">
+</Event><Event ErrorLevel="0" Project="Tanktics" Source="Tanktics\Tanktics.csproj" Description="Upgraded XNA Game Studio project.">
+</Event><Event ErrorLevel="0" Project="Tanktics" Source="Tanktics\Tanktics.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Tanktics" Source="Tanktics\Tanktics.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Tanktics.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Tanktics.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Tanktics" Source="Tanktics\Tanktics.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Tanktics" Source="Tanktics\Tanktics.csproj" Description="Upgraded XNA Framework References.">
+</Event></UpgradeLog>
