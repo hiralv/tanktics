@@ -45,7 +45,7 @@ namespace Tanktics
         public Unit currentUnit;
         int currentUnitNum = 0;
 
-        int currentPlayer;
+        public int currentPlayer;
 
         Unit[] unitsKilledThisTurn = new Unit[MAXIMUMUNITS];
         int numUnitsKilled = 0;
@@ -55,6 +55,7 @@ namespace Tanktics
         //DOES NOT:
         //Add or create any units
         //ATM these must be done with seperate calls
+        //Acey Boyce & Robby Florence
         public UnitController(TileEngine tileEngine, int numOfPlayers)
         {
             map = tileEngine;
@@ -238,20 +239,36 @@ namespace Tanktics
         //Robby Florence
         public Boolean isVisible(int team, int x, int y)
         {
+            if (x < 0 || x >= xSize || y < 0 || y >= ySize)
+                return false;
+
+            //teams can always see their base
             if (team == 1)
-                return team1Visibility[y, x];
+                return team1Visibility[y, x] || (x <= 4 && y <= 4);
             else if (team == 2)
-                return team2Visibility[y, x];
+                return team2Visibility[y, x] || (x >= xSize - 5 && y <= 4);
             else if (team == 3)
-                return team3Visibility[y, x];
+                return team3Visibility[y, x] || (x >= xSize - 5 && y >= ySize - 5);
             else if (team == 4)
-                return team4Visibility[y, x];
+                return team4Visibility[y, x] || (x <= 4 && y >= ySize - 5);
             else
                 return false;
         }
 
+        //Returns true if given space has a no unit in it
+        //Acey Boyce
+        public Boolean isEmpty(int x, int y)
+        {
+            if (currentBoard[y, x].team != 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
         //Removes the player from the player rotation and removes their pieces from currentBoard
         // Note: You just lost the game
+        //Acey Boyce
         public void loseTheGame(int Loser)
         {
             inGame[Loser - 1] = false;
@@ -312,6 +329,7 @@ namespace Tanktics
 
         //Returns true if active player has more units
         //False otherwise
+        //Acey Boyce
         public Boolean hasMoreUnits()
         {
             Boolean foundOne = false;
@@ -366,6 +384,7 @@ namespace Tanktics
         }
 
         //Selects next unit owned by active player
+        //Acey Boyce
         public void nextUnit()
         {   
             //if the current player has no more unused units
@@ -419,6 +438,7 @@ namespace Tanktics
         }
 
         //Adds a Unit to the Board
+        //Acey Boyce
         public Boolean addUnit(String setType, int setTeam, int startingX, int startingY, Texture2D[] textures)
         {
             Unit newUnit;
@@ -500,6 +520,8 @@ namespace Tanktics
             return false;
         }
 
+        //Impliments all input moves
+        //Acey Boyce
         public void finalize()
         {
             //Step 1:
@@ -615,6 +637,7 @@ namespace Tanktics
         //          2 if Unit has already made a move this turn;
         //          3 if Other Unit(s) or factory is blocking all paths to the space
         //          9 End of move method reached. Unknown Error.
+        //Acey Boyce
         public int moveAPC(int goalX, int goalY)
         {
             //Check if unit has already moved this turn
@@ -1176,6 +1199,7 @@ namespace Tanktics
         //          5 if Special Artillary Error
         //               Attempt to shoot or move to enemy diagonally
         //          9 End of move method reached. Unknown Error.
+        //Acey Boyce
         public int moveArtillery(int goalX, int goalY)
         {
             //Check if unit has already moved this turn
@@ -1666,6 +1690,7 @@ namespace Tanktics
         //          2 if Unit has already made a move this turn;
         //          3 if Other Unit(s) is blocking all paths to the space
         //          9 End of move method reached. Unknown Error.
+        //Acey Boyce
         public int moveTank(int goalX, int goalY)
         {
             //Check if unit has already moved this turn
@@ -3085,6 +3110,7 @@ namespace Tanktics
         //               Attempt to shoot or move to enemy diagonally
         //          8 if goalX or goalY was outside array
         //          9 End of move method reached. Unknown Error.
+        //Acey Boyce
         public int moveUnit(int goalX, int goalY)
         {
             int results;
@@ -3125,6 +3151,7 @@ namespace Tanktics
 
         }
 
+        //Acey Boyce
         public void update(GameTime gametime)
         {
             int x = 0;
@@ -3177,6 +3204,7 @@ namespace Tanktics
         }
 
         //Removes the given unit from the players unit list
+        //Acey Boyce
         public void removeUnit(int unitNum, int teamNum)
         {
             int i = 0;
