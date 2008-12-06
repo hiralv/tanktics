@@ -43,6 +43,34 @@ namespace Tanktics
         UnitController unitControl;
         Point selected = Point.Zero;
 
+        //Turn controllers
+        TurnController TC1;
+        TurnController TC2;
+        TurnController TC3;
+        TurnController TC4;
+        TurnController[] TCs;
+
+        //textures for apc animations for 4 players
+        //(up, down, left, right, idle up, idle down)
+        Texture2D[] apc1 = new Texture2D[6];
+        Texture2D[] apc2 = new Texture2D[6];
+        Texture2D[] apc3 = new Texture2D[6];
+        Texture2D[] apc4 = new Texture2D[6];
+
+        //textures for artillery animations for 4 players
+        //(up, down, left, right, idle up, idle down)
+        Texture2D[] artillery1 = new Texture2D[6];
+        Texture2D[] artillery2 = new Texture2D[6];
+        Texture2D[] artillery3 = new Texture2D[6];
+        Texture2D[] artillery4 = new Texture2D[6];
+
+        //textures for tank animations for 4 players
+        //(up, down, left, right, idle up, idle down)
+        Texture2D[] tank1 = new Texture2D[6];
+        Texture2D[] tank2 = new Texture2D[6];
+        Texture2D[] tank3 = new Texture2D[6];
+        Texture2D[] tank4 = new Texture2D[6];
+
         #endregion
 
         #region Initialization
@@ -84,6 +112,21 @@ namespace Tanktics
             modelHud = new ModelHud(0, 440, 160, 160);
 
             unitControl = new UnitController(tileEngine, 4);
+            TC1 = new TurnController(unitControl, 0, 0, 3, 3);
+            TC2 = new TurnController(unitControl, 22, 0, 25, 3);
+            TC3 = new TurnController(unitControl, 0, 22, 3, 25);
+            TC4 = new TurnController(unitControl, 22, 22, 25, 25);
+            TC1.setNext(TC2);
+            TC2.setNext(TC3);
+            TC3.setNext(TC4);
+            TC4.setNext(TC1);
+            TCs = new TurnController[4];
+            TCs[0] = TC1;
+            TCs[1] = TC2;
+            TCs[2] = TC3;
+            TCs[3] = TC4;
+
+
         }
 
         /// <summary>
@@ -104,27 +147,7 @@ namespace Tanktics
             dataHud.LoadContent(content);
             modelHud.LoadContent(content);
 
-            //textures for apc animations for 4 players
-            //(up, down, left, right, idle up, idle down)
-            Texture2D[] apc1 = new Texture2D[6];
-            Texture2D[] apc2 = new Texture2D[6];
-            Texture2D[] apc3 = new Texture2D[6];
-            Texture2D[] apc4 = new Texture2D[6];
-
-            //textures for artillery animations for 4 players
-            //(up, down, left, right, idle up, idle down)
-            Texture2D[] artillery1 = new Texture2D[6];
-            Texture2D[] artillery2 = new Texture2D[6];
-            Texture2D[] artillery3 = new Texture2D[6];
-            Texture2D[] artillery4 = new Texture2D[6];
-
-            //textures for tank animations for 4 players
-            //(up, down, left, right, idle up, idle down)
-            Texture2D[] tank1 = new Texture2D[6];
-            Texture2D[] tank2 = new Texture2D[6];
-            Texture2D[] tank3 = new Texture2D[6];
-            Texture2D[] tank4 = new Texture2D[6];
-
+           
 
 
             //load player 1 (white) apc animations
@@ -227,29 +250,29 @@ namespace Tanktics
             tank4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Brown");
             tank4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Brown");
 
-            //addUnits(1, 0, 0, artillery1);
+            
             addUnits(2, 0, tileEngine.MapWidth - 4, artillery2);
             addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, artillery3);
             addUnits(4, tileEngine.MapHeight - 4, 0, artillery4);
 
-            unitControl.addUnit("artillery", 1, 2, 0, artillery1);
-            unitControl.addUnit("artillery", 1, 3, 0, artillery1);
-            unitControl.addUnit("tank", 1, 1, 1, tank1);
-            unitControl.addUnit("tank", 1, 2, 1, tank1);
-            unitControl.addUnit("tank", 1, 3, 1, tank1);
-            unitControl.addUnit("tank", 1, 1, 2, tank1);
-            unitControl.addUnit("apc", 1, 2, 2, apc1);
-            unitControl.addUnit("apc", 1, 3, 2, apc1);
-            unitControl.addUnit("apc", 1, 0, 3, apc1);
-            unitControl.addUnit("apc", 1, 1, 3, apc1);
-            unitControl.addUnit("apc", 1, 2, 3, apc1);
-            unitControl.addUnit("apc", 1, 3, 3, apc1);
-            unitControl.nextUnit();
-            selected.X = unitControl.currentUnit.currentX;
-            selected.Y = unitControl.currentUnit.currentY;
+            //unitControl.addUnit("artillery", 1, 2, 0, artillery1);
+            //unitControl.addUnit("artillery", 1, 3, 0, artillery1);
+            //unitControl.addUnit("tank", 1, 1, 1, tank1);
+            //unitControl.addUnit("tank", 1, 2, 1, tank1);
+            //unitControl.addUnit("tank", 1, 3, 1, tank1);
+            //unitControl.addUnit("tank", 1, 1, 2, tank1);
+            //unitControl.addUnit("apc", 1, 2, 2, apc1);
+            //unitControl.addUnit("apc", 1, 3, 2, apc1);
+            //unitControl.addUnit("apc", 1, 0, 3, apc1);
+            //unitControl.addUnit("apc", 1, 1, 3, apc1);
+            //unitControl.addUnit("apc", 1, 2, 3, apc1);
+            //unitControl.addUnit("apc", 1, 3, 3, apc1);
+            //unitControl.nextUnit();
+            //selected.X = unitControl.currentUnit.currentX;
+            //selected.Y = unitControl.currentUnit.currentY;
 
-            selected.X = unitControl.currentUnit.currentX;
-            selected.Y = unitControl.currentUnit.currentY;
+            //selected.X = unitControl.currentUnit.currentX;
+            //selected.Y = unitControl.currentUnit.currentY;
 
             // once the load has finished, we use ResetElapsedTime to tell the game's
             // timing mechanism that we have just finished a very long frame, and that
@@ -275,6 +298,8 @@ namespace Tanktics
                     unitControl.addUnit("artillery", team, x, y, textures);
                 }
             }
+            //Sets the team to be passed the set up phase sence that is basically what this is.
+            TCs[team - 1].nextPhase();
         }
 
         #endregion
@@ -339,12 +364,15 @@ namespace Tanktics
             if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageDown))
                 camera.ZoomOut(elapsed);
 
-            //select next unit
+            //Combat Phase: select next unit
             if (input.IsNewKeyPress(Keys.Tab))
             {
-                unitControl.nextUnit();
-                selected.X = unitControl.currentUnit.currentX;
-                selected.Y = unitControl.currentUnit.currentY;
+                if (TCs[unitControl.currentPlayer - 1].phase == 2)
+                {
+                    unitControl.nextUnit();
+                    selected.X = unitControl.currentUnit.currentX;
+                    selected.Y = unitControl.currentUnit.currentY;
+                }
             }
 
             //move selected square
@@ -357,22 +385,105 @@ namespace Tanktics
             if (input.IsNewKeyPress(Keys.D) && selected.X < tileEngine.MapWidth - 1)
                 selected.X++;
 
-            //move current unit to selected square
+            //Combat Phase:move current unit to selected square
+            //Unit Placement Phase: Place next unit on selected square
             if (input.IsNewKeyPress(Keys.Space))
             {
-                unitControl.moveUnit(selected.X, selected.Y);
-                selected.X = unitControl.currentUnit.currentX;
-                selected.Y = unitControl.currentUnit.currentY;
+                if (TCs[unitControl.currentPlayer - 1].phase == 2)
+                {
+                    unitControl.moveUnit(selected.X, selected.Y);
+                    selected.X = unitControl.currentUnit.currentX;
+                    selected.Y = unitControl.currentUnit.currentY;
+                }
+
+                else if (TCs[unitControl.currentPlayer - 1].phase == 0)
+                {
+                    if (TCs[unitControl.currentPlayer - 1].totalAPC < TCs[unitControl.currentPlayer - 1].MAXAPC)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("apc", selected.X, selected.Y))
+                        {
+                            if (unitControl.currentPlayer == 1)
+                                unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc1);
+                            else if (unitControl.currentPlayer == 2)
+                                unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc2);
+                            else if (unitControl.currentPlayer == 3)
+                                unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc3);
+                            else if (unitControl.currentPlayer == 4)
+                                unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc4);
+
+                            TCs[unitControl.currentPlayer - 1].totalAPC++;
+                        }
+                    }
+                    else if (TCs[unitControl.currentPlayer - 1].totalTank < TCs[unitControl.currentPlayer - 1].MAXTANK)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("tank", selected.X, selected.Y))
+                        {
+                            if (unitControl.currentPlayer == 1)
+                                unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank1);
+                            else if (unitControl.currentPlayer == 2)
+                                unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank2);
+                            else if (unitControl.currentPlayer == 3)
+                                unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank3);
+                            else if (unitControl.currentPlayer == 4)
+                                unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank4);
+
+                            TCs[unitControl.currentPlayer - 1].totalTank++;
+                        }
+                    }
+                    else if (TCs[unitControl.currentPlayer - 1].totalArtil < TCs[unitControl.currentPlayer - 1].MAXARTIL)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("artillery", selected.X, selected.Y))
+                        {
+                            if (unitControl.currentPlayer == 1)
+                                unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery1);
+                            else if (unitControl.currentPlayer == 2)
+                                unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery2);
+                            else if (unitControl.currentPlayer == 3)
+                                unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery3);
+                            else if (unitControl.currentPlayer == 4)
+                                unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery4);
+
+                            TCs[unitControl.currentPlayer - 1].totalArtil++;
+                        }
+                        //If all units placed move on to next Phase
+                        //Note may be changed to move to next players phase 0
+                        if (TCs[unitControl.currentPlayer - 1].totalArtil == TCs[unitControl.currentPlayer - 1].MAXARTIL)
+                        {
+                            TCs[unitControl.currentPlayer - 1].nextPhase();
+                            unitControl.nextUnit();
+                            selected.X = unitControl.currentUnit.currentX;
+                            selected.Y = unitControl.currentUnit.currentY;
+                        }
+                    }
+                }
 
             }
 
-            //finalize turn
+            //Unit Placement Phase: No Function
+            //Movement Phase: Next Phase
+            //Combat Phase: Next Phase
+            //Purchase Phase: Finalize and End Turn
             if (input.IsNewKeyPress(Keys.Enter))
             {
-                unitControl.finalize();
-                unitControl.nextUnit();
-                selected.X = unitControl.currentUnit.currentX;
-                selected.Y = unitControl.currentUnit.currentY;
+
+                if (TCs[unitControl.currentPlayer - 1].phase == 2)
+                {
+                    TCs[unitControl.currentPlayer - 1].nextPhase();
+                }
+                else if (TCs[unitControl.currentPlayer - 1].phase == 3)
+                {
+                    TCs[unitControl.currentPlayer - 1].nextPhase();
+                }
+                else if (TCs[unitControl.currentPlayer - 1].phase == 4)
+                {
+                    TCs[unitControl.currentPlayer-1].nextPhase();
+                    TCs[unitControl.currentPlayer-1].getNext().nextPhase();
+                    unitControl.finalize();
+                    unitControl.nextUnit();
+                    selected.X = unitControl.currentUnit.currentX;
+                    selected.Y = unitControl.currentUnit.currentY;
+                }
+
             }
 
         }
