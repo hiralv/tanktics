@@ -1,0 +1,2 @@
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\Content\obj\x86\Debug\audio\GameSounds.xml
