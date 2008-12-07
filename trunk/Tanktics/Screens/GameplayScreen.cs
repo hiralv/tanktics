@@ -103,9 +103,9 @@ namespace Tanktics
 
             unitControl = new UnitController(tileEngine, 4);
             TC1 = new TurnController(unitControl, 0, 0, 3, 3);
-            TC2 = new TurnController(unitControl, 22, 0, 25, 3);
-            TC3 = new TurnController(unitControl, 0, 22, 3, 25);
-            TC4 = new TurnController(unitControl, 22, 22, 25, 25);
+            TC2 = new TurnController(unitControl, 21, 0, 25, 3);
+            TC3 = new TurnController(unitControl, 21, 21, 25, 25);
+            TC4 = new TurnController(unitControl, 0, 21, 3, 25);
             TC1.setNext(TC2);
             TC2.setNext(TC3);
             TC3.setNext(TC4);
@@ -442,10 +442,18 @@ namespace Tanktics
                         //Note may be changed to move to next players phase 0
                         if (TCs[unitControl.currentPlayer - 1].totalArtil == TCs[unitControl.currentPlayer - 1].MAXARTIL)
                         {
-                            TCs[unitControl.currentPlayer - 1].nextPhase();
-                            unitControl.nextUnit();
-                            selected.X = unitControl.currentUnit.currentX;
-                            selected.Y = unitControl.currentUnit.currentY;
+                            TCs[unitControl.currentPlayer - 1].phase = 5;
+                            unitControl.currentPlayer++;
+                            if (unitControl.currentPlayer == 5)
+                            {
+                                unitControl.currentPlayer = 1;
+                                TCs[unitControl.currentPlayer - 1].nextPhase();
+                                unitControl.nextUnit();
+                                selected.X = unitControl.currentUnit.currentX;
+                                selected.Y = unitControl.currentUnit.currentY;
+                            }
+                            camera.PlayerNum = unitControl.currentPlayer;
+                            miniMap.PlayerNum = unitControl.currentPlayer;
                         }
                     }
                 }
