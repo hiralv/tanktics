@@ -111,6 +111,7 @@ namespace Tanktics
             TCs[1] = TC2;
             TCs[2] = TC3;
             TCs[3] = TC4;
+            TCs[0].points = 50;
 
             ai1 = new AI();
         }
@@ -376,6 +377,93 @@ namespace Tanktics
                 selected.X--;
             if (input.IsNewKeyPress(Keys.D) && selected.X < tileEngine.MapWidth - 1)
                 selected.X++;
+
+            //Purchase Phase: Buy an APC
+            //Acey Boyce
+            if (input.IsNewKeyPress(Keys.D1))
+            {
+                if (TCs[unitControl.currentPlayer - 1].phase == 4)
+                {
+                    if (TCs[unitControl.currentPlayer - 1].totalAPC < TCs[unitControl.currentPlayer - 1].MAXAPC)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].points >= 1)
+                        {
+                            if (TCs[unitControl.currentPlayer - 1].createUnit("apc", selected.X, selected.Y))
+                            {
+                                if (unitControl.currentPlayer == 1)
+                                    unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc1);
+                                else if (unitControl.currentPlayer == 2)
+                                    unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc2);
+                                else if (unitControl.currentPlayer == 3)
+                                    unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc3);
+                                else if (unitControl.currentPlayer == 4)
+                                    unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc4);
+
+                                TCs[unitControl.currentPlayer - 1].totalAPC++;
+                                TCs[unitControl.currentPlayer - 1].points--;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Purchase Phase: Buy a tank
+            //Acey Boyce
+            if (input.IsNewKeyPress(Keys.D2))
+            {
+                if (TCs[unitControl.currentPlayer - 1].phase == 4)
+                {
+                    if (TCs[unitControl.currentPlayer - 1].totalTank < TCs[unitControl.currentPlayer - 1].MAXTANK)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].points >= 2)
+                        {
+                            if (TCs[unitControl.currentPlayer - 1].createUnit("tank", selected.X, selected.Y))
+                            {
+                                if (unitControl.currentPlayer == 1)
+                                    unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank1);
+                                else if (unitControl.currentPlayer == 2)
+                                    unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank2);
+                                else if (unitControl.currentPlayer == 3)
+                                    unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank3);
+                                else if (unitControl.currentPlayer == 4)
+                                    unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank4);
+
+                                TCs[unitControl.currentPlayer - 1].totalTank++;
+                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points-2;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Purchase Phase: Buy an artillery
+            //Acey Boyce
+            if (input.IsNewKeyPress(Keys.D3))
+            {
+                if (TCs[unitControl.currentPlayer - 1].phase == 4)
+                {
+                    if (TCs[unitControl.currentPlayer - 1].totalArtil < TCs[unitControl.currentPlayer - 1].MAXARTIL)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].points >= 3)
+                        {
+                            if (TCs[unitControl.currentPlayer - 1].createUnit("artillery", selected.X, selected.Y))
+                            {
+                                if (unitControl.currentPlayer == 1)
+                                    unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery1);
+                                else if (unitControl.currentPlayer == 2)
+                                    unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery2);
+                                else if (unitControl.currentPlayer == 3)
+                                    unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery3);
+                                else if (unitControl.currentPlayer == 4)
+                                    unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery4);
+
+                                TCs[unitControl.currentPlayer - 1].totalArtil++;
+                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points - 3;
+                            }
+                        }
+                    }
+                }
+            }
 
             //Combat Phase:move current unit to selected square
             //Unit Placement Phase: Place next unit on selected square
