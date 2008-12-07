@@ -1,1 +1,1 @@
-Windows.v3.0.Beta
+Windows.v3.0

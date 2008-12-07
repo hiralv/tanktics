@@ -32,12 +32,7 @@ namespace Tanktics
         Camera2D camera;
         Camera2D miniMap;
 
-        //Hud elements
-        Hud hud;
-        DataHud dataHud;
-        ButtonHud buttonHud;
-        ModelHud modelHud;
-        GraphHud graphHud;
+        HUD hud;
 
         //unit controller and selected square
         UnitController unitControl;
@@ -51,25 +46,25 @@ namespace Tanktics
         TurnController[] TCs;
 
         //textures for apc animations for 4 players
-        //(up, down, left, right, idle up, idle down)
-        Texture2D[] apc1 = new Texture2D[6];
-        Texture2D[] apc2 = new Texture2D[6];
-        Texture2D[] apc3 = new Texture2D[6];
-        Texture2D[] apc4 = new Texture2D[6];
+        //(up, down, left, right, idle up, idle down, rotate)
+        Texture2D[] apc1 = new Texture2D[7];
+        Texture2D[] apc2 = new Texture2D[7];
+        Texture2D[] apc3 = new Texture2D[7];
+        Texture2D[] apc4 = new Texture2D[7];
 
         //textures for artillery animations for 4 players
-        //(up, down, left, right, idle up, idle down)
-        Texture2D[] artillery1 = new Texture2D[6];
-        Texture2D[] artillery2 = new Texture2D[6];
-        Texture2D[] artillery3 = new Texture2D[6];
-        Texture2D[] artillery4 = new Texture2D[6];
+        //(up, down, left, right, idle up, idle down, rotate)
+        Texture2D[] artillery1 = new Texture2D[7];
+        Texture2D[] artillery2 = new Texture2D[7];
+        Texture2D[] artillery3 = new Texture2D[7];
+        Texture2D[] artillery4 = new Texture2D[7];
 
         //textures for tank animations for 4 players
-        //(up, down, left, right, idle up, idle down)
-        Texture2D[] tank1 = new Texture2D[6];
-        Texture2D[] tank2 = new Texture2D[6];
-        Texture2D[] tank3 = new Texture2D[6];
-        Texture2D[] tank4 = new Texture2D[6];
+        //(up, down, left, right, idle up, idle down, rotate)
+        Texture2D[] tank1 = new Texture2D[7];
+        Texture2D[] tank2 = new Texture2D[7];
+        Texture2D[] tank3 = new Texture2D[7];
+        Texture2D[] tank4 = new Texture2D[7];
 
         #endregion
 
@@ -83,7 +78,6 @@ namespace Tanktics
             TransitionOnTime = TimeSpan.FromSeconds(1.0);
             TransitionOffTime = TimeSpan.FromSeconds(1.0);
 
-            //tileEngine = new TileEngine("Maps/map0.txt", 48, 48, 10, 12);
             tileEngine = new TileEngine("Maps/map1.txt", 64, 64, 5, 12);
 
             //create main camera
@@ -91,25 +85,21 @@ namespace Tanktics
                 1,
                 tileEngine.TileWidth, tileEngine.TileHeight,
                 tileEngine.MapWidth, tileEngine.MapHeight);
-            camera.Viewport = new Rectangle(0, 0, 800, 480);
+            camera.Viewport = new Rectangle(0, 0, 800, 430);
             camera.Speed = 240;
             //only allow zooming out to total width of board
             camera.MinScale = (float)camera.Viewport.Width / tileEngine.WidthInPixels;
 
             //create minimap window
             miniMap = new Camera2D(
-                0,
+                1,
                 tileEngine.TileWidth, tileEngine.TileHeight,
                 tileEngine.MapWidth, tileEngine.MapHeight);
             miniMap.Viewport = new Rectangle(650, 450, 150, 150);
             //scale to show entire map in camera
             miniMap.Scale = (float)miniMap.Viewport.Width / tileEngine.WidthInPixels;
 
-            hud = new Hud(640,440,160,160);
-            graphHud = new GraphHud(480, 480, 160, 160);
-            buttonHud = new ButtonHud(320, 480, 160, 160);
-            dataHud = new DataHud(160, 480, 160, 160);
-            modelHud = new ModelHud(0, 440, 160, 160);
+            hud = new HUD(0, 430, 800, 170);
 
             unitControl = new UnitController(tileEngine, 4);
             TC1 = new TurnController(unitControl, 0, 0, 3, 3);
@@ -125,8 +115,6 @@ namespace Tanktics
             TCs[1] = TC2;
             TCs[2] = TC3;
             TCs[3] = TC4;
-
-
         }
 
         /// <summary>
@@ -137,18 +125,11 @@ namespace Tanktics
             if (content == null)
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
-            //tileEngine.Texture = content.Load<Texture2D>("fulltileset_alpha");
             tileEngine.Texture = content.Load<Texture2D>("fullTileSet");
             tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
+            tileEngine.BlankTexture = content.Load<Texture2D>("blank");
 
             hud.LoadContent(content);
-            buttonHud.LoadContent(content);
-            graphHud.LoadContent(content);
-            dataHud.LoadContent(content);
-            modelHud.LoadContent(content);
-
-           
-
 
             //load player 1 (white) apc animations
             apc1[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up White");
@@ -157,6 +138,7 @@ namespace Tanktics
             apc1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right White");
             apc1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up White");
             apc1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down White");
+            apc1[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/APC/APC Rotating/APC Rotating White");
 
             //load player 2 (green) apc animations
             apc2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Green");
@@ -165,6 +147,7 @@ namespace Tanktics
             apc2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Green");
             apc2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Green");
             apc2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Green");
+            apc2[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/APC/APC Rotating/APC Rotating Green");
 
             //load player 3 (grey) apc animations
             apc3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Grey");
@@ -173,6 +156,7 @@ namespace Tanktics
             apc3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Grey");
             apc3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Grey");
             apc3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Grey");
+            apc3[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/APC/APC Rotating/APC Rotating Grey");
 
             //load player 4 (brown) apc animations
             apc4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Brown");
@@ -181,6 +165,7 @@ namespace Tanktics
             apc4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Brown");
             apc4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Brown");
             apc4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Brown");
+            apc4[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/APC/APC Rotating/APC Rotating Brown");
 
 
 
@@ -191,6 +176,7 @@ namespace Tanktics
             artillery1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right White");
             artillery1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up White");
             artillery1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down White");
+            artillery1[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Rotating/Artillery Rotating White");
 
             //load player 2 (green) artillery animations
             artillery2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Green");
@@ -199,6 +185,7 @@ namespace Tanktics
             artillery2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Green");
             artillery2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Green");
             artillery2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Green");
+            artillery2[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Rotating/Artillery Rotating Green");
 
             //load player 3 (grey) artillery animations
             artillery3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Grey");
@@ -207,6 +194,7 @@ namespace Tanktics
             artillery3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Grey");
             artillery3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Grey");
             artillery3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Grey");
+            artillery3[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Rotating/Artillery Rotating Grey");
 
             //load player 4 (brown) artillery animations
             artillery4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Brown");
@@ -215,6 +203,7 @@ namespace Tanktics
             artillery4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Brown");
             artillery4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Brown");
             artillery4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Brown");
+            artillery4[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Rotating/Artillery Rotating Brown");
 
 
 
@@ -225,6 +214,7 @@ namespace Tanktics
             tank1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right White");
             tank1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up White");
             tank1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down White");
+            tank1[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating White");
 
             //load player 2 (green) tank animations
             tank2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Green");
@@ -233,6 +223,7 @@ namespace Tanktics
             tank2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Green");
             tank2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Green");
             tank2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Green");
+            tank2[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating Green");
 
             //load player 3 (grey) tank animations
             tank3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Grey");
@@ -241,6 +232,7 @@ namespace Tanktics
             tank3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Grey");
             tank3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Grey");
             tank3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Grey");
+            tank3[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating Grey");
 
             //load player 4 (brown) tank animations
             tank4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Brown");
@@ -249,11 +241,12 @@ namespace Tanktics
             tank4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Brown");
             tank4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Brown");
             tank4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Brown");
+            tank4[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating Brown");
 
             
-            addUnits(2, 0, tileEngine.MapWidth - 4, artillery2);
-            addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, artillery3);
-            addUnits(4, tileEngine.MapHeight - 4, 0, artillery4);
+            //addUnits(2, 0, tileEngine.MapWidth - 4, artillery2);
+            //addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, artillery3);
+            //addUnits(4, tileEngine.MapHeight - 4, 0, artillery4);
 
             //unitControl.addUnit("artillery", 1, 2, 0, artillery1);
             //unitControl.addUnit("artillery", 1, 3, 0, artillery1);
@@ -319,7 +312,7 @@ namespace Tanktics
             elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             unitControl.update(gameTime);
-            modelHud.Update(gameTime);
+            hud.Update(gameTime, unitControl);
         }
 
 
@@ -480,8 +473,14 @@ namespace Tanktics
                     TCs[unitControl.currentPlayer-1].getNext().nextPhase();
                     unitControl.finalize();
                     unitControl.nextUnit();
-                    selected.X = unitControl.currentUnit.currentX;
-                    selected.Y = unitControl.currentUnit.currentY;
+                    if (unitControl.currentUnit != null)
+                    {
+                        selected.X = unitControl.currentUnit.currentX;
+                        selected.Y = unitControl.currentUnit.currentY;
+                    }
+                    //change player number for cameras
+                    camera.PlayerNum = unitControl.currentPlayer;
+                    miniMap.PlayerNum = unitControl.currentPlayer;
                 }
 
             }
@@ -500,13 +499,9 @@ namespace Tanktics
 
             //draw main camera and minimap
             tileEngine.Draw(spriteBatch, camera, unitControl, selected);
-            tileEngine.Draw(spriteBatch, miniMap);
+            tileEngine.Draw(spriteBatch, miniMap, unitControl);
 
             hud.Draw(spriteBatch);
-            buttonHud.Draw(spriteBatch);
-            graphHud.Draw(spriteBatch,ScreenManager);
-            dataHud.Draw(spriteBatch);
-            modelHud.Draw(spriteBatch);
             
             spriteBatch.End();
 

@@ -255,6 +255,56 @@ namespace Tanktics
                 return false;
         }
 
+        //get the number of a type of units still active on the current board
+        //Robby Florence
+        public int getNumUnits(int team, string type)
+        {
+            int count = 0;
+
+            if (team == 1)
+            {
+                for (int i = 0; i < team1Length; i++)
+                {
+                    if (team1[i].type.Equals(type))
+                        count++;
+                }
+            }
+            else if (team == 2)
+            {
+                for (int i = 0; i < team2Length; i++)
+                {
+                    if (team2[i].type.Equals(type))
+                        count++;
+                }
+            }
+            else if (team == 3)
+            {
+                for (int i = 0; i < team3Length; i++)
+                {
+                    if (team3[i].type.Equals(type))
+                        count++;
+                }
+            }
+            else if (team == 4)
+            {
+                for (int i = 0; i < team4Length; i++)
+                {
+                    if (team4[i].type.Equals(type))
+                        count++;
+                }
+            }
+
+            return count;
+        }
+
+        //get the unit at (x, y) on the current board
+        //used to draw minimap
+        //Robby Florence
+        public Unit getUnit(int x, int y)
+        {
+            return currentBoard[y, x];
+        }
+
         //Returns true if given space has a no unit in it
         //Acey Boyce
         public Boolean isEmpty(int x, int y)

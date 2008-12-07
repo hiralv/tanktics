@@ -28,6 +28,8 @@ namespace Tanktics
 
         //texture for selected squares
         public Texture2D SelectedTexture;
+        //blank texture used to draw units in minimap
+        public Texture2D BlankTexture;
 
         #endregion
 
@@ -167,6 +169,96 @@ namespace Tanktics
                                     scaledTileHeight),
                                 tiles[map[i, y, x]],
                                 Color.White);
+                        }
+                    }
+                }
+            }
+        }
+
+        //draw minimap
+        //entire map is displayed, non-visible tiles are darkened
+        //visible units are displayed as team-colored squares
+        public void Draw(SpriteBatch batch, Camera2D camera, UnitController units)
+        {
+            Color fade = Color.White;
+            int unitTeam;
+
+            int scaledTileWidth = (int)(camera.Scale * TileWidth + 0.5f);
+            int scaledTileHeight = (int)(camera.Scale * TileHeight + 0.5f);
+
+            //calculate range of visible tiles
+            Point minVisible = new Point(
+                (int)(camera.Position.X / scaledTileWidth),
+                (int)(camera.Position.Y / scaledTileHeight));
+            Point maxVisible = new Point(
+                ((int)(camera.Position.X + camera.Viewport.Width) / scaledTileWidth) + 1,
+                ((int)(camera.Position.Y + camera.Viewport.Height) / scaledTileHeight) + 1);
+
+            minVisible.X = Math.Max(minVisible.X, 0);
+            minVisible.Y = Math.Max(minVisible.Y, 0);
+            maxVisible.X = Math.Min(maxVisible.X, MapWidth);
+            maxVisible.Y = Math.Min(maxVisible.Y, MapHeight);
+
+            for (int i = 0; i < numLayers - 2; i++)
+            {
+                for (int y = minVisible.Y; y < maxVisible.Y; y++)
+                {
+                    for (int x = minVisible.X; x < maxVisible.X; x++)
+                    {
+                        if (map[i, y, x] >= 0)
+                        {
+                            //fade tiles under fog of war
+                            if (!units.isVisible(camera.PlayerNum, x, y))
+                                fade = Color.Gray;
+                            else
+                                fade = Color.White;
+
+                            batch.Draw(
+                                texture,
+                                new Rectangle(
+                                    (x - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
+                                    (y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
+                                    scaledTileWidth,
+                                    scaledTileHeight),
+                                tiles[map[i, y, x]],
+                                fade);
+                        }
+                    }
+                }
+            }
+
+            //draw units
+            if (units != null && BlankTexture != null)
+            {
+                for (int y = minVisible.Y; y < maxVisible.Y; y++)
+                {
+                    for (int x = minVisible.X; x < maxVisible.X; x++)
+                    {
+                        if (units.isVisible(camera.PlayerNum, x, y))
+                        {
+                            unitTeam = units.getUnit(x, y).team;
+
+                            //set color for unit
+                            if (unitTeam == 1)
+                                fade = new Color(240, 240, 240);
+                            else if (unitTeam == 2)
+                                fade = new Color(40, 120, 20);
+                            else if (unitTeam == 3)
+                                fade = new Color(100, 100, 100);
+                            else if (unitTeam == 4)
+                                fade = new Color(170, 120, 60);
+                            else
+                                continue;
+
+                            //draw square in tile
+                            batch.Draw(
+                                BlankTexture,
+                                new Rectangle(
+                                (x - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth + (int)(0.25f * scaledTileWidth),
+                                (y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight + (int)(0.25f * scaledTileHeight),
+                                (int)(0.5f * scaledTileWidth),
+                                (int)(0.5f * scaledTileHeight)),
+                                fade);
                         }
                     }
                 }

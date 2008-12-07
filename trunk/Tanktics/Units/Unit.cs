@@ -8,7 +8,7 @@ namespace Tanktics
 {
     public class Unit
     {
-        public enum Anim { Up, Down, Left, Right, IdleUp, IdleDown };
+        public enum Anim { Up, Down, Left, Right, IdleUp, IdleDown , Rotate };
 
         public Boolean hasMoved;
         public int vision;

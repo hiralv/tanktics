@@ -7,9 +7,6 @@ namespace Tanktics
 {
     class Artillery : Unit
     {
-
-
-
         public Artillery(int setTeam, int startingX, int startingY, Texture2D[] textures, int uNum)
         {
             unitNumber = uNum;
@@ -73,10 +70,14 @@ namespace Tanktics
             sprites[(int)Anim.IdleDown].Texture = textures[(int)Anim.IdleDown];
             sprites[(int)Anim.IdleDown].Animations.Add("idle down", new Animation(560, 620, 50, 5, 10, 0, 0));
             sprites[(int)Anim.IdleDown].CurrentAnimation = "idle down";
+            //add rotate animation
+            sprites[(int)Anim.Rotate] = new AnimatingSprite();
+            sprites[(int)Anim.Rotate].Texture = textures[(int)Anim.Rotate];
+            sprites[(int)Anim.Rotate].Animations.Add("rotate", new Animation(1540, 210, 50, 5, 10, 0, 0));
+            sprites[(int)Anim.Rotate].CurrentAnimation = "rotate";
 
             currentSprite = (int)Anim.IdleDown;
             currentSpriteRect = sprites[currentSprite].Animations["idle down"].CurrentFrame;
         }
-
     }
 }

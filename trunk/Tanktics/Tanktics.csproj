@@ -84,6 +84,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Screens\HUD.cs" />
+    <Compile Include="TurnController.cs" />
     <Compile Include="Units\Artillery.cs" />
     <Compile Include="Tile Engine\Camera2D.cs" />
     <Compile Include="GameManagementFiles\GameAudio.cs" />
@@ -93,7 +95,6 @@
     <Compile Include="Screens\Control.cs" />
     <Compile Include="Screens\GameplayScreen.cs" />
     <Compile Include="Screens\HelpScreen.cs" />
-    <Compile Include="Screens\Hud.cs" />
     <Compile Include="Screens\LocalScreen.cs" />
     <Compile Include="Screens\MultiPlayerScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,9 +125,6 @@
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
-    <Content Include="Maps\map0.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Maps\map1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
