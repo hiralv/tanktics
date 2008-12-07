@@ -77,6 +77,31 @@ namespace Tanktics
 
             currentSprite = (int)Anim.IdleDown;
             currentSpriteRect = sprites[currentSprite].Animations["idle down"].CurrentFrame;
+
+            #region Map values
+            switch (setTeam)
+            {
+                case 1:
+                    typeno = 30;
+                    AI.map[startingX, startingY] = 30;
+                    break;
+
+                case 2:
+                    typeno = 60;
+                    AI.map[startingX, startingY] = 60;
+                    break;
+
+                case 3:
+                    typeno = 90;
+                    AI.map[startingX, startingY] = 90;
+                    break;
+
+                case 4:
+                    typeno = 120;
+                    AI.map[startingX, startingY] = 120;
+                    break;
+            }
+            #endregion
         }
 
         public override List<moves> GetAllpossibleMoves()
@@ -209,6 +234,38 @@ namespace Tanktics
                 }
             }
             #endregion
+
+
+            #region Move team places
+            for (int i = 0; i < possiblemoves.Count; i++)
+            {
+                moves move = possiblemoves[i];
+
+                switch (team)
+                {
+                    case 1:
+                        if (AI.map[move.x,move.y] >= 10 && AI.map[move.x, move.y] <= 30)
+                            possiblemoves.RemoveAt(i);
+                        break;
+
+                    case 2:
+                        if (AI.map[move.x, move.y] >= 40 && AI.map[move.x, move.y] <= 60)
+                            possiblemoves.RemoveAt(i);
+                        break;
+
+                    case 3:
+                        if (AI.map[move.x, move.y] >= 70 && AI.map[move.x, move.y] <= 90)
+                            possiblemoves.RemoveAt(i);
+                        break;
+
+                    case 4:
+                        if (AI.map[move.x, move.y] >= 100 && AI.map[move.x,move.y] <= 120)
+                            possiblemoves.RemoveAt(i);
+                        break;
+                }
+            } 
+            #endregion
+
 
             return possiblemoves;
         }

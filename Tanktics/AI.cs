@@ -42,7 +42,7 @@ namespace Tanktics
 
         public moves FindBestPossibleMove(List<moves> possiblemoves)
         {
-            possiblemoves = RemovesOccupiedSpaces(possiblemoves);
+            
             Random ran = new Random();
             moves move = new moves();
             int ret = ran.Next(possiblemoves.Count);

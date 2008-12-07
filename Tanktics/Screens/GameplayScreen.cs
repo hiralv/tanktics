@@ -551,6 +551,7 @@ namespace Tanktics
                 moves move = ai1.FindBestPossibleMove(possiblemoves);
 
                 unitControl.moveUnit(move.x, move.y);
+
                 AI.map[unitControl.currentUnit.previousX, unitControl.currentUnit.previousY] = 0;
 
                 selected.X = unitControl.currentUnit.currentX;
