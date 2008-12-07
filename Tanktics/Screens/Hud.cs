@@ -74,8 +74,6 @@ namespace Tanktics
                     unitIconFrames[row, col] = new Rectangle(col * 32, row * 32, 32, 32);
                 }
             }
-
-            hudInfo = "Money: $50\n\nArtillery:\nTanks:\nAPCs:";
         }
 
         public void LoadContent(ContentManager content)
@@ -97,32 +95,37 @@ namespace Tanktics
 
         #region Update and Draw
 
-        public void Update(GameTime gameTime, UnitController units)
+        public void UpdateAnim(GameTime gameTime)
+        {
+            if (currentRotatingSprite != null)
+                currentRotatingSprite.Update(gameTime);
+        }
+
+        public void Update(TurnController turn, UnitController units)
         {
             //get rotating animation of current unit
             if (units.currentUnit != null)
-            {
                 currentRotatingSprite = units.currentUnit.sprites[(int)Unit.Anim.Rotate];
-                currentRotatingSprite.Update(gameTime);
-            }
 
-            //update hud info when team changes
-            if (units.currentPlayer != currentTeam)
-            {
-                currentTeam = units.currentPlayer;
-                numAPCs = units.getNumUnits(currentTeam, "apc");
-                numTanks = units.getNumUnits(currentTeam, "tank");
-                numArtillery = units.getNumUnits(currentTeam, "artillery");
+            //update points
+            hudInfo = "Points: " + turn.points + "\n\nArtillery:\nTanks:\nAPCs:";
 
-                graph1Height = (float)(units.getNumUnits(1, "apc") + units.getNumUnits(1, "tank") +
-                    units.getNumUnits(1, "artillery")) / (6 + 4 + 2);
-                graph2Height = (float)(units.getNumUnits(2, "apc") + units.getNumUnits(2, "tank") +
-                    units.getNumUnits(2, "artillery")) / (6 + 4 + 2);
-                graph3Height = (float)(units.getNumUnits(3, "apc") + units.getNumUnits(3, "tank") +
-                    units.getNumUnits(3, "artillery")) / (6 + 4 + 2);
-                graph4Height = (float)(units.getNumUnits(4, "apc") + units.getNumUnits(4, "tank") +
-                    units.getNumUnits(4, "artillery")) / (6 + 4 + 2);
-            }
+            currentTeam = units.currentPlayer;
+            //update number of each unit
+            numAPCs = units.getNumUnits(currentTeam, "apc");
+            numTanks = units.getNumUnits(currentTeam, "tank");
+            numArtillery = units.getNumUnits(currentTeam, "artillery");
+
+            //update graphs
+            graph1Height = (float)(units.getNumUnits(1, "apc") + units.getNumUnits(1, "tank") +
+                units.getNumUnits(1, "artillery")) / (turn.MAXAPC + turn.MAXTANK + turn.MAXARTIL);
+            graph2Height = (float)(units.getNumUnits(2, "apc") + units.getNumUnits(2, "tank") +
+                units.getNumUnits(2, "artillery")) / (turn.MAXAPC + turn.MAXTANK + turn.MAXARTIL);
+            graph3Height = (float)(units.getNumUnits(3, "apc") + units.getNumUnits(3, "tank") +
+                units.getNumUnits(3, "artillery")) / (turn.MAXAPC + turn.MAXTANK + turn.MAXARTIL);
+            graph4Height = (float)(units.getNumUnits(4, "apc") + units.getNumUnits(4, "tank") +
+                units.getNumUnits(4, "artillery")) / (turn.MAXAPC + turn.MAXTANK + turn.MAXARTIL);
+
         }
 
         public void Draw(SpriteBatch batch)
@@ -265,7 +268,6 @@ namespace Tanktics
             batch.Draw(blank, graphPosition, new Color(240, 240, 240));
 
             //draw graph 2
-            graph2Height = 0.5f;
             graphPosition.X += (int)(0.05f * centerRect.Width);
             graphPosition.Y = (int)(textPosition.Y + textScale * textSize.Y + (1f - graph2Height) * totalGraphHeight);
             graphPosition.Height = (int)(graph2Height * totalGraphHeight);
@@ -273,7 +275,6 @@ namespace Tanktics
             batch.Draw(blank, graphPosition, new Color(120, 170, 110));
 
             //draw graph 3
-            graph3Height = 0.7f;
             graphPosition.X += (int)(0.05f * centerRect.Width);
             graphPosition.Y = (int)(textPosition.Y + textScale * textSize.Y + (1f - graph3Height) * totalGraphHeight);
             graphPosition.Height = (int)(graph3Height * totalGraphHeight);
@@ -281,7 +282,6 @@ namespace Tanktics
             batch.Draw(blank, graphPosition, new Color(180, 180, 180));
 
             //draw graph 4
-            graph4Height = 0.4f;
             graphPosition.X += (int)(0.05f * centerRect.Width);
             graphPosition.Y = (int)(textPosition.Y + textScale * textSize.Y + (1f - graph4Height) * totalGraphHeight);
             graphPosition.Height = (int)(graph4Height * totalGraphHeight);
