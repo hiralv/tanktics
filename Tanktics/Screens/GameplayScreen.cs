@@ -89,27 +89,20 @@ namespace Tanktics
                 1,
                 tileEngine.TileWidth, tileEngine.TileHeight,
                 tileEngine.MapWidth, tileEngine.MapHeight);
-            camera.Viewport = new Rectangle(0, 0, 800, 430);
             camera.Speed = 240;
-            //only allow zooming out to total width of board
-            camera.MinScale = (float)camera.Viewport.Width / tileEngine.WidthInPixels;
 
             //create minimap window
             miniMap = new Camera2D(
                 1,
                 tileEngine.TileWidth, tileEngine.TileHeight,
                 tileEngine.MapWidth, tileEngine.MapHeight);
-            miniMap.Viewport = new Rectangle(650, 450, 150, 150);
-            //scale to show entire map in camera
-            miniMap.Scale = (float)miniMap.Viewport.Width / tileEngine.WidthInPixels;
-
-            hud = new HUD(0, 430, 800, 170);
 
             unitControl = new UnitController(tileEngine, 4);
             TC1 = new TurnController(unitControl, 0, 0, 3, 3);
-            TC2 = new TurnController(unitControl, 21, 0, 25, 3);
-            TC3 = new TurnController(unitControl, 21, 21, 25, 25);
-            TC4 = new TurnController(unitControl, 0, 21, 3, 25);
+            TC2 = new TurnController(unitControl, tileEngine.MapWidth - 4, 0, tileEngine.MapWidth - 1, 3);
+            TC3 = new TurnController(unitControl, tileEngine.MapWidth - 4, tileEngine.MapHeight - 4,
+                tileEngine.MapWidth - 1, tileEngine.MapHeight - 1);
+            TC4 = new TurnController(unitControl, 0, tileEngine.MapHeight - 4, 3, tileEngine.MapHeight - 1);
             TC1.setNext(TC2);
             TC2.setNext(TC3);
             TC3.setNext(TC4);
@@ -119,8 +112,6 @@ namespace Tanktics
             TCs[1] = TC2;
             TCs[2] = TC3;
             TCs[3] = TC4;
-
-            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
 
             #region AI Variables
 
@@ -164,6 +155,30 @@ namespace Tanktics
             if (content == null)
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
+            Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
+            //only allow zooming out to total width of board
+            camera.MinScale = (float)camera.Viewport.Width / tileEngine.WidthInPixels;
+            
+            //set camera and hud viewports as percentages of window
+            //viewport isnt available in constructor, so do it here
+            camera.Viewport = new Rectangle(
+                viewport.X, viewport.Y,
+                viewport.Width, (int)(430f / 600f * viewport.Height));
+            miniMap.Viewport = new Rectangle(
+                viewport.X + (int)(650f / 800f * viewport.Width),
+                viewport.Y + (int)(450f / 600f * viewport.Height),
+                (int)(150f / 800f * viewport.Width),
+                (int)(150f / 600f * viewport.Height));
+            //scale to show entire map in camera
+            miniMap.Scale = (float)miniMap.Viewport.Width / tileEngine.WidthInPixels;
+
+            hud = new HUD(
+                viewport.X,
+                viewport.Y + (int)(430f / 800f * viewport.Width),
+                viewport.Width,
+                (int)(170f / 600f * viewport.Height));
+            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
+            
             tileEngine.Texture = content.Load<Texture2D>("fullTileSet");
             tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
             tileEngine.BlankTexture = content.Load<Texture2D>("blank");
@@ -282,29 +297,6 @@ namespace Tanktics
             tank4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Brown");
             tank4[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating Brown");
 
-            
-            //addUnits(2, 0, tileEngine.MapWidth - 4, artillery2);
-            //addUnits(3, tileEngine.MapHeight - 4, tileEngine.MapWidth - 4, artillery3);
-            //addUnits(4, tileEngine.MapHeight - 4, 0, artillery4);
-
-            //unitControl.addUnit("artillery", 1, 2, 0, artillery1);
-            //unitControl.addUnit("artillery", 1, 3, 0, artillery1);
-            //unitControl.addUnit("tank", 1, 1, 1, tank1);
-            //unitControl.addUnit("tank", 1, 2, 1, tank1);
-            //unitControl.addUnit("tank", 1, 3, 1, tank1);
-            //unitControl.addUnit("tank", 1, 1, 2, tank1);
-            //unitControl.addUnit("apc", 1, 2, 2, apc1);
-            //unitControl.addUnit("apc", 1, 3, 2, apc1);
-            //unitControl.addUnit("apc", 1, 0, 3, apc1);
-            //unitControl.addUnit("apc", 1, 1, 3, apc1);
-            //unitControl.addUnit("apc", 1, 2, 3, apc1);
-            //unitControl.addUnit("apc", 1, 3, 3, apc1);
-            //unitControl.nextUnit();
-            //selected.X = unitControl.currentUnit.currentX;
-            //selected.Y = unitControl.currentUnit.currentY;
-
-            //selected.X = unitControl.currentUnit.currentX;
-            //selected.Y = unitControl.currentUnit.currentY;
 
             // once the load has finished, we use ResetElapsedTime to tell the game's
             // timing mechanism that we have just finished a very long frame, and that
@@ -538,7 +530,6 @@ namespace Tanktics
                     TCs[unitControl.currentPlayer-1].nextPhase();
                     TCs[unitControl.currentPlayer-1].getNext().nextPhase();
                     unitControl.finalize();
-                    unitControl.nextUnit();
                     selected.X = unitControl.currentUnit.currentX;
                     selected.Y = unitControl.currentUnit.currentY;
                     //change player number for cameras

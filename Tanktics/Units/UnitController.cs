@@ -739,7 +739,8 @@ namespace Tanktics
                 currentUnit = team3[0];
             else
                 currentUnit = team4[0];
-            currentUnitNum = 0;
+            currentUnitNum = -1;
+            nextUnit();
         }
 
 
