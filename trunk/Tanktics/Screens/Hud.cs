@@ -104,11 +104,11 @@ namespace Tanktics
         public void Update(TurnController turn, UnitController units)
         {
             //get rotating animation of current unit
-            if (units.currentUnit != null)
+            if (units.currentUnit != null && turn.phase != 0)
                 currentRotatingSprite = units.currentUnit.sprites[(int)Unit.Anim.Rotate];
 
             //update points
-            hudInfo = "Points: " + turn.points + "\n\nArtillery:\nTanks:\nAPCs:";
+            hudInfo = "Points: " + turn.points + "\n\nAPCs:\nTanks:\nArtillery:";
 
             currentTeam = units.currentPlayer;
             //update number of each unit
@@ -184,15 +184,15 @@ namespace Tanktics
             Color fade;
             Color dark = new Color(96, 96, 96);
             Rectangle iconPosition = new Rectangle(
-                (int)(textPosition.X + textScale * textSize.X),
+                (int)(textPosition.X + 0.5f * textScale * textSize.X),
                 (int)(textPosition.Y + 0.4f * textScale * textSize.Y),
                 (int)(0.2f * textScale * textSize.Y),
                 (int)(0.2f * textScale * textSize.Y));
 
-            //draw artillery icons
-            for (int i = 1; i <= 2; i++)
+            //draw apc icons
+            for (int i = 1; i <= 6; i++)
             {
-                if (i <= numArtillery)
+                if (i <= numAPCs)
                     fade = Color.White;
                 else
                     fade = dark;
@@ -200,7 +200,7 @@ namespace Tanktics
                 batch.Draw(
                     unitIcons,
                     iconPosition,
-                    unitIconFrames[currentTeam - 1, 2],
+                    unitIconFrames[currentTeam - 1, 0],
                     fade);
                 iconPosition.X += iconPosition.Width;
             }
@@ -224,13 +224,13 @@ namespace Tanktics
                 iconPosition.X += iconPosition.Width;
             }
 
-            //draw apc icons
-            iconPosition.X = (int)(textPosition.X + 0.5f * textScale * textSize.X);
+            //draw artillery icons
+            iconPosition.X = (int)(textPosition.X + textScale * textSize.X);
             iconPosition.Y += (int)(0.2f * textScale * textSize.Y);
 
-            for (int i = 1; i <= 6; i++)
+            for (int i = 1; i <= 2; i++)
             {
-                if (i <= numAPCs)
+                if (i <= numArtillery)
                     fade = Color.White;
                 else
                     fade = dark;
@@ -238,7 +238,7 @@ namespace Tanktics
                 batch.Draw(
                     unitIcons,
                     iconPosition,
-                    unitIconFrames[currentTeam - 1, 0],
+                    unitIconFrames[currentTeam - 1, 2],
                     fade);
                 iconPosition.X += iconPosition.Width;
             }
