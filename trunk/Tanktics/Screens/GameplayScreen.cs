@@ -112,7 +112,7 @@ namespace Tanktics
             TCs[2] = TC3;
             TCs[3] = TC4;
 
-            ai1 = new AI();
+            ai1 = new AI(unitControl);
         }
 
         /// <summary>
@@ -599,47 +599,63 @@ namespace Tanktics
             if (input.IsNewKeyPress(Keys.C))
             //if (unitControl.currentUnit.team == 1)
             {
-                int previousx, previousy, result;
-                previousx = unitControl.currentUnit.currentX;
-                previousy = unitControl.currentUnit.currentY;
+                Point point = ai1.NextMove();
+                selected.X = point.X;
+                selected.Y = point.Y;
 
-                List<moves> possiblemoves = unitControl.currentUnit.GetAllpossibleMoves();
-                //int i = ran.Next(possiblemoves.Count);
-                moves move = ai1.FindBestPossibleMove(possiblemoves);
+                #region Old AI
+                //Unit mostouter = unitControl.currentUnit;
+                //Unit firstunit = unitControl.currentUnit;
+                //unitControl.nextUnit();
+                //Unit nextunit = unitControl.currentUnit;
 
-                result = unitControl.moveUnit(move.x, move.y);
+                //while (nextunit != firstunit)
+                //{
+                //    if (AI.values[nextunit.currentX, nextunit.currentY] > AI.values[mostouter.currentX, mostouter.currentY])
+                //        mostouter = nextunit;
 
-                if (result == 3)
-                {
-                    while (result != 1)
-                    {
-                        possiblemoves.Remove(move);
-                        if (possiblemoves.Count > 0)
-                        {
-                            move = ai1.FindBestPossibleMove(possiblemoves);
-                            result = unitControl.moveUnit(move.x, move.y);
-                        }
-                        else
-                            break; 
-                    }
-                }
+                //    unitControl.nextUnit();
+                //    nextunit = unitControl.currentUnit;
+                //}
 
-                if (result == 1)
-                {
-                    //AI update map
-                    AI.map[previousx, previousy] = 0;
-                    AI.map[unitControl.currentUnit.currentX, unitControl.currentUnit.currentY] = unitControl.currentUnit.typeno;
-                }
+                //while (unitControl.currentUnit != mostouter)
+                //    unitControl.nextUnit();
 
+                //int previousx, previousy, result;
+                //previousx = unitControl.currentUnit.currentX;
+                //previousy = unitControl.currentUnit.currentY;
+
+                //List<moves> possiblemoves = unitControl.currentUnit.GetAllpossibleMoves();
+                //moves move = ai1.FindBestPossibleMove(possiblemoves);
+
+                //result = unitControl.moveUnit(move.x, move.y);
+
+                //if (result == 3)
+                //{
+                //    while (result != 1)
+                //    {
+                //        possiblemoves.Remove(move);
+                //        if (possiblemoves.Count > 0)
+                //        {
+                //            move = ai1.FindBestPossibleMove(possiblemoves);
+                //            result = unitControl.moveUnit(move.x, move.y);
+                //        }
+                //        else
+                //            break;
+                //    }
+                //}
+
+                //if (result == 1)
+                //{
+                //    //AI update map
+                //    AI.map[previousx, previousy] = 0;
+                //    AI.map[unitControl.currentUnit.currentX, unitControl.currentUnit.currentY] = unitControl.currentUnit.typeno;
+                //}
+
+                //selected.X = unitControl.currentUnit.currentX;
+                //selected.Y = unitControl.currentUnit.currentY;
                 
-
-                
-
-                selected.X = unitControl.currentUnit.currentX;
-                selected.Y = unitControl.currentUnit.currentY;
-
-                if (unitControl.currentUnit == previousunit)
-                    unitControl.nextUnit();
+                #endregion
             }
         }
 

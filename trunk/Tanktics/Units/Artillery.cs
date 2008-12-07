@@ -83,23 +83,19 @@ namespace Tanktics
             switch (setTeam)
             {
                 case 1:
-                    typeno = 10;
-                    AI.map[startingX, startingY] = 10;
+                    AI.map[startingX, startingY] = typeno = 30;
                     break;
 
                 case 2:
-                    typeno = 40;
-                    AI.map[startingX, startingY] = 40;
+                    AI.map[startingX, startingY] = typeno = 60;
                     break;
 
                 case 3:
-                    typeno = 70;
-                    AI.map[startingX, startingY] = 70;
+                    AI.map[startingX, startingY] = typeno = 90;
                     break;
 
                 case 4:
-                    typeno = 100;
-                    AI.map[startingX, startingY] = 100;
+                    AI.map[startingX, startingY] = typeno = 120;
                     break;
             }
             #endregion
