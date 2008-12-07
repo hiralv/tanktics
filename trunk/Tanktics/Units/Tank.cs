@@ -78,5 +78,139 @@ namespace Tanktics
             currentSprite = (int)Anim.IdleDown;
             currentSpriteRect = sprites[currentSprite].Animations["idle down"].CurrentFrame;
         }
+
+        public override List<moves> GetAllpossibleMoves()
+        {
+            List<moves> possiblemoves = new List<moves>();
+
+
+            #region horizontal and vertical
+            for (int i = 1; i <= 3; i++)
+            {
+                if (currentX + i < 25)
+                {
+                    possiblemoves.Add(new moves(currentX + i, currentY));
+                }
+
+                if (currentY + i < 25)
+                {
+                    possiblemoves.Add(new moves(currentX, currentY + i));
+                }
+
+                if (currentX - i > -1)
+                {
+                    possiblemoves.Add(new moves(currentX - i, currentY));
+                }
+
+                if (currentY - i > -1)
+                {
+                    possiblemoves.Add(new moves(currentX, currentY - i));
+                }
+            }
+            #endregion
+
+            #region first square
+            if (currentX + 1 < 25)
+            {
+                if (currentY + 1 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX + 1, currentY + 1));
+                }
+
+                if (currentY - 1 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX + 1, currentY - 1));
+                }
+
+                if (currentY + 2 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX + 1, currentY + 2));
+                }
+
+                if (currentY - 2 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX + 1, currentY - 2));
+                }
+            }
+
+
+            if (currentX - 1 > -1)
+            {
+                if (currentY - 1 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX - 1, currentY - 1));
+                }
+
+                if (currentY + 1 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX - 1, currentY + 1));
+                }
+
+                if (currentY + 2 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX - 1, currentY + 2));
+                }
+
+                if (currentY - 2 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX - 1, currentY - 2));
+                }
+            }
+
+
+            #endregion
+
+            #region Second square
+            if (currentX + 2 < 25)
+            {
+                if (currentY + 1 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX + 2, currentY + 1));
+                }
+
+                if (currentY + 2 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX + 2, currentY + 2));
+                }
+
+                if (currentY - 1 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX + 2, currentY - 1));
+                }
+
+                if (currentY - 2 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX + 2, currentY - 2));
+                }
+            }
+            #endregion
+
+            #region Third square
+            if (currentX - 2 > -1)
+            {
+                if (currentY + 1 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX - 2, currentY + 1));
+                }
+
+                if (currentY + 2 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX - 2, currentY + 2));
+                }
+
+                if (currentY - 1 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX - 2, currentY - 1));
+                }
+
+                if (currentY - 2 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX - 2, currentY - 2));
+                }
+            }
+            #endregion
+
+            return possiblemoves;
+        }
     }
 }

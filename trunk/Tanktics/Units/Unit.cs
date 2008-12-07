@@ -166,5 +166,10 @@ namespace Tanktics
 
             sprites[currentSprite].Draw(batch, spriteDest, fade);
         }
+
+        public virtual List<moves> GetAllpossibleMoves()
+        {
+            return null;
+        }
     }
 }
