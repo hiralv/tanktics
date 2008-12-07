@@ -97,11 +97,11 @@ namespace Tanktics
                 tileEngine.MapWidth, tileEngine.MapHeight);
 
             unitControl = new UnitController(tileEngine, 4);
-            TC1 = new TurnController(unitControl, 0, 0, 3, 3);
-            TC2 = new TurnController(unitControl, tileEngine.MapWidth - 4, 0, tileEngine.MapWidth - 1, 3);
-            TC3 = new TurnController(unitControl, tileEngine.MapWidth - 4, tileEngine.MapHeight - 4,
+            TC1 = new TurnController(unitControl, 1, 0, 0, 3, 3);
+            TC2 = new TurnController(unitControl, 2, tileEngine.MapWidth - 4, 0, tileEngine.MapWidth - 1, 3);
+            TC3 = new TurnController(unitControl, 3, tileEngine.MapWidth - 4, tileEngine.MapHeight - 4,
                 tileEngine.MapWidth - 1, tileEngine.MapHeight - 1);
-            TC4 = new TurnController(unitControl, 0, tileEngine.MapHeight - 4, 3, tileEngine.MapHeight - 1);
+            TC4 = new TurnController(unitControl, 4, 0, tileEngine.MapHeight - 4, 3, tileEngine.MapHeight - 1);
             TC1.setNext(TC2);
             TC2.setNext(TC3);
             TC3.setNext(TC4);
@@ -264,7 +264,6 @@ namespace Tanktics
             tank4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Brown");
             tank4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Brown");
             tank4[(int)Unit.Anim.Rotate] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating Brown");
-
 
             // once the load has finished, we use ResetElapsedTime to tell the game's
             // timing mechanism that we have just finished a very long frame, and that
