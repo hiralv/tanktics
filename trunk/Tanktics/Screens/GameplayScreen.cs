@@ -554,12 +554,13 @@ namespace Tanktics
             if (input.IsNewKeyPress(Keys.C))
             //if (unitControl.currentUnit.team == 1)
             {
+                
                 List<moves> possiblemoves = unitControl.currentUnit.GetAllpossibleMoves();
                 //int i = ran.Next(possiblemoves.Count);
                 moves move = ai1.FindBestPossibleMove(possiblemoves);
 
                 unitControl.moveUnit(move.x, move.y);
-                ai1.map[unitControl.currentUnit.previousX, unitControl.currentUnit.previousY] = 0;
+                AI.map[unitControl.currentUnit.previousX, unitControl.currentUnit.previousY] = 0;
 
                 selected.X = unitControl.currentUnit.currentX;
                 selected.Y = unitControl.currentUnit.currentY;

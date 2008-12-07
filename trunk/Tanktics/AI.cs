@@ -24,7 +24,7 @@ namespace Tanktics
    
     class AI
     {
-        public int[,] map;
+        static public int[,] map;
         public int[,] values;
         
         public AI()

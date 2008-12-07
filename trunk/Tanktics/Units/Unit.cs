@@ -16,6 +16,7 @@ namespace Tanktics
         public int team;
         public int cost;
         public String type;
+        public int typeno;
         public int unitNumber;
         //map position
         public int currentX;

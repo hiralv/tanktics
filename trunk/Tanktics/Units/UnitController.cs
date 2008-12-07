@@ -495,14 +495,78 @@ namespace Tanktics
             if (setType.Equals("artillery"))
             {
                 newUnit = new Artillery(setTeam, startingX, startingY, textures, totalUnitsMade);
+
+                #region Map values
+                switch (setTeam)
+                {
+                    case 1:
+                        AI.map[startingX, startingY] = 10;
+                        break;
+
+                    case 2:
+                        AI.map[startingX, startingY] = 40;
+                        break;
+
+                    case 3:
+                        AI.map[startingX, startingY] = 70;
+                        break;
+
+                    case 4:
+                        AI.map[startingX, startingY] = 100;
+                        break;
+                } 
+                #endregion
             }
             else if (setType.Equals("apc"))
             {
                 newUnit = new APC(setTeam, startingX, startingY, textures, totalUnitsMade);
+
+                #region Map Values
+                switch (setTeam)
+                {
+                    case 1:
+                        AI.map[startingX, startingY] = 20;
+                        break;
+
+                    case 2:
+                        AI.map[startingX, startingY] = 50;
+                        break;
+
+                    case 3:
+                        AI.map[startingX, startingY] = 80;
+                        break;
+
+                    case 4:
+                        AI.map[startingX, startingY] = 110;
+                        break;
+                } 
+                #endregion
             }
             else
             {
                 newUnit = new Tank(setTeam, startingX, startingY, textures, totalUnitsMade);
+
+                #region Map values
+                switch (setTeam)
+                {
+                    case 1:
+                        AI.map[startingX, startingY] = 30;
+                        break;
+
+                    case 2:
+                        AI.map[startingX, startingY] = 60;
+                        break;
+
+                    case 3:
+                        AI.map[startingX, startingY] = 90;
+                        break;
+
+                    case 4:
+                        AI.map[startingX, startingY] = 120;
+                        break;
+                } 
+                #endregion
+
             }
             totalUnitsMade++;
 
@@ -3189,6 +3253,10 @@ namespace Tanktics
                 currentUnit.sethasMoved(true);
                 // Step 3: Call next unit
                 nextUnit();
+
+                //AI update map
+                AI.map[currentUnit.previousX, currentUnit.previousY] = 0;
+                AI.map[currentUnit.currentX, currentUnit.currentY] = currentUnit.typeno;
             }
 
             return results;
