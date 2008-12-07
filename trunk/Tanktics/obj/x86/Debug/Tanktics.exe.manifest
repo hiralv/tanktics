@@ -60,7 +60,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>mLeN20XENBPsP0AYjeKGe5KR6wc=</dsig:DigestValue>
+        <dsig:DigestValue>eH/346oKYSDJSWjzewGzq4flu+A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -70,7 +70,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>7TM1R0ZSAD+65DhEe30ZxsP9BSg=</dsig:DigestValue>
+      <dsig:DigestValue>hi4WZoiIpFCud4O3BNh2SzDAK+w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\audio\Sound Bank.xsb" size="452">
@@ -79,7 +79,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>2HM1m3s5whmjnGeKRmur5yGZ8Lo=</dsig:DigestValue>
+      <dsig:DigestValue>qZIHk2YSIKGNa2d1gZ2L3VfFAac=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\audio\Wave Bank.xwb" size="13170716">
@@ -88,7 +88,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Md9n5ON7ermF8Sth6/vhPv+FOBY=</dsig:DigestValue>
+      <dsig:DigestValue>9xunbgnp8RU52JJWX+0yPoylBxM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\blank.xnb" size="149">
