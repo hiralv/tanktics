@@ -115,6 +115,8 @@ namespace Tanktics
             TCs[1] = TC2;
             TCs[2] = TC3;
             TCs[3] = TC4;
+
+            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
         }
 
         /// <summary>
@@ -312,7 +314,7 @@ namespace Tanktics
             elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             unitControl.update(gameTime);
-            hud.Update(gameTime, unitControl);
+            hud.UpdateAnim(gameTime);
         }
 
 
@@ -365,6 +367,7 @@ namespace Tanktics
                     unitControl.nextUnit();
                     selected.X = unitControl.currentUnit.currentX;
                     selected.Y = unitControl.currentUnit.currentY;
+                    hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
                 }
             }
 
@@ -444,6 +447,21 @@ namespace Tanktics
                         {
                             TCs[unitControl.currentPlayer - 1].phase = 5;
                             unitControl.currentPlayer++;
+                            if (unitControl.currentPlayer == 2)
+                            {
+                                selected.X = tileEngine.MapWidth - 4;
+                                selected.Y = 0;
+                            }
+                            else if (unitControl.currentPlayer == 3)
+                            {
+                                selected.X = tileEngine.MapWidth - 4;
+                                selected.Y = tileEngine.MapHeight - 4;
+                            }
+                            else if (unitControl.currentPlayer == 4)
+                            {
+                                selected.X = 0;
+                                selected.Y = tileEngine.MapHeight - 4;
+                            }
                             if (unitControl.currentPlayer == 5)
                             {
                                 unitControl.currentPlayer = 1;
@@ -454,10 +472,13 @@ namespace Tanktics
                             }
                             camera.PlayerNum = unitControl.currentPlayer;
                             miniMap.PlayerNum = unitControl.currentPlayer;
+                            //move camera to next team's current unit
+                            camera.JumpTo(selected.X, selected.Y);
                         }
                     }
                 }
 
+                hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
             }
 
             //Unit Placement Phase: No Function
@@ -481,16 +502,16 @@ namespace Tanktics
                     TCs[unitControl.currentPlayer-1].getNext().nextPhase();
                     unitControl.finalize();
                     unitControl.nextUnit();
-                    if (unitControl.currentUnit != null)
-                    {
-                        selected.X = unitControl.currentUnit.currentX;
-                        selected.Y = unitControl.currentUnit.currentY;
-                    }
+                    selected.X = unitControl.currentUnit.currentX;
+                    selected.Y = unitControl.currentUnit.currentY;
                     //change player number for cameras
                     camera.PlayerNum = unitControl.currentPlayer;
                     miniMap.PlayerNum = unitControl.currentPlayer;
+                    //move camera to next team's current unit
+                    camera.JumpTo(selected.X, selected.Y);
                 }
 
+                hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
             }
 
         }

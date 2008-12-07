@@ -113,6 +113,15 @@ namespace Tanktics
             ClampToViewport();
         }
 
+        public void JumpTo(int x, int y)
+        {
+            //attempt to center camera around (x, y) tile
+            Position.X = x * scale * tileWidth - Viewport.Width / 2;
+            Position.Y = y * scale * tileHeight - Viewport.Height / 2;
+
+            ClampToViewport();
+        }
+
         #endregion
     }
 }

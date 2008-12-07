@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Tanktics
 {
-    class TurnController
+    public class TurnController
     {
         UnitController unitController;
 
