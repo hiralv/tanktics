@@ -124,14 +124,14 @@ namespace Tanktics
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
-            //only allow zooming out to total width of board
-            camera.MinScale = (float)camera.Viewport.Width / tileEngine.WidthInPixels;
             
             //set camera and hud viewports as percentages of window
             //viewport isnt available in constructor, so do it here
             camera.Viewport = new Rectangle(
                 viewport.X, viewport.Y,
                 viewport.Width, (int)(430f / 600f * viewport.Height));
+            //only allow zooming out to total width of board
+            camera.MinScale = (float)camera.Viewport.Width / tileEngine.WidthInPixels;
             miniMap.Viewport = new Rectangle(
                 viewport.X + (int)(650f / 800f * viewport.Width),
                 viewport.Y + (int)(450f / 600f * viewport.Height),
