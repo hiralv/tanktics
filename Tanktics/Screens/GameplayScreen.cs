@@ -68,7 +68,6 @@ namespace Tanktics
         Texture2D[] tank4 = new Texture2D[7];
 
         AI ai1;
-        Random ran;
         Unit previousunit;
         #endregion
 
@@ -114,7 +113,6 @@ namespace Tanktics
             TCs[3] = TC4;
 
             ai1 = new AI();
-            ran = new Random();
         }
 
         /// <summary>
@@ -515,14 +513,41 @@ namespace Tanktics
             if (input.IsNewKeyPress(Keys.C))
             //if (unitControl.currentUnit.team == 1)
             {
-                
+                int previousx, previousy, result;
+                previousx = unitControl.currentUnit.currentX;
+                previousy = unitControl.currentUnit.currentY;
+
                 List<moves> possiblemoves = unitControl.currentUnit.GetAllpossibleMoves();
                 //int i = ran.Next(possiblemoves.Count);
                 moves move = ai1.FindBestPossibleMove(possiblemoves);
 
-                unitControl.moveUnit(move.x, move.y);
+                result = unitControl.moveUnit(move.x, move.y);
 
-                AI.map[unitControl.currentUnit.previousX, unitControl.currentUnit.previousY] = 0;
+                if (result == 3)
+                {
+                    while (result != 1)
+                    {
+                        possiblemoves.Remove(move);
+                        if (possiblemoves.Count > 0)
+                        {
+                            move = ai1.FindBestPossibleMove(possiblemoves);
+                            result = unitControl.moveUnit(move.x, move.y);
+                        }
+                        else
+                            break; 
+                    }
+                }
+
+                if (result == 1)
+                {
+                    //AI update map
+                    AI.map[previousx, previousy] = 0;
+                    AI.map[unitControl.currentUnit.currentX, unitControl.currentUnit.currentY] = unitControl.currentUnit.typeno;
+                }
+
+                
+
+                
 
                 selected.X = unitControl.currentUnit.currentX;
                 selected.Y = unitControl.currentUnit.currentY;

@@ -3189,14 +3189,9 @@ namespace Tanktics
                 // Step 2: Set unit to has moved
                 currentUnit.sethasMoved(true);
 
-                //AI update map
-                AI.map[currentUnit.previousX, currentUnit.previousY] = 0;
-                AI.map[currentUnit.currentX, currentUnit.currentY] = currentUnit.typeno;
-
                 // Step 3: Call next unit
                 nextUnit();
 
-                
             }
 
             return results;
