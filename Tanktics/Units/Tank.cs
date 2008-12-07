@@ -82,23 +82,19 @@ namespace Tanktics
             switch (setTeam)
             {
                 case 1:
-                    typeno = 30;
-                    AI.map[startingX, startingY] = 30;
+                    AI.map[startingX, startingY] = typeno = 20;
                     break;
 
                 case 2:
-                    typeno = 60;
-                    AI.map[startingX, startingY] = 60;
+                    AI.map[startingX, startingY] = typeno = 50;
                     break;
 
                 case 3:
-                    typeno = 90;
-                    AI.map[startingX, startingY] = 90;
+                    AI.map[startingX, startingY] = typeno = 80;
                     break;
 
                 case 4:
-                    typeno = 120;
-                    AI.map[startingX, startingY] = 120;
+                    AI.map[startingX, startingY] = typeno = 110;
                     break;
             }
             #endregion
@@ -193,24 +189,12 @@ namespace Tanktics
                     possiblemoves.Add(new moves(currentX + 2, currentY + 1));
                 }
 
-                if (currentY + 2 < 25)
-                {
-                    possiblemoves.Add(new moves(currentX + 2, currentY + 2));
-                }
-
                 if (currentY - 1 > -1)
                 {
                     possiblemoves.Add(new moves(currentX + 2, currentY - 1));
                 }
-
-                if (currentY - 2 > -1)
-                {
-                    possiblemoves.Add(new moves(currentX + 2, currentY - 2));
-                }
             }
-            #endregion
 
-            #region Third square
             if (currentX - 2 > -1)
             {
                 if (currentY + 1 < 25)
@@ -218,19 +202,9 @@ namespace Tanktics
                     possiblemoves.Add(new moves(currentX - 2, currentY + 1));
                 }
 
-                if (currentY + 2 < 25)
-                {
-                    possiblemoves.Add(new moves(currentX - 2, currentY + 2));
-                }
-
                 if (currentY - 1 > -1)
                 {
                     possiblemoves.Add(new moves(currentX - 2, currentY - 1));
-                }
-
-                if (currentY - 2 > -1)
-                {
-                    possiblemoves.Add(new moves(currentX - 2, currentY - 2));
                 }
             }
             #endregion
