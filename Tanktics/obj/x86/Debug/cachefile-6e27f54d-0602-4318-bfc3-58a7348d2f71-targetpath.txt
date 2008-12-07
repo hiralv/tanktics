@@ -24,20 +24,7 @@ Content\Main Menu\Brightness copy.xnb
 Content\Main Menu\master copy.xnb
 Content\Main Menu\how copy.xnb
 Content\Main Menu\view copy.xnb
-Content\fulltileset_alpha.xnb
-Content\HUD\hud2 copy.xnb
-Content\HUD\done copy.xnb
-Content\HUD\finalize copy.xnb
-Content\HUD\next copy.xnb
-Content\HUD\previous copy.xnb
-Content\HUD\artillary symbol copy.xnb
-Content\HUD\humvee symbol copy.xnb
-Content\HUD\tanksymbol copy.xnb
 Content\selected border.xnb
-Content\HUD\mud texture copy.xnb
-Content\HUD\hud5 copy.xnb
-Content\HUD\hud3 copy.xnb
-Content\HUD\graph.xnb
 Content\Unit Animations\APC\APC Driving Down\APC Driving Down Brown.xnb
 Content\Unit Animations\APC\APC Driving Down\APC Driving Down Green.xnb
 Content\Unit Animations\APC\APC Driving Down\APC Driving Down Grey.xnb
@@ -123,6 +110,12 @@ Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Green.xnb
 Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.xnb
 Content\Unit Animations\Tank\Tank Rotating\Tank Rotating White.xnb
 Content\fullTileSet.xnb
+Content\HUD\hud background.xnb
+Content\HUD\hud border brown.xnb
+Content\HUD\hud border green.xnb
+Content\HUD\hud border grey.xnb
+Content\HUD\hud border white.xnb
+Content\HUD\unit icons.xnb
 Content\audio\GameSounds.xgs
 Content\audio\Wave Bank.xwb
 Content\audio\Sound Bank.xsb
