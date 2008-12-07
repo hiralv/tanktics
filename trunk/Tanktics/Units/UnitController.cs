@@ -239,6 +239,7 @@ namespace Tanktics
         //Robby Florence
         public Boolean isVisible(int team, int x, int y)
         {
+            return true;
             if (x < 0 || x >= xSize || y < 0 || y >= ySize)
                 return false;
 
@@ -3148,6 +3149,13 @@ namespace Tanktics
             }
 
             return 9;
+        }
+
+        //Returns the Unit currently at the given position
+        //Acey Boyce
+        public Unit unitAt(int X, int Y)
+        {
+            return currentBoard[Y,X];
         }
 
         //Call for all unit Movement
