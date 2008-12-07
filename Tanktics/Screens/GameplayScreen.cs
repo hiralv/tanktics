@@ -111,7 +111,6 @@ namespace Tanktics
             TCs[1] = TC2;
             TCs[2] = TC3;
             TCs[3] = TC4;
-            TCs[0].points = 50;
 
             ai1 = new AI();
         }
