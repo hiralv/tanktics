@@ -239,7 +239,6 @@ namespace Tanktics
         //Robby Florence
         public Boolean isVisible(int team, int x, int y)
         {
-            return true;
             if (x < 0 || x >= xSize || y < 0 || y >= ySize)
                 return false;
 
