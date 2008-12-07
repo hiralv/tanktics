@@ -270,3 +270,135 @@ C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud bor
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud border grey.xnb
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud border white.xnb
 C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\unit icons.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Maps\map1.txt
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\menufont.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\gamefont.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\blank.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry2.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry3.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Infintry4.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\selected border.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating White.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\fullTileSet.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\hud background.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\hud border brown.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\hud border green.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\hud border grey.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\hud border white.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\HUD\unit icons.xnb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\audio\GameSounds.xgs
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Wave Bank.xwb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Content\audio\Sound Bank.xsb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe.manifest
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Tanktics.application
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Tanktics.exe
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\bin\x86\Debug\Tanktics.pdb
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe.manifest
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\Tanktics.application
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb

@@ -14,6 +14,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 #endregion
 
 namespace Tanktics
@@ -66,6 +67,9 @@ namespace Tanktics
         Texture2D[] tank3 = new Texture2D[7];
         Texture2D[] tank4 = new Texture2D[7];
 
+        AI ai1;
+        Random ran;
+        Unit previousunit;
         #endregion
 
         #region Initialization
@@ -117,6 +121,39 @@ namespace Tanktics
             TCs[3] = TC4;
 
             hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
+
+            #region AI Variables
+
+            ai1 = new AI();
+            ran = new Random();
+            ai1.values = new int[25, 25] {  
+                            {1, 2,	3,	4,	5,	10,	15,	20,	25,	30,	35,	40,	45,	0,	0,	0,	0,	0,	0,	0,	0,	1,	1,	1,	1},
+                            {2,	2,	3,	4,	5,	11,	16,	21,	26,	31,	36,	41,	46,	0,	0,	0,	0,	0,	0,	0,	0,	1,	1,	1,	1},
+                            {3,	3,	3,	4,	5,	10,	15,	20,	25,	30,	-4,	-4,	50,	-4,	-4,	0,	0,	0,	0,	0,	0,	1,	1,	1,	1},
+                            {4,	4,	4,	4,	5,	10,	15,	20,	25,	30,	-4,	50,	55,	50,	-4,	0,	0,	0,	0,	0,	0,	1,	1,	1,	1},
+                            {5,	5,	5,	5,	5,	11,	16,	21,	26,	31,	-4,	46,	50,	46,	-4,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {10,11,	10,	10,	11,	11,	16,	21,	26,	31,	36,	40,	45,	45,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {15,16,	15,	15,	15,	16,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {20,21,	20,	20,	20,	21,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {25,26,	25,	25,	25,	26,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {30,31,	30,	30,	30,	31,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {35,36,	-4,	-4,	-4,	36,	0,	0,	0,	0,	4,	0,	0,	0,	4,	0,	0,	0,	0,	0,	4,	4,	4,	0,	0},
+                            {40,41,	-4,	50,	45,	40,	0,	0,	0,	0,	4,	2,	2,	2,	4,	0,	0,	0,	0,	2,	2,	2,	4,	0,	0},
+                            {45,46,	50,	55,	50,	45,	0,	0,	0,	0,	4,	2,	2,	2,	4,	0,	0,	0,	0,	2,	2,	2,	0,	0,	0},
+                            {0,	0,	-4,	50,	45,	40,	0,	0,	0,	0,	4,	2,	2,	2,	4,	0,	0,	0,	0,	2,	2,	2,	4,	0,	0},
+                            {0,	0,	-4,	-4,	-4,	0,	0,	0,	0,	0,	4,	0,	0,	0,	4,	0,	0,	0,	0,	0,	4,	4,	4,	0,	0},
+                            {0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	2,	2,	2,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	4,	2,	2,	2,	4,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0},
+                            {1,	1,	1,	1,	0,	0,	0,	0,	0,	0,	4,	2,	2,	2,	4,	0,	0,	0,	0,	0,	0,	1,	1,	1,	1},
+                            {1,	1,	1,	1,	0,	0,	0,	0,	0,	0,	4,	4,	0,	4,	4,	0,	0,	0,	0,	0,	0,	1,	1,	1,	1},
+                            {1,	1,	1,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	1,	1,	1,	1},
+                            {1,	1,	1,	1,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	1,	1,	1,	1}};
+
+            #endregion
         }
 
         /// <summary>
@@ -514,6 +551,22 @@ namespace Tanktics
                 hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
             }
 
+            if (input.IsNewKeyPress(Keys.C))
+            //if (unitControl.currentUnit.team == 1)
+            {
+                List<moves> possiblemoves = unitControl.currentUnit.GetAllpossibleMoves();
+                //int i = ran.Next(possiblemoves.Count);
+                moves move = ai1.FindBestPossibleMove(possiblemoves);
+
+                unitControl.moveUnit(move.x, move.y);
+                ai1.map[unitControl.currentUnit.previousX, unitControl.currentUnit.previousY] = 0;
+
+                selected.X = unitControl.currentUnit.currentX;
+                selected.Y = unitControl.currentUnit.currentY;
+
+                if (unitControl.currentUnit == previousunit)
+                    unitControl.nextUnit();
+            }
         }
 
         /// <summary>

@@ -79,5 +79,63 @@ namespace Tanktics
             currentSprite = (int)Anim.IdleDown;
             currentSpriteRect = sprites[currentSprite].Animations["idle down"].CurrentFrame;
         }
+
+        public override List<moves> GetAllpossibleMoves()
+        {
+            List<moves> possiblemoves = new List<moves>();
+
+
+            for (int i = 1; i <= 2; i++)
+            {
+                if (currentX + i < 25)
+                {
+                    possiblemoves.Add(new moves(currentX + i, currentY));
+                }
+
+                if (currentY + i < 25)
+                {
+                    possiblemoves.Add(new moves(currentX, currentY + i));
+                }
+
+                if (currentX - i >= 0)
+                {
+                    possiblemoves.Add(new moves(currentX - i, currentY));
+                }
+
+                if (currentY - i > -1)
+                {
+                    possiblemoves.Add(new moves(currentX, currentY - i));
+                }
+            }
+
+            if (currentX + 1 < 25)
+            {
+                if (currentY + 1 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX + 1, currentY + 1));
+                }
+
+                if (currentY - 1 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX + 1, currentY - 1));
+                }
+            }
+
+
+            if (currentX - 1 >= 0)
+            {
+                if (currentY - 1 > -1)
+                {
+                    possiblemoves.Add(new moves(currentX - 1, currentY - 1));
+                }
+
+                if (currentY + 1 < 25)
+                {
+                    possiblemoves.Add(new moves(currentX - 1, currentY + 1));
+                }
+            }
+
+            return possiblemoves;
+        }
     }
 }
