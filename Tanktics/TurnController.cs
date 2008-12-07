@@ -70,7 +70,14 @@ namespace Tanktics
             {
                 phase++;
             }
+
             phase++;
+            if (phase == 4)
+            {
+                totalArtil = unitController.getNumUnits(team, "artillery");
+                totalAPC = unitController.getNumUnits(team, "apc");
+                totalTank = unitController.getNumUnits(team, "tank");
+            }
             
 
             if (phase >= 6)
