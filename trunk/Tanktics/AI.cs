@@ -29,7 +29,7 @@ namespace Tanktics
     class AI
     {
         UnitController unitControl;
-
+        public static Unit currentmovingunit = new Unit();
         #region Values
         static public int[,] map;
         static public int[,] values = new int[25, 25] {  
@@ -132,6 +132,7 @@ namespace Tanktics
                 //AI update map
                 AI.map[mostouter.currentX, mostouter.currentY] = 0;
                 AI.map[move.x, move.y] = mostouter.typeno;
+                AI.currentmovingunit = mostouter;
             }
             else if (result == 3)
             {
