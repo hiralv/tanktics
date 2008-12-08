@@ -1321,7 +1321,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX - 1] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team, currentUnit.currentX - 1, currentUnit.currentY);
                     return 1;
                 }
                 //if there is water
@@ -1351,7 +1351,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 1];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX + 1] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team, currentUnit.currentX + 1, currentUnit.currentY);
                     return 1;
                 }
                 //if there is water
@@ -1381,7 +1381,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY - 1, currentUnit.currentX] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY - 1);
                     return 1;
                 }
                 //if there is water
@@ -1411,7 +1411,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY + 1, currentUnit.currentX] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY + 1);
                     return 1;
                 }
                 //if there is water
@@ -1442,7 +1442,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX - 2] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team, currentUnit.currentX - 2, currentUnit.currentY);
                     return 1;
                 }
                 //if there is a unit 1 to the left or water 1, 2 to the left
@@ -1475,7 +1475,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 2];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX + 2] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team, currentUnit.currentX + 2, currentUnit.currentY);
                     return 1;
                 }
                 //if there is a unit 1 to the right or water 1, 2 to the right
@@ -1508,7 +1508,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 2, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY - 2, currentUnit.currentX] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY - 2);
                     return 1;
                 }
                 //if there is a unit 1 above or water 1, 2 above
@@ -1541,7 +1541,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 2, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY + 2, currentUnit.currentX] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY + 2);
                     return 1;
                 }
                 //if there is a unit 1 below or water 1, 2 below
@@ -1575,7 +1575,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 3];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX - 3] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX - 3].team, currentUnit.currentX - 3, currentUnit.currentY);
                     return 1;
                 }
             }
@@ -1592,7 +1592,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 3];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY, currentUnit.currentX + 3] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX + 3].team, currentUnit.currentX + 3, currentUnit.currentY);
                     return 1;
                 }
             }
@@ -1609,7 +1609,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 3, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY - 3, currentUnit.currentX] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY - 3, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY - 3);
                     return 1;
                 }
             }
@@ -1626,7 +1626,7 @@ namespace Tanktics
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 3, currentUnit.currentX];
                     numUnitsKilled++;
-                    currentBoard[currentUnit.currentY + 3, currentUnit.currentX] = new NullUnit();
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY + 3, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY + 3);
                     return 1;
                 }
             }
