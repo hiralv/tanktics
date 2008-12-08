@@ -68,7 +68,7 @@ namespace Tanktics
         Texture2D[] tank4 = new Texture2D[6];
 
         AI ai1;
-        //Unit previousunit;
+
         #endregion
 
         #region Initialization
@@ -113,6 +113,20 @@ namespace Tanktics
             TCs[3] = TC4;
 
             ai1 = new AI(unitControl);
+            team1 = new Point[12];
+            team1[0].X = 0; team1[0].Y = 0;
+            team1[1].X = 1; team1[1].Y = 0;
+            team1[2].X = 2; team1[2].Y = 0;
+            team1[3].X = 0; team1[3].Y = 1;
+            team1[4].X = 0; team1[4].Y = 2;
+            team1[5].X = 0; team1[5].Y = 3;
+            team1[6].X = 3; team1[6].Y = 0;
+            team1[7].X = 2; team1[7].Y = 1;
+            team1[8].X = 3; team1[8].Y = 2;
+            team1[9].X = 1; team1[9].Y = 3;
+            team1[10].X = 3; team1[10].Y = 1;
+            team1[11].X = 2; team1[11].Y = 3;
+
         }
 
         /// <summary>
@@ -452,6 +466,64 @@ namespace Tanktics
                 }
             }
 
+            if (unitControl.currentPlayer == 1)
+            {
+                if (TCs[unitControl.currentPlayer - 1].phase == 0)
+                {
+                    for (int i = 0; i < 6; i++)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("apc", team1[i].X,team1[i].Y))
+                        {
+                            unitControl.addUnit("apc", unitControl.currentPlayer, team1[i].X, team1[i].Y, apc1);
+                            TCs[unitControl.currentPlayer - 1].totalAPC++;
+                            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
+                        }
+                    }
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("tank", team1[i + 6].X, team1[i + 6].Y))
+                        {
+                            unitControl.addUnit("tank", unitControl.currentPlayer, team1[i + 6].X, team1[i + 6].Y, tank1);
+                            TCs[unitControl.currentPlayer - 1].totalTank++;
+                            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
+                        }
+                    }
+
+                    for (int i = 0; i < 2; i++)
+                    {
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("artillery", team1[i + 10].X, team1[i + 10].Y))
+                        {
+                            unitControl.addUnit("artillery", unitControl.currentPlayer, team1[i + 10].X, team1[i + 10].Y, artillery1);
+                            TCs[unitControl.currentPlayer - 1].totalArtil++;
+                            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
+                        }
+                    }
+
+                    TCs[unitControl.currentPlayer - 1].phase = 5;
+                    unitControl.currentPlayer++;
+                    if (unitControl.currentPlayer == 2)
+                    {
+                        selected.X = tileEngine.MapWidth - 4;
+                        selected.Y = 0;
+                    }
+                    else if (unitControl.currentPlayer == 3)
+                    {
+                        selected.X = tileEngine.MapWidth - 4;
+                        selected.Y = tileEngine.MapHeight - 4;
+                    }
+                    else if (unitControl.currentPlayer == 4)
+                    {
+                        selected.X = 0;
+                        selected.Y = tileEngine.MapHeight - 4;
+                    }
+                    camera.PlayerNum = unitControl.currentPlayer;
+                    miniMap.PlayerNum = unitControl.currentPlayer;
+                    //move camera to next team's current unit
+                    camera.JumpTo(selected.X, selected.Y);
+                }
+            }
+
             //Combat Phase:move current unit to selected square
             //Unit Placement Phase: Place next unit on selected square
             if (input.IsNewKeyPress(Keys.Space))
@@ -584,8 +656,7 @@ namespace Tanktics
                 hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
             }
 
-            if (input.IsNewKeyPress(Keys.C))
-            //if (unitControl.currentUnit.team == 1)
+            //if (TC1.phase == 2 && unitControl.currentPlayer == 1)
             {
                 Point point = ai1.NextMove();
                 selected.X = point.X;
