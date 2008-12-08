@@ -1259,7 +1259,7 @@ namespace Tanktics
 
             //Check if within absolute value range
             int absoluteDistance = Math.Abs(goalX - currentUnit.currentX) + Math.Abs(goalY - currentUnit.currentY);
-            if (absoluteDistance > currentUnit.movement)
+            if (absoluteDistance > currentUnit.movement + 1)
             {
                 return 0;
             }
@@ -1307,6 +1307,7 @@ namespace Tanktics
             {
                 return 1;
             }
+
             //If player is trying to go one space left
             if (left && !above && !below && (absoluteDistance == 1))
             {
@@ -1561,9 +1562,83 @@ namespace Tanktics
                 }
             }
 
+            //if player is trying to fire three spaces left
+            if (left && !above && !below && (absoluteDistance == 3))
+            {
+                //if the unit 3 to the left is on the same team as current unit
+                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 3].team)
+                {
+                    return 0;
+                }
+                //if there is unit (but not your unit)
+                else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 3].team != 0)
+                {
+                    unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 3];
+                    numUnitsKilled++;
+                    currentBoard[currentUnit.currentY, currentUnit.currentX - 3] = new NullUnit();
+                    return 1;
+                }
+            }
+            //if player is trying to fire three spaces right
+            if (right && !above && !below && (absoluteDistance == 3))
+            {
+                //if the unit 2 to the right is on the same team as current unit
+                if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 3].team)
+                {
+                    return 0;
+                }
+                //if there is unit (but not your unit)
+                else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 3].team != 0)
+                {
+                    unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 3];
+                    numUnitsKilled++;
+                    currentBoard[currentUnit.currentY, currentUnit.currentX + 3] = new NullUnit();
+                    return 1;
+                }
+            }
+            //if player is trying to fire three spaces above
+            if (above && !right && !left && (absoluteDistance == 3))
+            {
+                //if the unit 2 above is on the same team as current unit
+                if (currentUnit.team == currentBoard[currentUnit.currentY - 3, currentUnit.currentX].team)
+                {
+                    return 0;
+                }
+                //if there is unit (but not your unit)
+                else if (currentBoard[currentUnit.currentY - 3, currentUnit.currentX].team != 0)
+                {
+                    unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 3, currentUnit.currentX];
+                    numUnitsKilled++;
+                    currentBoard[currentUnit.currentY - 3, currentUnit.currentX] = new NullUnit();
+                    return 1;
+                }
+            }
+            //if player is trying to fire three spaces below
+            if (below && !right && !left && (absoluteDistance == 3))
+            {
+                //if the unit 2 below is on the same team as current unit
+                if (currentUnit.team == currentBoard[currentUnit.currentY + 3, currentUnit.currentX].team)
+                {
+                    return 3;
+                }
+                //if there is unit (but not your unit)
+                else if (currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team != 0)
+                {
+                    unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 3, currentUnit.currentX];
+                    numUnitsKilled++;
+                    currentBoard[currentUnit.currentY + 3, currentUnit.currentX] = new NullUnit();
+                    return 1;
+                }
+            }
+
             //if player is trying to go above and left
             if (above && left)
             {
+                //if trying to move/fire three spaces
+                if (absoluteDistance == 3)
+                {
+                    return 0;                    
+                }
                 //if the unit above and left is on the same team as current unit
                 if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX - 1].team ||
                     !map.IsWalkable("artillery", currentUnit.currentX-1, currentUnit.currentY-1))
@@ -1606,6 +1681,11 @@ namespace Tanktics
             //if player is trying to go above and right
             if (above && right)
             {
+                //if trying to move/fire three spaces
+                if (absoluteDistance == 3)
+                {
+                    return 0;
+                }
                 //if the unit above and right is on the same team as current unit
                 if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX + 1].team ||
                     !map.IsWalkable("artillery", currentUnit.currentX + 1, currentUnit.currentY - 1))
@@ -1648,6 +1728,11 @@ namespace Tanktics
             //if player is trying to go below and left
             if (below && left)
             {
+                //if trying to move/fire three spaces
+                if (absoluteDistance == 3)
+                {
+                    return 0;
+                }
                 //if the unit below and left is on the same team as current unit
                 if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX - 1].team ||
                     !map.IsWalkable("artillery", currentUnit.currentX-1, currentUnit.currentY+1))
@@ -1690,6 +1775,11 @@ namespace Tanktics
             //if player is trying to go below and right
             if (below && right)
             {
+                //if trying to move/fire three spaces
+                if (absoluteDistance == 3)
+                {
+                    return 0;
+                }
                 //if the unit below and right is on the same team as current unit
                 if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX + 1].team ||
                     !map.IsWalkable("artillery", currentUnit.currentX+1, currentUnit.currentY+1))
