@@ -12,6 +12,8 @@ namespace Tanktics
     {
         #region Fields
 
+        public enum HUDUnits { APC, Tank, Artillery };
+
         Texture2D background;
         Rectangle backgroundRect;
         Texture2D[] borders = new Texture2D[4];
@@ -27,13 +29,21 @@ namespace Tanktics
         //second dimension is (apc, tank, artillery)
         Rectangle[,] unitIconFrames = new Rectangle[4, 3];
 
-        AnimatingSprite currentRotatingSprite;
+        //rotating unit variables
+        Texture2D[,] rotationTextures = new Texture2D[4, 3];
+        AnimatingSprite[] rotationSprites = new AnimatingSprite[3];
+        int currentUnitType;
+
         string hudInfo;
         int currentTeam = 0;
         //number of living units for current team
         int numArtillery;
         int numTanks;
         int numAPCs;
+        //max number of units
+        int maxArtillery;
+        int maxTanks;
+        int maxAPCs;
         //texture used to draw graphs
         Texture2D blank;
         //graph height for each team
@@ -89,6 +99,36 @@ namespace Tanktics
             unitIcons = content.Load<Texture2D>("HUD/unit icons");
             font = content.Load<SpriteFont>("gamefont");
             blank = content.Load<Texture2D>("blank");
+
+            //load rotating unit textures
+            rotationTextures[0, (int)HUDUnits.APC] = content.Load<Texture2D>("Unit Animations/APC/APC Rotating/APC Rotating White");
+            rotationTextures[1, (int)HUDUnits.APC] = content.Load<Texture2D>("Unit Animations/APC/APC Rotating/APC Rotating Green");
+            rotationTextures[2, (int)HUDUnits.APC] = content.Load<Texture2D>("Unit Animations/APC/APC Rotating/APC Rotating Grey");
+            rotationTextures[3, (int)HUDUnits.APC] = content.Load<Texture2D>("Unit Animations/APC/APC Rotating/APC Rotating Brown");
+            rotationTextures[0, (int)HUDUnits.Tank] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating White");
+            rotationTextures[1, (int)HUDUnits.Tank] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating Green");
+            rotationTextures[2, (int)HUDUnits.Tank] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating Grey");
+            rotationTextures[3, (int)HUDUnits.Tank] = content.Load<Texture2D>("Unit Animations/Tank/Tank Rotating/Tank Rotating Brown");
+            rotationTextures[0, (int)HUDUnits.Artillery] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Rotating/Artillery Rotating White");
+            rotationTextures[1, (int)HUDUnits.Artillery] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Rotating/Artillery Rotating Green");
+            rotationTextures[2, (int)HUDUnits.Artillery] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Rotating/Artillery Rotating Grey");
+            rotationTextures[3, (int)HUDUnits.Artillery] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Rotating/Artillery Rotating Brown");
+
+            //create apc animation
+            rotationSprites[(int)HUDUnits.APC] = new AnimatingSprite();
+            rotationSprites[(int)HUDUnits.APC].Texture = rotationTextures[0, (int)HUDUnits.APC];
+            rotationSprites[(int)HUDUnits.APC].Animations.Add("rotate", new Animation(1410, 380, 50, 5, 10, 0, 0));
+            rotationSprites[(int)HUDUnits.APC].CurrentAnimation = "rotate";
+            //create tank animation
+            rotationSprites[(int)HUDUnits.Tank] = new AnimatingSprite();
+            rotationSprites[(int)HUDUnits.Tank].Texture = rotationTextures[0, (int)HUDUnits.Tank];
+            rotationSprites[(int)HUDUnits.Tank].Animations.Add("rotate", new Animation(2000, 260, 50, 5, 10, 0, 0));
+            rotationSprites[(int)HUDUnits.Tank].CurrentAnimation = "rotate";
+            //create artillery animation
+            rotationSprites[(int)HUDUnits.Artillery] = new AnimatingSprite();
+            rotationSprites[(int)HUDUnits.Artillery].Texture = rotationTextures[0, (int)HUDUnits.Artillery];
+            rotationSprites[(int)HUDUnits.Artillery].Animations.Add("rotate", new Animation(1540, 210, 50, 5, 10, 0, 0));
+            rotationSprites[(int)HUDUnits.Artillery].CurrentAnimation = "rotate";
         }
 
         #endregion
@@ -97,34 +137,69 @@ namespace Tanktics
 
         public void UpdateAnim(GameTime gameTime)
         {
-            if (currentRotatingSprite != null)
-                currentRotatingSprite.Update(gameTime);
+            rotationSprites[currentUnitType].Update(gameTime);
         }
 
         public void Update(TurnController turn, UnitController units)
         {
-            //get rotating animation of current unit
-            if (units.currentUnit != null && turn.phase != 0)
-                currentRotatingSprite = units.currentUnit.sprites[(int)Unit.Anim.Rotate];
-
-            //update points
-            hudInfo = "Points: " + turn.points + "\n\nAPCs:\nTanks:\nArtillery:";
-
             currentTeam = units.currentPlayer;
+
+            //for setup phase, get rotating animation of unit being added
+            if (turn.phase == 0)
+            {
+                if (turn.totalAPC < turn.MAXAPC)
+                    currentUnitType = (int)HUDUnits.APC;
+                else if (turn.totalTank < turn.MAXTANK)
+                    currentUnitType = (int)HUDUnits.Tank;
+                else
+                    currentUnitType = (int)HUDUnits.Artillery;
+            }
+            //get rotating animation of current unit
+            else if (units.currentUnit != null)
+            {
+                if (units.currentUnit.type.Equals("apc"))
+                    currentUnitType = (int)HUDUnits.APC;
+                else if (units.currentUnit.type.Equals("tank"))
+                    currentUnitType = (int)HUDUnits.Tank;
+                else
+                    currentUnitType = (int)HUDUnits.Artillery;
+            }
+
+            rotationSprites[currentUnitType].Texture = rotationTextures[currentTeam - 1, currentUnitType];
+
+            //update phase and points
+            if (turn.phase == 0)
+                hudInfo = "Phase: Setup\n";
+            else if (turn.phase == 2)
+                hudInfo = "Phase: Movement\n";
+            else if (turn.phase == 3)
+                hudInfo = "Phase: Combat\n";
+            else if (turn.phase == 4)
+                hudInfo = "Phase: Purchase\n";
+            else
+                hudInfo = "Phase:\n";
+
+            hudInfo += "Points: " + turn.points + "\nAPCs:\nTanks:\nArtillery:";
+
             //update number of each unit
             numAPCs = units.getNumUnits(currentTeam, "apc");
             numTanks = units.getNumUnits(currentTeam, "tank");
             numArtillery = units.getNumUnits(currentTeam, "artillery");
+            maxAPCs = turn.MAXAPC;
+            maxTanks = turn.MAXTANK;
+            maxArtillery = turn.MAXARTIL;
+
+            int maxTotalUnits = maxAPCs + maxTanks + maxArtillery;
 
             //update graphs
             graph1Height = (float)(units.getNumUnits(1, "apc") + units.getNumUnits(1, "tank") +
-                units.getNumUnits(1, "artillery")) / (turn.MAXAPC + turn.MAXTANK + turn.MAXARTIL);
+                units.getNumUnits(1, "artillery")) / maxTotalUnits;
             graph2Height = (float)(units.getNumUnits(2, "apc") + units.getNumUnits(2, "tank") +
-                units.getNumUnits(2, "artillery")) / (turn.MAXAPC + turn.MAXTANK + turn.MAXARTIL);
+                units.getNumUnits(2, "artillery")) / maxTotalUnits;
             graph3Height = (float)(units.getNumUnits(3, "apc") + units.getNumUnits(3, "tank") +
-                units.getNumUnits(3, "artillery")) / (turn.MAXAPC + turn.MAXTANK + turn.MAXARTIL);
+                units.getNumUnits(3, "artillery")) / maxTotalUnits;
             graph4Height = (float)(units.getNumUnits(4, "apc") + units.getNumUnits(4, "tank") +
-                units.getNumUnits(4, "artillery")) / (turn.MAXAPC + turn.MAXTANK + turn.MAXARTIL);
+                units.getNumUnits(4, "artillery")) / maxTotalUnits;
 
         }
 
@@ -141,26 +216,23 @@ namespace Tanktics
             batch.Draw(borders[currentTeam - 1], borderRect, Color.White);
             
             //draw rotating unit in left rectangle
-            if (currentRotatingSprite != null)
-            {
-                Rectangle currentSpriteRect = currentRotatingSprite.Animations["rotate"].CurrentFrame;
+            Rectangle currentSpriteRect = rotationSprites[currentUnitType].Animations["rotate"].CurrentFrame;
 
-                //calculate scale to make the sprite fit in destination
-                float scale = Math.Min(
-                    0.8f * (float)leftRect.Width / currentSpriteRect.Width,
-                    0.8f * (float)leftRect.Height / currentSpriteRect.Height);
+            //calculate scale to make the sprite fit in destination
+            float scale = Math.Min(
+                0.8f * (float)leftRect.Width / currentSpriteRect.Width,
+                0.8f * (float)leftRect.Height / currentSpriteRect.Height);
 
-                //use scale to get new destination rectangle
-                //centered in original destination
-                Rectangle spriteDest = new Rectangle(
-                    0, 0,
-                    (int)(scale * currentSpriteRect.Width),
-                    (int)(scale * currentSpriteRect.Height));
-                spriteDest.X = leftRect.X + leftRect.Width / 2 - spriteDest.Width / 2;
-                spriteDest.Y = leftRect.Y + leftRect.Height / 2 - spriteDest.Height / 2;
+            //use scale to get new destination rectangle
+            //centered in original destination
+            Rectangle spriteDest = new Rectangle(
+                0, 0,
+                (int)(scale * currentSpriteRect.Width),
+                (int)(scale * currentSpriteRect.Height));
+            spriteDest.X = leftRect.X + leftRect.Width / 2 - spriteDest.Width / 2;
+            spriteDest.Y = leftRect.Y + leftRect.Height / 2 - spriteDest.Height / 2;
 
-                currentRotatingSprite.Draw(batch, spriteDest, Color.White);
-            }
+            rotationSprites[currentUnitType].Draw(batch, spriteDest, Color.White);
 
             //draw hud info text
             Vector2 textSize = font.MeasureString(hudInfo);
@@ -183,14 +255,15 @@ namespace Tanktics
             //draw unit icons
             Color fade;
             Color dark = new Color(96, 96, 96);
+
+            //draw apc icons
             Rectangle iconPosition = new Rectangle(
-                (int)(textPosition.X + 0.5f * textScale * textSize.X),
+                (int)(centerRect.X + 0.18f * centerRect.Width),
                 (int)(textPosition.Y + 0.4f * textScale * textSize.Y),
                 (int)(0.2f * textScale * textSize.Y),
                 (int)(0.2f * textScale * textSize.Y));
 
-            //draw apc icons
-            for (int i = 1; i <= 6; i++)
+            for (int i = 1; i <= maxAPCs; i++)
             {
                 if (i <= numAPCs)
                     fade = Color.White;
@@ -200,16 +273,16 @@ namespace Tanktics
                 batch.Draw(
                     unitIcons,
                     iconPosition,
-                    unitIconFrames[currentTeam - 1, 0],
+                    unitIconFrames[currentTeam - 1, (int)HUDUnits.APC],
                     fade);
                 iconPosition.X += iconPosition.Width;
             }
 
             //draw tank icons
-            iconPosition.X = (int)(textPosition.X + 0.6f * textScale * textSize.X);
+            iconPosition.X = (int)(centerRect.X + 0.21f * centerRect.Width);
             iconPosition.Y += (int)(0.2f * textScale * textSize.Y);
 
-            for (int i = 1; i <= 4; i++)
+            for (int i = 1; i <= maxTanks; i++)
             {
                 if (i <= numTanks)
                     fade = Color.White;
@@ -219,16 +292,16 @@ namespace Tanktics
                 batch.Draw(
                     unitIcons,
                     iconPosition,
-                    unitIconFrames[currentTeam - 1, 1],
+                    unitIconFrames[currentTeam - 1, (int)HUDUnits.Tank],
                     fade);
                 iconPosition.X += iconPosition.Width;
             }
 
             //draw artillery icons
-            iconPosition.X = (int)(textPosition.X + textScale * textSize.X);
+            iconPosition.X = (int)(centerRect.X + 0.33f * centerRect.Width);
             iconPosition.Y += (int)(0.2f * textScale * textSize.Y);
 
-            for (int i = 1; i <= 2; i++)
+            for (int i = 1; i <= maxArtillery; i++)
             {
                 if (i <= numArtillery)
                     fade = Color.White;
@@ -238,7 +311,7 @@ namespace Tanktics
                 batch.Draw(
                     unitIcons,
                     iconPosition,
-                    unitIconFrames[currentTeam - 1, 2],
+                    unitIconFrames[currentTeam - 1, (int)HUDUnits.Artillery],
                     fade);
                 iconPosition.X += iconPosition.Width;
             }
@@ -264,28 +337,24 @@ namespace Tanktics
                 (int)(textPosition.Y + textScale * textSize.Y + (1f - graph1Height) * totalGraphHeight),
                 (int)(0.05f * centerRect.Width),
                 (int)(graph1Height * totalGraphHeight));
-
             batch.Draw(blank, graphPosition, new Color(240, 240, 240));
 
             //draw graph 2
             graphPosition.X += (int)(0.05f * centerRect.Width);
             graphPosition.Y = (int)(textPosition.Y + textScale * textSize.Y + (1f - graph2Height) * totalGraphHeight);
             graphPosition.Height = (int)(graph2Height * totalGraphHeight);
-
             batch.Draw(blank, graphPosition, new Color(120, 170, 110));
 
             //draw graph 3
             graphPosition.X += (int)(0.05f * centerRect.Width);
             graphPosition.Y = (int)(textPosition.Y + textScale * textSize.Y + (1f - graph3Height) * totalGraphHeight);
             graphPosition.Height = (int)(graph3Height * totalGraphHeight);
-
             batch.Draw(blank, graphPosition, new Color(180, 180, 180));
 
             //draw graph 4
             graphPosition.X += (int)(0.05f * centerRect.Width);
             graphPosition.Y = (int)(textPosition.Y + textScale * textSize.Y + (1f - graph4Height) * totalGraphHeight);
             graphPosition.Height = (int)(graph4Height * totalGraphHeight);
-
             batch.Draw(blank, graphPosition, new Color(170, 140, 80));
         }
 
