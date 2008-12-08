@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System.Threading;
 #endregion
 
 namespace Tanktics
@@ -68,7 +69,8 @@ namespace Tanktics
         Texture2D[] tank4 = new Texture2D[6];
 
         AI ai1;
-
+        Point[] team1;
+        Unit previousunit;
         #endregion
 
         #region Initialization
@@ -127,6 +129,8 @@ namespace Tanktics
             team1[10].X = 3; team1[10].Y = 1;
             team1[11].X = 2; team1[11].Y = 3;
 
+
+
         }
 
         /// <summary>
@@ -138,7 +142,7 @@ namespace Tanktics
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
-            
+
             //set camera and hud viewports as percentages of window
             //viewport isnt available in constructor, so do it here
             camera.Viewport = new Rectangle(
@@ -161,7 +165,7 @@ namespace Tanktics
                 (int)(170f / 600f * viewport.Height));
             hud.LoadContent(content);
             hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
-            
+
             tileEngine.Texture = content.Load<Texture2D>("fullTileSet");
             tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
             tileEngine.BlankTexture = content.Load<Texture2D>("blank");
@@ -174,7 +178,7 @@ namespace Tanktics
             apc1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right White");
             apc1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up White");
             apc1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down White");
-            
+
             //load player 2 (green) apc animations
             apc2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Green");
             apc2[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Down/APC Driving Down Green");
@@ -182,7 +186,7 @@ namespace Tanktics
             apc2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Green");
             apc2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Green");
             apc2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Green");
-            
+
             //load player 3 (grey) apc animations
             apc3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Grey");
             apc3[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Down/APC Driving Down Grey");
@@ -190,7 +194,7 @@ namespace Tanktics
             apc3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Grey");
             apc3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Grey");
             apc3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Grey");
-            
+
             //load player 4 (brown) apc animations
             apc4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Up/APC Driving Up Brown");
             apc4[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Down/APC Driving Down Brown");
@@ -198,7 +202,7 @@ namespace Tanktics
             apc4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/APC/APC Driving Right/APC Driving Right Brown");
             apc4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Up/APC Idling Up Brown");
             apc4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/APC/APC Idling Down/APC Idling Down Brown");
-            
+
 
 
             //load player 1 (white) artillery animations
@@ -208,7 +212,7 @@ namespace Tanktics
             artillery1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right White");
             artillery1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up White");
             artillery1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down White");
-            
+
             //load player 2 (green) artillery animations
             artillery2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Green");
             artillery2[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Down/Artillery Driving Down Green");
@@ -216,7 +220,7 @@ namespace Tanktics
             artillery2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Green");
             artillery2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Green");
             artillery2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Green");
-            
+
             //load player 3 (grey) artillery animations
             artillery3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Grey");
             artillery3[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Down/Artillery Driving Down Grey");
@@ -224,7 +228,7 @@ namespace Tanktics
             artillery3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Grey");
             artillery3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Grey");
             artillery3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Grey");
-            
+
             //load player 4 (brown) artillery animations
             artillery4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Up/Artillery Driving Up Brown");
             artillery4[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Down/Artillery Driving Down Brown");
@@ -232,7 +236,7 @@ namespace Tanktics
             artillery4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Driving Right/Artillery Driving Right Brown");
             artillery4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Up/Artillery Idling Up Brown");
             artillery4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Artillery/Artillery Idling Down/Artillery Idling Down Brown");
-            
+
 
 
             //load player 1 (white) tank animations
@@ -242,7 +246,7 @@ namespace Tanktics
             tank1[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right White");
             tank1[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up White");
             tank1[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down White");
-            
+
             //load player 2 (green) tank animations
             tank2[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Green");
             tank2[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Down/Tank Driving Down Green");
@@ -250,7 +254,7 @@ namespace Tanktics
             tank2[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Green");
             tank2[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Green");
             tank2[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Green");
-            
+
             //load player 3 (grey) tank animations
             tank3[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Grey");
             tank3[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Down/Tank Driving Down Grey");
@@ -258,7 +262,7 @@ namespace Tanktics
             tank3[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Grey");
             tank3[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Grey");
             tank3[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Grey");
-            
+
             //load player 4 (brown) tank animations
             tank4[(int)Unit.Anim.Up] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Up/Tank Driving Up Brown");
             tank4[(int)Unit.Anim.Down] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Down/Tank Driving Down Brown");
@@ -266,7 +270,7 @@ namespace Tanktics
             tank4[(int)Unit.Anim.Right] = content.Load<Texture2D>("Unit Animations/Tank/Tank Driving Right/Tank Driving Right Brown");
             tank4[(int)Unit.Anim.IdleUp] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Up/Tank Idling Up Brown");
             tank4[(int)Unit.Anim.IdleDown] = content.Load<Texture2D>("Unit Animations/Tank/Tank Idling Down/Tank Idling Down Brown");
-            
+
             // once the load has finished, we use ResetElapsedTime to tell the game's
             // timing mechanism that we have just finished a very long frame, and that
             // it should not try to catch up.
@@ -297,7 +301,7 @@ namespace Tanktics
 
         #endregion
 
-        #region Update and Draw
+
 
         /// <summary>
         /// Updates the state of the game. This method checks the GameScreen.IsActive
@@ -308,12 +312,13 @@ namespace Tanktics
                                                        bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
-            
+
             elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             unitControl.update(gameTime);
             hud.UpdateAnim(gameTime);
         }
+
 
 
         /// <summary>
@@ -430,7 +435,7 @@ namespace Tanktics
                                     unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank4);
 
                                 TCs[unitControl.currentPlayer - 1].totalTank++;
-                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points-2;
+                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points - 2;
                             }
                         }
                     }
@@ -466,13 +471,14 @@ namespace Tanktics
                 }
             }
 
+            #region Automatic Unit Placment
             if (unitControl.currentPlayer == 1)
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 0)
                 {
                     for (int i = 0; i < 6; i++)
                     {
-                        if (TCs[unitControl.currentPlayer - 1].createUnit("apc", team1[i].X,team1[i].Y))
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("apc", team1[i].X, team1[i].Y))
                         {
                             unitControl.addUnit("apc", unitControl.currentPlayer, team1[i].X, team1[i].Y, apc1);
                             TCs[unitControl.currentPlayer - 1].totalAPC++;
@@ -500,7 +506,7 @@ namespace Tanktics
                         }
                     }
 
-                    TCs[unitControl.currentPlayer - 1].phase = 5;
+                    //TCs[unitControl.currentPlayer - 1].phase = 5;
                     unitControl.currentPlayer++;
                     if (unitControl.currentPlayer == 2)
                     {
@@ -523,6 +529,7 @@ namespace Tanktics
                     camera.JumpTo(selected.X, selected.Y);
                 }
             }
+            #endregion
 
             //Combat Phase:move current unit to selected square
             //Unit Placement Phase: Place next unit on selected square
@@ -641,8 +648,8 @@ namespace Tanktics
                 }
                 else if (TCs[unitControl.currentPlayer - 1].phase == 4)
                 {
-                    TCs[unitControl.currentPlayer-1].nextPhase();
-                    TCs[unitControl.currentPlayer-1].getNext().nextPhase();
+                    TCs[unitControl.currentPlayer - 1].nextPhase();
+                    TCs[unitControl.currentPlayer - 1].getNext().nextPhase();
                     unitControl.finalize();
                     selected.X = unitControl.currentUnit.currentX;
                     selected.Y = unitControl.currentUnit.currentY;
@@ -656,66 +663,121 @@ namespace Tanktics
                 hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
             }
 
-            //if (TC1.phase == 2 && unitControl.currentPlayer == 1)
+
+            //if (input.IsNewKeyPress(Keys.C))
+            if (unitControl.currentPlayer == 1 || unitControl.currentPlayer == 2 || unitControl.currentPlayer == 3 || unitControl.currentPlayer == 4)
             {
-                Point point = ai1.NextMove();
-                selected.X = point.X;
-                selected.Y = point.Y;
 
-                #region Old AI
-                //Unit mostouter = unitControl.currentUnit;
-                //Unit firstunit = unitControl.currentUnit;
-                //unitControl.nextUnit();
-                //Unit nextunit = unitControl.currentUnit;
-
-                //while (nextunit != firstunit)
+                #region Old method
+                //if (previousunit == null)
                 //{
-                //    if (AI.values[nextunit.currentX, nextunit.currentY] > AI.values[mostouter.currentX, mostouter.currentY])
-                //        mostouter = nextunit;
+                //    previousunit = new NullUnit();
+                //    previousunit = unitControl.currentUnit;
+                //    Point point = ai1.NextMove();
+                //    selected.X = point.X;
+                //    selected.Y = point.Y;
 
-                //    unitControl.nextUnit();
-                //    nextunit = unitControl.currentUnit;
-                //}
-
-                //while (unitControl.currentUnit != mostouter)
-                //    unitControl.nextUnit();
-
-                //int previousx, previousy, result;
-                //previousx = unitControl.currentUnit.currentX;
-                //previousy = unitControl.currentUnit.currentY;
-
-                //List<moves> possiblemoves = unitControl.currentUnit.GetAllpossibleMoves();
-                //moves move = ai1.FindBestPossibleMove(possiblemoves);
-
-                //result = unitControl.moveUnit(move.x, move.y);
-
-                //if (result == 3)
-                //{
-                //    while (result != 1)
-                //    {
-                //        possiblemoves.Remove(move);
-                //        if (possiblemoves.Count > 0)
-                //        {
-                //            move = ai1.FindBestPossibleMove(possiblemoves);
-                //            result = unitControl.moveUnit(move.x, move.y);
-                //        }
-                //        else
-                //            break;
-                //    }
-                //}
-
-                //if (result == 1)
-                //{
-                //    //AI update map
-                //    AI.map[previousx, previousy] = 0;
-                //    AI.map[unitControl.currentUnit.currentX, unitControl.currentUnit.currentY] = unitControl.currentUnit.typeno;
-                //}
-
-                //selected.X = unitControl.currentUnit.currentX;
-                //selected.Y = unitControl.currentUnit.currentY;
-                
+                //} 
                 #endregion
+
+                if (TCs[unitControl.currentPlayer - 1].phase == 2)
+                {
+                    if (!AI.currentmovingunit.isMoving)
+                    {
+                        //previousunit = unitControl.currentUnit;
+                        int result = ai1.NextMove();
+                        selected.X = AI.currentmovingunit.currentX;
+                        selected.Y = AI.currentmovingunit.currentY;
+                        camera.PlayerNum = unitControl.currentPlayer;
+                        miniMap.PlayerNum = unitControl.currentPlayer;
+                        //move camera to next team's current unit
+                        camera.JumpTo(selected.X, selected.Y);
+
+                        if (result == 0)
+                        {
+                            TCs[unitControl.currentPlayer - 1].nextPhase();
+
+                            if (TCs[unitControl.currentPlayer - 1].phase == 3)
+                            {
+                                TCs[unitControl.currentPlayer - 1].nextPhase();
+                            }
+
+                            if (TCs[unitControl.currentPlayer - 1].phase == 4)
+                            {
+                                TCs[unitControl.currentPlayer - 1].nextPhase();
+                                TCs[unitControl.currentPlayer - 1].getNext().nextPhase();
+                                unitControl.finalize();
+                                selected.X = unitControl.currentUnit.currentX;
+                                selected.Y = unitControl.currentUnit.currentY;
+                                //change player number for cameras
+                                camera.PlayerNum = unitControl.currentPlayer;
+                                miniMap.PlayerNum = unitControl.currentPlayer;
+                                //move camera to next team's current unit
+                                camera.JumpTo(selected.X, selected.Y);
+                                hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
+                            }
+
+
+                            #region Old AI
+                            //Unit mostouter = unitControl.currentUnit;
+                            //Unit firstunit = unitControl.currentUnit;
+                            //unitControl.nextUnit();
+                            //Unit nextunit = unitControl.currentUnit;
+
+                            //while (nextunit != firstunit)
+                            //{
+                            //    if (AI.values[nextunit.currentX, nextunit.currentY] > AI.values[mostouter.currentX, mostouter.currentY])
+                            //        mostouter = nextunit;
+
+                            //    unitControl.nextUnit();
+                            //    nextunit = unitControl.currentUnit;
+                            //}
+
+                            //while (unitControl.currentUnit != mostouter)
+                            //    unitControl.nextUnit();
+
+                            //int previousx, previousy, result;
+                            //previousx = unitControl.currentUnit.currentX;
+                            //previousy = unitControl.currentUnit.currentY;
+
+                            //List<moves> possiblemoves = unitControl.currentUnit.GetAllpossibleMoves();
+                            //moves move = ai1.FindBestPossibleMove(possiblemoves);
+
+                            //result = unitControl.moveUnit(move.x, move.y);
+
+                            //if (result == 3)
+                            //{
+                            //    while (result != 1)
+                            //    {
+                            //        possiblemoves.Remove(move);
+                            //        if (possiblemoves.Count > 0)
+                            //        {
+                            //            move = ai1.FindBestPossibleMove(possiblemoves);
+                            //            result = unitControl.moveUnit(move.x, move.y);
+                            //        }
+                            //        else
+                            //            break;
+                            //    }
+                            //}
+
+                            //if (result == 1)
+                            //{
+                            //    //AI update map
+                            //    AI.map[previousx, previousy] = 0;
+                            //    AI.map[unitControl.currentUnit.currentX, unitControl.currentUnit.currentY] = unitControl.currentUnit.typeno;
+                            //}
+
+                            //selected.X = unitControl.currentUnit.currentX;
+                            //selected.Y = unitControl.currentUnit.currentY;
+
+                            #endregion
+                        }
+                    }
+
+                }
             }
+
+
         }
 
         /// <summary>
@@ -733,7 +795,7 @@ namespace Tanktics
             tileEngine.Draw(spriteBatch, miniMap, unitControl);
 
             hud.Draw(spriteBatch);
-            
+
             spriteBatch.End();
 
             // If the game is transitioning on or off, fade it out to black.
@@ -742,6 +804,6 @@ namespace Tanktics
         }
 
 
-        #endregion
+
     }
 }
