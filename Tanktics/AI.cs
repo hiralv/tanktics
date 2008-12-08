@@ -9,6 +9,8 @@ using System.Collections.Generic;
 
 namespace Tanktics
 {
+
+    //HIRAL VORA
     public class moves
     {
         public int x;
@@ -30,6 +32,7 @@ namespace Tanktics
     {
         UnitController unitControl;
         public static Unit currentmovingunit = new Unit();
+
         #region Values
         static public int[,] map;
         static public int[,] values = new int[25, 25] {  
@@ -76,7 +79,7 @@ namespace Tanktics
             }
         }
 
-        public Point NextMove()
+        public int NextMove()
         {
             Unit mostouter = unitControl.currentUnit;
             Unit firstunit = unitControl.currentUnit;
@@ -85,10 +88,7 @@ namespace Tanktics
 
             if (mostouter.hasMoved)
             {
-                unitControl.nextUnit();
-                unitControl.finalize();
-                return new Point(unitControl.currentUnit.currentX, unitControl.currentUnit.currentY);
-                
+                return 0;
             }
 
             while (nextunit != firstunit)
@@ -139,10 +139,7 @@ namespace Tanktics
                 mostouter.sethasMoved(true);
             }
 
-            Point point = new Point(unitControl.currentUnit.currentX, unitControl.currentUnit.currentY);
-
-
-            return point;
+            return 1;
         }
 
         private moves FindBestPossibleMove(List<moves> possiblemoves)
