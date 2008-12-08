@@ -34,9 +34,11 @@ namespace Tanktics
         public int[] moves;
         public int currentDirection = 0;
         public int numMoves;
+        //speed in tiles per second
+        public float speed = 1f;
         //offset during movements (percentage of tile width/height)
-        public float offsetX = 0f;
-        public float offsetY = 0f;
+        float offsetX = 0f;
+        float offsetY = 0f;
 
 
         public void sethasMoved(Boolean toSet)
@@ -58,30 +60,32 @@ namespace Tanktics
         {
             if (isMoving)
             {
+                float elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
                 //move offset
                 if (moves[currentDirection] == (int)Anim.Up)
                 {
                     currentSprite = (int)Anim.Up;
                     currentSpriteRect = sprites[currentSprite].Animations["up"].CurrentFrame;
-                    offsetY -= 0.01f;
+                    offsetY -= elapsed * speed;
                 }
                 else if (moves[currentDirection] == (int)Anim.Down)
                 {
                     currentSprite = (int)Anim.Down;
                     currentSpriteRect = sprites[currentSprite].Animations["down"].CurrentFrame;
-                    offsetY += 0.01f;
+                    offsetY += elapsed * speed;
                 }
                 else if (moves[currentDirection] == (int)Anim.Left)
                 {
                     currentSprite = (int)Anim.Left;
                     currentSpriteRect = sprites[currentSprite].Animations["left"].CurrentFrame;
-                    offsetX -= 0.01f;
+                    offsetX -= elapsed * speed;
                 }
                 else if (moves[currentDirection] == (int)Anim.Right)
                 {
                     currentSprite = (int)Anim.Right;
                     currentSpriteRect = sprites[currentSprite].Animations["right"].CurrentFrame;
-                    offsetX += 0.01f;
+                    offsetX += elapsed * speed;
                 }
 
                 //set new unit location when offset has reached a new tile
