@@ -122,8 +122,12 @@ namespace Tanktics
             if (result == 1)
             {
                 //AI update map
-                AI.map[previousx, previousy] = 0;
-                AI.map[unitControl.currentUnit.currentX, unitControl.currentUnit.currentY] = unitControl.currentUnit.typeno;
+                AI.map[mostouter.currentX, mostouter.currentY] = 0;
+                AI.map[move.x, move.y] = mostouter.typeno;
+            }
+            else if (result == 3)
+            {
+                mostouter.sethasMoved(true);
             }
 
             Point point = new Point(unitControl.currentUnit.currentX, unitControl.currentUnit.currentY);
