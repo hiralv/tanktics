@@ -116,18 +116,18 @@ namespace Tanktics
 
             ai1 = new AI(unitControl);
             team1 = new Point[12];
-            team1[0].X = 0; team1[0].Y = 0;
-            team1[1].X = 1; team1[1].Y = 0;
-            team1[2].X = 2; team1[2].Y = 0;
-            team1[3].X = 0; team1[3].Y = 1;
+            team1[0].X = 2; team1[0].Y = 0;
+            team1[1].X = 2; team1[1].Y = 1;
+            team1[2].X = 2; team1[2].Y = 2;
+            team1[3].X = 1; team1[3].Y = 2;
             team1[4].X = 0; team1[4].Y = 2;
-            team1[5].X = 0; team1[5].Y = 3;
+            team1[5].X = 1; team1[5].Y = 1;
             team1[6].X = 3; team1[6].Y = 0;
-            team1[7].X = 2; team1[7].Y = 1;
-            team1[8].X = 3; team1[8].Y = 2;
-            team1[9].X = 1; team1[9].Y = 3;
+            team1[7].X = 3; team1[7].Y = 2;
+            team1[8].X = 2; team1[8].Y = 3;
+            team1[9].X = 0; team1[9].Y = 3;
             team1[10].X = 3; team1[10].Y = 1;
-            team1[11].X = 2; team1[11].Y = 3;
+            team1[11].X = 1; team1[11].Y = 3;
 
 
 
@@ -531,6 +531,7 @@ namespace Tanktics
             }
             #endregion
 
+
             //Combat Phase:move current unit to selected square
             //Unit Placement Phase: Place next unit on selected square
             if (input.IsNewKeyPress(Keys.Space))
@@ -665,7 +666,8 @@ namespace Tanktics
 
 
             //if (input.IsNewKeyPress(Keys.C))
-            if (unitControl.currentPlayer == 1 || unitControl.currentPlayer == 2 || unitControl.currentPlayer == 3 || unitControl.currentPlayer == 4)
+            //if (unitControl.currentPlayer == 1 || unitControl.currentPlayer == 2 || unitControl.currentPlayer == 3 || unitControl.currentPlayer == 4)
+            if (unitControl.currentPlayer == 1)
             {
 
                 #region Old method
