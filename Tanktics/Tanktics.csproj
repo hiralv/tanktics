@@ -87,7 +87,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI.cs" />
-    <Compile Include="gspla.cs" />
     <Compile Include="Screens\HUD.cs" />
     <Compile Include="TurnController.cs" />
     <Compile Include="Units\Artillery.cs" />
