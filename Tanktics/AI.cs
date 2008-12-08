@@ -64,7 +64,7 @@ namespace Tanktics
         public AI(UnitController unitControl)
         {
             this.unitControl = unitControl;
-
+            
             map = new int[25, 25];
 
             for (int i = 0; i < 25; i++)
