@@ -101,7 +101,7 @@ namespace Tanktics
                 {
                     currentDirection++;
                     currentX--;
-                    control.setCurrentBoard(new NullUnit(), team, currentX+1, currentY);
+                    control.setCurrentBoard(new NullUnit(), team, currentX + 1, currentY);
                     control.setCurrentBoard(this, team, currentX, currentY);
                     offsetX = 0f;
                 }
@@ -109,7 +109,7 @@ namespace Tanktics
                 {
                     currentDirection++;
                     currentY++;
-                    control.setCurrentBoard(new NullUnit(), team, currentX, currentY-1);
+                    control.setCurrentBoard(new NullUnit(), team, currentX, currentY - 1);
                     control.setCurrentBoard(this, team, currentX, currentY);
                     offsetY = 0f;
                 }
@@ -117,7 +117,7 @@ namespace Tanktics
                 {
                     currentDirection++;
                     currentY--;
-                    control.setCurrentBoard(new NullUnit(), team, currentX, currentY+1);
+                    control.setCurrentBoard(new NullUnit(), team, currentX, currentY + 1);
                     control.setCurrentBoard(this, team, currentX, currentY);
                     offsetY = 0f;
                 }

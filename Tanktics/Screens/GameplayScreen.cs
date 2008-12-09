@@ -15,7 +15,6 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using System.Threading;
 #endregion
 
 namespace Tanktics
@@ -39,6 +38,7 @@ namespace Tanktics
         //unit controller and selected square
         UnitController unitControl;
         Point selected = Point.Zero;
+        Point prevSelected = Point.Zero;
 
         //Turn controllers
         TurnController TC1;
@@ -70,7 +70,7 @@ namespace Tanktics
 
         AI ai1;
         Point[] team1;
-        Unit previousunit;
+        //Unit previousunit;
         #endregion
 
         #region Initialization
@@ -83,7 +83,7 @@ namespace Tanktics
             TransitionOnTime = TimeSpan.FromSeconds(1.0);
             TransitionOffTime = TimeSpan.FromSeconds(1.0);
 
-            tileEngine = new TileEngine("Maps/map1.txt", 64, 64, 5, 12);
+            tileEngine = new TileEngine("Maps/map0.txt", 64, 64, 5, 12);
 
             //create main camera
             camera = new Camera2D(
@@ -99,11 +99,11 @@ namespace Tanktics
                 tileEngine.MapWidth, tileEngine.MapHeight);
 
             unitControl = new UnitController(tileEngine, 4);
-            TC1 = new TurnController(unitControl, 1, 0, 0, 3, 3);
-            TC2 = new TurnController(unitControl, 2, tileEngine.MapWidth - 4, 0, tileEngine.MapWidth - 1, 3);
-            TC3 = new TurnController(unitControl, 3, tileEngine.MapWidth - 4, tileEngine.MapHeight - 4,
+            TC1 = new TurnController(unitControl, 1, 0, 0, 2, 2);
+            TC2 = new TurnController(unitControl, 2, tileEngine.MapWidth - 3, 0, tileEngine.MapWidth - 1, 2);
+            TC3 = new TurnController(unitControl, 3, tileEngine.MapWidth - 3, tileEngine.MapHeight - 3,
                 tileEngine.MapWidth - 1, tileEngine.MapHeight - 1);
-            TC4 = new TurnController(unitControl, 4, 0, tileEngine.MapHeight - 4, 3, tileEngine.MapHeight - 1);
+            TC4 = new TurnController(unitControl, 4, 0, tileEngine.MapHeight - 3, 2, tileEngine.MapHeight - 1);
             TC1.setNext(TC2);
             TC2.setNext(TC3);
             TC3.setNext(TC4);
@@ -115,19 +115,13 @@ namespace Tanktics
             TCs[3] = TC4;
 
             ai1 = new AI(unitControl);
-            team1 = new Point[12];
+            team1 = new Point[6];
             team1[0].X = 2; team1[0].Y = 0;
             team1[1].X = 2; team1[1].Y = 1;
             team1[2].X = 2; team1[2].Y = 2;
             team1[3].X = 1; team1[3].Y = 2;
             team1[4].X = 0; team1[4].Y = 2;
             team1[5].X = 1; team1[5].Y = 1;
-            team1[6].X = 3; team1[6].Y = 0;
-            team1[7].X = 3; team1[7].Y = 2;
-            team1[8].X = 2; team1[8].Y = 3;
-            team1[9].X = 0; team1[9].Y = 3;
-            team1[10].X = 3; team1[10].Y = 1;
-            team1[11].X = 1; team1[11].Y = 3;
 
 
 
@@ -164,7 +158,6 @@ namespace Tanktics
                 viewport.Width,
                 (int)(170f / 600f * viewport.Height));
             hud.LoadContent(content);
-            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
 
             tileEngine.Texture = content.Load<Texture2D>("fullTileSet");
             tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
@@ -285,20 +278,6 @@ namespace Tanktics
             content.Unload();
         }
 
-        //delete this when we finish the initialization phase
-        private void addUnits(int team, int top, int left, Texture2D[] textures)
-        {
-            for (int y = top; y < top + 4; y++)
-            {
-                for (int x = left; x < left + 4; x++)
-                {
-                    unitControl.addUnit("artillery", team, x, y, textures);
-                }
-            }
-            //Sets the team to be passed the set up phase sence that is basically what this is.
-            TCs[team - 1].nextPhase();
-        }
-
         #endregion
 
 
@@ -316,7 +295,7 @@ namespace Tanktics
             elapsed = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             unitControl.update(gameTime);
-            hud.UpdateAnim(gameTime);
+            hud.Update(gameTime, TCs[unitControl.currentPlayer - 1], unitControl);
         }
 
 
@@ -337,9 +316,9 @@ namespace Tanktics
                     new MainMenuScreen());
             }
 
-            Vector2 cameraMotion = Vector2.Zero;
 
             //move camera
+            Vector2 cameraMotion = Vector2.Zero;
             if (input.IsKeyDownUp())
                 cameraMotion.Y--;
             if (input.IsKeyDownDown())
@@ -348,7 +327,6 @@ namespace Tanktics
                 cameraMotion.X--;
             if (input.IsKeyDownRight())
                 cameraMotion.X++;
-
             if (cameraMotion != Vector2.Zero)
             {
                 //normalize so camera moves at same speed diagonally as horizontal/vertical
@@ -362,18 +340,6 @@ namespace Tanktics
             if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageDown))
                 camera.ZoomOut(elapsed);
 
-            //Combat Phase: select next unit
-            if (input.IsNewKeyPress(Keys.Tab))
-            {
-                if (TCs[unitControl.currentPlayer - 1].phase == 2)
-                {
-                    unitControl.nextUnit();
-                    selected.X = unitControl.currentUnit.currentX;
-                    selected.Y = unitControl.currentUnit.currentY;
-                    hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
-                }
-            }
-
             //move selected square
             if (input.IsNewKeyPress(Keys.W) && selected.Y > 0)
                 selected.Y--;
@@ -383,6 +349,19 @@ namespace Tanktics
                 selected.X--;
             if (input.IsNewKeyPress(Keys.D) && selected.X < tileEngine.MapWidth - 1)
                 selected.X++;
+
+
+
+            //Combat Phase: select next unit
+            if (input.IsNewKeyPress(Keys.Tab))
+            {
+                if (TCs[unitControl.currentPlayer - 1].phase == 2)
+                {
+                    unitControl.nextUnit();
+                    selected.X = unitControl.currentUnit.currentX;
+                    selected.Y = unitControl.currentUnit.currentY;
+                }
+            }
 
             //Purchase Phase: Buy an APC
             //Acey Boyce
@@ -476,33 +455,30 @@ namespace Tanktics
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 0)
                 {
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < TC1.MAXAPC; i++)
                     {
                         if (TCs[unitControl.currentPlayer - 1].createUnit("apc", team1[i].X, team1[i].Y))
                         {
                             unitControl.addUnit("apc", unitControl.currentPlayer, team1[i].X, team1[i].Y, apc1);
                             TCs[unitControl.currentPlayer - 1].totalAPC++;
-                            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
                         }
                     }
 
-                    for (int i = 0; i < 4; i++)
+                    for (int i = TC1.MAXAPC; i < TC1.MAXAPC + TC1.MAXTANK; i++)
                     {
-                        if (TCs[unitControl.currentPlayer - 1].createUnit("tank", team1[i + 6].X, team1[i + 6].Y))
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("tank", team1[i].X, team1[i].Y))
                         {
-                            unitControl.addUnit("tank", unitControl.currentPlayer, team1[i + 6].X, team1[i + 6].Y, tank1);
+                            unitControl.addUnit("tank", unitControl.currentPlayer, team1[i].X, team1[i].Y, tank1);
                             TCs[unitControl.currentPlayer - 1].totalTank++;
-                            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
                         }
                     }
 
-                    for (int i = 0; i < 2; i++)
+                    for (int i = TC1.MAXAPC + TC1.MAXTANK; i < TC1.MAXAPC + TC1.MAXTANK + TC1.MAXARTIL; i++)
                     {
-                        if (TCs[unitControl.currentPlayer - 1].createUnit("artillery", team1[i + 10].X, team1[i + 10].Y))
+                        if (TCs[unitControl.currentPlayer - 1].createUnit("artillery", team1[i].X, team1[i].Y))
                         {
-                            unitControl.addUnit("artillery", unitControl.currentPlayer, team1[i + 10].X, team1[i + 10].Y, artillery1);
+                            unitControl.addUnit("artillery", unitControl.currentPlayer, team1[i].X, team1[i].Y, artillery1);
                             TCs[unitControl.currentPlayer - 1].totalArtil++;
-                            hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
                         }
                     }
 
@@ -510,23 +486,21 @@ namespace Tanktics
                     unitControl.currentPlayer++;
                     if (unitControl.currentPlayer == 2)
                     {
-                        selected.X = tileEngine.MapWidth - 4;
+                        selected.X = tileEngine.MapWidth - 3;
                         selected.Y = 0;
                     }
                     else if (unitControl.currentPlayer == 3)
                     {
-                        selected.X = tileEngine.MapWidth - 4;
-                        selected.Y = tileEngine.MapHeight - 4;
+                        selected.X = tileEngine.MapWidth - 3;
+                        selected.Y = tileEngine.MapHeight - 3;
                     }
                     else if (unitControl.currentPlayer == 4)
                     {
                         selected.X = 0;
-                        selected.Y = tileEngine.MapHeight - 4;
+                        selected.Y = tileEngine.MapHeight - 3;
                     }
                     camera.PlayerNum = unitControl.currentPlayer;
                     miniMap.PlayerNum = unitControl.currentPlayer;
-                    //move camera to next team's current unit
-                    camera.JumpTo(selected.X, selected.Y);
                 }
             }
             #endregion
@@ -600,18 +574,18 @@ namespace Tanktics
                             unitControl.currentPlayer++;
                             if (unitControl.currentPlayer == 2)
                             {
-                                selected.X = tileEngine.MapWidth - 4;
+                                selected.X = tileEngine.MapWidth - 3;
                                 selected.Y = 0;
                             }
                             else if (unitControl.currentPlayer == 3)
                             {
-                                selected.X = tileEngine.MapWidth - 4;
-                                selected.Y = tileEngine.MapHeight - 4;
+                                selected.X = tileEngine.MapWidth - 3;
+                                selected.Y = tileEngine.MapHeight - 3;
                             }
                             else if (unitControl.currentPlayer == 4)
                             {
                                 selected.X = 0;
-                                selected.Y = tileEngine.MapHeight - 4;
+                                selected.Y = tileEngine.MapHeight - 3;
                             }
                             if (unitControl.currentPlayer == 5)
                             {
@@ -623,13 +597,9 @@ namespace Tanktics
                             }
                             camera.PlayerNum = unitControl.currentPlayer;
                             miniMap.PlayerNum = unitControl.currentPlayer;
-                            //move camera to next team's current unit
-                            camera.JumpTo(selected.X, selected.Y);
                         }
                     }
                 }
-
-                hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
             }
 
             //Unit Placement Phase: No Function
@@ -657,11 +627,7 @@ namespace Tanktics
                     //change player number for cameras
                     camera.PlayerNum = unitControl.currentPlayer;
                     miniMap.PlayerNum = unitControl.currentPlayer;
-                    //move camera to next team's current unit
-                    camera.JumpTo(selected.X, selected.Y);
                 }
-
-                hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
             }
 
 
@@ -692,8 +658,6 @@ namespace Tanktics
                         selected.Y = AI.currentmovingunit.currentY;
                         camera.PlayerNum = unitControl.currentPlayer;
                         miniMap.PlayerNum = unitControl.currentPlayer;
-                        //move camera to next team's current unit
-                        camera.JumpTo(selected.X, selected.Y);
 
                         if (result == 0)
                         {
@@ -714,9 +678,6 @@ namespace Tanktics
                                 //change player number for cameras
                                 camera.PlayerNum = unitControl.currentPlayer;
                                 miniMap.PlayerNum = unitControl.currentPlayer;
-                                //move camera to next team's current unit
-                                camera.JumpTo(selected.X, selected.Y);
-                                hud.Update(TCs[unitControl.currentPlayer - 1], unitControl);
                             }
 
 
@@ -775,11 +736,16 @@ namespace Tanktics
                             #endregion
                         }
                     }
-
                 }
             }
 
 
+
+
+            //move camera to selected square
+            if (!prevSelected.Equals(selected))
+                camera.JumpTo(selected.X, selected.Y);
+            prevSelected = selected;
         }
 
         /// <summary>

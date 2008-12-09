@@ -296,7 +296,7 @@ namespace Tanktics
                         {
                             //grid layer
                             if (i == numLayers - 2)
-                                fade = new Color(255, 255, 255, 40);
+                                fade = new Color(255, 255, 255, 30);
                             //tile is on edge of visibility
                             else if ((x > 0 && !units.isVisible(camera.PlayerNum, x - 1, y)) ||
                                 (x < MapWidth - 1 && !units.isVisible(camera.PlayerNum, x + 1, y)) ||

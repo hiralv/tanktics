@@ -135,13 +135,10 @@ namespace Tanktics
 
         #region Update and Draw
 
-        public void UpdateAnim(GameTime gameTime)
+        public void Update(GameTime gameTime, TurnController turn, UnitController units)
         {
             rotationSprites[currentUnitType].Update(gameTime);
-        }
 
-        public void Update(TurnController turn, UnitController units)
-        {
             currentTeam = units.currentPlayer;
 
             //for setup phase, get rotating animation of unit being added
