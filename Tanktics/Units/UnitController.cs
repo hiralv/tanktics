@@ -683,7 +683,7 @@ namespace Tanktics
         //Movement specifics for APCs
         //ASUMPTION: the game will never feed it a position off the board
         //           for example it will never make a call goal(-1, 4)
-        //Returns:  0 if Trying to move greater than maximum movement range of unit
+        //Returns:  0 if Trying to move greater than maximum movement range of unit (Or stay same spot)
         //          1 if legal move
         //          2 if Unit has already made a move this turn;
         //          3 if Other Unit(s) or factory is blocking all paths to the space
@@ -743,7 +743,7 @@ namespace Tanktics
             //from the next unit line) it is valid move
             if ((!right && !left && !below && !above))
             {
-                return 1;
+                return 0;
             }
             //If player is trying to go one space left
             if (left && !above && !below && (absoluteDistance == 1))
@@ -1242,7 +1242,7 @@ namespace Tanktics
         //Movement specifics for Artillery
         //ASUMPTION: the game will never feed it a position off the board
         //           for example it will never make a call goal(-1, 4)
-        //Returns:  0 if Trying to move greater than maximum movement range of unit
+        //Returns:  0 if Trying to move greater than maximum movement range of unit (Or stay same spot)
         //          1 if legal move
         //          2 if Unit has already made a move this turn;
         //          3 if Other Unit(s) is blocking all paths to the space
@@ -1305,7 +1305,7 @@ namespace Tanktics
             //from the next unit line) it is valid move
             if ((!right && !left && !below && !above))
             {
-                return 1;
+                return 0;
             }
 
             //If player is trying to go one space left
@@ -1826,7 +1826,7 @@ namespace Tanktics
         //Movement specifics for Tanks
         //ASUMPTION: the game will never feed it a position off the board
         //           for example it will never make a call goal(-1, 4)
-        //Returns:  0 if Trying to move greater than maximum movement range of unit
+        //Returns:  0 if Trying to move greater than maximum movement range of unit (Or stay same spot)
         //          1 if legal move
         //          2 if Unit has already made a move this turn;
         //          3 if Other Unit(s) is blocking all paths to the space
@@ -1888,7 +1888,7 @@ namespace Tanktics
             //from the next unit line) it is valid move
             if ((!right && !left && !below && !above))
             {
-                return 1;
+                return 0;
             }
             //If player is trying to go one space left
             if (left && !above && !below && (absoluteDistance == 1))
@@ -3250,7 +3250,7 @@ namespace Tanktics
         //Call for all unit Movement
         //Does alot of upkeep and calls the specific move calls
         //NOTE:      ONLY CALL THIS FOR MOVEMENT
-        //Returns:  0 if Trying to move greater than maximum movement range of unit
+        //Returns:  0 if Trying to move greater than maximum movement range of unit(Or stay same spot)
         //          1 if legal move
         //          2 if Unit has already made a move this turn;
         //          3 if Other Unit(s), water, or factory is blocking all paths to the space
