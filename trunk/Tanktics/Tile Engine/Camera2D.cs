@@ -32,7 +32,7 @@ namespace Tanktics
         public float MinScale = 0.1f;
         public float MaxScale = 2f;
 
-        //player using this camera (1, 2, 3, or 4)
+        //player using this camera
         public int PlayerNum;
 
         #endregion
@@ -87,6 +87,7 @@ namespace Tanktics
 
         #region Public Methods
 
+        //move the camera's x and/or y position
         public void Move(Vector2 direction, float elapsed)
         {
             Position.X += direction.X * elapsed * Speed;
@@ -95,6 +96,7 @@ namespace Tanktics
             ClampToViewport();
         }
 
+        //increase scale
         public void ZoomIn(float elapsed)
         {
             scale += elapsed * scaleRate;
@@ -102,7 +104,8 @@ namespace Tanktics
             if (scale > MaxScale)
                 scale = MaxScale;
         }
-
+        
+        //decrease scale
         public void ZoomOut(float elapsed)
         {
             scale -= elapsed * scaleRate;
@@ -113,11 +116,25 @@ namespace Tanktics
             ClampToViewport();
         }
 
+        //center the camera around tile at (x, y) if it is outside viewport
         public void JumpTo(int x, int y)
         {
-            //attempt to center camera around (x, y) tile
-            Position.X = x * scale * tileWidth - Viewport.Width / 2;
-            Position.Y = y * scale * tileHeight - Viewport.Height / 2;
+            int scaledTileWidth = (int)(scale * tileWidth + 0.5f);
+            int scaledTileHeight = (int)(scale * tileHeight + 0.5f);
+
+            //calculate range of visible tiles
+            Point minVisible = new Point(
+                (int)(Position.X / scaledTileWidth) + 1,
+                (int)(Position.Y / scaledTileHeight) + 1);
+            Point maxVisible = new Point(
+                (int)(Position.X + Viewport.Width) / scaledTileWidth - 1,
+                (int)(Position.Y + Viewport.Height) / scaledTileHeight - 1);
+
+            //center around (x, y) if its outside viewport
+            if (x < minVisible.X || x > maxVisible.X)
+                Position.X = x * scaledTileWidth - Viewport.Width / 2;
+            if (y < minVisible.Y || y > maxVisible.Y)
+                Position.Y = y * scaledTileHeight - Viewport.Height / 2;
 
             ClampToViewport();
         }

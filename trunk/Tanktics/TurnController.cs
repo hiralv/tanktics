@@ -21,9 +21,9 @@ namespace Tanktics
         public int totalTank = 0;
         public int totalArtil = 0;
 
-        public int MAXAPC = 6;
-        public int MAXTANK = 4;
-        public int MAXARTIL = 2;
+        public int MAXAPC = 3;
+        public int MAXTANK = 2;
+        public int MAXARTIL = 1;
 
         int startingSmallX;
         int startingSmallY;
@@ -94,143 +94,187 @@ namespace Tanktics
         {
             points = points + calcPoints();
         }
+
         //Calulates current number of factories under the players control
         //Acey Boyce
         public int calcPoints()
         {
             int numFactories = 0;
-            //Factory 1
-            //If player has an APC in factory get a point
-            if ((unitController.unitAt(11, 3).team == team && unitController.unitAt(11, 3).type.Equals("apc")) ||
-                (unitController.unitAt(12, 3).team == team && unitController.unitAt(12, 3).type.Equals("apc")) ||
-                (unitController.unitAt(13, 3).team == team && unitController.unitAt(13, 3).type.Equals("apc")) ||
-                (unitController.unitAt(11, 4).team == team && unitController.unitAt(11, 4).type.Equals("apc")) ||
-                (unitController.unitAt(13, 4).team == team && unitController.unitAt(13, 4).type.Equals("apc")) ||
-                (unitController.unitAt(11, 5).team == team && unitController.unitAt(11, 5).type.Equals("apc")) ||
-                (unitController.unitAt(12, 5).team == team && unitController.unitAt(12, 5).type.Equals("apc")) ||
-                (unitController.unitAt(13, 5).team == team && unitController.unitAt(13, 5).type.Equals("apc")))
-            {
-                numFactories++;
-                //Unless of course their is another teams unit in there too!
-                if ((unitController.unitAt(11, 3).team != team && unitController.unitAt(11, 3).team != 0) ||
-                (unitController.unitAt(12, 3).team != team && unitController.unitAt(12, 3).team != 0) ||
-                (unitController.unitAt(13, 3).team != team && unitController.unitAt(13, 3).team != 0) ||
-                (unitController.unitAt(11, 4).team != team && unitController.unitAt(11, 4).team != 0) ||
-                (unitController.unitAt(13, 4).team != team && unitController.unitAt(13, 4).team != 0) ||
-                (unitController.unitAt(11, 5).team != team && unitController.unitAt(11, 5).team != 0) ||
-                (unitController.unitAt(12, 5).team != team && unitController.unitAt(12, 5).team != 0) ||
-                (unitController.unitAt(13, 5).team != team && unitController.unitAt(13, 5).team != 0))
-                {
-                    numFactories--;
-                }
-            }
 
-            //Factory 2
-            //If player has an APC in factory get a point
-            if ((unitController.unitAt(3, 11).team == team && unitController.unitAt(3, 11).type.Equals("apc")) ||
-                (unitController.unitAt(3, 12).team == team && unitController.unitAt(3, 12).type.Equals("apc")) ||
-                (unitController.unitAt(3, 13).team == team && unitController.unitAt(3, 13).type.Equals("apc")) ||
-                (unitController.unitAt(4, 11).team == team && unitController.unitAt(4, 11).type.Equals("apc")) ||
-                (unitController.unitAt(4, 13).team == team && unitController.unitAt(4, 13).type.Equals("apc")) ||
-                (unitController.unitAt(5, 11).team == team && unitController.unitAt(5, 11).type.Equals("apc")) ||
-                (unitController.unitAt(5, 12).team == team && unitController.unitAt(5, 12).type.Equals("apc")) ||
-                (unitController.unitAt(5, 13).team == team && unitController.unitAt(5, 13).type.Equals("apc")))
-            {
+            //factory 1
+            if (factoryControlled(7, 2, 9, 4))
                 numFactories++;
-                //Unless of course their is another teams unit in there too!
-                if ((unitController.unitAt(3, 11).team != team && unitController.unitAt(3, 11).team != 0) ||
-                (unitController.unitAt(3, 12).team != team && unitController.unitAt(3, 12).team != 0) ||
-                (unitController.unitAt(3, 13).team != team && unitController.unitAt(3, 13).team != 0) ||
-                (unitController.unitAt(4, 11).team != team && unitController.unitAt(4, 11).team != 0) ||
-                (unitController.unitAt(4, 13).team != team && unitController.unitAt(4, 13).team != 0) ||
-                (unitController.unitAt(5, 11).team != team && unitController.unitAt(5, 11).team != 0) ||
-                (unitController.unitAt(5, 12).team != team && unitController.unitAt(5, 12).team != 0) ||
-                (unitController.unitAt(5, 13).team != team && unitController.unitAt(5, 13).team != 0))
-                {
-                    numFactories--;
-                }
-            }
+            //factory 2
+            if (factoryControlled(2, 7, 4, 9))
+                numFactories++;
+            //factory 3
+            if (factoryControlled(7, 7, 9, 9))
+                numFactories++;
+            //factory 4
+            if (factoryControlled(12, 7, 14, 9))
+                numFactories++;
+            //factory 5
+            if (factoryControlled(7, 12, 9, 14))
+                numFactories++;
 
-            //Factory 3
-            //If player has an APC in factory get a point
-            if ((unitController.unitAt(11, 11).team == team && unitController.unitAt(11, 11).type.Equals("apc")) ||
-                (unitController.unitAt(11, 12).team == team && unitController.unitAt(11, 12).type.Equals("apc")) ||
-                (unitController.unitAt(11, 13).team == team && unitController.unitAt(11, 13).type.Equals("apc")) ||
-                (unitController.unitAt(12, 11).team == team && unitController.unitAt(12, 11).type.Equals("apc")) ||
-                (unitController.unitAt(12, 13).team == team && unitController.unitAt(12, 13).type.Equals("apc")) ||
-                (unitController.unitAt(13, 11).team == team && unitController.unitAt(13, 11).type.Equals("apc")) ||
-                (unitController.unitAt(13, 12).team == team && unitController.unitAt(13, 12).type.Equals("apc")) ||
-                (unitController.unitAt(13, 13).team == team && unitController.unitAt(13, 13).type.Equals("apc")))
-            {
-                numFactories++;
-                //Unless of course their is another teams unit in there too!
-                if ((unitController.unitAt(11, 11).team != team && unitController.unitAt(11, 11).team != 0) ||
-                (unitController.unitAt(11, 12).team != team && unitController.unitAt(11, 12).team != 0) ||
-                (unitController.unitAt(11, 13).team != team && unitController.unitAt(11, 13).team != 0) ||
-                (unitController.unitAt(12, 11).team != team && unitController.unitAt(12, 11).team != 0) ||
-                (unitController.unitAt(12, 13).team != team && unitController.unitAt(12, 13).team != 0) ||
-                (unitController.unitAt(13, 11).team != team && unitController.unitAt(13, 11).team != 0) ||
-                (unitController.unitAt(13, 12).team != team && unitController.unitAt(13, 12).team != 0) ||
-                (unitController.unitAt(13, 13).team != team && unitController.unitAt(13, 13).team != 0))
-                {
-                    numFactories--;
-                }
-            }
+            #region old way...
+            ////Factory 1
+            ////If player has a unit in factory get a point
+            //if (unitController.unitAt(7, 2).team == team ||
+            //    unitController.unitAt(8, 2).team == team ||
+            //    unitController.unitAt(9, 2).team == team ||
+            //    unitController.unitAt(7, 3).team == team ||
+            //    unitController.unitAt(9, 3).team == team ||
+            //    unitController.unitAt(7, 4).team == team ||
+            //    unitController.unitAt(8, 4).team == team ||
+            //    unitController.unitAt(9, 4).team == team)
+            //{
+            //    numFactories++;
+            //    //Unless of course there is another teams unit in there too!
+            //    if ((unitController.unitAt(7, 2).team != team && unitController.unitAt(7, 2).team != 0) ||
+            //    (unitController.unitAt(8, 2).team != team && unitController.unitAt(8, 2).team != 0) ||
+            //    (unitController.unitAt(9, 2).team != team && unitController.unitAt(9, 2).team != 0) ||
+            //    (unitController.unitAt(7, 3).team != team && unitController.unitAt(7, 3).team != 0) ||
+            //    (unitController.unitAt(9, 3).team != team && unitController.unitAt(9, 3).team != 0) ||
+            //    (unitController.unitAt(7, 4).team != team && unitController.unitAt(7, 4).team != 0) ||
+            //    (unitController.unitAt(8, 4).team != team && unitController.unitAt(8, 4).team != 0) ||
+            //    (unitController.unitAt(9, 4).team != team && unitController.unitAt(9, 4).team != 0))
+            //    {
+            //        numFactories--;
+            //    }
+            //}
 
-            //Factory 4
-            //If player has an APC in factory get a point
-            if ((unitController.unitAt(19, 11).team == team && unitController.unitAt(19, 11).type.Equals("apc")) ||
-                (unitController.unitAt(19, 12).team == team && unitController.unitAt(19, 12).type.Equals("apc")) ||
-                (unitController.unitAt(19, 13).team == team && unitController.unitAt(19, 13).type.Equals("apc")) ||
-                (unitController.unitAt(20, 11).team == team && unitController.unitAt(20, 11).type.Equals("apc")) ||
-                (unitController.unitAt(20, 13).team == team && unitController.unitAt(20, 13).type.Equals("apc")) ||
-                (unitController.unitAt(21, 11).team == team && unitController.unitAt(21, 11).type.Equals("apc")) ||
-                (unitController.unitAt(21, 12).team == team && unitController.unitAt(21, 12).type.Equals("apc")) ||
-                (unitController.unitAt(21, 13).team == team && unitController.unitAt(21, 13).type.Equals("apc")))
-            {
-                numFactories++;
-                //Unless of course their is another teams unit in there too!
-                if ((unitController.unitAt(19, 11).team != team && unitController.unitAt(19, 11).team != 0) ||
-                (unitController.unitAt(19, 12).team != team && unitController.unitAt(19, 12).team != 0) ||
-                (unitController.unitAt(19, 13).team != team && unitController.unitAt(19, 13).team != 0) ||
-                (unitController.unitAt(20, 11).team != team && unitController.unitAt(20, 11).team != 0) ||
-                (unitController.unitAt(20, 13).team != team && unitController.unitAt(20, 13).team != 0) ||
-                (unitController.unitAt(21, 11).team != team && unitController.unitAt(21, 11).team != 0) ||
-                (unitController.unitAt(21, 12).team != team && unitController.unitAt(21, 12).team != 0) ||
-                (unitController.unitAt(21, 13).team != team && unitController.unitAt(21, 13).team != 0))
-                {
-                    numFactories--;
-                }
-            }
+            ////Factory 2
+            ////If player has a unit in factory get a point
+            //if (unitController.unitAt(2, 7).team == team ||
+            //    unitController.unitAt(3, 7).team == team ||
+            //    unitController.unitAt(4, 7).team == team ||
+            //    unitController.unitAt(2, 8).team == team ||
+            //    unitController.unitAt(4, 8).team == team ||
+            //    unitController.unitAt(2, 9).team == team ||
+            //    unitController.unitAt(3, 9).team == team ||
+            //    unitController.unitAt(4, 9).team == team)
+            //{
+            //    numFactories++;
+            //    //Unless of course there is another teams unit in there too!
+            //    if ((unitController.unitAt(2, 7).team != team && unitController.unitAt(2, 7).team != 0) ||
+            //    (unitController.unitAt(3, 7).team != team && unitController.unitAt(3, 7).team != 0) ||
+            //    (unitController.unitAt(4, 7).team != team && unitController.unitAt(4, 7).team != 0) ||
+            //    (unitController.unitAt(2, 8).team != team && unitController.unitAt(2, 8).team != 0) ||
+            //    (unitController.unitAt(4, 8).team != team && unitController.unitAt(4, 8).team != 0) ||
+            //    (unitController.unitAt(2, 9).team != team && unitController.unitAt(2, 9).team != 0) ||
+            //    (unitController.unitAt(3, 9).team != team && unitController.unitAt(3, 9).team != 0) ||
+            //    (unitController.unitAt(4, 9).team != team && unitController.unitAt(4, 9).team != 0))
+            //    {
+            //        numFactories--;
+            //    }
+            //}
 
-            //Factory 5
-            //If player has an APC in factory get a point
-            if ((unitController.unitAt(11, 19).team == team && unitController.unitAt(11, 19).type.Equals("apc")) ||
-                (unitController.unitAt(11, 20).team == team && unitController.unitAt(11, 20).type.Equals("apc")) ||
-                (unitController.unitAt(11, 21).team == team && unitController.unitAt(11, 21).type.Equals("apc")) ||
-                (unitController.unitAt(12, 19).team == team && unitController.unitAt(12, 19).type.Equals("apc")) ||
-                (unitController.unitAt(12, 21).team == team && unitController.unitAt(12, 21).type.Equals("apc")) ||
-                (unitController.unitAt(13, 19).team == team && unitController.unitAt(13, 19).type.Equals("apc")) ||
-                (unitController.unitAt(13, 20).team == team && unitController.unitAt(13, 20).type.Equals("apc")) ||
-                (unitController.unitAt(13, 21).team == team && unitController.unitAt(13, 21).type.Equals("apc")))
-            {
-                numFactories++;
-                //Unless of course their is another teams unit in there too!
-                if ((unitController.unitAt(11, 19).team != team && unitController.unitAt(11, 19).team != 0) ||
-                (unitController.unitAt(11, 20).team != team && unitController.unitAt(11, 20).team != 0) ||
-                (unitController.unitAt(11, 21).team != team && unitController.unitAt(11, 21).team != 0) ||
-                (unitController.unitAt(12, 19).team != team && unitController.unitAt(12, 19).team != 0) ||
-                (unitController.unitAt(12, 21).team != team && unitController.unitAt(12, 21).team != 0) ||
-                (unitController.unitAt(13, 19).team != team && unitController.unitAt(13, 19).team != 0) ||
-                (unitController.unitAt(13, 20).team != team && unitController.unitAt(13, 20).team != 0) ||
-                (unitController.unitAt(13, 21).team != team && unitController.unitAt(13, 21).team != 0))
-                {
-                    numFactories--;
-                }
-            }
+            ////Factory 3
+            ////If player has an APC in factory get a point
+            //if ((unitController.unitAt(11, 11).team == team && unitController.unitAt(11, 11).type.Equals("apc")) ||
+            //    (unitController.unitAt(11, 12).team == team && unitController.unitAt(11, 12).type.Equals("apc")) ||
+            //    (unitController.unitAt(11, 13).team == team && unitController.unitAt(11, 13).type.Equals("apc")) ||
+            //    (unitController.unitAt(12, 11).team == team && unitController.unitAt(12, 11).type.Equals("apc")) ||
+            //    (unitController.unitAt(12, 13).team == team && unitController.unitAt(12, 13).type.Equals("apc")) ||
+            //    (unitController.unitAt(13, 11).team == team && unitController.unitAt(13, 11).type.Equals("apc")) ||
+            //    (unitController.unitAt(13, 12).team == team && unitController.unitAt(13, 12).type.Equals("apc")) ||
+            //    (unitController.unitAt(13, 13).team == team && unitController.unitAt(13, 13).type.Equals("apc")))
+            //{
+            //    numFactories++;
+            //    //Unless of course their is another teams unit in there too!
+            //    if ((unitController.unitAt(11, 11).team != team && unitController.unitAt(11, 11).team != 0) ||
+            //    (unitController.unitAt(11, 12).team != team && unitController.unitAt(11, 12).team != 0) ||
+            //    (unitController.unitAt(11, 13).team != team && unitController.unitAt(11, 13).team != 0) ||
+            //    (unitController.unitAt(12, 11).team != team && unitController.unitAt(12, 11).team != 0) ||
+            //    (unitController.unitAt(12, 13).team != team && unitController.unitAt(12, 13).team != 0) ||
+            //    (unitController.unitAt(13, 11).team != team && unitController.unitAt(13, 11).team != 0) ||
+            //    (unitController.unitAt(13, 12).team != team && unitController.unitAt(13, 12).team != 0) ||
+            //    (unitController.unitAt(13, 13).team != team && unitController.unitAt(13, 13).team != 0))
+            //    {
+            //        numFactories--;
+            //    }
+            //}
+
+            ////Factory 4
+            ////If player has an APC in factory get a point
+            //if ((unitController.unitAt(19, 11).team == team && unitController.unitAt(19, 11).type.Equals("apc")) ||
+            //    (unitController.unitAt(19, 12).team == team && unitController.unitAt(19, 12).type.Equals("apc")) ||
+            //    (unitController.unitAt(19, 13).team == team && unitController.unitAt(19, 13).type.Equals("apc")) ||
+            //    (unitController.unitAt(20, 11).team == team && unitController.unitAt(20, 11).type.Equals("apc")) ||
+            //    (unitController.unitAt(20, 13).team == team && unitController.unitAt(20, 13).type.Equals("apc")) ||
+            //    (unitController.unitAt(21, 11).team == team && unitController.unitAt(21, 11).type.Equals("apc")) ||
+            //    (unitController.unitAt(21, 12).team == team && unitController.unitAt(21, 12).type.Equals("apc")) ||
+            //    (unitController.unitAt(21, 13).team == team && unitController.unitAt(21, 13).type.Equals("apc")))
+            //{
+            //    numFactories++;
+            //    //Unless of course their is another teams unit in there too!
+            //    if ((unitController.unitAt(19, 11).team != team && unitController.unitAt(19, 11).team != 0) ||
+            //    (unitController.unitAt(19, 12).team != team && unitController.unitAt(19, 12).team != 0) ||
+            //    (unitController.unitAt(19, 13).team != team && unitController.unitAt(19, 13).team != 0) ||
+            //    (unitController.unitAt(20, 11).team != team && unitController.unitAt(20, 11).team != 0) ||
+            //    (unitController.unitAt(20, 13).team != team && unitController.unitAt(20, 13).team != 0) ||
+            //    (unitController.unitAt(21, 11).team != team && unitController.unitAt(21, 11).team != 0) ||
+            //    (unitController.unitAt(21, 12).team != team && unitController.unitAt(21, 12).team != 0) ||
+            //    (unitController.unitAt(21, 13).team != team && unitController.unitAt(21, 13).team != 0))
+            //    {
+            //        numFactories--;
+            //    }
+            //}
+
+            ////Factory 5
+            ////If player has an APC in factory get a point
+            //if ((unitController.unitAt(11, 19).team == team && unitController.unitAt(11, 19).type.Equals("apc")) ||
+            //    (unitController.unitAt(11, 20).team == team && unitController.unitAt(11, 20).type.Equals("apc")) ||
+            //    (unitController.unitAt(11, 21).team == team && unitController.unitAt(11, 21).type.Equals("apc")) ||
+            //    (unitController.unitAt(12, 19).team == team && unitController.unitAt(12, 19).type.Equals("apc")) ||
+            //    (unitController.unitAt(12, 21).team == team && unitController.unitAt(12, 21).type.Equals("apc")) ||
+            //    (unitController.unitAt(13, 19).team == team && unitController.unitAt(13, 19).type.Equals("apc")) ||
+            //    (unitController.unitAt(13, 20).team == team && unitController.unitAt(13, 20).type.Equals("apc")) ||
+            //    (unitController.unitAt(13, 21).team == team && unitController.unitAt(13, 21).type.Equals("apc")))
+            //{
+            //    numFactories++;
+            //    //Unless of course their is another teams unit in there too!
+            //    if ((unitController.unitAt(11, 19).team != team && unitController.unitAt(11, 19).team != 0) ||
+            //    (unitController.unitAt(11, 20).team != team && unitController.unitAt(11, 20).team != 0) ||
+            //    (unitController.unitAt(11, 21).team != team && unitController.unitAt(11, 21).team != 0) ||
+            //    (unitController.unitAt(12, 19).team != team && unitController.unitAt(12, 19).team != 0) ||
+            //    (unitController.unitAt(12, 21).team != team && unitController.unitAt(12, 21).team != 0) ||
+            //    (unitController.unitAt(13, 19).team != team && unitController.unitAt(13, 19).team != 0) ||
+            //    (unitController.unitAt(13, 20).team != team && unitController.unitAt(13, 20).team != 0) ||
+            //    (unitController.unitAt(13, 21).team != team && unitController.unitAt(13, 21).team != 0))
+            //    {
+            //        numFactories--;
+            //    }
+            //}
+#endregion
 
             return numFactories;
         }
+
+        //determine if a factory zone at the given location is controlled by this team
+        //Robby Florence
+        public Boolean factoryControlled(int startX, int startY, int endX, int endY)
+        {
+            Boolean controlled = false;
+
+            for (int y = startY; y <= endY; y++)
+            {
+                for (int x = startX; x <= endX; x++)
+                {
+                    //unit on another team found, so this team cant control factory
+                    if (unitController.unitAt(x, y).team > 0 && unitController.unitAt(x, y).team != team)
+                        return false;
+
+                    //unit on this team found, possible to conrol this factory
+                    if (unitController.unitAt(x, y).team == team)
+                        controlled = true;
+                }
+            }
+
+            return controlled;
+        }
+
         //Additional checks for creating a unit
         //Acey Boyce
         public Boolean createUnit(String type, int X, int Y)
