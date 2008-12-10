@@ -1661,7 +1661,7 @@ namespace Tanktics
                     return 3;
                 }
                 //if there is unit (but not your unit)
-                else if (currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team != 0)
+                else if (currentBoard[currentUnit.currentY + 3, currentUnit.currentX].team != 0)
                 {
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 3, currentUnit.currentX];
                     numUnitsKilled++;
