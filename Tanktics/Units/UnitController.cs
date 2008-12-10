@@ -1485,7 +1485,7 @@ namespace Tanktics
                     return 1;
                 }
                 //if there is a unit 1 to the left or water 1, 2 to the left
-                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team ||
+                else if (currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team != 0 ||
                     !map.IsWalkable("artillery", currentUnit.currentX - 1, currentUnit.currentY) ||
                     !map.IsWalkable("artillery", currentUnit.currentX - 2, currentUnit.currentY))
                 {
@@ -1518,7 +1518,7 @@ namespace Tanktics
                     return 1;
                 }
                 //if there is a unit 1 to the right or water 1, 2 to the right
-                else if (currentUnit.team == currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team ||
+                else if (currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team != 0 ||
                     !map.IsWalkable("artillery", currentUnit.currentX + 1, currentUnit.currentY) ||
                     !map.IsWalkable("artillery", currentUnit.currentX + 2, currentUnit.currentY))
                 {
@@ -1551,7 +1551,7 @@ namespace Tanktics
                     return 1;
                 }
                 //if there is a unit 1 above or water 1, 2 above
-                else if (currentUnit.team == currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team ||
+                else if (currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team != 0 ||
                    !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY - 1) ||
                    !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY - 2))
                 {
@@ -1584,7 +1584,7 @@ namespace Tanktics
                     return 1;
                 }
                 //if there is a unit 1 below or water 1, 2 below
-                else if (currentUnit.team == currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team ||
+                else if (currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team != 0||
                    !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY + 1) ||
                    !map.IsWalkable("artillery", currentUnit.currentX, currentUnit.currentY + 2))
                 {
