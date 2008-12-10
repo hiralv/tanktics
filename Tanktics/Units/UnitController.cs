@@ -684,11 +684,12 @@ namespace Tanktics
             //Step 5:
             //Remove all killed units from unit lists
             i = 0;
-            while (!(unitsKilledThisTurn[i].type.Equals("null")))
+            while (i < numUnitsKilled)//!(unitsKilledThisTurn[i].type.Equals("null")))
             {
                 removeUnit(unitsKilledThisTurn[i].unitNumber, unitsKilledThisTurn[i].team);
                 i++;
             }
+            numUnitsKilled = 0;
 
 
             //Step 6:
@@ -3408,7 +3409,7 @@ namespace Tanktics
             }
             else if (teamNum == 3)
             {
-                while (i < team2Length)
+                while (i < team3Length)
                 {
                     if (team3[i].unitNumber == unitNum)
                     {

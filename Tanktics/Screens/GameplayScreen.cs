@@ -159,9 +159,7 @@ namespace Tanktics
                 (int)(170f / 600f * viewport.Height));
             hud.LoadContent(content);
 
-            tileEngine.Texture = content.Load<Texture2D>("fullTileSet");
-            tileEngine.SelectedTexture = content.Load<Texture2D>("selected border");
-            tileEngine.BlankTexture = content.Load<Texture2D>("blank");
+            tileEngine.LoadContent(content);
 
 
             //load player 1 (white) apc animations

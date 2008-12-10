@@ -27,9 +27,11 @@ namespace Tanktics
         int numLayers;
 
         //texture for selected squares
-        public Texture2D SelectedTexture;
+        Texture2D selectedTexture;
+        //texture for current unit square
+        Texture2D currentUnitTexture;
         //blank texture used to draw units in minimap
-        public Texture2D BlankTexture;
+        Texture2D blankTexture;
 
         #endregion
 
@@ -115,6 +117,17 @@ namespace Tanktics
                     tiles[i] = new Rectangle(x * TileWidth, y * TileHeight, TileWidth, TileHeight);
                 }
             }
+        }
+
+        public void LoadContent(ContentManager content)
+        {
+            if (content == null)
+                return;
+
+            texture = content.Load<Texture2D>("fullTileSet");
+            selectedTexture = content.Load<Texture2D>("selected border");
+            currentUnitTexture = content.Load<Texture2D>("current unit border");
+            blankTexture = content.Load<Texture2D>("blank");
         }
 
         #endregion
@@ -228,7 +241,7 @@ namespace Tanktics
             }
 
             //draw units
-            if (units != null && BlankTexture != null)
+            if (units != null && blankTexture != null)
             {
                 for (int y = minVisible.Y; y < maxVisible.Y; y++)
                 {
@@ -252,7 +265,7 @@ namespace Tanktics
 
                             //draw square in tile
                             batch.Draw(
-                                BlankTexture,
+                                blankTexture,
                                 new Rectangle(
                                 (x - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth + (int)(0.25f * scaledTileWidth),
                                 (y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight + (int)(0.25f * scaledTileHeight),
@@ -331,11 +344,12 @@ namespace Tanktics
                     {
                         if (units.isVisible(camera.PlayerNum, x, y))
                         {
-                            //tile is on edge of visibility
+                            //tile is on edge of visibility or has already moved
                             if ((x > 0 && !units.isVisible(camera.PlayerNum, x - 1, y)) ||
                                 (x < MapWidth - 1 && !units.isVisible(camera.PlayerNum, x + 1, y)) ||
                                 (y > 0 && !units.isVisible(camera.PlayerNum, x, y - 1)) ||
-                                (y < MapHeight - 1 && !units.isVisible(camera.PlayerNum, x, y + 1)))
+                                (y < MapHeight - 1 && !units.isVisible(camera.PlayerNum, x, y + 1)) ||
+                                units.getUnit(x, y).hasMoved)
                             {
                                 fade = Color.LightGray;
                             }
@@ -353,13 +367,28 @@ namespace Tanktics
                 }
             }
 
+            //draw current unit border
+            if (currentUnitTexture != null && units.currentUnit != null &&
+                minVisible.X <= units.currentUnit.currentX && units.currentUnit.currentX < maxVisible.X &&
+                minVisible.Y <= units.currentUnit.currentY && units.currentUnit.currentY < maxVisible.Y)
+            {
+                batch.Draw(
+                    currentUnitTexture,
+                    new Rectangle(
+                        (units.currentUnit.currentX - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
+                        (units.currentUnit.currentY - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
+                        scaledTileWidth,
+                        scaledTileHeight),
+                    Color.White);
+            }
+
             //draw selected border
-            if (SelectedTexture != null &&
+            if (selectedTexture != null &&
                 minVisible.X <= selected.X && selected.X < maxVisible.X &&
                 minVisible.Y <= selected.Y && selected.Y < maxVisible.Y)
             {
                 batch.Draw(
-                    SelectedTexture,
+                    selectedTexture,
                     new Rectangle(
                         (selected.X - minVisible.X) * scaledTileWidth + camera.Viewport.X - (int)camera.Position.X % scaledTileWidth,
                         (selected.Y - minVisible.Y) * scaledTileHeight + camera.Viewport.Y - (int)camera.Position.Y % scaledTileHeight,
