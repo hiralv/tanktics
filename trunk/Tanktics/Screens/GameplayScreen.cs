@@ -512,9 +512,17 @@ namespace Tanktics
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
-                    unitControl.moveUnit(selected.X, selected.Y);
-                    selected.X = unitControl.currentUnit.currentX;
-                    selected.Y = unitControl.currentUnit.currentY;
+                    if ((unitControl.getUnit(selected.X, selected.Y).team == unitControl.currentPlayer) &&
+                        !unitControl.getUnit(selected.X, selected.Y).hasMoved)
+                    {
+                        unitControl.currentUnit = unitControl.getUnit(selected.X, selected.Y);
+                    }
+                    else
+                    {
+                        unitControl.moveUnit(selected.X, selected.Y);
+                        selected.X = unitControl.currentUnit.currentX;
+                        selected.Y = unitControl.currentUnit.currentY;
+                    }
                 }
 
                 else if (TCs[unitControl.currentPlayer - 1].phase == 0)
