@@ -72,8 +72,9 @@ namespace Tanktics
             }
 
             phase++;
-            if (phase == 4)
+            if (phase == 3)
             {
+                phase++;
                 totalArtil = unitController.getNumUnits(team, "artillery");
                 totalAPC = unitController.getNumUnits(team, "apc");
                 totalTank = unitController.getNumUnits(team, "tank");
