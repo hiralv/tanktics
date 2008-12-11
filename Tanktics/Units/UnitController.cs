@@ -3401,7 +3401,7 @@ namespace Tanktics
                     {
                         removedUnit = team2[i];
                         team2[i] = team2[team2Length - 1];
-                        team2[team1Length - 1] = new NullUnit();
+                        team2[team2Length - 1] = new NullUnit();
                         team2Length--;
                     }
                     i++;
