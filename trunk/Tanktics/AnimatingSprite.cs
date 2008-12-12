@@ -40,6 +40,15 @@ using Microsoft.Xna.Framework.Graphics;
         public int CurrentFrameNum
         {
             get { return currentFrame; }
+            set
+            {
+                currentFrame = value;
+                if (currentFrame == frames.Length - 1)
+                    isFinished = true;
+                else
+                    isFinished = false;
+
+            }
         }
 
         /// <summary>
