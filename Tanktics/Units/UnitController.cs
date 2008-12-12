@@ -50,6 +50,11 @@ namespace Tanktics
         Unit[] unitsKilledThisTurn = new Unit[MAXIMUMUNITS];
         int numUnitsKilled = 0;
 
+        //explosion variables
+        public AnimatingSprite explosion;
+        Boolean isExploding = false;
+        Point explosionLocation = Point.Zero;
+
 
         //Creates a new Unit Controller and sets the number of players
         //DOES NOT:
@@ -101,6 +106,13 @@ namespace Tanktics
                 unitsKilledThisTurn[i] = new NullUnit();
                 i++;
             }
+
+            //initialize explosion sprite
+            Animation explo = new Animation(3990, 1596, 37, 4, 10, 0, 0);
+            explo.FramesPerSecond = 37;
+            explosion = new AnimatingSprite();
+            explosion.Animations.Add("explosion", explo);
+            explosion.CurrentAnimation = "explosion";
         }
 
         //set the unit at a position on the current board
@@ -802,6 +814,12 @@ namespace Tanktics
                     currentUnit.moves[0] = (int)Unit.Anim.Left;
                     currentUnit.numMoves = 1;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX-1].team, currentUnit.currentX-1, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-1;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -830,6 +848,12 @@ namespace Tanktics
                     currentUnit.moves[0] = (int)Unit.Anim.Right;
                     currentUnit.numMoves = 1;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX+1].team, currentUnit.currentX+1, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+1;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -858,6 +882,12 @@ namespace Tanktics
                     currentUnit.moves[0] = (int)Unit.Anim.Up;
                     currentUnit.numMoves = 1;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-1, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY-1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY-1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -886,6 +916,12 @@ namespace Tanktics
                     currentUnit.moves[0] = (int)Unit.Anim.Down;
                     currentUnit.numMoves = 1;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+1, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY+1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY+1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -923,6 +959,12 @@ namespace Tanktics
                     currentUnit.moves[1] = (int)Unit.Anim.Left;
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX-2].team, currentUnit.currentX-2, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-2;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -959,6 +1001,12 @@ namespace Tanktics
                     currentUnit.moves[1] = (int)Unit.Anim.Right;
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team, currentUnit.currentX + 2, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX + 2;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -995,6 +1043,12 @@ namespace Tanktics
                     currentUnit.moves[1] = (int)Unit.Anim.Up;
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-2, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY-2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY-2;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1031,6 +1085,12 @@ namespace Tanktics
                     currentUnit.moves[1] = (int)Unit.Anim.Down;
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+2, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY+2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY+2;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1090,6 +1150,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-1, currentUnit.currentX-1].team, currentUnit.currentX-1, currentUnit.currentY-1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-1;
+                    explosionLocation.Y = currentUnit.currentY-1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1148,6 +1214,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-1, currentUnit.currentX+1].team, currentUnit.currentX+1, currentUnit.currentY-1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+1;
+                    explosionLocation.Y = currentUnit.currentY-1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1206,6 +1278,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+1, currentUnit.currentX-1].team, currentUnit.currentX-1, currentUnit.currentY+1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-1;
+                    explosionLocation.Y = currentUnit.currentY+1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1264,6 +1342,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+1, currentUnit.currentX+1].team, currentUnit.currentX+1, currentUnit.currentY+1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+1;
+                    explosionLocation.Y = currentUnit.currentY+1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1354,6 +1438,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 1];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX - 1].team, currentUnit.currentX - 1, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX - 1;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
                 //if there is water
@@ -1384,6 +1473,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 1];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX + 1].team, currentUnit.currentX + 1, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX + 1;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
                 //if there is water
@@ -1414,6 +1508,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 1, currentUnit.currentX];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY - 1, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY - 1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY - 1;
+                    isExploding = true;
+
                     return 1;
                 }
                 //if there is water
@@ -1444,6 +1543,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 1, currentUnit.currentX];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY + 1, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY + 1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY + 1;
+                    isExploding = true;
+
                     return 1;
                 }
                 //if there is water
@@ -1475,6 +1579,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 2];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX - 2].team, currentUnit.currentX - 2, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX - 2;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
                 //if there is a unit 1 to the left or water 1, 2 to the left
@@ -1508,6 +1617,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 2];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX + 2].team, currentUnit.currentX + 2, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX + 2;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
                 //if there is a unit 1 to the right or water 1, 2 to the right
@@ -1541,6 +1655,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 2, currentUnit.currentX];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY - 2, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY - 2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY - 2;
+                    isExploding = true;
+
                     return 1;
                 }
                 //if there is a unit 1 above or water 1, 2 above
@@ -1574,6 +1693,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 2, currentUnit.currentX];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY + 2, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY + 2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY + 2;
+                    isExploding = true;
+
                     return 1;
                 }
                 //if there is a unit 1 below or water 1, 2 below
@@ -1608,6 +1732,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX - 3];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX - 3].team, currentUnit.currentX - 3, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX - 3;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1625,6 +1754,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY, currentUnit.currentX + 3];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX + 3].team, currentUnit.currentX + 3, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX + 3;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1642,6 +1776,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY - 3, currentUnit.currentX];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY - 3, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY - 3);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY - 3;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1659,6 +1798,11 @@ namespace Tanktics
                     unitsKilledThisTurn[numUnitsKilled] = currentBoard[currentUnit.currentY + 3, currentUnit.currentX];
                     numUnitsKilled++;
                     setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY + 3, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY + 3);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY + 3;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1947,6 +2091,12 @@ namespace Tanktics
                     currentUnit.moves[0] = (int)Unit.Anim.Left;
                     currentUnit.numMoves = 1;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX-1].team, currentUnit.currentX-1, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-1;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -1975,6 +2125,12 @@ namespace Tanktics
                     currentUnit.moves[0] = (int)Unit.Anim.Right;
                     currentUnit.numMoves = 1;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX+1].team, currentUnit.currentX+1, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+1;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2003,6 +2159,12 @@ namespace Tanktics
                     currentUnit.moves[0] = (int)Unit.Anim.Up;
                     currentUnit.numMoves = 1;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-1, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY-1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY-1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2031,6 +2193,12 @@ namespace Tanktics
                     currentUnit.moves[0] = (int)Unit.Anim.Down;
                     currentUnit.numMoves = 1;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+1, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY+1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY+1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2068,6 +2236,12 @@ namespace Tanktics
                     currentUnit.moves[1] = (int)Unit.Anim.Left;
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX-2].team, currentUnit.currentX-2, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-2;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2104,6 +2278,12 @@ namespace Tanktics
                     currentUnit.moves[1] = (int)Unit.Anim.Right;
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX+2].team, currentUnit.currentX+2, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+2;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2140,6 +2320,12 @@ namespace Tanktics
                     currentUnit.moves[1] = (int)Unit.Anim.Up;
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-2, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY-2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY-2;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2176,6 +2362,12 @@ namespace Tanktics
                     currentUnit.moves[1] = (int)Unit.Anim.Down;
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+2, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY+2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY+2;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2217,6 +2409,12 @@ namespace Tanktics
                     currentUnit.moves[2] = (int)Unit.Anim.Left;
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX-3].team, currentUnit.currentX-3, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-3;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2257,6 +2455,12 @@ namespace Tanktics
                     currentUnit.moves[2] = (int)Unit.Anim.Right;
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY, currentUnit.currentX+3].team, currentUnit.currentX+3, currentUnit.currentY);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+3;
+                    explosionLocation.Y = currentUnit.currentY;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2297,6 +2501,12 @@ namespace Tanktics
                     currentUnit.moves[2] = (int)Unit.Anim.Up;
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-3, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY-3);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY-3;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2337,6 +2547,12 @@ namespace Tanktics
                     currentUnit.moves[2] = (int)Unit.Anim.Down;
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+3, currentUnit.currentX].team, currentUnit.currentX, currentUnit.currentY+3);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX;
+                    explosionLocation.Y = currentUnit.currentY+3;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2396,6 +2612,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-1, currentUnit.currentX-1].team, currentUnit.currentX-1, currentUnit.currentY-1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-1;
+                    explosionLocation.Y = currentUnit.currentY-1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2454,6 +2676,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-1, currentUnit.currentX+1].team, currentUnit.currentX+1, currentUnit.currentY-1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+1;
+                    explosionLocation.Y = currentUnit.currentY-1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2512,6 +2740,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+1, currentUnit.currentX-1].team, currentUnit.currentX-1, currentUnit.currentY+1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-1;
+                    explosionLocation.Y = currentUnit.currentY+1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2570,6 +2804,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 2;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+1, currentUnit.currentX+1].team, currentUnit.currentX+1, currentUnit.currentY+1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+1;
+                    explosionLocation.Y = currentUnit.currentY+1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2661,6 +2901,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-2, currentUnit.currentX-1].team, currentUnit.currentX-1, currentUnit.currentY-2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-1;
+                    explosionLocation.Y = currentUnit.currentY-2;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2747,6 +2993,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-2, currentUnit.currentX+1].team, currentUnit.currentX+1, currentUnit.currentY-2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+1;
+                    explosionLocation.Y = currentUnit.currentY-2;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2833,6 +3085,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+2, currentUnit.currentX-1].team, currentUnit.currentX-1, currentUnit.currentY+2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-1;
+                    explosionLocation.Y = currentUnit.currentY+2;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -2919,6 +3177,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+2, currentUnit.currentX+1].team, currentUnit.currentX+1, currentUnit.currentY+2);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+1;
+                    explosionLocation.Y = currentUnit.currentY+2;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -3006,6 +3270,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-1, currentUnit.currentX-2].team, currentUnit.currentX-2, currentUnit.currentY-1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-2;
+                    explosionLocation.Y = currentUnit.currentY-1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -3092,6 +3362,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY-1, currentUnit.currentX+2].team, currentUnit.currentX+2, currentUnit.currentY-1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+2;
+                    explosionLocation.Y = currentUnit.currentY-1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -3178,6 +3454,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+1, currentUnit.currentX-2].team, currentUnit.currentX-2, currentUnit.currentY+1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX-2;
+                    explosionLocation.Y = currentUnit.currentY+1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -3265,6 +3547,12 @@ namespace Tanktics
                     }
                     currentUnit.numMoves = 3;
                     currentUnit.isMoving = true;
+                    setCurrentBoard(new NullUnit(), currentBoard[currentUnit.currentY+1, currentUnit.currentX+2].team, currentUnit.currentX+2, currentUnit.currentY+1);
+                    //start explosion
+                    explosionLocation.X = currentUnit.currentX+2;
+                    explosionLocation.Y = currentUnit.currentY+1;
+                    isExploding = true;
+
                     return 1;
                 }
             }
@@ -3354,6 +3642,19 @@ namespace Tanktics
                 }
                 y++;
             }
+
+            //update explosion
+            if (isExploding)
+            {
+                //stop explosion when finished
+                if (explosion.IsFinished)
+                {
+                    isExploding = false;
+                    explosion.Animations["explosion"].CurrentFrameNum = 0;
+                }
+                else
+                    explosion.Update(gametime);
+            }
         }
 
         //draw the unit at (x, y) in the destination rectangle
@@ -3362,6 +3663,10 @@ namespace Tanktics
         {
             if (currentBoard[y, x].team != 0)
                 currentBoard[y, x].Draw(batch, destination, fade);
+
+            //draw explosion
+            if (isExploding && explosionLocation.X == x && explosionLocation.Y == y)
+                explosion.Draw(batch, destination, fade);
         }
 
         //Removes the given unit from the players unit list
