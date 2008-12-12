@@ -336,14 +336,6 @@ namespace Tanktics
             return count;
         }
 
-        //get the unit at (x, y) on the current board
-        //used to draw minimap
-        //Robby Florence
-        public Unit getUnit(int x, int y)
-        {
-            return currentBoard[y, x];
-        }
-
         //Returns true if given space has a no unit in it
         //Acey Boyce
         public Boolean isEmpty(int x, int y)

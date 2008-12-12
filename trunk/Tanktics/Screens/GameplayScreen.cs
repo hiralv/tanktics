@@ -510,10 +510,10 @@ namespace Tanktics
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
-                    if ((unitControl.getUnit(selected.X, selected.Y).team == unitControl.currentPlayer) &&
-                        !unitControl.getUnit(selected.X, selected.Y).hasMoved)
+                    if ((unitControl.unitAt(selected.X, selected.Y).team == unitControl.currentPlayer) &&
+                        !unitControl.unitAt(selected.X, selected.Y).hasMoved)
                     {
-                        unitControl.currentUnit = unitControl.getUnit(selected.X, selected.Y);
+                        unitControl.currentUnit = unitControl.unitAt(selected.X, selected.Y);
                     }
                     else
                     {
