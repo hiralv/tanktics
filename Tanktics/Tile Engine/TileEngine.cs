@@ -249,7 +249,7 @@ namespace Tanktics
                     {
                         if (units.isVisible(camera.PlayerNum, x, y))
                         {
-                            unitTeam = units.getUnit(x, y).team;
+                            unitTeam = units.unitAt(x, y).team;
 
                             //set color for unit
                             if (unitTeam == 1)
@@ -349,7 +349,7 @@ namespace Tanktics
                                 (x < MapWidth - 1 && !units.isVisible(camera.PlayerNum, x + 1, y)) ||
                                 (y > 0 && !units.isVisible(camera.PlayerNum, x, y - 1)) ||
                                 (y < MapHeight - 1 && !units.isVisible(camera.PlayerNum, x, y + 1)) ||
-                                units.getUnit(x, y).hasMoved)
+                                (units.unitAt(x, y).hasMoved && !units.unitAt(x, y).isMoving))
                             {
                                 fade = Color.LightGray;
                             }
