@@ -79,7 +79,16 @@ namespace Tanktics
                 totalAPC = unitController.getNumUnits(team, "apc");
                 totalTank = unitController.getNumUnits(team, "tank");
             }
-            
+
+                //If you can not buy units skip buy unit phase.
+            if (phase == 4)
+            {
+                if ((points < 2) ||
+                    ((totalArtil == 1) && (totalAPC == 3) && (totalTank == 2)))
+                {
+                    phase++;
+                }
+            }
 
             if (phase >= 6)
             {
