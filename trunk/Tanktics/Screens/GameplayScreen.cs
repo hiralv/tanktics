@@ -317,23 +317,84 @@ namespace Tanktics
             if (input == null)
                 throw new ArgumentNullException("input");
 
+            String leftString = "";
+            String rightString = "";
+            GamePadState gps = GamePad.GetState(PlayerIndex.One);
+
+            if (GamePad.GetState(PlayerIndex.One).IsConnected)
+            {
+                Vector2 leftStick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Left;
+                Vector2 rightStick = GamePad.GetState(PlayerIndex.One).ThumbSticks.Right;
+                if (leftStick.Length() > .2f)
+                {
+                    float stickAngle = (float)Math.Atan2(leftStick.Y, leftStick.X);
+                    if (stickAngle > -MathHelper.PiOver4 &&
+                        stickAngle < MathHelper.PiOver4)
+                    {
+                        leftString = "right";
+                    }
+                    else if (stickAngle > MathHelper.PiOver4 &&
+                    stickAngle < 3f * MathHelper.PiOver4)
+                    {
+                        leftString = "up";
+                    }
+
+                    else if (stickAngle > -(3f * MathHelper.PiOver4) &&
+                    stickAngle < -MathHelper.PiOver4)
+                    {
+                        leftString = "down";  
+                    }
+                    else
+                    {
+                        leftString = "left";
+                    }
+                }
+                if (rightStick.Length() > .2f)
+                {
+                    float stickAngle = (float)Math.Atan2(rightStick.Y, rightStick.X);
+                    if (stickAngle > -MathHelper.PiOver4 &&
+                        stickAngle < MathHelper.PiOver4)
+                    {
+                        rightString = "right";
+                    }
+                    else if (stickAngle > MathHelper.PiOver4 &&
+                    stickAngle < 3f * MathHelper.PiOver4)
+                    {
+                        rightString = "up";
+                    }
+
+                    else if (stickAngle > -(3f * MathHelper.PiOver4) &&
+                    stickAngle < -MathHelper.PiOver4)
+                    {
+                        rightString = "down";  
+                    }
+                    else
+                    {
+                        rightString = "left";
+                    }
+                }
+            }
+
             //exit game
-            if (input.PauseGame)
+            if (input.IsNewKeyPress(Keys.Escape)|| gps.Buttons.Back==ButtonState.Pressed)
             {
                 LoadingScreen.Load(ScreenManager, false, new MenuBackgroundScreen(),
                     new MainMenuScreen());
             }
 
-
             //move camera
             Vector2 cameraMotion = Vector2.Zero;
-            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.W))
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.W) ||
+                rightString.Equals("up"))
                 cameraMotion.Y--;
-            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.S))
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.S) ||
+                rightString.Equals("down"))
                 cameraMotion.Y++;
-            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.A))
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.A) ||
+                rightString.Equals("left"))
                 cameraMotion.X--;
-            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.D))
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.D) ||
+                rightString.Equals("right"))
                 cameraMotion.X++;
             if (cameraMotion != Vector2.Zero)
             {
@@ -343,25 +404,39 @@ namespace Tanktics
             }
 
             //zoom in/out with pageup/pagedown keys
-            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageUp))
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageUp) ||
+                gps.Triggers.Right> 0)
                 camera.ZoomIn(elapsed);
-            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageDown))
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageDown) ||
+                gps.Triggers.Left> 0)
                 camera.ZoomOut(elapsed);
 
             //move selected square
-            if (input.IsNewKeyPress(Keys.Up) && selected.Y > 0)
+            if ((input.IsNewKeyPress(Keys.Up) ||
+                gps.DPad.Up == ButtonState.Pressed ||
+                 leftString.Equals("up")) && 
+                selected.Y > 0)
                 selected.Y--;
-            if (input.IsNewKeyPress(Keys.Down) && selected.Y < tileEngine.MapHeight - 1)
+            if ((input.IsNewKeyPress(Keys.Down) ||
+                gps.DPad.Down == ButtonState.Pressed ||
+                 leftString.Equals("down"))&& 
+                 selected.Y < tileEngine.MapHeight - 1)
                 selected.Y++;
-            if (input.IsNewKeyPress(Keys.Left) && selected.X > 0)
+            if ((input.IsNewKeyPress(Keys.Left) ||
+                gps.DPad.Left == ButtonState.Pressed ||
+                 leftString.Equals("left")) && 
+                 selected.X > 0)
                 selected.X--;
-            if (input.IsNewKeyPress(Keys.Right) && selected.X < tileEngine.MapWidth - 1)
+            if ((input.IsNewKeyPress(Keys.Right) ||
+                gps.DPad.Right == ButtonState.Pressed ||
+                 leftString.Equals("right"))&& 
+                selected.X < tileEngine.MapWidth - 1)
                 selected.X++;
 
 
 
             //Combat Phase: select next unit
-            if (input.IsNewKeyPress(Keys.Tab))
+            if (input.IsNewKeyPress(Keys.Tab) || gps.Buttons.RightShoulder == ButtonState.Pressed)
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
@@ -372,7 +447,7 @@ namespace Tanktics
             }
 
             //Combat Phase: select previous unit
-            if (input.IsNewKeyPress(Keys.Back))
+            if (input.IsNewKeyPress(Keys.Back) || gps.Buttons.LeftShoulder == ButtonState.Pressed)
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
@@ -384,7 +459,7 @@ namespace Tanktics
 
             //Purchase Phase: Buy an APC
             //Acey Boyce
-            if (input.IsNewKeyPress(Keys.D1))
+            if (input.IsNewKeyPress(Keys.D1) || gps.Buttons.X == ButtonState.Pressed)
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 4)
                 {
@@ -413,7 +488,7 @@ namespace Tanktics
 
             //Purchase Phase: Buy a tank
             //Acey Boyce
-            if (input.IsNewKeyPress(Keys.D2))
+            if (input.IsNewKeyPress(Keys.D2) || gps.Buttons.Y == ButtonState.Pressed)
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 4)
                 {
@@ -442,7 +517,7 @@ namespace Tanktics
 
             //Purchase Phase: Buy an artillery
             //Acey Boyce
-            if (input.IsNewKeyPress(Keys.D3))
+            if (input.IsNewKeyPress(Keys.D3) || gps.Buttons.B == ButtonState.Pressed)
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 4)
                 {
@@ -527,7 +602,7 @@ namespace Tanktics
 
             //Combat Phase:move current unit to selected square
             //Unit Placement Phase: Place next unit on selected square
-            if (input.IsNewKeyPress(Keys.Space))
+            if (input.IsNewKeyPress(Keys.Space) || gps.Buttons.A == ButtonState.Pressed)
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
@@ -635,7 +710,7 @@ namespace Tanktics
             //Movement Phase: Next Phase
             //Combat Phase: Next Phase
             //Purchase Phase: Finalize and End Turn
-            if (input.IsNewKeyPress(Keys.Enter))
+            if (input.IsNewKeyPress(Keys.Enter) || gps.Buttons.Start == ButtonState.Pressed)
             {
 
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
