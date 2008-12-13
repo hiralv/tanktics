@@ -45,11 +45,11 @@ namespace Tanktics
 
         String currentJob = "Executive Producer";
 
-        String[] Job = new String[13];
+        String[] Job = new String[14];
 
         String personsName = "  Dr  Tiffany Barnes  ";
 
-        String[] nameArray = new String[13];
+        String[] nameArray = new String[14];
 
         int counter = 0;
 
@@ -72,6 +72,7 @@ namespace Tanktics
             Job[10] ="     Tank SFX      ";
             Job[11] ="Giant  Sound  Pack ";
             Job[12] ="Unedited Main Theme";
+            Job[13] =" Special Thanks To ";
 
 
 
@@ -88,6 +89,7 @@ namespace Tanktics
             nameArray[10] ="      Radio Mall      ";
             nameArray[11] ="      Fede-lasse      ";
             nameArray[12] ="Jack Wall & Sam Hulick";
+            nameArray[13] ="   All Play Testers   ";
 
             sprite = new AnimatingSprite();
             sprite2 = new AnimatingSprite();

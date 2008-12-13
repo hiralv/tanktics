@@ -11,6 +11,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 #endregion
 
 namespace Tanktics
@@ -103,6 +104,8 @@ namespace Tanktics
         /// </summary>
         public override void HandleInput(InputState input)
         {
+            GamePadState gps = GamePad.GetState(PlayerIndex.One);
+
             //go back to options screen
             if (input.MenuCancel)
             {
@@ -110,7 +113,7 @@ namespace Tanktics
                 ExitScreen();
                 ScreenManager.AddScreen(new OptionsScreen());
             }
-            else if (!input.IsKeyDownLeft() && !input.IsKeyDownRight())
+            else if ((!input.IsKeyDownLeft() && !input.IsKeyDownRight()))
             {
                 //select master audio
                 if (input.MenuSelect)
@@ -165,6 +168,66 @@ namespace Tanktics
                 {
                     RotationAngle += elapsed * 1.5f;
                     RotationAngle = RotationAngle % circle;
+                }
+            }
+            if (GamePad.GetState(PlayerIndex.One).IsConnected)
+            {
+                if ((gps.DPad.Left == ButtonState.Released && gps.DPad.Right == ButtonState.Released))
+                {
+                    //select master audio
+                    if (input.MenuSelect)
+                    {
+                    }
+
+                    //rotate menu
+                    if (RotationAngle > top)
+                    {
+                        RotationAngle -= elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                    if (RotationAngle < top)
+                    {
+                        RotationAngle += elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                }
+                else if (gps.DPad.Left == ButtonState.Pressed)
+                {
+                    //select sound effects
+                    if (input.MenuSelect)
+                    {
+                    }
+
+                    //rotate menu
+                    if (RotationAngle < leftside)
+                    {
+                        RotationAngle += elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                    if (RotationAngle > leftside)
+                    {
+                        RotationAngle -= elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                }
+                else if (gps.DPad.Right == ButtonState.Pressed)
+                {
+                    //select background music
+                    if (input.MenuSelect)
+                    {
+                    }
+
+                    //rotate menu
+                    if (RotationAngle > rightside)
+                    {
+                        RotationAngle -= elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                    if (RotationAngle < rightside)
+                    {
+                        RotationAngle += elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
                 }
             }
         }
