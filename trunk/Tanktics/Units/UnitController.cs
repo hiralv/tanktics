@@ -3638,7 +3638,7 @@ namespace Tanktics
                 currentUnit.sethasMoved(true);
 
                 // Step 3: Call next unit
-                nextUnit();
+                //nextUnit();
 
                 //Step 4: Call Remove Dead to make any dead unit dead
                 removeDead();
