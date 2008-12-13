@@ -668,8 +668,9 @@ namespace Tanktics
         }
 
         //Impliments all input moves
+        //Returns the int of the next team
         //Acey Boyce
-        public void finalize()
+        public int finalize()
         {
             //Step 1:
             //Play animation for each movement in the actions Taken array
@@ -789,6 +790,7 @@ namespace Tanktics
                 currentUnit = team4[0];
             currentUnitNum = -1;
             nextUnit();
+            return currentPlayer;
         }
 
         //Removes killed units.
