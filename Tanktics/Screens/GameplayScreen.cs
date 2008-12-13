@@ -296,6 +296,14 @@ namespace Tanktics
 
             unitControl.update(gameTime);
             hud.Update(gameTime, TCs[unitControl.currentPlayer - 1], unitControl);
+
+            //select next unit after current unit has finished moving
+            if (unitControl.currentUnit != null && unitControl.currentUnit.hasMoved && !unitControl.currentUnit.isMoving)
+            {
+                unitControl.nextUnit();
+                selected.X = unitControl.currentUnit.currentX;
+                selected.Y = unitControl.currentUnit.currentY;
+            }
         }
 
 
