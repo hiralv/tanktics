@@ -319,13 +319,13 @@ namespace Tanktics
 
             //move camera
             Vector2 cameraMotion = Vector2.Zero;
-            if (input.IsKeyDownUp())
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.W))
                 cameraMotion.Y--;
-            if (input.IsKeyDownDown())
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.S))
                 cameraMotion.Y++;
-            if (input.IsKeyDownLeft())
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.A))
                 cameraMotion.X--;
-            if (input.IsKeyDownRight())
+            if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.D))
                 cameraMotion.X++;
             if (cameraMotion != Vector2.Zero)
             {
@@ -341,13 +341,13 @@ namespace Tanktics
                 camera.ZoomOut(elapsed);
 
             //move selected square
-            if (input.IsNewKeyPress(Keys.W) && selected.Y > 0)
+            if (input.IsNewKeyPress(Keys.Up) && selected.Y > 0)
                 selected.Y--;
-            if (input.IsNewKeyPress(Keys.S) && selected.Y < tileEngine.MapHeight - 1)
+            if (input.IsNewKeyPress(Keys.Down) && selected.Y < tileEngine.MapHeight - 1)
                 selected.Y++;
-            if (input.IsNewKeyPress(Keys.A) && selected.X > 0)
+            if (input.IsNewKeyPress(Keys.Left) && selected.X > 0)
                 selected.X--;
-            if (input.IsNewKeyPress(Keys.D) && selected.X < tileEngine.MapWidth - 1)
+            if (input.IsNewKeyPress(Keys.Right) && selected.X < tileEngine.MapWidth - 1)
                 selected.X++;
 
 
