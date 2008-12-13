@@ -371,6 +371,17 @@ namespace Tanktics
                 }
             }
 
+            //Combat Phase: select previous unit
+            if (input.IsNewKeyPress(Keys.Back))
+            {
+                if (TCs[unitControl.currentPlayer - 1].phase == 2)
+                {
+                    unitControl.prevUnit();
+                    selected.X = unitControl.currentUnit.currentX;
+                    selected.Y = unitControl.currentUnit.currentY;
+                }
+            }
+
             //Purchase Phase: Buy an APC
             //Acey Boyce
             if (input.IsNewKeyPress(Keys.D1))
