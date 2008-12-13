@@ -93,6 +93,8 @@ namespace Tanktics
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+            this.graphics.IsFullScreen = true;
+
             // Create the screen manager component.
             screenManager = new ScreenManager(this);
             Components.Add(screenManager);
