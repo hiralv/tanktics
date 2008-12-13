@@ -692,6 +692,25 @@ namespace Tanktics
 
 
             //Step 6:
+            //Check if any player has lost the game
+            if (team1Length <= 0)
+            {
+                loseTheGame(1);
+            }
+            if (team2Length <= 0)
+            {
+                loseTheGame(2);
+            }
+            if (team3Length <= 0)
+            {
+                loseTheGame(3);
+            }
+            if (team4Length <= 0)
+            {
+                loseTheGame(4);
+            }
+
+            //Step 7:
             //Move to next player and select his first unit
             //NOTE:
             //An advance wars style black screen may want to be added before this step
