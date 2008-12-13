@@ -520,8 +520,10 @@ namespace Tanktics
                     else
                     {
                         unitControl.moveUnit(selected.X, selected.Y);
-                        selected.X = unitControl.currentUnit.currentX;
-                        selected.Y = unitControl.currentUnit.currentY;
+                        //Commented out so we can see the explosions
+                        //Before it snapped to nextunit so you would miss boom
+                        //selected.X = unitControl.currentUnit.currentX;
+                        //selected.Y = unitControl.currentUnit.currentY;
                     }
                 }
 
@@ -653,6 +655,16 @@ namespace Tanktics
                     camera.PlayerNum = unitControl.currentPlayer;
                     miniMap.PlayerNum = unitControl.currentPlayer;
                 }
+                if (TCs[unitControl.currentPlayer - 1].phase == 5)
+                {
+                    TCs[unitControl.currentPlayer - 1].getNext().nextPhase();
+                    unitControl.finalize();
+                    selected.X = unitControl.currentUnit.currentX;
+                    selected.Y = unitControl.currentUnit.currentY;
+                    //change player number for cameras
+                    camera.PlayerNum = unitControl.currentPlayer;
+                    miniMap.PlayerNum = unitControl.currentPlayer;
+                }
             }
 
 
@@ -696,6 +708,16 @@ namespace Tanktics
                             if (TCs[unitControl.currentPlayer - 1].phase == 4)
                             {
                                 TCs[unitControl.currentPlayer - 1].nextPhase();
+                                TCs[unitControl.currentPlayer - 1].getNext().nextPhase();
+                                unitControl.finalize();
+                                selected.X = unitControl.currentUnit.currentX;
+                                selected.Y = unitControl.currentUnit.currentY;
+                                //change player number for cameras
+                                camera.PlayerNum = unitControl.currentPlayer;
+                                miniMap.PlayerNum = unitControl.currentPlayer;
+                            }
+                            if (TCs[unitControl.currentPlayer - 1].phase == 5)
+                            {
                                 TCs[unitControl.currentPlayer - 1].getNext().nextPhase();
                                 unitControl.finalize();
                                 selected.X = unitControl.currentUnit.currentX;
