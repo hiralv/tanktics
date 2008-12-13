@@ -11,6 +11,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 #endregion
 
 namespace Tanktics
@@ -189,6 +190,96 @@ namespace Tanktics
                 {
                     RotationAngle += elapsed * 1.5f;
                     RotationAngle = RotationAngle % circle;
+                }
+            }
+            if (GamePad.GetState(PlayerIndex.One).IsConnected)
+            {
+                GamePadState gps = GamePad.GetState(PlayerIndex.One);
+                if (gps.DPad.Left == ButtonState.Released && gps.DPad.Right == ButtonState.Released && gps.DPad.Down == ButtonState.Released)
+                {
+                    //select new game
+                    if (input.MenuSelect)
+                    {
+                        gameAudio.PlaySound("Menu Sound");
+                        ExitScreen();
+                        ScreenManager.AddScreen(new NewGameScreen());
+                    }
+
+                    //rotate menu
+                    if (RotationAngle > top)
+                    {
+                        RotationAngle -= elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                    if (RotationAngle < top)
+                    {
+                        RotationAngle += elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                }
+                else if (gps.DPad.Left == ButtonState.Pressed)
+                {
+                    //select credits
+                    if (input.MenuSelect)
+                    {
+                        gameAudio.PlaySound("Menu Sound");
+                        LoadingScreen.Load(ScreenManager, false, new CreditsScreen());
+                    }
+
+                    //rotate menu
+                    if (RotationAngle < left)
+                    {
+                        RotationAngle += elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                    if (RotationAngle > left)
+                    {
+                        RotationAngle -= elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                }
+                else if (gps.DPad.Right == ButtonState.Pressed)
+                {
+                    //select options
+                    if (input.MenuSelect)
+                    {
+                        gameAudio.PlaySound("Menu Sound");
+                        ExitScreen();
+                        ScreenManager.AddScreen(new OptionsScreen());
+                    }
+
+                    //rotate menu
+                    if (RotationAngle > right)
+                    {
+                        RotationAngle -= elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                    if (RotationAngle < right)
+                    {
+                        RotationAngle += elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                }
+                else if (gps.DPad.Down == ButtonState.Pressed)
+                {
+                    //select exit
+                    if (input.MenuSelect)
+                    {
+                        gameAudio.PlaySound("Menu Sound");
+                        ScreenManager.Game.Exit();
+                    }
+
+                    //rotate menu
+                    if (RotationAngle > bottom)
+                    {
+                        RotationAngle -= elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
+                    if (RotationAngle < bottom)
+                    {
+                        RotationAngle += elapsed * 1.5f;
+                        RotationAngle = RotationAngle % circle;
+                    }
                 }
             }
         }
