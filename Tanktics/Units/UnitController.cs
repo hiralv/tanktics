@@ -687,13 +687,8 @@ namespace Tanktics
             }
             //Step 5:
             //Remove all killed units from unit lists
-            i = 0;
-            while (i < numUnitsKilled)//!(unitsKilledThisTurn[i].type.Equals("null")))
-            {
-                removeUnit(unitsKilledThisTurn[i].unitNumber, unitsKilledThisTurn[i].team);
-                i++;
-            }
-            numUnitsKilled = 0;
+
+            removeDead();
 
 
             //Step 6:
@@ -721,6 +716,20 @@ namespace Tanktics
                 currentUnit = team4[0];
             currentUnitNum = -1;
             nextUnit();
+        }
+
+        //Removes killed units.
+        //Needed due to original style of game
+        //Acey Boyce
+        public void removeDead()
+        {
+            int i = 0;
+            while (i < numUnitsKilled)//!(unitsKilledThisTurn[i].type.Equals("null")))
+            {
+                removeUnit(unitsKilledThisTurn[i].unitNumber, unitsKilledThisTurn[i].team);
+                i++;
+            }
+            numUnitsKilled = 0;
         }
 
 
@@ -3612,16 +3621,12 @@ namespace Tanktics
                 // Step 3: Call next unit
                 nextUnit();
 
+                //Step 4: Call Remove Dead to make any dead unit dead
+                removeDead();
+
             }
 
             return results;
-        }
-
-        //Undoes the last move done by player
-        //UNFINISHED
-        public void undo()
-        {
-
         }
 
         //Acey Boyce
