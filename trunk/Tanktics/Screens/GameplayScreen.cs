@@ -371,7 +371,7 @@ namespace Tanktics
                 {
                     if (TCs[unitControl.currentPlayer - 1].totalAPC < TCs[unitControl.currentPlayer - 1].MAXAPC)
                     {
-                        if (TCs[unitControl.currentPlayer - 1].points >= 1)
+                        if (TCs[unitControl.currentPlayer - 1].points >= 2)
                         {
                             if (TCs[unitControl.currentPlayer - 1].createUnit("apc", selected.X, selected.Y))
                             {
@@ -385,7 +385,7 @@ namespace Tanktics
                                     unitControl.addUnit("apc", unitControl.currentPlayer, selected.X, selected.Y, apc4);
 
                                 TCs[unitControl.currentPlayer - 1].totalAPC++;
-                                TCs[unitControl.currentPlayer - 1].points--;
+                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points - 2;
                             }
                         }
                     }
@@ -400,7 +400,7 @@ namespace Tanktics
                 {
                     if (TCs[unitControl.currentPlayer - 1].totalTank < TCs[unitControl.currentPlayer - 1].MAXTANK)
                     {
-                        if (TCs[unitControl.currentPlayer - 1].points >= 2)
+                        if (TCs[unitControl.currentPlayer - 1].points >= 3)
                         {
                             if (TCs[unitControl.currentPlayer - 1].createUnit("tank", selected.X, selected.Y))
                             {
@@ -414,7 +414,7 @@ namespace Tanktics
                                     unitControl.addUnit("tank", unitControl.currentPlayer, selected.X, selected.Y, tank4);
 
                                 TCs[unitControl.currentPlayer - 1].totalTank++;
-                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points - 2;
+                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points - 3;
                             }
                         }
                     }
@@ -429,7 +429,7 @@ namespace Tanktics
                 {
                     if (TCs[unitControl.currentPlayer - 1].totalArtil < TCs[unitControl.currentPlayer - 1].MAXARTIL)
                     {
-                        if (TCs[unitControl.currentPlayer - 1].points >= 3)
+                        if (TCs[unitControl.currentPlayer - 1].points >= 4)
                         {
                             if (TCs[unitControl.currentPlayer - 1].createUnit("artillery", selected.X, selected.Y))
                             {
@@ -443,7 +443,7 @@ namespace Tanktics
                                     unitControl.addUnit("artillery", unitControl.currentPlayer, selected.X, selected.Y, artillery4);
 
                                 TCs[unitControl.currentPlayer - 1].totalArtil++;
-                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points - 3;
+                                TCs[unitControl.currentPlayer - 1].points = TCs[unitControl.currentPlayer - 1].points - 4;
                             }
                         }
                     }
@@ -620,10 +620,27 @@ namespace Tanktics
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
                     TCs[unitControl.currentPlayer - 1].nextPhase();
-                }
-                else if (TCs[unitControl.currentPlayer - 1].phase == 3)
-                {
-                    TCs[unitControl.currentPlayer - 1].nextPhase();
+
+                    if (unitControl.currentPlayer == 1)
+                    {
+                        selected.X = 0;
+                        selected.Y = 0;
+                    }
+                    else if (unitControl.currentPlayer == 2)
+                    {
+                        selected.X = tileEngine.MapWidth - 3;
+                        selected.Y = 0;
+                    }
+                    else if (unitControl.currentPlayer == 3)
+                    {
+                        selected.X = tileEngine.MapWidth - 3;
+                        selected.Y = tileEngine.MapHeight - 3;
+                    }
+                    else if (unitControl.currentPlayer == 4)
+                    {
+                        selected.X = 0;
+                        selected.Y = tileEngine.MapHeight - 3;
+                    }
                 }
                 else if (TCs[unitControl.currentPlayer - 1].phase == 4)
                 {
