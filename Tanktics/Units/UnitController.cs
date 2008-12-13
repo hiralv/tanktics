@@ -530,6 +530,60 @@ namespace Tanktics
 
         }
 
+        //Selects previous unit owned by active player
+        //Acey Boyce
+        public void prevUnit()
+        {
+            //if the current player has no more unused units
+            //do not bother doing this method
+            //I would also suggest making the nextUnit button unselectable if
+            //hasMoreUnits is true
+            if (hasMoreUnits())
+            {
+                currentUnitNum--;
+                if (currentPlayer == 1)
+                {
+                    if (currentUnitNum < 0)
+                    {
+                        currentUnitNum = team1Length - 1;
+                    }
+                    currentUnit = team1[currentUnitNum];
+                }
+                if (currentPlayer == 2)
+                {
+                    if (currentUnitNum < 0)
+                    {
+                        currentUnitNum = team2Length - 1;
+                    }
+                    currentUnit = team2[currentUnitNum];
+                }
+                if (currentPlayer == 3)
+                {
+                    if (currentUnitNum < 0)
+                    {
+                        currentUnitNum = team3Length - 1;
+                    }
+                    currentUnit = team3[currentUnitNum];
+                }
+                if (currentPlayer == 4)
+                {
+                    if (currentUnitNum < 0)
+                    {
+                        currentUnitNum = team4Length - 1;
+                    }
+                    currentUnit = team4[currentUnitNum];
+                }
+
+
+                //If the next in line has already moved call again to get next
+                if (currentUnit.hasMoved)
+                {
+                    prevUnit();
+                }
+            }
+
+        }
+
         //Adds a Unit to the Board
         //Acey Boyce
         public Boolean addUnit(String setType, int setTeam, int startingX, int startingY, Texture2D[] textures)
