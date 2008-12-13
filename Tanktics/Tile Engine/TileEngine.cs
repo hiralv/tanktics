@@ -191,7 +191,7 @@ namespace Tanktics
         //draw minimap
         //entire map is displayed, non-visible tiles are darkened
         //visible units are displayed as team-colored squares
-        public void Draw(SpriteBatch batch, Camera2D camera, UnitController units)
+        public void Draw(SpriteBatch batch, Camera2D camera, UnitController units, Boolean gameOver)
         {
             Color fade = Color.White;
             int unitTeam;
@@ -221,7 +221,7 @@ namespace Tanktics
                         if (map[i, y, x] >= 0)
                         {
                             //fade tiles under fog of war
-                            if (!units.isVisible(camera.PlayerNum, x, y))
+                            if (!gameOver && !units.isVisible(camera.PlayerNum, x, y))
                                 fade = Color.Gray;
                             else
                                 fade = Color.White;
@@ -247,7 +247,7 @@ namespace Tanktics
                 {
                     for (int x = minVisible.X; x < maxVisible.X; x++)
                     {
-                        if (units.isVisible(camera.PlayerNum, x, y))
+                        if (gameOver || units.isVisible(camera.PlayerNum, x, y))
                         {
                             unitTeam = units.unitAt(x, y).team;
 
@@ -279,7 +279,7 @@ namespace Tanktics
         }
 
         //draw tiles, units, and selected square
-        public void Draw(SpriteBatch batch, Camera2D camera, UnitController units, Point selected)
+        public void Draw(SpriteBatch batch, Camera2D camera, UnitController units, Point selected, Boolean gameOver)
         {
             Color fade;
             
@@ -305,16 +305,17 @@ namespace Tanktics
                 {
                     for (int x = minVisible.X; x < maxVisible.X; x++)
                     {
-                        if (map[i, y, x] >= 0 && units.isVisible(camera.PlayerNum, x, y))
+                        if (map[i, y, x] >= 0 && (gameOver || units.isVisible(camera.PlayerNum, x, y)))
                         {
                             //grid layer
                             if (i == numLayers - 2)
                                 fade = new Color(255, 255, 255, 30);
                             //tile is on edge of visibility
-                            else if ((x > 0 && !units.isVisible(camera.PlayerNum, x - 1, y)) ||
+                            else if (!gameOver &&
+                                ((x > 0 && !units.isVisible(camera.PlayerNum, x - 1, y)) ||
                                 (x < MapWidth - 1 && !units.isVisible(camera.PlayerNum, x + 1, y)) ||
                                 (y > 0 && !units.isVisible(camera.PlayerNum, x, y - 1)) ||
-                                (y < MapHeight - 1 && !units.isVisible(camera.PlayerNum, x, y + 1)))
+                                (y < MapHeight - 1 && !units.isVisible(camera.PlayerNum, x, y + 1))))
                             {
                                 fade = Color.LightGray;
                             }
@@ -342,14 +343,15 @@ namespace Tanktics
                 {
                     for (int x = minVisible.X; x < maxVisible.X; x++)
                     {
-                        if (units.isVisible(camera.PlayerNum, x, y))
+                        if (gameOver || units.isVisible(camera.PlayerNum, x, y))
                         {
                             //tile is on edge of visibility or has already moved
-                            if ((x > 0 && !units.isVisible(camera.PlayerNum, x - 1, y)) ||
+                            if (!gameOver && 
+                                ((x > 0 && !units.isVisible(camera.PlayerNum, x - 1, y)) ||
                                 (x < MapWidth - 1 && !units.isVisible(camera.PlayerNum, x + 1, y)) ||
                                 (y > 0 && !units.isVisible(camera.PlayerNum, x, y - 1)) ||
                                 (y < MapHeight - 1 && !units.isVisible(camera.PlayerNum, x, y + 1)) ||
-                                (units.unitAt(x, y).hasMoved && !units.unitAt(x, y).isMoving))
+                                (units.unitAt(x, y).hasMoved && !units.unitAt(x, y).isMoving)))
                             {
                                 fade = Color.LightGray;
                             }
@@ -368,7 +370,7 @@ namespace Tanktics
             }
 
             //draw current unit border
-            if (currentUnitTexture != null && units.currentUnit != null &&
+            if (!gameOver && currentUnitTexture != null && units.currentUnit != null &&
                 minVisible.X <= units.currentUnit.currentX && units.currentUnit.currentX < maxVisible.X &&
                 minVisible.Y <= units.currentUnit.currentY && units.currentUnit.currentY < maxVisible.Y)
             {
@@ -383,7 +385,7 @@ namespace Tanktics
             }
 
             //draw selected border
-            if (selectedTexture != null &&
+            if (!gameOver && selectedTexture != null &&
                 minVisible.X <= selected.X && selected.X < maxVisible.X &&
                 minVisible.Y <= selected.Y && selected.Y < maxVisible.Y)
             {

@@ -31,10 +31,17 @@ namespace Tanktics
         int startingBigY;
 
         public int points = 0;
+        int controlledFactories = 0;
         int team;
 
         TurnController nextTurnController;
 
+        //variables for victory conditions
+        public Boolean playerWon = false;
+        public int victoryCondition = -1;
+        public enum VictoryCond { Factories, Points, NoOpponents };
+        public int maxPoints = 10;
+        int numFactories = 5;
 
 
         public TurnController(UnitController UC, int theTeam, int ssX, int ssY, int sbX, int sbY)
@@ -94,6 +101,7 @@ namespace Tanktics
             {
                 phase = 1;
                 pointPhase();
+                checkVictory();
                 phase++;
             }
         }
@@ -102,7 +110,8 @@ namespace Tanktics
         //Acey Boyce
         public void pointPhase()
         {
-            points = points + calcPoints();
+            controlledFactories = calcPoints();
+            points = points + controlledFactories;
         }
 
         //Calulates current number of factories under the players control
@@ -283,6 +292,41 @@ namespace Tanktics
             }
 
             return controlled;
+        }
+
+        //determine if any victory conditions have been met so the game is over
+        //Condition 1: player controls over half of the factories
+        //Condition 2: player has at least 10 points
+        //Condition 3: all other players have been eliminated
+        //Robby Florence
+        public void checkVictory()
+        {
+            //condition 1
+            if (controlledFactories >= (int)(0.5f * numFactories + 0.5f))
+            {
+                playerWon = true;
+                victoryCondition = (int)VictoryCond.Factories;
+            }
+            //condition 2
+            else if (points >= maxPoints)
+            {
+                playerWon = true;
+                victoryCondition = (int)VictoryCond.Points;
+            }
+            //condition 3
+            else
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    //another in-game team is found
+                    if (i != team - 1 && unitController.inGame[i] == true)
+                        return;
+                }
+
+                //no other in-game teams found, all opponents are eliminated
+                playerWon = true;
+                victoryCondition = (int)VictoryCond.NoOpponents;
+            }
         }
 
         //Additional checks for creating a unit

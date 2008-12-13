@@ -47,6 +47,8 @@ namespace Tanktics
         TurnController TC4;
         TurnController[] TCs;
 
+        Boolean gameOver = false;
+
         //textures for apc animations for 4 players
         //(up, down, left, right, idle up, idle down)
         Texture2D[] apc1 = new Texture2D[6];
@@ -304,6 +306,10 @@ namespace Tanktics
                 selected.X = unitControl.currentUnit.currentX;
                 selected.Y = unitControl.currentUnit.currentY;
             }
+
+            //check game over
+            if (TCs[unitControl.currentPlayer - 1].playerWon)
+                gameOver = true;
         }
 
 
@@ -410,6 +416,11 @@ namespace Tanktics
             if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageDown) ||
                 gps.Triggers.Left> 0)
                 camera.ZoomOut(elapsed);
+
+
+            //only exit game or move camera in game over
+            if (gameOver)
+                return;
 
             //move selected square
             if ((input.IsNewKeyPress(Keys.Up) ||
@@ -900,12 +911,118 @@ namespace Tanktics
             spriteBatch.Begin();
 
             //draw main camera and minimap
-            tileEngine.Draw(spriteBatch, camera, unitControl, selected);
-            tileEngine.Draw(spriteBatch, miniMap, unitControl);
+            tileEngine.Draw(spriteBatch, camera, unitControl, selected, gameOver);
+            tileEngine.Draw(spriteBatch, miniMap, unitControl, gameOver);
 
             hud.Draw(spriteBatch);
 
             spriteBatch.End();
+
+            //draw game over text
+            if (gameOver)
+            {
+                Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
+                SpriteFont font = ScreenManager.Font;
+                String winnerText;
+                String conditionText = "";
+                String exitText = "Press Esc/Back To Exit";
+                Color textColor;
+                float textScale;
+                Vector2 textSize;
+                Vector2 textPosition;
+
+                //set text and color for winning team
+                if (unitControl.currentPlayer == 1)
+                {
+                    winnerText = "White Team Wins!";
+                    textColor = new Color(240, 240, 240);
+                }
+                else if (unitControl.currentPlayer == 2)
+                {
+                    winnerText = "Green Team Wins!";
+                    textColor = new Color(150, 200, 140);
+                }
+                else if (unitControl.currentPlayer == 3)
+                {
+                    winnerText = "Grey Team Wins!";
+                    textColor = new Color(180, 180, 180);
+                }
+                else
+                {
+                    winnerText = "Brown Team Wins!";
+                    textColor = new Color(190, 160, 100);
+                }
+
+                //set text for victory condition
+                if (TCs[unitControl.currentPlayer - 1].victoryCondition == (int)TurnController.VictoryCond.Factories)
+                    conditionText = "Control Over Half Of The Factories";
+                else if (TCs[unitControl.currentPlayer - 1].victoryCondition == (int)TurnController.VictoryCond.Points)
+                    conditionText = "Accumulate " + TCs[unitControl.currentPlayer - 1].maxPoints + " Points";
+                else if (TCs[unitControl.currentPlayer - 1].victoryCondition == (int)TurnController.VictoryCond.NoOpponents)
+                    conditionText = "Eliminate All Opponents";
+
+                
+                ScreenManager.FadeBackBufferToBlack(150);
+                spriteBatch.Begin();
+
+                //draw winner text
+                textSize = font.MeasureString(winnerText);
+                textScale = 0.1f * viewport.Height / textSize.Y;
+                //center text horizontally
+                textPosition = new Vector2(
+                    viewport.X + 0.5f * (viewport.Width - textScale * textSize.X),
+                    viewport.Y + 0.2f * viewport.Height);
+
+                spriteBatch.DrawString(
+                    font,
+                    winnerText,
+                    textPosition,
+                    textColor,
+                    0f,
+                    Vector2.Zero,
+                    textScale,
+                    SpriteEffects.None,
+                    0f);
+
+                //draw victory condition text
+                textSize = font.MeasureString(conditionText);
+                textScale *= 0.75f;
+                //center text horizontally
+                textPosition = new Vector2(
+                    viewport.X + 0.5f * (viewport.Width - textScale * textSize.X),
+                    viewport.Y + 0.3f * viewport.Height);
+
+                spriteBatch.DrawString(
+                    font,
+                    conditionText,
+                    textPosition,
+                    textColor,
+                    0f,
+                    Vector2.Zero,
+                    textScale,
+                    SpriteEffects.None,
+                    0f);
+
+                //draw exit text
+                textSize = font.MeasureString(exitText);
+                //center text horizontally
+                textPosition = new Vector2(
+                    viewport.X + 0.5f * (viewport.Width - textScale * textSize.X),
+                    viewport.Y + 0.6f * viewport.Height);
+
+                spriteBatch.DrawString(
+                    font,
+                    exitText,
+                    textPosition,
+                    textColor,
+                    0f,
+                    Vector2.Zero,
+                    textScale,
+                    SpriteEffects.None,
+                    0f);
+
+                spriteBatch.End();
+            }
 
             // If the game is transitioning on or off, fade it out to black.
             if (TransitionPosition > 0)

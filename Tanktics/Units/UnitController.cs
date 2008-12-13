@@ -38,7 +38,7 @@ namespace Tanktics
         Boolean[,] team3Visibility;
         Boolean[,] team4Visibility;
 
-        Boolean[] inGame = new Boolean[4];
+        public Boolean[] inGame = new Boolean[4];
 
         Unit[] actionsTakenThisTurn = new Unit[MAXIMUMUNITS];
         int totalactions;
