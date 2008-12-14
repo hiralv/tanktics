@@ -260,8 +260,7 @@ namespace Tanktics
             get
             {
                 return IsNewKeyPress(Keys.Escape) ||
-                       IsNewButtonPress(Buttons.Back) ||
-                       IsNewButtonPress(Buttons.Start);
+                       IsNewButtonPress(Buttons.Back);
             }
         }
 
