@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // GDDLogoScreen.cs
 //
-// Display the GDD logo as a popup screen on top of the logo screen.
+// Display GDD logo as a popup screen on top of the logo screen.--Robby/Chris
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -23,12 +23,14 @@ namespace Tanktics
     class GDDLogoScreen : GameScreen
     {
         #region Fields
+
         TimeSpan elapsedTime = TimeSpan.Zero;
         bool drawGDDLogo = true, drawExplosion = false;
         TimeSpan startExplosionTime = TimeSpan.FromSeconds(4.0);
         TimeSpan stopGDDTime = TimeSpan.FromSeconds(6.0);
-        GameAudio gameAudio;
 
+        //Game Audio --Chris Wykel
+        GameAudio gameAudio;
 
         AnimatingSprite explosion;
         ContentManager content;
@@ -74,6 +76,7 @@ namespace Tanktics
             logoTexture = content.Load<Texture2D>("Intro/GDD2007_Transparent");
             explosion.Texture = content.Load<Texture2D>("Intro/Intro Explosion no black");
 
+            //GameAudio gets ScreenManager Audio and adds Explosion Sound --Robby Flourence/chris Wykel
             gameAudio = ScreenManager.Audio;
             gameAudio.AddSound("Explosion");
             
@@ -95,8 +98,7 @@ namespace Tanktics
         /// Updates the GDD logo screen. This only increments the elapsed time counter
         /// and exits the screen after a set amount of display time.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
             

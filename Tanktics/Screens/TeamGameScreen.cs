@@ -1,8 +1,8 @@
 #region File Description
 //-----------------------------------------------------------------------------
-// OptionScreen.cs
+// TeamGameScreen.cs
 //
-// Display the NewGame menu.
+// Display the TeamGameScreen menu. --Chris Wykel
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -17,26 +17,32 @@ using Microsoft.Xna.Framework.Input;
 namespace Tanktics
 {
     /// <summary>
-    /// The main menu screen is the main menu...
+    /// The TeamGame menu...
     /// </summary>
     class TeamGameScreen : GameScreen
     {
         #region Fields
 
+        //Graphics and Audio
         ContentManager content;
         GameAudio gameAudio;
+
         //textures
         Texture2D MenuImage;
+
         //vectors
         private Vector2 origin;
         private Vector2 screenpos;
+
         //rotation angles for turning animation
         private float RotationAngle = 0.0f;
         private float top = 0.0f;
         private float bottom = -3.2f;
         private float circle = MathHelper.Pi * 2;
+
         //elapsed time between updates
         float elapsed = 0f;
+
         //menu title
         string title = "TankTics";
 
@@ -89,8 +95,7 @@ namespace Tanktics
         /// <summary>
         /// Updates the main menu screen.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 

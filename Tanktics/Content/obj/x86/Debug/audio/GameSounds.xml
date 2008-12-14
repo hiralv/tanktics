@@ -9,8 +9,10 @@
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = &lt;none&gt;;
-    Bank Last Revised Low = 3606451056;
-    Bank Last Revised High = 29973939;
+    Header Last Modified Low = 0;
+    Header Last Modified High = 0;
+    Bank Last Revised Low = 1667679268;
+    Bank Last Revised High = 29973967;
 
     Wave
     {
@@ -152,33 +154,10 @@
 
     Wave
     {
-        Name = Unit Explosion;
-        File = ..\Sounds\Unit Explosion.wav;
-        Build Settings Last Modified Low = 3513013556;
-        Build Settings Last Modified High = 29973939;
-
-        Cache
-        {
-            Format Tag = 0;
-            Channels = 1;
-            Sampling Rate = 16000;
-            Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 42912;
-            Loop Region Offset = 0;
-            Loop Region Length = 0;
-            File Type = 1;
-            Last Modified Low = 3762631936;
-            Last Modified High = 29270659;
-        }
-    }
-
-    Wave
-    {
         Name = Background Song;
         File = ..\Sounds\Background Song.wav;
-        Build Settings Last Modified Low = 3513013556;
-        Build Settings Last Modified High = 29973939;
+        Build Settings Last Modified Low = 473522280;
+        Build Settings Last Modified High = 29973945;
 
         Cache
         {
@@ -193,6 +172,29 @@
             File Type = 1;
             Last Modified Low = 3254732306;
             Last Modified High = 29973939;
+        }
+    }
+
+    Wave
+    {
+        Name = Unit Explosion;
+        File = ..\Sounds\Unit Explosion.wav;
+        Build Settings Last Modified Low = 473522280;
+        Build Settings Last Modified High = 29973945;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 16000;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 42912;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3762631936;
+            Last Modified High = 29270659;
         }
     }
 }

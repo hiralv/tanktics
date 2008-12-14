@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // LogoTitleScreen.cs
 //
-// Display the title as a popup screen on top of the logo screen.
+// Display title as popup screen on top of the logo screen.-- robby Flourence
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -52,8 +52,7 @@ namespace Tanktics
         /// Updates the logo title screen. This only increments the elapsed time counter
         /// and exits the screen after a set amount of display time.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 

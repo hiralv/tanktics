@@ -26,6 +26,7 @@ namespace Tanktics
     class CreditsScreen : GameScreen
     {
         ContentManager content;
+        GameAudio gameAudio;
         SpriteFont gameFont;
         SpriteBatch batch;
         AnimatingSprite sprite;
@@ -45,11 +46,11 @@ namespace Tanktics
 
         String currentJob = "Executive Producer";
 
-        String[] Job = new String[14];
+        String[] Job = new String[16];
 
         String personsName = "  Dr  Tiffany Barnes  ";
 
-        String[] nameArray = new String[14];
+        String[] nameArray = new String[16];
 
         int counter = 0;
 
@@ -72,7 +73,8 @@ namespace Tanktics
             Job[10] ="     Tank SFX      ";
             Job[11] ="Giant  Sound  Pack ";
             Job[12] ="Unedited Main Theme";
-            Job[13] =" Special Thanks To ";
+            Job[13] ="Bourne on land song";
+            Job[14] =" Special Thanks To ";
 
 
 
@@ -89,7 +91,8 @@ namespace Tanktics
             nameArray[10] ="      Radio Mall      ";
             nameArray[11] ="      Fede-lasse      ";
             nameArray[12] ="Jack Wall & Sam Hulick";
-            nameArray[13] ="   All Play Testers   ";
+            nameArray[13] ="   Bourne  Identity   ";
+            nameArray[14] ="   All Play Testers   ";
 
             sprite = new AnimatingSprite();
             sprite2 = new AnimatingSprite();
@@ -112,6 +115,7 @@ namespace Tanktics
         {
             if (content == null)
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
+            gameAudio = ScreenManager.Audio;
 
             gameFont = content.Load<SpriteFont>("gamefont");
             batch = ScreenManager.SpriteBatch;
@@ -122,6 +126,7 @@ namespace Tanktics
             infantry[3] = content.Load<Texture2D>("Infintry4");
             sprite.Texture = infantry[3];
             sprite2.Texture = infantry[3];
+
         }
 
         public override void UnloadContent()

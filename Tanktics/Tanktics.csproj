@@ -86,9 +86,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AI.cs" />
+    <Compile Include="GameManagementFiles\AI.cs" />
     <Compile Include="Screens\HUD.cs" />
-    <Compile Include="TurnController.cs" />
+    <Compile Include="GameManagementFiles\TurnController.cs" />
     <Compile Include="Units\Artillery.cs" />
     <Compile Include="Tile Engine\Camera2D.cs" />
     <Compile Include="GameManagementFiles\GameAudio.cs" />
@@ -105,7 +105,7 @@
     <Compile Include="GameManagementFiles\GameScreen.cs" />
     <Compile Include="GameManagementFiles\InputState.cs" />
     <Compile Include="GameManagementFiles\ScreenManager.cs" />
-    <Compile Include="AnimatingSprite.cs" />
+    <Compile Include="GameManagementFiles\AnimatingSprite.cs" />
     <Compile Include="Screens\ControlsScreen.cs" />
     <Compile Include="Screens\CreditsScreen.cs" />
     <Compile Include="Screens\GDDLogoScreen.cs" />
