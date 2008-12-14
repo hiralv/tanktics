@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // TankIntroScreen.cs
 //
-// Display the tank animations to transition to the main menu.--Robby Flourence
+// Display the tank animations to transition to the main menu.--Robby Florence
 //-----------------------------------------------------------------------------
 #endregion
 

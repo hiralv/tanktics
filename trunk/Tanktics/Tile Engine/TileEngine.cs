@@ -1,4 +1,12 @@
-//coded by robby?
+#region File Description
+//-----------------------------------------------------------------------------
+// TileEngine.cs
+//
+// The TileEngine creates the background for a map. It is also used to draw
+// the minimap. -- Robby Florence
+//-----------------------------------------------------------------------------
+#endregion
+
 #region Using Statements
 using System;
 using System.IO;
@@ -10,7 +18,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Tanktics
 {
-    //Robby Florence
     public class TileEngine
     {
         #region Fields

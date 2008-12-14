@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // MenuBackgroundScreen.cs
 //
-// Displays background image for the main menu. -- Robby Flourence
+// Displays background image for the main menu. -- Robby Florence
 //-----------------------------------------------------------------------------
 #endregion
 

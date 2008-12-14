@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // GameplayScreen.cs
 //
-// The gameplayScreen is Where the game is played. -- Robby Flourence
+// The GameplayScreen is where the game is played. -- Robby Florence
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -18,7 +18,6 @@ using System.Collections.Generic;
 
 namespace Tanktics
 {
-    //Robby Florence
     class GameplayScreen : GameScreen
     {
         #region Fields
@@ -278,6 +277,8 @@ namespace Tanktics
         }
 
         #endregion
+
+        #region Update and Draw
 
         /// <summary>
         /// Updates the state of the game. This method checks the GameScreen.IsActive
@@ -1070,8 +1071,6 @@ namespace Tanktics
             if (TransitionPosition > 0)
                 ScreenManager.FadeBackBufferToBlack(255 - TransitionAlpha);
         }
-
-
-
+        #endregion
     }
 }
