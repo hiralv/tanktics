@@ -783,6 +783,9 @@ namespace Tanktics
             }
             #endregion
 
+
+            //This code is executed when AI gets its turn
+            //Hiral Vora
             #region AI Movement
             if (!humanPlayers[unitControl.currentPlayer - 1])
             {
