@@ -117,7 +117,7 @@ namespace Tanktics
                 if (input.MenuSelect)
                 {
                     gameAudio.PlaySound("Menu Sound");
-                    LoadingScreen.Load(ScreenManager, true, new GameplayScreen());
+                    LoadingScreen.Load(ScreenManager, true, new GameplayScreen(true, true, true, true));
                 }
 
                 //rotate menu
@@ -138,7 +138,7 @@ namespace Tanktics
                 if (input.MenuSelect)
                 {
                     gameAudio.PlaySound("Menu Sound");
-                    LoadingScreen.Load(ScreenManager, true, new GameplayScreen());
+                    LoadingScreen.Load(ScreenManager, true, new GameplayScreen(true, true, true, true));
                 }
 
                 //rotate menu
@@ -162,7 +162,7 @@ namespace Tanktics
                     if (input.MenuSelect)
                     {
                         gameAudio.PlaySound("Menu Sound");
-                        LoadingScreen.Load(ScreenManager, true, new GameplayScreen());
+                        LoadingScreen.Load(ScreenManager, true, new GameplayScreen(true, true, true, true));
                     }
 
                     //rotate menu
@@ -183,7 +183,7 @@ namespace Tanktics
                     if (input.MenuSelect)
                     {
                         gameAudio.PlaySound("Menu Sound");
-                        LoadingScreen.Load(ScreenManager, true, new GameplayScreen());
+                        LoadingScreen.Load(ScreenManager, true, new GameplayScreen(true, true, true, true));
                     }
 
                     //rotate menu
