@@ -107,12 +107,12 @@ namespace Tanktics
             #region horizontal and vertical
             for (int i = 1; i <= 3; i++)
             {
-                if (currentX + i < 25)
+                if (currentX + i < 17)
                 {
                     possiblemoves.Add(new moves(currentX + i, currentY));
                 }
 
-                if (currentY + i < 25)
+                if (currentY + i < 17)
                 {
                     possiblemoves.Add(new moves(currentX, currentY + i));
                 }
@@ -130,9 +130,9 @@ namespace Tanktics
             #endregion
 
             #region first square
-            if (currentX + 1 < 25)
+            if (currentX + 1 < 17)
             {
-                if (currentY + 1 < 25)
+                if (currentY + 1 < 17)
                 {
                     possiblemoves.Add(new moves(currentX + 1, currentY + 1));
                 }
@@ -142,7 +142,7 @@ namespace Tanktics
                     possiblemoves.Add(new moves(currentX + 1, currentY - 1));
                 }
 
-                if (currentY + 2 < 25)
+                if (currentY + 2 < 17)
                 {
                     possiblemoves.Add(new moves(currentX + 1, currentY + 2));
                 }
@@ -161,12 +161,12 @@ namespace Tanktics
                     possiblemoves.Add(new moves(currentX - 1, currentY - 1));
                 }
 
-                if (currentY + 1 < 25)
+                if (currentY + 1 < 17)
                 {
                     possiblemoves.Add(new moves(currentX - 1, currentY + 1));
                 }
 
-                if (currentY + 2 < 25)
+                if (currentY + 2 < 17)
                 {
                     possiblemoves.Add(new moves(currentX - 1, currentY + 2));
                 }
@@ -181,9 +181,9 @@ namespace Tanktics
             #endregion
 
             #region Second square
-            if (currentX + 2 < 25)
+            if (currentX + 2 < 17)
             {
-                if (currentY + 1 < 25)
+                if (currentY + 1 < 17)
                 {
                     possiblemoves.Add(new moves(currentX + 2, currentY + 1));
                 }
@@ -196,7 +196,7 @@ namespace Tanktics
 
             if (currentX - 2 > -1)
             {
-                if (currentY + 1 < 25)
+                if (currentY + 1 < 17)
                 {
                     possiblemoves.Add(new moves(currentX - 2, currentY + 1));
                 }

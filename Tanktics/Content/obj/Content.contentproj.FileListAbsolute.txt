@@ -6,3 +6,5 @@ C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\Content\obj\x86\Debug\Resolve
 C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\Content\obj\x86\Debug\audio\GameSounds.xml
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\Content\obj\x86\Debug\audio\GameSounds.xml
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics2\Tanktics\Content\obj\x86\Debug\audio\GameSounds.xml
