@@ -1,4 +1,11 @@
-//Coded by robby?
+#region File Description
+//-----------------------------------------------------------------------------
+// Camera2D.cs
+//
+// Camera2D creates a camera to move around a TileEngine -- Robby Florence
+//-----------------------------------------------------------------------------
+#endregion
+
 #region Using Statements
 using System;
 using System.Collections.Generic;
@@ -9,7 +16,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Tanktics
 {
-    //Robby Florence
     public class Camera2D
     {
         #region Fields

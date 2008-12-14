@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // LogoTitleScreen.cs
 //
-// Display title as popup screen on top of the logo screen.-- robby Flourence
+// Display title as popup screen on top of the logo screen.-- Robby Florence
 //-----------------------------------------------------------------------------
 #endregion
 

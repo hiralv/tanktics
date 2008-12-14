@@ -1,4 +1,11 @@
-//Code built By Robby Flourence and and Hiral Vora
+#region File Description
+//-----------------------------------------------------------------------------
+// HUD.cs
+//
+// The HUD displays player information in the GameplayScreen - Robby Florence
+//-----------------------------------------------------------------------------
+#endregion
+
 #region Using Statements
 using System;
 using System.Collections.Generic;
