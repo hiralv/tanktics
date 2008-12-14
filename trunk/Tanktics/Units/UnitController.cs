@@ -108,8 +108,8 @@ namespace Tanktics
             }
 
             //initialize explosion sprite
-            Animation explo = new Animation(3990, 1596, 37, 4, 10, 0, 0);
-            explo.FramesPerSecond = 37;
+            Animation explo = new Animation(1420, 568, 35, 4, 10, 0, 0);
+            explo.FramesPerSecond = 35;
             explosion = new AnimatingSprite();
             explosion.Animations.Add("explosion", explo);
             explosion.CurrentAnimation = "explosion";

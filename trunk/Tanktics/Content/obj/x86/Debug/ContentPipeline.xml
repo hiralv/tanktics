@@ -7,7 +7,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\menufont.xnb</Output>
       <Time>2007-11-26T11:32:06-05:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\gamefont.xnb</Output>
       <Time>2007-11-26T11:32:06-05:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\blank.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\blank.xnb</Output>
       <Time>2007-11-26T11:32:06-05:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\WarningLogo.xnb</Output>
       <Time>2008-10-25T12:05:08-04:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\BoxOfElephants.xnb</Output>
       <Time>2008-10-21T18:03:40-04:00</Time>
     </Item>
     <Item>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb</Output>
-      <Time>2008-10-26T18:21:02-04:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\controls.xnb</Output>
+      <Time>2008-12-13T16:35:13.2662-05:00</Time>
     </Item>
     <Item>
       <Source>Intro\GDD2007_Transparent.png</Source>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\GDD2007_Transparent.xnb</Output>
       <Time>2008-10-28T00:38:54-04:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\Intro Explosion no black.xnb</Output>
       <Time>2008-10-27T03:37:36-04:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\Driving Tank Animation.xnb</Output>
       <Time>2008-10-28T00:23:12-04:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\turning tank animation.xnb</Output>
       <Time>2008-10-28T00:30:54-04:00</Time>
     </Item>
     <Item>
@@ -97,7 +97,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Intro\Zooming tank Animation.xnb</Output>
       <Time>2008-10-28T00:23:40-04:00</Time>
     </Item>
     <Item>
@@ -106,7 +106,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\background.xnb</Output>
       <Time>2008-10-27T16:14:42-04:00</Time>
     </Item>
     <Item>
@@ -115,7 +115,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\new copy.xnb</Output>
       <Time>2008-10-28T00:19:36-04:00</Time>
     </Item>
     <Item>
@@ -124,7 +124,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\controls copy.xnb</Output>
       <Time>2008-10-28T22:57:12-04:00</Time>
     </Item>
     <Item>
@@ -133,7 +133,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\single copy.xnb</Output>
       <Time>2008-10-29T01:20:56-04:00</Time>
     </Item>
     <Item>
@@ -142,7 +142,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\local copy.xnb</Output>
       <Time>2008-10-29T01:39:28-04:00</Time>
     </Item>
     <Item>
@@ -151,7 +151,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\individual copy.xnb</Output>
       <Time>2008-10-29T01:55:02-04:00</Time>
     </Item>
     <Item>
@@ -160,7 +160,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\opposite copy.xnb</Output>
       <Time>2008-10-29T01:56:46-04:00</Time>
     </Item>
     <Item>
@@ -169,7 +169,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Infintry.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Infintry.xnb</Output>
       <Time>2008-10-29T02:13:26-04:00</Time>
     </Item>
     <Item>
@@ -178,7 +178,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Infintry2.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Infintry2.xnb</Output>
       <Time>2008-10-29T02:13:30-04:00</Time>
     </Item>
     <Item>
@@ -187,7 +187,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Infintry3.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Infintry3.xnb</Output>
       <Time>2008-10-29T02:13:32-04:00</Time>
     </Item>
     <Item>
@@ -196,7 +196,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Infintry4.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Infintry4.xnb</Output>
       <Time>2008-10-29T02:13:34-04:00</Time>
     </Item>
     <Item>
@@ -205,7 +205,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\Brightness copy.xnb</Output>
       <Time>2008-10-29T02:47:12-04:00</Time>
     </Item>
     <Item>
@@ -214,7 +214,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb</Output>
       <Time>2008-10-29T03:23:22-04:00</Time>
     </Item>
     <Item>
@@ -223,7 +223,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb</Output>
       <Time>2008-10-29T03:27:24-04:00</Time>
     </Item>
     <Item>
@@ -232,7 +232,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb</Output>
       <Time>2008-10-29T03:33:48-04:00</Time>
     </Item>
     <Item>
@@ -241,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\selected border.xnb</Output>
-      <Time>2008-11-23T21:02:39.8714-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\selected border.xnb</Output>
+      <Time>2008-12-10T15:13:46.1073847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Down\APC Driving Down Brown.png</Source>
@@ -250,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Brown.xnb</Output>
-      <Time>2008-11-24T19:21:24.0576-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Brown.xnb</Output>
+      <Time>2008-12-10T14:04:12.6479847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Down\APC Driving Down Green.png</Source>
@@ -259,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Green.xnb</Output>
-      <Time>2008-11-24T19:21:24.0246-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Green.xnb</Output>
+      <Time>2008-12-10T14:34:07.7839847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Down\APC Driving Down Grey.png</Source>
@@ -268,7 +268,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Grey.xnb</Output>
       <Time>2008-11-24T19:21:24.0466-05:00</Time>
     </Item>
     <Item>
@@ -277,7 +277,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down White.xnb</Output>
       <Time>2008-11-24T19:21:24.0156-05:00</Time>
     </Item>
     <Item>
@@ -286,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Brown.xnb</Output>
-      <Time>2008-11-24T19:21:06.4936-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Brown.xnb</Output>
+      <Time>2008-12-10T14:04:34.0519847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Left\APC Driving Left Green.png</Source>
@@ -295,8 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Green.xnb</Output>
-      <Time>2008-11-24T19:21:06.4556-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Green.xnb</Output>
+      <Time>2008-12-10T14:34:22.4019847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Left\APC Driving Left Grey.png</Source>
@@ -304,7 +304,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left Grey.xnb</Output>
       <Time>2008-11-24T19:21:06.4836-05:00</Time>
     </Item>
     <Item>
@@ -313,7 +313,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Left\APC Driving Left White.xnb</Output>
       <Time>2008-11-24T19:21:06.4456-05:00</Time>
     </Item>
     <Item>
@@ -322,8 +322,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Brown.xnb</Output>
-      <Time>2008-11-24T19:21:13.9886-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Brown.xnb</Output>
+      <Time>2008-12-10T14:04:59.1939847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Right\APC Driving Right Green.png</Source>
@@ -331,8 +331,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Green.xnb</Output>
-      <Time>2008-11-24T19:21:14.0056-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Green.xnb</Output>
+      <Time>2008-12-10T14:34:37.6699847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Right\APC Driving Right Grey.png</Source>
@@ -340,7 +340,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right Grey.xnb</Output>
       <Time>2008-11-24T19:21:14.0226-05:00</Time>
     </Item>
     <Item>
@@ -349,7 +349,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Right\APC Driving Right White.xnb</Output>
       <Time>2008-11-24T19:21:14.0136-05:00</Time>
     </Item>
     <Item>
@@ -358,8 +358,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Brown.xnb</Output>
-      <Time>2008-11-24T19:21:16.8616-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Brown.xnb</Output>
+      <Time>2008-12-10T14:05:19.8799847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Up\APC Driving Up Green.png</Source>
@@ -367,8 +367,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Green.xnb</Output>
-      <Time>2008-11-24T19:21:16.8066-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Green.xnb</Output>
+      <Time>2008-12-10T14:34:54.3339847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Driving Up\APC Driving Up Grey.png</Source>
@@ -376,7 +376,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up Grey.xnb</Output>
       <Time>2008-11-24T19:21:16.8426-05:00</Time>
     </Item>
     <Item>
@@ -385,7 +385,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Up\APC Driving Up White.xnb</Output>
       <Time>2008-11-24T19:21:16.8166-05:00</Time>
     </Item>
     <Item>
@@ -394,8 +394,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Brown.xnb</Output>
-      <Time>2008-11-24T19:21:09.9296-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Brown.xnb</Output>
+      <Time>2008-12-10T14:03:59.4169847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Idling Down\APC Idling Down Green.png</Source>
@@ -403,8 +403,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Green.xnb</Output>
-      <Time>2008-11-24T19:21:09.8996-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Green.xnb</Output>
+      <Time>2008-12-10T14:32:17.8609847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Idling Down\APC Idling Down Grey.png</Source>
@@ -412,7 +412,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down Grey.xnb</Output>
       <Time>2008-11-24T19:21:09.9206-05:00</Time>
     </Item>
     <Item>
@@ -421,7 +421,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Down\APC Idling Down White.xnb</Output>
       <Time>2008-11-24T19:21:09.9106-05:00</Time>
     </Item>
     <Item>
@@ -430,8 +430,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Brown.xnb</Output>
-      <Time>2008-11-24T19:21:03.7686-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Brown.xnb</Output>
+      <Time>2008-12-10T14:05:38.1529847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Idling Up\APC Idling Up Green.png</Source>
@@ -439,8 +439,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Green.xnb</Output>
-      <Time>2008-11-24T19:21:03.7186-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Green.xnb</Output>
+      <Time>2008-12-10T14:35:09.5489847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Idling Up\APC Idling Up Grey.png</Source>
@@ -448,7 +448,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up Grey.xnb</Output>
       <Time>2008-11-24T19:21:03.7606-05:00</Time>
     </Item>
     <Item>
@@ -457,7 +457,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Idling Up\APC Idling Up White.xnb</Output>
       <Time>2008-11-24T19:21:03.7046-05:00</Time>
     </Item>
     <Item>
@@ -466,8 +466,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Brown.xnb</Output>
-      <Time>2008-11-24T19:21:21.4046-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Brown.xnb</Output>
+      <Time>2008-12-10T14:05:56.1089847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Rotating\APC Rotating Green.png</Source>
@@ -475,8 +475,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Green.xnb</Output>
-      <Time>2008-11-24T19:21:21.3506-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Green.xnb</Output>
+      <Time>2008-12-10T14:35:25.3059847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\APC\APC Rotating\APC Rotating Grey.png</Source>
@@ -484,7 +484,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating Grey.xnb</Output>
       <Time>2008-11-24T19:21:21.3676-05:00</Time>
     </Item>
     <Item>
@@ -493,7 +493,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Rotating\APC Rotating White.xnb</Output>
       <Time>2008-11-24T19:21:21.3106-05:00</Time>
     </Item>
     <Item>
@@ -502,8 +502,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown.xnb</Output>
-      <Time>2008-11-24T19:21:30.0016-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Brown.xnb</Output>
+      <Time>2008-12-10T14:08:05.2729847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.png</Source>
@@ -511,8 +511,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.xnb</Output>
-      <Time>2008-11-24T19:21:29.9416-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Green.xnb</Output>
+      <Time>2008-12-10T14:36:48.5879847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.png</Source>
@@ -520,7 +520,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down Grey.xnb</Output>
       <Time>2008-11-24T19:21:29.9806-05:00</Time>
     </Item>
     <Item>
@@ -529,7 +529,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Down\Artillery Driving Down White.xnb</Output>
       <Time>2008-11-24T19:21:29.9726-05:00</Time>
     </Item>
     <Item>
@@ -538,8 +538,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown.xnb</Output>
-      <Time>2008-11-24T19:21:34.9946-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Brown.xnb</Output>
+      <Time>2008-12-10T14:08:21.9629847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.png</Source>
@@ -547,8 +547,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.xnb</Output>
-      <Time>2008-11-24T19:21:35.0106-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Green.xnb</Output>
+      <Time>2008-12-10T14:37:02.3019847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.png</Source>
@@ -556,8 +556,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.xnb</Output>
-      <Time>2008-11-24T19:21:34.9606-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left Grey.xnb</Output>
+      <Time>2008-12-10T12:59:32.8704-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.png</Source>
@@ -565,7 +565,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Left\Artillery Driving Left White.xnb</Output>
       <Time>2008-12-06T13:03:49.8858-05:00</Time>
     </Item>
     <Item>
@@ -574,8 +574,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown.xnb</Output>
-      <Time>2008-11-24T19:21:38.6966-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Brown.xnb</Output>
+      <Time>2008-12-10T14:08:37.9829847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.png</Source>
@@ -583,8 +583,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.xnb</Output>
-      <Time>2008-11-24T19:21:38.7566-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Green.xnb</Output>
+      <Time>2008-12-10T14:37:16.2099847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.png</Source>
@@ -592,7 +592,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right Grey.xnb</Output>
       <Time>2008-11-24T19:21:38.6506-05:00</Time>
     </Item>
     <Item>
@@ -601,7 +601,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Right\Artillery Driving Right White.xnb</Output>
       <Time>2008-11-24T19:21:38.7656-05:00</Time>
     </Item>
     <Item>
@@ -610,8 +610,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown.xnb</Output>
-      <Time>2008-11-24T19:21:25.8906-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Brown.xnb</Output>
+      <Time>2008-12-10T14:09:01.9469847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.png</Source>
@@ -619,8 +619,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.xnb</Output>
-      <Time>2008-11-24T19:21:25.8666-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Green.xnb</Output>
+      <Time>2008-12-10T14:37:40.1549847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.png</Source>
@@ -628,8 +628,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.xnb</Output>
-      <Time>2008-11-24T19:21:25.8816-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up Grey.xnb</Output>
+      <Time>2008-12-10T12:58:47.6934-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.png</Source>
@@ -637,7 +637,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Driving Up\Artillery Driving Up White.xnb</Output>
       <Time>2008-12-06T13:04:21.6938-05:00</Time>
     </Item>
     <Item>
@@ -646,8 +646,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown.xnb</Output>
-      <Time>2008-11-24T19:21:36.4926-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Brown.xnb</Output>
+      <Time>2008-12-10T14:09:21.6659847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.png</Source>
@@ -655,8 +655,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.xnb</Output>
-      <Time>2008-11-24T19:21:36.5316-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Green.xnb</Output>
+      <Time>2008-12-10T14:38:05.6829847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.png</Source>
@@ -664,7 +664,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down Grey.xnb</Output>
       <Time>2008-11-24T19:21:36.4336-05:00</Time>
     </Item>
     <Item>
@@ -673,7 +673,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Down\Artillery Idling Down White.xnb</Output>
       <Time>2008-11-24T19:21:36.5396-05:00</Time>
     </Item>
     <Item>
@@ -682,8 +682,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown.xnb</Output>
-      <Time>2008-11-24T19:21:31.8106-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Brown.xnb</Output>
+      <Time>2008-12-10T14:09:42.8139847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.png</Source>
@@ -691,8 +691,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.xnb</Output>
-      <Time>2008-11-24T19:21:31.7616-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Green.xnb</Output>
+      <Time>2008-12-10T14:38:22.0219847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.png</Source>
@@ -700,8 +700,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.xnb</Output>
-      <Time>2008-11-24T19:21:31.8026-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up Grey.xnb</Output>
+      <Time>2008-12-10T12:59:10.5964-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.png</Source>
@@ -709,7 +709,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Idling Up\Artillery Idling Up White.xnb</Output>
       <Time>2008-12-06T13:04:45.7198-05:00</Time>
     </Item>
     <Item>
@@ -718,8 +718,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown.xnb</Output>
-      <Time>2008-11-24T19:21:28.5096-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Brown.xnb</Output>
+      <Time>2008-12-10T14:09:58.9589847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.png</Source>
@@ -727,8 +727,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.xnb</Output>
-      <Time>2008-11-24T19:21:28.4546-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Green.xnb</Output>
+      <Time>2008-12-10T14:38:36.9129847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.png</Source>
@@ -736,7 +736,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating Grey.xnb</Output>
       <Time>2008-11-24T19:21:28.5006-05:00</Time>
     </Item>
     <Item>
@@ -745,7 +745,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Artillery\Artillery Rotating\Artillery Rotating White.xnb</Output>
       <Time>2008-11-24T19:21:28.4256-05:00</Time>
     </Item>
     <Item>
@@ -754,8 +754,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown.xnb</Output>
-      <Time>2008-11-24T19:21:50.5526-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Brown.xnb</Output>
+      <Time>2008-12-10T14:11:27.6439847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.png</Source>
@@ -763,8 +763,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.xnb</Output>
-      <Time>2008-11-24T19:21:50.5856-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Green.xnb</Output>
+      <Time>2008-12-10T14:40:22.3229847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.png</Source>
@@ -772,7 +772,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down Grey.xnb</Output>
       <Time>2008-11-24T19:21:50.4816-05:00</Time>
     </Item>
     <Item>
@@ -781,7 +781,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Down\Tank Driving Down White.xnb</Output>
       <Time>2008-11-24T19:21:50.5936-05:00</Time>
     </Item>
     <Item>
@@ -790,8 +790,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown.xnb</Output>
-      <Time>2008-11-24T19:21:55.5226-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Brown.xnb</Output>
+      <Time>2008-12-10T14:11:42.6029847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.png</Source>
@@ -799,8 +799,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.xnb</Output>
-      <Time>2008-11-24T19:21:55.4416-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Green.xnb</Output>
+      <Time>2008-12-10T14:40:36.0519847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.png</Source>
@@ -808,7 +808,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left Grey.xnb</Output>
       <Time>2008-11-24T19:21:55.5136-05:00</Time>
     </Item>
     <Item>
@@ -817,7 +817,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Left\Tank Driving Left White.xnb</Output>
       <Time>2008-11-24T19:21:55.5026-05:00</Time>
     </Item>
     <Item>
@@ -826,8 +826,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown.xnb</Output>
-      <Time>2008-11-24T19:21:59.9466-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Brown.xnb</Output>
+      <Time>2008-12-10T14:11:58.1249847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.png</Source>
@@ -835,8 +835,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.xnb</Output>
-      <Time>2008-11-24T19:21:59.9036-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Green.xnb</Output>
+      <Time>2008-12-10T14:40:51.0389847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.png</Source>
@@ -844,7 +844,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right Grey.xnb</Output>
       <Time>2008-11-24T19:21:59.9386-05:00</Time>
     </Item>
     <Item>
@@ -853,7 +853,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Right\Tank Driving Right White.xnb</Output>
       <Time>2008-11-24T19:21:59.8816-05:00</Time>
     </Item>
     <Item>
@@ -862,8 +862,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown.xnb</Output>
-      <Time>2008-11-24T19:21:41.8676-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Brown.xnb</Output>
+      <Time>2008-12-10T14:12:19.9939847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.png</Source>
@@ -871,8 +871,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.xnb</Output>
-      <Time>2008-11-24T19:21:41.9156-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Green.xnb</Output>
+      <Time>2008-12-10T14:41:22.8029847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.png</Source>
@@ -880,7 +880,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up Grey.xnb</Output>
       <Time>2008-11-24T19:21:41.8586-05:00</Time>
     </Item>
     <Item>
@@ -889,7 +889,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Driving Up\Tank Driving Up White.xnb</Output>
       <Time>2008-11-24T19:21:41.9076-05:00</Time>
     </Item>
     <Item>
@@ -898,8 +898,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown.xnb</Output>
-      <Time>2008-11-24T19:21:57.3346-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Brown.xnb</Output>
+      <Time>2008-12-10T14:12:35.0399847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.png</Source>
@@ -907,8 +907,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.xnb</Output>
-      <Time>2008-11-24T19:21:57.2906-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Green.xnb</Output>
+      <Time>2008-12-10T14:41:37.4599847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.png</Source>
@@ -916,7 +916,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down Grey.xnb</Output>
       <Time>2008-11-24T19:21:57.3236-05:00</Time>
     </Item>
     <Item>
@@ -925,7 +925,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Down\Tank Idling Down White.xnb</Output>
       <Time>2008-11-24T19:21:57.3026-05:00</Time>
     </Item>
     <Item>
@@ -934,8 +934,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown.xnb</Output>
-      <Time>2008-11-24T19:21:53.0226-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Brown.xnb</Output>
+      <Time>2008-12-10T14:12:51.1959847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.png</Source>
@@ -943,8 +943,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.xnb</Output>
-      <Time>2008-11-24T19:21:53.0856-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Green.xnb</Output>
+      <Time>2008-12-10T14:41:50.2629847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.png</Source>
@@ -952,7 +952,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up Grey.xnb</Output>
       <Time>2008-11-24T19:21:52.9896-05:00</Time>
     </Item>
     <Item>
@@ -961,7 +961,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Idling Up\Tank Idling Up White.xnb</Output>
       <Time>2008-11-24T19:21:53.0546-05:00</Time>
     </Item>
     <Item>
@@ -970,8 +970,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Brown.xnb</Output>
-      <Time>2008-11-24T19:21:47.7956-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Brown.xnb</Output>
+      <Time>2008-12-10T14:13:10.9239847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Rotating\Tank Rotating Green.png</Source>
@@ -979,8 +979,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Green.xnb</Output>
-      <Time>2008-11-24T19:21:47.9766-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Green.xnb</Output>
+      <Time>2008-12-10T14:42:05.2769847-05:00</Time>
     </Item>
     <Item>
       <Source>Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.png</Source>
@@ -988,7 +988,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating Grey.xnb</Output>
       <Time>2008-11-24T19:21:47.7586-05:00</Time>
     </Item>
     <Item>
@@ -997,7 +997,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating White.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Animations\Tank\Tank Rotating\Tank Rotating White.xnb</Output>
       <Time>2008-11-24T19:21:47.9606-05:00</Time>
     </Item>
     <Item>
@@ -1006,7 +1006,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\fullTileSet.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\fullTileSet.xnb</Output>
       <Time>2008-12-05T19:35:35.5202-05:00</Time>
     </Item>
     <Item>
@@ -1015,7 +1015,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\HUD\hud background.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud background.xnb</Output>
       <Time>2008-12-06T17:11:34.1738-05:00</Time>
     </Item>
     <Item>
@@ -1024,7 +1024,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\HUD\hud border brown.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud border brown.xnb</Output>
       <Time>2008-12-06T17:30:34.5738-05:00</Time>
     </Item>
     <Item>
@@ -1033,7 +1033,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\HUD\hud border green.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud border green.xnb</Output>
       <Time>2008-12-06T17:34:33.8588-05:00</Time>
     </Item>
     <Item>
@@ -1042,7 +1042,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\HUD\hud border grey.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud border grey.xnb</Output>
       <Time>2008-12-06T17:31:53.9518-05:00</Time>
     </Item>
     <Item>
@@ -1051,7 +1051,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\HUD\hud border white.xnb</Output>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\hud border white.xnb</Output>
       <Time>2008-12-06T17:31:06.1648-05:00</Time>
     </Item>
     <Item>
@@ -1060,18 +1060,27 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\HUD\unit icons.xnb</Output>
-      <Time>2008-12-06T13:14:55.4608-05:00</Time>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\HUD\unit icons.xnb</Output>
+      <Time>2008-12-10T14:46:55.3959847-05:00</Time>
+    </Item>
+    <Item>
+      <Source>current unit border.png</Source>
+      <Name>current unit border</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\current unit border.xnb</Output>
+      <Time>2008-12-10T15:14:56.0073847-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Robby\Documents\Tanktics XNA 3.0\Tanktics\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
