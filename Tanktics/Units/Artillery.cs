@@ -145,7 +145,7 @@ namespace Tanktics
             }
 
 
-            if (currentX - 1 >= 0)
+            if (currentX - 1 > -1)
             {
                 if (currentY - 1 > -1)
                 {

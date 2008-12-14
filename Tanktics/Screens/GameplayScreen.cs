@@ -660,7 +660,8 @@ namespace Tanktics
                     }
                     else
                     {
-                        unitControl.moveUnit(selected.X, selected.Y);
+                        AI.map[unitControl.currentUnit.currentX, unitControl.currentUnit.currentY] = 0;
+                        unitControl.moveUnit(selected.X, selected.Y);   
                     }
                 }
 
