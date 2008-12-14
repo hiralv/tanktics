@@ -1,5 +1,6 @@
 #region File Description
 //-----------------------------------------------------------------------------
+// Prebuilt sample code
 // LoadingScreen.cs
 //
 // Microsoft XNA Community Game Platform
@@ -42,13 +43,11 @@ namespace Tanktics
 
         #region Initialization
 
-
         /// <summary>
         /// The constructor is private: loading screens should
         /// be activated via the static Load method instead.
         /// </summary>
-        private LoadingScreen(ScreenManager screenManager, bool loadingIsSlow,
-                              GameScreen[] screensToLoad)
+        private LoadingScreen(ScreenManager screenManager, bool loadingIsSlow, GameScreen[] screensToLoad)
         {
             this.loadingIsSlow = loadingIsSlow;
             this.screensToLoad = screensToLoad;
@@ -60,8 +59,7 @@ namespace Tanktics
         /// <summary>
         /// Activates the loading screen.
         /// </summary>
-        public static void Load(ScreenManager screenManager, bool loadingIsSlow,
-                                params GameScreen[] screensToLoad)
+        public static void Load(ScreenManager screenManager, bool loadingIsSlow, params GameScreen[] screensToLoad)
         {
             // Tell all the current screens to transition off.
             foreach (GameScreen screen in screenManager.GetScreens())
@@ -75,17 +73,14 @@ namespace Tanktics
             screenManager.AddScreen(loadingScreen);
         }
 
-
         #endregion
 
         #region Update and Draw
 
-
         /// <summary>
         /// Updates the loading screen.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 
@@ -109,8 +104,7 @@ namespace Tanktics
                 ScreenManager.Game.ResetElapsedTime();
             }
         }
-
-
+        
         /// <summary>
         /// Draws the loading screen.
         /// </summary>
@@ -154,8 +148,7 @@ namespace Tanktics
                 spriteBatch.End();
             }
         }
-
-
+        
         #endregion
     }
 }

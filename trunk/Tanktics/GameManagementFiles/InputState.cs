@@ -1,3 +1,4 @@
+//prebuilt sample code modified by Christopher Wykel
 #region File Description
 //-----------------------------------------------------------------------------
 // InputState.cs
@@ -52,10 +53,15 @@ namespace Tanktics
 
         #endregion
 
-        #region Properties
+        /// <summary>
+        /// A bunch of checks that I have placed into the InputState.cs file allowing
+        /// us to check to see if a key is being held down. --Christopher Wykel
+        /// </summary>
+        #region Keydown Checks
 
-
-        //KeyDown checks
+        /// <summary>
+        /// A Check to see if the Escape Key is being held down. --Christopher Wykel
+        /// </summary>
         public bool IsKeyDownEscape()
         {
             for (int i = 0; i < MaxInputs; i++)
@@ -66,12 +72,15 @@ namespace Tanktics
 
             return false;
         }
-
         public bool IsKeyDownEscape(PlayerIndex playerIndex)
         {
             return (CurrentKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Escape) &&
                     LastKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Escape));
         }
+
+        /// <summary>
+        /// A Check to see if the Up Key is being held down. --Christopher Wykel
+        /// </summary>
         public bool IsKeyDownUp()
         {
             for (int i = 0; i < MaxInputs; i++)
@@ -82,13 +91,15 @@ namespace Tanktics
 
             return false;
         }
-
         public bool IsKeyDownUp(PlayerIndex playerIndex)
         {
             return (CurrentKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Up) &&
                     LastKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Up));
         }
 
+        /// <summary>
+        /// A Check to see if the Left Key is being held down. --Christopher Wykel
+        /// </summary>
         public bool IsKeyDownLeft()
         {
             for (int i = 0; i < MaxInputs; i++)
@@ -99,13 +110,15 @@ namespace Tanktics
 
             return false;
         }
-
         public bool IsKeyDownLeft(PlayerIndex playerIndex)
         {
             return (CurrentKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Left) &&
                     LastKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Left));
         }
-
+       
+        /// <summary>
+        /// A Check to see if the Right Key is being held down. --Christopher Wykel
+        /// </summary>
         public bool IsKeyDownRight()
         {
             for (int i = 0; i < MaxInputs; i++)
@@ -116,13 +129,15 @@ namespace Tanktics
 
             return false;
         }
-
         public bool IsKeyDownRight(PlayerIndex playerIndex)
         {
             return (CurrentKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Right) &&
                     LastKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Right));
         }
-
+    
+        /// <summary>
+        /// A Check to see if the Down Key is being held down. --Christopher Wykel
+        /// </summary>
         public bool IsKeyDownDown()
         {
             for (int i = 0; i < MaxInputs; i++)
@@ -133,15 +148,23 @@ namespace Tanktics
 
             return false;
         }
-
         public bool IsKeyDownDown(PlayerIndex playerIndex)
         {
             return (CurrentKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Down) &&
                     LastKeyboardStates[(int)playerIndex].IsKeyDown(Keys.Down));
         }
 
+        #endregion
 
-        //other Input Checks
+        /// <summary>
+        /// A bunch of checks that I have placed into the InputState.cs file allowing
+        /// us to check to see if a set of keys is pressed. some not used. --Christopher Wykel
+        /// </summary>
+        #region MenuChecks
+
+        /// <summary>
+        /// A Check to see if the LeftMenu Key is being held down. --Christopher Wykel
+        /// </summary>
         public bool MenuLeft
         {
             get
@@ -152,6 +175,9 @@ namespace Tanktics
             }
         }
 
+        /// <summary>
+        /// A Check to see if the RightMenu Key is being held down. --Christopher Wykel
+        /// </summary>
         public bool MenuRight
         {
             get
@@ -162,6 +188,9 @@ namespace Tanktics
             }
         }
 
+        /// <summary>
+        /// A Check to see if the UpMenu Key is being held down. --Christopher Wykel
+        /// </summary>
         public bool MenuUp
         {
             get
@@ -172,10 +201,8 @@ namespace Tanktics
             }
         }
 
-
         /// <summary>
-        /// Checks for a "menu down" input action, from any player,
-        /// on either keyboard or gamepad.
+        /// A Check to see if the DownMenu Key is being held down. --Christopher Wykel
         /// </summary>
         public bool MenuDown
         {
@@ -186,8 +213,13 @@ namespace Tanktics
                        IsNewButtonPress(Buttons.LeftThumbstickDown);
             }
         }
+        
+        #endregion
 
-
+        /// <summary>
+        /// A bunch of checks that were already included in this document --Christopher Wykel
+        /// </summary>
+        #region Preset KeyChecks
         /// <summary>
         /// Checks for a "menu select" input action, from any player,
         /// on either keyboard or gamepad.

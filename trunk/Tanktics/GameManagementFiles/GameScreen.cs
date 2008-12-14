@@ -1,3 +1,4 @@
+//prebuilt sample code.
 #region File Description
 //-----------------------------------------------------------------------------
 // GameScreen.cs

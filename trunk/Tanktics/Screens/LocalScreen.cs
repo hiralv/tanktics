@@ -1,8 +1,8 @@
 #region File Description
 //-----------------------------------------------------------------------------
-// OptionScreen.cs
+// LocalScreen.cs
 //
-// Display the NewGame menu.
+// Display the LocalScreen menu. --Chris Wykel
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -23,20 +23,26 @@ namespace Tanktics
     {
         #region Fields
 
+        //Audio and Graphics
         ContentManager content;
         GameAudio gameAudio;
+
         //textures
         Texture2D MenuImage;
+
         //vectors
         private Vector2 origin;
         private Vector2 screenpos;
+
         //rotation angles for turning animation
         private float RotationAngle = 0.0f;
         private float top = 0.0f;
         private float bottom = -3.2f;
         private float circle = MathHelper.Pi * 2;
+
         //elapsed time between updates
         float elapsed = 0f;
+
         //menu title
         string title = "TankTics";
 
@@ -70,6 +76,7 @@ namespace Tanktics
             origin.X = MenuImage.Width / 2;
             origin.Y = MenuImage.Height / 2;
 
+            //Gets Audio from ScreenManager.
             gameAudio = ScreenManager.Audio;
         }
 
@@ -88,8 +95,7 @@ namespace Tanktics
         /// <summary>
         /// Updates the main menu screen.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 
@@ -216,6 +222,7 @@ namespace Tanktics
             SpriteFont font = ScreenManager.Font;
             Vector2 textSize = font.MeasureString(title);
             Vector2 textPosition = new Vector2((viewport.Width - 2*textSize.X) / 2, (viewport.Height - 2*textSize.Y) / 2);
+            
             spriteBatch.Begin();
 
             //draw menu items

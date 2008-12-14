@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // LogoScreen.cs
 //
-// Display the Box of Elephants logo and start the GDD logo screen.
+// Displays Box of Elephants logo and starts GDD logo screen.-- Robby Flourence
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -22,8 +22,11 @@ namespace Tanktics
     class LogoScreen : GameScreen
     {
         #region Fields
+
+        //Audio and Graphics
         GameAudio gameAudio;
         ContentManager content;
+
         Texture2D logoTexture;
         float scale = 0.67f;
         TimeSpan elapsedTime = TimeSpan.Zero;
@@ -78,8 +81,7 @@ namespace Tanktics
         /// <summary>
         /// Updates the logo screen.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 

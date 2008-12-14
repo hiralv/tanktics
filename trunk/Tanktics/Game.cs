@@ -71,8 +71,6 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace Tanktics
 {
-    
-
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -117,6 +115,7 @@ namespace Tanktics
         {
 
         }
+
         protected override void UnloadContent()
         {
 

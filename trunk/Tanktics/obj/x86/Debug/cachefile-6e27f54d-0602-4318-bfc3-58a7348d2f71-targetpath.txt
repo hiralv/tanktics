@@ -116,6 +116,8 @@ Content\HUD\hud border green.xnb
 Content\HUD\hud border grey.xnb
 Content\HUD\hud border white.xnb
 Content\HUD\unit icons.xnb
+Content\current unit border.xnb
+Content\Unit Explosion.xnb
 Content\audio\GameSounds.xgs
 Content\audio\Wave Bank.xwb
 Content\audio\Sound Bank.xsb

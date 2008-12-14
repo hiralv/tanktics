@@ -1,5 +1,6 @@
 #region File Description
 //-----------------------------------------------------------------------------
+// prebuilt sample code edited by Chris Wykel
 // ScreenManager.cs
 //
 // Microsoft XNA Community Game Platform
@@ -27,6 +28,7 @@ namespace Tanktics
     public class ScreenManager : DrawableGameComponent
     {
         #region Fields
+
         GameAudio gameAudio;
         List<GameScreen> screens = new List<GameScreen>();
         List<GameScreen> screensToUpdate = new List<GameScreen>();
@@ -77,11 +79,13 @@ namespace Tanktics
             set { traceEnabled = value; }
         }
 
+        /// <summary>
+        /// Gets the GameAudio Audio state
+        /// </summary>
         public GameAudio Audio
         {
             get { return gameAudio; }
         }
-
 
         #endregion
 
@@ -109,15 +113,25 @@ namespace Tanktics
 
 
         /// <summary>
-        /// Load your graphics content.
+        /// Load your graphics content. -- Christopher Wykel
         /// </summary>
         protected override void LoadContent()
         {
+            //Creates new GameAudio
             gameAudio = new GameAudio();
+            //Adds Game Audio Theme Music and Background Music
             gameAudio.AddSound("Theme Music");
+            gameAudio.AddSound("Background Song");
+            //Adds the Cue to the combined calls of both.
+            gameAudio.AddSound("Menu and Background");
+            //Calls Menu and Background Cue 2 times to queue up the Background song after the Theme Music
+            gameAudio.PlaySound("Menu and Background");
+            gameAudio.PlaySound("Menu and Background");
+
             // Load content belonging to the screen manager.
             ContentManager content = Game.Content;
 
+            //Standard stuff
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = content.Load<SpriteFont>("menufont");
             blankTexture = content.Load<Texture2D>("blank");
@@ -127,8 +141,8 @@ namespace Tanktics
             {
                 screen.LoadContent();
             }
+
             
-            gameAudio.PlaySound("Theme Music");
         }
 
 
@@ -155,8 +169,12 @@ namespace Tanktics
         /// </summary>
         public override void Update(GameTime gameTime)
         {
+            //Update the audio as it will almost always be running. -- Christopher Wykel
+            gameAudio.UpdateAudio();
+            
             // Read the keyboard and gamepad.
             input.Update();
+
             // Make a copy of the master screen list, to avoid confusion if
             // the process of updating one screen adds or removes others.
             screensToUpdate.Clear();
@@ -196,7 +214,6 @@ namespace Tanktics
                         coveredByOtherScreen = true;
                 }
             }
-
             // Print debug trace?
             if (traceEnabled)
                 TraceScreens();
@@ -235,7 +252,6 @@ namespace Tanktics
         #endregion
 
         #region Public Methods
-
 
         /// <summary>
         /// Adds a new screen to the screen manager.
@@ -301,7 +317,6 @@ namespace Tanktics
 
             spriteBatch.End();
         }
-
 
         #endregion
     }

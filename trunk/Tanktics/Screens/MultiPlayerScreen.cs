@@ -1,8 +1,8 @@
 #region File Description
 //-----------------------------------------------------------------------------
-// OptionScreen.cs
+// MultiPlayerScreen.cs
 //
-// Display the Options menu.
+// Displays the MultiPlayerScreen menu. --Chris Wykel
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -17,27 +17,33 @@ using Microsoft.Xna.Framework.Input;
 namespace Tanktics
 {
     /// <summary>
-    /// The main menu screen is the main menu...
+    /// MultiPlayerScreen menu...
     /// </summary>
     class MultiPlayerScreen : GameScreen
     {
         #region Fields
 
+        //Graphics and Audio
         ContentManager content;
         GameAudio gameAudio;
+
         //textures
         Texture2D MenuImage;
+
         //vectors
         private Vector2 origin;
         private Vector2 screenpos;
+
         //rotation angles for turning animation
         private float RotationAngle = 0.0f;
         private float top = 0.0f;
         private float rightside = -2.25f;
         private float leftside = 2.15f;
         private float circle = MathHelper.Pi * 2;
+
         //elapsed time between updates
         float elapsed = 0f;
+
         //menu title
         string title = "TankTics";
 
@@ -71,6 +77,7 @@ namespace Tanktics
             origin.X = MenuImage.Width / 2;
             origin.Y = MenuImage.Height / 2;
 
+            //gets Audio from ScreenManager.
             gameAudio = ScreenManager.Audio;
         }
 
@@ -89,10 +96,7 @@ namespace Tanktics
         /// <summary>
         /// Updates the main menu screen.
         /// </summary>
-
-
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 
@@ -254,6 +258,7 @@ namespace Tanktics
             SpriteFont font = ScreenManager.Font;
             Vector2 textSize = font.MeasureString(title);
             Vector2 textPosition = new Vector2((viewport.Width - 2*textSize.X) / 2, (viewport.Height - 2*textSize.Y) / 2);
+            
             spriteBatch.Begin();
 
             //draw menu items

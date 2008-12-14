@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // MenuBackgroundScreen.cs
 //
-// Display the background image for the main menu.
+// Displays background image for the main menu. -- Robby Flourence
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -69,8 +69,7 @@ namespace Tanktics
         /// <summary>
         /// Updates the menu background screen.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, false);
         }

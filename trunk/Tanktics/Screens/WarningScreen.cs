@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // WarningScreen.cs
 //
-// Display the "A for Awesome" warning image.
+// Display the "A for Awesome" warning image.--Robby Florence
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -72,8 +72,7 @@ namespace Tanktics
         /// Updates the warning screen. This only increments the elapsed time counter
         /// and loads the logo screen after a set amount of display time.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 

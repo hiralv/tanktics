@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // TankIntroScreen.cs
 //
-// Display the tank animations to transition to the main menu.
+// Display the tank animations to transition to the main menu.--Robby Flourence
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -25,16 +25,22 @@ namespace Tanktics
     class TankIntroScreen : GameScreen
     {
         #region Fields
+        //Graphics and Audio
         GameAudio gameAudio;
         ContentManager content;
+
         AnimatingSprite driveSprite, turnSprite, zoomSprite;
+
         //increment to move animations each frame
         float moveX = 0;
+
         //previous frame of drive and turn animations
         //used to determine when the frame advances
         int drivePrevFrame = -1, turnPrevFrame = -1;
+
         //if the animation has been delayed between turn and zoom
         bool zoomDelayed = false;
+
         //if the positions of the animations have been set in the Draw method
         bool initialized = false;
 
@@ -109,8 +115,7 @@ namespace Tanktics
         /// <summary>
         /// Updates the tank intro screen.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 
@@ -163,6 +168,7 @@ namespace Tanktics
                 ScreenManager.AddScreen(new MenuBackgroundScreen());
                 ScreenManager.AddScreen(new MainMenuScreen());
             }
+            gameAudio.UpdateAudio();
         }
 
         /// <summary>

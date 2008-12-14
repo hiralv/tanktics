@@ -1,9 +1,12 @@
+//Code built By Robby Flourence and and Hiral Vora
+#region Using Statements
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+#endregion
 
 namespace Tanktics
 {
@@ -85,7 +88,10 @@ namespace Tanktics
                 }
             }
         }
-
+        
+        /// <summary>
+        /// A place to load all content
+        /// </summary>
         public void LoadContent(ContentManager content)
         {
             if (content == null)
@@ -314,11 +320,11 @@ namespace Tanktics
             }
 
             //draw graph title
-            textSize = font.MeasureString("Graph");
+            textSize = font.MeasureString("Army");
             textPosition.X = centerRect.X + (int)(0.77 * centerRect.Width);
             batch.DrawString(
                 font,
-                "Graph",
+                "Army",
                 textPosition,
                 Color.Black,
                 0f,

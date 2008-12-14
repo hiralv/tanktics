@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------------------
 // MainMenuScreen.cs
 //
-// Display the main menu.
+// Displays MainMenuScreen. --Chris Wykel
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -23,13 +23,17 @@ namespace Tanktics
     {
         #region Fields
 
+        //graphics and Audio
         ContentManager content;
         GameAudio gameAudio;
+
         //textures
         Texture2D MenuImage;
+
         //vectors
         private Vector2 origin;
         private Vector2 screenpos;
+
         //rotation angle for turning animation
         private float RotationAngle = 0.0f;
         private float top = 0.0f; 
@@ -37,8 +41,10 @@ namespace Tanktics
         private float left = 1.55f;
         private float bottom = -3.2f;
         private float circle = MathHelper.Pi * 2;
+
         //elapsed time between updates
         float elapsed = 0f;
+
         //menu title
         string title = "TankTics";
 
@@ -72,6 +78,7 @@ namespace Tanktics
             origin.X = MenuImage.Width / 2;
             origin.Y = MenuImage.Height / 2;
 
+            //gets Audio from ScreenManager
             gameAudio = ScreenManager.Audio;
             gameAudio.AddSound("Menu Sound");
         }
@@ -91,8 +98,7 @@ namespace Tanktics
         /// <summary>
         /// Updates the main menu screen.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 

@@ -26,20 +26,7 @@ C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Mai
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\master copy.xnb
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\how copy.xnb
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Main Menu\view copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\fulltileset_alpha.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud2 copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\done copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\finalize copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\next copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\previous copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\artillary symbol copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\humvee symbol copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\tanksymbol copy.xnb
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\selected border.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\mud texture copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud5 copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud3 copy.xnb
-C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\graph.xnb
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Brown.xnb
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Green.xnb
 C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Animations\APC\APC Driving Down\APC Driving Down Grey.xnb
@@ -402,3 +389,11 @@ C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\D
 C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\Tanktics.application
 C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\Tanktics.exe
 C:\Users\Hiral\Documents\Visual Studio 2005\Projects\Tanktics\Tanktics\obj\x86\Debug\Tanktics.pdb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud background.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud border brown.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud border green.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud border grey.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\hud border white.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\HUD\unit icons.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\current unit border.xnb
+C:\Documents and Settings\me\Desktop\TankTics\Tanktics\bin\x86\Debug\Content\Unit Explosion.xnb

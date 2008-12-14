@@ -1,8 +1,8 @@
 #region File Description
 //-----------------------------------------------------------------------------
-// OptionScreen.cs
+// AudioScreen.cs
 //
-// Display the Options menu.
+// Display the AudioScreen menu. --Chris Wykel
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -17,27 +17,33 @@ using Microsoft.Xna.Framework.Input;
 namespace Tanktics
 {
     /// <summary>
-    /// The main menu screen is the main menu...
+    /// The AudioScreen menu...
     /// </summary>
     class AudioScreen : GameScreen
     {
         #region Fields
 
+        //graphics and audio
         ContentManager content;
         GameAudio gameAudio;
+
         //textures
         Texture2D MenuImage;
+
         //vectors
         private Vector2 origin;
         private Vector2 screenpos;
+
         //rotation angles for turning animation
         private float RotationAngle = 0.0f;
         private float top = 0.0f;
         private float rightside = -2.25f;
         private float leftside = 2.15f;
         private float circle = MathHelper.Pi * 2;
+
         //elapsed time between updates
         float elapsed = 0f;
+
         //menu title
         string title = "TankTics";
 
@@ -246,6 +252,7 @@ namespace Tanktics
             SpriteFont font = ScreenManager.Font;
             Vector2 textSize = font.MeasureString(title);
             Vector2 textPosition = new Vector2((viewport.Width - 2*textSize.X) / 2, (viewport.Height - 2*textSize.Y) / 2);
+                        
             spriteBatch.Begin();
 
             //draw menu items

@@ -1,13 +1,18 @@
-﻿using System;
+﻿//Coded by Acey and robby slight changes by chris
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 
 namespace Tanktics
 {
     public class UnitController
     {
+        //game Audio
+        GameAudio gameAudio;
+
         //Maximum allowed units per team
         static int MAXIMUMUNITS = 20;
 
@@ -63,6 +68,10 @@ namespace Tanktics
         //Acey Boyce & Robby Florence
         public UnitController(TileEngine tileEngine, int numOfPlayers)
         {
+            //Create new AudioEngine add explosion sound
+            gameAudio = new GameAudio();
+            gameAudio.AddSound("Unit Explosion");
+
             map = tileEngine;
             xSize = tileEngine.MapWidth;
             ySize = tileEngine.MapHeight;
@@ -3726,6 +3735,7 @@ namespace Tanktics
             //update explosion
             if (isExploding)
             {
+                
                 //stop explosion when finished
                 if (explosion.IsFinished)
                 {
@@ -3735,6 +3745,9 @@ namespace Tanktics
                 else
                     explosion.Update(gametime);
             }
+
+            // update all explosion audios-- Chris Wykel
+            gameAudio.UpdateAudio();
         }
 
         //draw the unit at (x, y) in the destination rectangle
@@ -3746,7 +3759,12 @@ namespace Tanktics
 
             //draw explosion
             if (isExploding && explosionLocation.X == x && explosionLocation.Y == y)
+            {
                 explosion.Draw(batch, destination, fade);
+                //plays an explosion sound-Chris Wykel
+                gameAudio.PlaySound("Unit Explosion");
+
+            }
         }
 
         //Removes the given unit from the players unit list

@@ -2,8 +2,7 @@
 //-----------------------------------------------------------------------------
 // GameplayScreen.cs
 //
-// The gameplay screen is currently a placeholder for
-// where the actual game will be played.
+// The gameplayScreen is Where the game is played. -- Robby Flourence
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -25,6 +24,7 @@ namespace Tanktics
         #region Fields
 
         ContentManager content;
+
         //amount of time (in seconds) between Update calls
         float elapsed;
 
@@ -279,15 +279,12 @@ namespace Tanktics
 
         #endregion
 
-
-
         /// <summary>
         /// Updates the state of the game. This method checks the GameScreen.IsActive
         /// property, so the game will stop updating when the pause menu is active,
         /// or if you tab away to a different application.
         /// </summary>
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 
@@ -310,8 +307,6 @@ namespace Tanktics
             if (TCs[unitControl.currentPlayer - 1].playerWon)
                 gameOver = true;
         }
-
-
 
         /// <summary>
         /// Lets the game respond to player input. Unlike the Update method,
@@ -903,9 +898,6 @@ namespace Tanktics
                 }
             }
             #endregion
-
-
-
 
             //move camera to selected square
             if (!prevSelected.Equals(selected))
