@@ -1072,6 +1072,15 @@
       <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\current unit border.xnb</Output>
       <Time>2008-12-10T15:14:56.0073847-05:00</Time>
     </Item>
+    <Item>
+      <Source>Unit Explosion.png</Source>
+      <Name>Unit Explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Robby\Documents\Tanktics SVN\Tanktics\bin\x86\Debug\Content\Unit Explosion.xnb</Output>
+      <Time>2008-12-13T23:19:50.6508-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
