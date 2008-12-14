@@ -20,7 +20,7 @@ namespace Tanktics
             hasMoved = false;
 
             //Vision range of Unit
-            vision = 4;
+            vision = 3;
 
             //Movement range of unit
             movement = 3;
