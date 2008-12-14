@@ -824,9 +824,10 @@ namespace Tanktics
 
                             if (TCs[unitControl.currentPlayer - 1].phase == 4)
                             {
+                                int prevTeam = unitControl.currentPlayer;
                                 TCs[unitControl.currentPlayer - 1].nextPhase();
-                                TCs[unitControl.currentPlayer - 1].getNext().nextPhase();
-                                unitControl.finalize();
+                                TCs[prevTeam - 1].setNext(TCs[unitControl.finalize() - 1]);
+                                TCs[prevTeam - 1].getNext().nextPhase();
                                 selected.X = unitControl.currentUnit.currentX;
                                 selected.Y = unitControl.currentUnit.currentY;
                                 //change player number for cameras
@@ -835,8 +836,9 @@ namespace Tanktics
                             }
                             if (TCs[unitControl.currentPlayer - 1].phase == 5)
                             {
-                                TCs[unitControl.currentPlayer - 1].getNext().nextPhase();
-                                unitControl.finalize();
+                                int prevTeam = unitControl.currentPlayer;
+                                TCs[prevTeam - 1].setNext(TCs[unitControl.finalize() - 1]);
+                                TCs[prevTeam - 1].getNext().nextPhase();
                                 selected.X = unitControl.currentUnit.currentX;
                                 selected.Y = unitControl.currentUnit.currentY;
                                 //change player number for cameras
