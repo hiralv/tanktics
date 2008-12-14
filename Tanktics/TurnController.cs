@@ -25,10 +25,10 @@ namespace Tanktics
         public int MAXTANK = 2;
         public int MAXARTIL = 1;
 
-        int startingSmallX;
-        int startingSmallY;
-        int startingBigX;
-        int startingBigY;
+        public int startingSmallX;
+        public int startingSmallY;
+        public int startingBigX;
+        public int startingBigY;
 
         public int points = 0;
         int controlledFactories = 0;

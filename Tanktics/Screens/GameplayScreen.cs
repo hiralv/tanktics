@@ -71,8 +71,9 @@ namespace Tanktics
         Texture2D[] tank4 = new Texture2D[6];
 
         AI ai1;
-        Point[] team1;
         //Unit previousunit;
+        //stores whether players are human/AI
+        Boolean[] humanPlayers;
         #endregion
 
         #region Initialization
@@ -80,10 +81,16 @@ namespace Tanktics
         /// <summary>
         /// Constructor.
         /// </summary>
-        public GameplayScreen()
+        public GameplayScreen(Boolean human1, Boolean human2, Boolean human3, Boolean human4)
         {
             TransitionOnTime = TimeSpan.FromSeconds(1.0);
             TransitionOffTime = TimeSpan.FromSeconds(1.0);
+
+            humanPlayers = new Boolean[4];
+            humanPlayers[0] = human1;
+            humanPlayers[1] = human2;
+            humanPlayers[2] = human3;
+            humanPlayers[3] = human4;
 
             tileEngine = new TileEngine("Maps/map0.txt", 64, 64, 5, 12);
 
@@ -117,16 +124,6 @@ namespace Tanktics
             TCs[3] = TC4;
 
             ai1 = new AI(unitControl);
-            team1 = new Point[6];
-            team1[0].X = 2; team1[0].Y = 0;
-            team1[1].X = 2; team1[1].Y = 1;
-            team1[2].X = 2; team1[2].Y = 2;
-            team1[3].X = 1; team1[3].Y = 2;
-            team1[4].X = 0; team1[4].Y = 2;
-            team1[5].X = 1; team1[5].Y = 1;
-
-
-
         }
 
         /// <summary>
@@ -325,6 +322,7 @@ namespace Tanktics
             if (input == null)
                 throw new ArgumentNullException("input");
 
+            #region Gamepad Setup
             String leftString = "";
             String rightString = "";
             GamePadState gps = GamePad.GetState(PlayerIndex.One);
@@ -382,6 +380,7 @@ namespace Tanktics
                     }
                 }
             }
+            #endregion
 
             //exit game
             if (input.IsNewKeyPress(Keys.Escape)|| gps.Buttons.Back==ButtonState.Pressed)
@@ -390,6 +389,7 @@ namespace Tanktics
                     new MainMenuScreen());
             }
 
+            #region Camera Controls
             //move camera
             Vector2 cameraMotion = Vector2.Zero;
             if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.W) ||
@@ -418,12 +418,13 @@ namespace Tanktics
             if (input.CurrentKeyboardStates[0].IsKeyDown(Keys.PageDown) ||
                 gps.Triggers.Left> 0)
                 camera.ZoomOut(elapsed);
-
+            #endregion
 
             //only exit game or move camera in game over
             if (gameOver)
                 return;
 
+            #region Move Selected Square
             //move selected square
             if ((input.IsNewKeyPress(Keys.Up) ||
                 gps.DPad.Up == ButtonState.Pressed ||
@@ -445,11 +446,12 @@ namespace Tanktics
                  leftString.Equals("right"))&& 
                 selected.X < tileEngine.MapWidth - 1)
                 selected.X++;
+            #endregion
 
-
-
+            #region Select Next/Previous Unit
             //Combat Phase: select next unit
-            if (input.IsNewKeyPress(Keys.Tab) || gps.Buttons.RightShoulder == ButtonState.Pressed)
+            if (humanPlayers[unitControl.currentPlayer - 1] &&
+                (input.IsNewKeyPress(Keys.Tab) || gps.Buttons.RightShoulder == ButtonState.Pressed))
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
@@ -460,7 +462,8 @@ namespace Tanktics
             }
 
             //Combat Phase: select previous unit
-            if (input.IsNewKeyPress(Keys.Back) || gps.Buttons.LeftShoulder == ButtonState.Pressed)
+            if (humanPlayers[unitControl.currentPlayer - 1] &&
+                (input.IsNewKeyPress(Keys.Back) || gps.Buttons.LeftShoulder == ButtonState.Pressed))
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
@@ -469,10 +472,13 @@ namespace Tanktics
                     selected.Y = unitControl.currentUnit.currentY;
                 }
             }
+            #endregion
 
+            #region Purchase Units
             //Purchase Phase: Buy an APC
             //Acey Boyce
-            if (input.IsNewKeyPress(Keys.D1) || gps.Buttons.X == ButtonState.Pressed)
+            if (humanPlayers[unitControl.currentPlayer - 1] &&
+                (input.IsNewKeyPress(Keys.D1) || gps.Buttons.X == ButtonState.Pressed))
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 4)
                 {
@@ -501,7 +507,8 @@ namespace Tanktics
 
             //Purchase Phase: Buy a tank
             //Acey Boyce
-            if (input.IsNewKeyPress(Keys.D2) || gps.Buttons.Y == ButtonState.Pressed)
+            if (humanPlayers[unitControl.currentPlayer - 1] &&
+                (input.IsNewKeyPress(Keys.D2) || gps.Buttons.Y == ButtonState.Pressed))
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 4)
                 {
@@ -530,7 +537,8 @@ namespace Tanktics
 
             //Purchase Phase: Buy an artillery
             //Acey Boyce
-            if (input.IsNewKeyPress(Keys.D3) || gps.Buttons.B == ButtonState.Pressed)
+            if (humanPlayers[unitControl.currentPlayer - 1] &&
+                (input.IsNewKeyPress(Keys.D3) || gps.Buttons.B == ButtonState.Pressed))
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 4)
                 {
@@ -556,66 +564,96 @@ namespace Tanktics
                     }
                 }
             }
+            #endregion
 
             #region Automatic Unit Placment
-            if (unitControl.currentPlayer == 1)
+            //Robby Florence
+            if (!humanPlayers[unitControl.currentPlayer - 1] && TCs[unitControl.currentPlayer - 1].phase == 0)
             {
-                if (TCs[unitControl.currentPlayer - 1].phase == 0)
+                int x, y;
+                Random rand = new Random();
+
+                //add apcs
+                for (int i = 0; i < TC1.MAXAPC; i++)
                 {
-                    for (int i = 0; i < TC1.MAXAPC; i++)
+                    //find an empty location in the player's base
+                    do
                     {
-                        if (TCs[unitControl.currentPlayer - 1].createUnit("apc", team1[i].X, team1[i].Y))
-                        {
-                            unitControl.addUnit("apc", unitControl.currentPlayer, team1[i].X, team1[i].Y, apc1);
-                            TCs[unitControl.currentPlayer - 1].totalAPC++;
-                        }
+                        x = rand.Next(TCs[unitControl.currentPlayer - 1].startingSmallX, TCs[unitControl.currentPlayer - 1].startingBigX + 1);
+                        y = rand.Next(TCs[unitControl.currentPlayer - 1].startingSmallY, TCs[unitControl.currentPlayer - 1].startingBigY + 1);
                     }
+                    while (!TCs[unitControl.currentPlayer - 1].createUnit("apc", x, y));
 
-                    for (int i = TC1.MAXAPC; i < TC1.MAXAPC + TC1.MAXTANK; i++)
-                    {
-                        if (TCs[unitControl.currentPlayer - 1].createUnit("tank", team1[i].X, team1[i].Y))
-                        {
-                            unitControl.addUnit("tank", unitControl.currentPlayer, team1[i].X, team1[i].Y, tank1);
-                            TCs[unitControl.currentPlayer - 1].totalTank++;
-                        }
-                    }
-
-                    for (int i = TC1.MAXAPC + TC1.MAXTANK; i < TC1.MAXAPC + TC1.MAXTANK + TC1.MAXARTIL; i++)
-                    {
-                        if (TCs[unitControl.currentPlayer - 1].createUnit("artillery", team1[i].X, team1[i].Y))
-                        {
-                            unitControl.addUnit("artillery", unitControl.currentPlayer, team1[i].X, team1[i].Y, artillery1);
-                            TCs[unitControl.currentPlayer - 1].totalArtil++;
-                        }
-                    }
-
-                    //TCs[unitControl.currentPlayer - 1].phase = 5;
-                    unitControl.currentPlayer++;
-                    if (unitControl.currentPlayer == 2)
-                    {
-                        selected.X = tileEngine.MapWidth - 3;
-                        selected.Y = 0;
-                    }
+                    //create unit
+                    if (unitControl.currentPlayer == 1)
+                        unitControl.addUnit("apc", 1, x, y, apc1);
+                    else if (unitControl.currentPlayer == 2)
+                        unitControl.addUnit("apc", 2, x, y, apc2);
                     else if (unitControl.currentPlayer == 3)
-                    {
-                        selected.X = tileEngine.MapWidth - 3;
-                        selected.Y = tileEngine.MapHeight - 3;
-                    }
+                        unitControl.addUnit("apc", 3, x, y, apc3);
                     else if (unitControl.currentPlayer == 4)
-                    {
-                        selected.X = 0;
-                        selected.Y = tileEngine.MapHeight - 3;
-                    }
-                    camera.PlayerNum = unitControl.currentPlayer;
-                    miniMap.PlayerNum = unitControl.currentPlayer;
+                        unitControl.addUnit("apc", 4, x, y, apc4);
+
+                    TCs[unitControl.currentPlayer - 1].totalAPC++;
                 }
+
+                //add tanks
+                for (int i = 0; i < TC1.MAXTANK; i++)
+                {
+                    //find an empty location in the player's base
+                    do
+                    {
+                        x = rand.Next(TCs[unitControl.currentPlayer - 1].startingSmallX, TCs[unitControl.currentPlayer - 1].startingBigX + 1);
+                        y = rand.Next(TCs[unitControl.currentPlayer - 1].startingSmallY, TCs[unitControl.currentPlayer - 1].startingBigY + 1);
+                    }
+                    while (!TCs[unitControl.currentPlayer - 1].createUnit("tank", x, y));
+
+                    //create unit
+                    if (unitControl.currentPlayer == 1)
+                        unitControl.addUnit("tank", 1, x, y, tank1);
+                    else if (unitControl.currentPlayer == 2)
+                        unitControl.addUnit("tank", 2, x, y, tank2);
+                    else if (unitControl.currentPlayer == 3)
+                        unitControl.addUnit("tank", 3, x, y, tank3);
+                    else if (unitControl.currentPlayer == 4)
+                        unitControl.addUnit("tank", 4, x, y, tank4);
+
+                    TCs[unitControl.currentPlayer - 1].totalTank++;
+                }
+
+                //add artillery
+                for (int i = 0; i < TC1.MAXARTIL; i++)
+                {
+                    //find an empty location in the player's base
+                    do
+                    {
+                        x = rand.Next(TCs[unitControl.currentPlayer - 1].startingSmallX, TCs[unitControl.currentPlayer - 1].startingBigX + 1);
+                        y = rand.Next(TCs[unitControl.currentPlayer - 1].startingSmallY, TCs[unitControl.currentPlayer - 1].startingBigY + 1);
+                    }
+                    while (!TCs[unitControl.currentPlayer - 1].createUnit("artillery", x, y));
+
+                    //create unit
+                    if (unitControl.currentPlayer == 1)
+                        unitControl.addUnit("artillery", 1, x, y, artillery1);
+                    else if (unitControl.currentPlayer == 2)
+                        unitControl.addUnit("artillery", 2, x, y, artillery2);
+                    else if (unitControl.currentPlayer == 3)
+                        unitControl.addUnit("artillery", 3, x, y, artillery3);
+                    else if (unitControl.currentPlayer == 4)
+                        unitControl.addUnit("artillery", 4, x, y, artillery4);
+
+                    TCs[unitControl.currentPlayer - 1].totalAPC++;
+                }
+
+                finalizeUnitPlacement();
             }
             #endregion
 
-
-            //Combat Phase:move current unit to selected square
+            #region Movement and Unit Placement
+            //Movement Phase:move current unit to selected square
             //Unit Placement Phase: Place next unit on selected square
-            if (input.IsNewKeyPress(Keys.Space) || gps.Buttons.A == ButtonState.Pressed)
+            if (humanPlayers[unitControl.currentPlayer - 1] &&
+                (input.IsNewKeyPress(Keys.Space) || gps.Buttons.A == ButtonState.Pressed))
             {
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
@@ -627,10 +665,6 @@ namespace Tanktics
                     else
                     {
                         unitControl.moveUnit(selected.X, selected.Y);
-                        //Commented out so we can see the explosions
-                        //Before it snapped to nextunit so you would miss boom
-                        //selected.X = unitControl.currentUnit.currentX;
-                        //selected.Y = unitControl.currentUnit.currentY;
                     }
                 }
 
@@ -687,49 +721,25 @@ namespace Tanktics
                         //Note may be changed to move to next players phase 0
                         if (TCs[unitControl.currentPlayer - 1].totalArtil == TCs[unitControl.currentPlayer - 1].MAXARTIL)
                         {
-                            TCs[unitControl.currentPlayer - 1].phase = 5;
-                            unitControl.currentPlayer++;
-                            if (unitControl.currentPlayer == 2)
-                            {
-                                selected.X = tileEngine.MapWidth - 3;
-                                selected.Y = 0;
-                            }
-                            else if (unitControl.currentPlayer == 3)
-                            {
-                                selected.X = tileEngine.MapWidth - 3;
-                                selected.Y = tileEngine.MapHeight - 3;
-                            }
-                            else if (unitControl.currentPlayer == 4)
-                            {
-                                selected.X = 0;
-                                selected.Y = tileEngine.MapHeight - 3;
-                            }
-                            if (unitControl.currentPlayer == 5)
-                            {
-                                unitControl.currentPlayer = 1;
-                                TCs[unitControl.currentPlayer - 1].nextPhase();
-                                unitControl.nextUnit();
-                                selected.X = unitControl.currentUnit.currentX;
-                                selected.Y = unitControl.currentUnit.currentY;
-                            }
-                            camera.PlayerNum = unitControl.currentPlayer;
-                            miniMap.PlayerNum = unitControl.currentPlayer;
+                            finalizeUnitPlacement();
                         }
                     }
                 }
             }
+            #endregion
 
+            #region Next Phase/Finalize Turn
             //Unit Placement Phase: No Function
             //Movement Phase: Next Phase
-            //Combat Phase: Next Phase
             //Purchase Phase: Finalize and End Turn
-            if (input.IsNewKeyPress(Keys.Enter) || gps.Buttons.Start == ButtonState.Pressed)
+            if (humanPlayers[unitControl.currentPlayer - 1] &&
+                (input.IsNewKeyPress(Keys.Enter) || gps.Buttons.Start == ButtonState.Pressed))
             {
-
                 if (TCs[unitControl.currentPlayer - 1].phase == 2)
                 {
                     TCs[unitControl.currentPlayer - 1].nextPhase();
 
+                    //move selection to player's base for purchase phase
                     if (unitControl.currentPlayer == 1)
                     {
                         selected.X = 0;
@@ -775,11 +785,10 @@ namespace Tanktics
                     miniMap.PlayerNum = unitControl.currentPlayer;
                 }
             }
+            #endregion
 
-
-            //if (input.IsNewKeyPress(Keys.C))
-            //if (unitControl.currentPlayer == 1 || unitControl.currentPlayer == 2 || unitControl.currentPlayer == 3 || unitControl.currentPlayer == 4)
-            if (unitControl.currentPlayer == 1)
+            #region AI Movement
+            if (!humanPlayers[unitControl.currentPlayer - 1])
             {
 
                 #region Old method
@@ -835,7 +844,6 @@ namespace Tanktics
                                 camera.PlayerNum = unitControl.currentPlayer;
                                 miniMap.PlayerNum = unitControl.currentPlayer;
                             }
-
 
                             #region Old AI
                             //Unit mostouter = unitControl.currentUnit;
@@ -894,6 +902,7 @@ namespace Tanktics
                     }
                 }
             }
+            #endregion
 
 
 
@@ -902,6 +911,41 @@ namespace Tanktics
             if (!prevSelected.Equals(selected))
                 camera.JumpTo(selected.X, selected.Y);
             prevSelected = selected;
+        }
+
+        //this code is repeated at the end of AI and human unit placement
+        //so it needs to be in one method
+        //it advances to next player and moves selection to next player's base
+        //Robby Florence
+        public void finalizeUnitPlacement()
+        {
+            TCs[unitControl.currentPlayer - 1].phase = 5;
+            unitControl.currentPlayer++;
+            if (unitControl.currentPlayer == 2)
+            {
+                selected.X = tileEngine.MapWidth - 3;
+                selected.Y = 0;
+            }
+            else if (unitControl.currentPlayer == 3)
+            {
+                selected.X = tileEngine.MapWidth - 3;
+                selected.Y = tileEngine.MapHeight - 3;
+            }
+            else if (unitControl.currentPlayer == 4)
+            {
+                selected.X = 0;
+                selected.Y = tileEngine.MapHeight - 3;
+            }
+            else if (unitControl.currentPlayer == 5)
+            {
+                unitControl.currentPlayer = 1;
+                TCs[unitControl.currentPlayer - 1].nextPhase();
+                unitControl.nextUnit();
+                selected.X = unitControl.currentUnit.currentX;
+                selected.Y = unitControl.currentUnit.currentY;
+            }
+            camera.PlayerNum = unitControl.currentPlayer;
+            miniMap.PlayerNum = unitControl.currentPlayer;
         }
 
         /// <summary>
@@ -922,6 +966,7 @@ namespace Tanktics
 
             spriteBatch.End();
 
+            #region Draw Game Over
             //draw game over text
             if (gameOver)
             {
@@ -1027,6 +1072,7 @@ namespace Tanktics
 
                 spriteBatch.End();
             }
+            #endregion
 
             // If the game is transitioning on or off, fade it out to black.
             if (TransitionPosition > 0)
