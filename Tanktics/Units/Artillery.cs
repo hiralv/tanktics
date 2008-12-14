@@ -98,6 +98,7 @@ namespace Tanktics
         }
 
 
+        //Find all possible moves that a artillery can move to
         //HIRAL VORA
         public override List<moves> GetAllpossibleMoves()
         {
