@@ -1003,7 +1003,7 @@ namespace Tanktics
 
                 //set text for victory condition
                 if (TCs[unitControl.currentPlayer - 1].victoryCondition == (int)TurnController.VictoryCond.Factories)
-                    conditionText = "Control Over Half Of The Factories";
+                    conditionText = "Control 80% of Factories";
                 else if (TCs[unitControl.currentPlayer - 1].victoryCondition == (int)TurnController.VictoryCond.Points)
                     conditionText = "Accumulate " + TCs[unitControl.currentPlayer - 1].maxPoints + " Points";
                 else if (TCs[unitControl.currentPlayer - 1].victoryCondition == (int)TurnController.VictoryCond.NoOpponents)
