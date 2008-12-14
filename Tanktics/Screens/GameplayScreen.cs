@@ -160,7 +160,7 @@ namespace Tanktics
 
             tileEngine.LoadContent(content);
 
-            unitControl.explosion.Texture = content.Load<Texture2D>("Intro/Intro Explosion no black");
+            unitControl.explosion.Texture = content.Load<Texture2D>("Unit Explosion");
 
 
             //load player 1 (white) apc animations
