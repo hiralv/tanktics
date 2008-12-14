@@ -107,12 +107,12 @@ namespace Tanktics
             #region Move list 1
             for (int i = 1; i <= 2; i++)
             {
-                if (currentX + i < 25)
+                if (currentX + i < 17)
                 {
                     possiblemoves.Add(new moves(currentX + i, currentY));
                 }
 
-                if (currentY + i < 25)
+                if (currentY + i < 17)
                 {
                     possiblemoves.Add(new moves(currentX, currentY + i));
                 }
@@ -131,9 +131,9 @@ namespace Tanktics
             #endregion
 
             #region Move List 2
-            if (currentX + 1 < 25)
+            if (currentX + 1 < 17)
             {
-                if (currentY + 1 < 25)
+                if (currentY + 1 < 17)
                 {
                     possiblemoves.Add(new moves(currentX + 1, currentY + 1));
                 }
@@ -152,7 +152,7 @@ namespace Tanktics
                     possiblemoves.Add(new moves(currentX - 1, currentY - 1));
                 }
 
-                if (currentY + 1 < 25)
+                if (currentY + 1 < 17)
                 {
                     possiblemoves.Add(new moves(currentX - 1, currentY + 1));
                 }
