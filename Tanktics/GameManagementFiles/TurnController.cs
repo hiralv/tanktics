@@ -42,7 +42,7 @@ namespace Tanktics
         public Boolean playerWon = false;
         public int victoryCondition = -1;
         public enum VictoryCond { Factories, Points, NoOpponents };
-        public int maxPoints = 10;
+        public int maxPoints = 15;
         int numFactories = 5;
 
 
@@ -304,7 +304,7 @@ namespace Tanktics
         public void checkVictory()
         {
             //condition 1
-            if (controlledFactories >= (int)(0.5f * numFactories + 0.5f))
+            if (controlledFactories >= (int)(0.8f * numFactories))
             {
                 playerWon = true;
                 victoryCondition = (int)VictoryCond.Factories;
