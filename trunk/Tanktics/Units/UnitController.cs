@@ -3701,12 +3701,15 @@ namespace Tanktics
                 totalactions++;
                 // Step 2: Set unit to has moved
                 currentUnit.sethasMoved(true);
-
+      
                 // Step 3: Call next unit
                 //nextUnit();
 
                 //Step 4: Call Remove Dead to make any dead unit dead
                 removeDead();
+
+                //Step 5: Update Map
+                AI.map[this.currentUnit.currentX, this.currentUnit.currentY] = this.currentUnit.typeno;
 
             }
 
